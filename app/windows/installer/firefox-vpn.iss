@@ -1,4 +1,4 @@
-﻿; The Windows installer of Firefox VPN (Inno Setup 6). scripts\build-windows.ps1
+; The Windows installer of Firefox VPN (Inno Setup 6). scripts\build-windows.ps1
 ; compiles it with the built app:
 ;
 ;   ISCC /DAppVersion=1.1.9 /DSourceDir=<the app's folder> /DOutputDir=<dir>
@@ -155,8 +155,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Type: files; Name: "{app}\firefox-vpn-core.exe"
 
 [Files]
+; Keep existing kernel driver untouched if already present to prevent file lock errors
+Source: "{#SourceDir}\core\WinDivert64.sys"; DestDir: "{app}\core"; Flags: onlyifdoesntexist uninsneveruninstall
 ; Never an existing data folder, if one was in the source.
-Source: "{#SourceDir}\*"; DestDir: "{app}"; Excludes: "user-data,portable"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#SourceDir}\*"; DestDir: "{app}"; Excludes: "user-data,portable,core\WinDivert64.sys"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{autoprograms}\{#AppName}"; Filename: "{app}\{#AppExe}"
