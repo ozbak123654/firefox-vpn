@@ -543,7 +543,7 @@ func (t *Tunnel) captureLoop() {
 		// FakeIPs (198.18.0.0/15) belong to gVisor and must NEVER be bypassed!
 		if !hasDst || dstPort != 53 {
 			if dstIP, ok := getDstIP(buf[:n]); ok {
-				if addr, err := netip.ParseAddr(dstIP.String()); err == nil && !IsFake(addr) {
+				if parsedAddr, err := netip.ParseAddr(dstIP.String()); err == nil && !IsFake(parsedAddr) {
 					if isPrivateOrExcluded(dstIP, t.serverIPs) || t.isDirect(dstIP.String()) {
 						_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
 						continue
