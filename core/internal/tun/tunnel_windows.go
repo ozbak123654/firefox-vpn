@@ -1,0 +1,414 @@
+//go:build windows
+
+package tun
+
+import (
+	"context"
+	"encoding/binary"
+	"errors"
+	"fmt"
+	"net"
+	"net/netip"
+	"os"
+	"strings"
+	"sync"
+	"time"
+
+	"golang.org/x/sys/windows"
+	"gvisor.dev/gvisor/pkg/buffer"
+	"gvisor.dev/gvisor/pkg/tcpip"
+	"gvisor.dev/gvisor/pkg/tcpip/adapters/gonet"
+	"gvisor.dev/gvisor/pkg/tcpip/header"
+	"gvisor.dev/gvisor/pkg/tcpip/link/channel"
+	"gvisor.dev/gvisor/pkg/tcpip/network/ipv4"
+	"gvisor.dev/gvisor/pkg/tcpip/network/ipv6"
+	"gvisor.dev/gvisor/pkg/tcpip/stack"
+	"gvisor.dev/gvisor/pkg/tcpip/transport/icmp"
+	"gvisor.dev/gvisor/pkg/tcpip/transport/tcp"
+	"gvisor.dev/gvisor/pkg/tcpip/transport/udp"
+	"gvisor.dev/gvisor/pkg/waiter"
+
+	"github.com/armanlife/firefox-vpn-client/core/internal/logx"
+)
+
+const (
+	nicID   = 1
+	dnsIdle = 10 * time.Second
+)
+
+// Tunnel is a running userspace stack on WinDivert for Windows.
+type Tunnel struct {
+	s          *stack.Stack
+	endpoint   *channel.Endpoint
+	netHandle  windows.Handle
+	flowHandle windows.Handle
+	ctx        context.Context
+	cancel     context.CancelFunc
+	once       sync.Once
+	selfPorts  sync.Map
+}
+
+// Start is not used with an fd on Windows; StartWinDivert is used instead.
+func Start(fd int, mtu uint32, dial Dialer, allow Allow, dns *FakeDNS) (*Tunnel, error) {
+	return nil, errors.New("tun: use StartWinDivert on Windows")
+}
+
+// StartWinDivert starts the userspace TCP/IP stack and intercepts Windows traffic
+// using WinDivert. TCP connections go through dial, DNS (UDP 53) is answered by dns,
+// and other UDP is refused with ICMP unreachable so apps fall back to TCP.
+func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAddrs []string) (*Tunnel, error) {
+	if !IsWinDivertAvailable() {
+		return nil, errors.New("WinDivert.dll not found: ensure WinDivert.dll and WinDivert64.sys are present")
+	}
+	if !IsElevated() {
+		return nil, errors.New("administrator privileges required: please run as Administrator")
+	}
+
+	filter := buildDivertFilter(serverAddrs)
+
+	netH, err := WinDivertOpen(filter, LayerNetwork, 0, 0)
+	if err != nil {
+		return nil, fmt.Errorf("open network divert: %w", err)
+	}
+
+	// Open flow layer to sniff local ports opened by our process
+	flowH, err := WinDivertOpen("outbound and !loopback", LayerFlow, 10, FlagSniff)
+	if err != nil {
+		_ = WinDivertClose(netH)
+		return nil, fmt.Errorf("open flow divert: %w", err)
+	}
+
+	if mtu == 0 {
+		mtu = 1500
+	}
+
+	chEndpoint := channel.New(1024, mtu, "")
+
+	s := stack.New(stack.Options{
+		NetworkProtocols:   []stack.NetworkProtocolFactory{ipv4.NewProtocol, ipv6.NewProtocol},
+		TransportProtocols: []stack.TransportProtocolFactory{tcp.NewProtocol, udp.NewProtocol, icmp.NewProtocol4, icmp.NewProtocol6},
+	})
+
+	ctx, cancel := context.WithCancel(context.Background())
+	t := &Tunnel{
+		s:          s,
+		endpoint:   chEndpoint,
+		netHandle:  netH,
+		flowHandle: flowH,
+		ctx:        ctx,
+		cancel:     cancel,
+	}
+
+	fail := func(err error) (*Tunnel, error) {
+		cancel()
+		s.Close()
+		_ = WinDivertClose(netH)
+		_ = WinDivertClose(flowH)
+		return nil, err
+	}
+
+	if e := s.CreateNIC(nicID, chEndpoint); e != nil {
+		return fail(fmt.Errorf("tun: %s", e))
+	}
+	if e := s.SetPromiscuousMode(nicID, true); e != nil {
+		return fail(fmt.Errorf("tun: %s", e))
+	}
+	if e := s.SetSpoofing(nicID, true); e != nil {
+		return fail(fmt.Errorf("tun: %s", e))
+	}
+	s.SetRouteTable([]tcpip.Route{
+		{Destination: header.IPv4EmptySubnet, NIC: nicID},
+		{Destination: header.IPv6EmptySubnet, NIC: nicID},
+	})
+	sack := tcpip.TCPSACKEnabled(true)
+	_ = s.SetTransportProtocolOption(tcp.ProtocolNumber, &sack)
+
+	tcpForwarder := tcp.NewForwarder(s, 0, 2048, func(r *tcp.ForwarderRequest) {
+		t.forwardTCP(r, dial, allow, dns)
+	})
+	s.SetTransportProtocolHandler(tcp.ProtocolNumber, tcpForwarder.HandlePacket)
+
+	udpForwarder := udp.NewForwarder(s, func(r *udp.ForwarderRequest) bool {
+		if r.ID().LocalPort != 53 {
+			return false // refused: ICMP port unreachable
+		}
+		var wq waiter.Queue
+		ep, e := r.CreateEndpoint(&wq)
+		if e != nil {
+			return true
+		}
+		go t.serveDNS(gonet.NewUDPConn(&wq, ep), dns)
+		return true
+	})
+	s.SetTransportProtocolHandler(udp.ProtocolNumber, udpForwarder.HandlePacket)
+
+	// Monitor our own process outbound flows to avoid looping
+	go t.monitorFlows()
+
+	// Intercept inbound packets from WinDivert and feed into gVisor
+	go t.captureLoop()
+
+	// Read outbound packets from gVisor and inject into Windows
+	go t.injectLoop()
+
+	logx.Info("WinDivert tunnel started mtu=%d", mtu)
+	return t, nil
+}
+
+// buildDivertFilter builds the WinDivert filter string.
+func buildDivertFilter(serverAddrs []string) string {
+	var parts []string
+	parts = append(parts, "outbound")
+	parts = append(parts, "!loopback")
+	parts = append(parts, "ip.DstAddr != 127.0.0.1")
+	// Exclude private and multicast networks from divert
+	parts = append(parts, "ip.DstAddr != 10.0.0.0/8")
+	parts = append(parts, "ip.DstAddr != 172.16.0.0/12")
+	parts = append(parts, "ip.DstAddr != 192.168.0.0/16")
+	parts = append(parts, "ip.DstAddr != 224.0.0.0/4")
+	parts = append(parts, "ip.DstAddr != 255.255.255.255")
+
+	// Exclude upstream proxy servers
+	for _, s := range serverAddrs {
+		host := s
+		if h, _, err := net.SplitHostPort(s); err == nil {
+			host = h
+		}
+		if ip := net.ParseIP(host); ip != nil && ip.To4() != nil {
+			parts = append(parts, fmt.Sprintf("ip.DstAddr != %s", ip.String()))
+		}
+	}
+
+	// Capture TCP and UDP DNS
+	parts = append(parts, "(tcp or (udp and udp.DstPort == 53))")
+
+	return strings.Join(parts, " and ")
+}
+
+// monitorFlows tracks flows belonging to our own process to prevent capturing self-traffic.
+func (t *Tunnel) monitorFlows() {
+	pid := uint32(os.Getpid())
+	var addr WinDivertAddress
+	buf := make([]byte, 1024)
+	for {
+		select {
+		case <-t.ctx.Done():
+			return
+		default:
+		}
+		_, err := WinDivertRecv(t.flowHandle, buf, &addr)
+		if err != nil {
+			if errors.Is(err, windows.ERROR_OPERATION_ABORTED) || errors.Is(err, windows.ERROR_INVALID_HANDLE) {
+				return
+			}
+			continue
+		}
+		if addr.FlowProcessID() == pid {
+			localPort := addr.FlowLocalPort()
+			if addr.Event() == EventConnect {
+				t.selfPorts.Store(localPort, true)
+			} else if addr.Event() == EventDisconnect {
+				t.selfPorts.Delete(localPort)
+			}
+		}
+	}
+}
+
+// captureLoop reads intercepted packets from WinDivert and pushes them into gVisor.
+func (t *Tunnel) captureLoop() {
+	buf := make([]byte, 65535)
+	var addr WinDivertAddress
+	for {
+		select {
+		case <-t.ctx.Done():
+			return
+		default:
+		}
+		n, err := WinDivertRecv(t.netHandle, buf, &addr)
+		if err != nil {
+			if errors.Is(err, windows.ERROR_OPERATION_ABORTED) || errors.Is(err, windows.ERROR_INVALID_HANDLE) {
+				return
+			}
+			continue
+		}
+		if n <= 0 {
+			continue
+		}
+
+		// Check if packet originates from our process's local port
+		if srcPort, ok := getSrcPort(buf[:n]); ok {
+			if _, isSelf := t.selfPorts.Load(srcPort); isSelf {
+				// Re-inject immediately without sending to gVisor
+				_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+				continue
+			}
+		}
+
+		var proto tcpip.NetworkProtocolNumber
+		version := buf[0] >> 4
+		if version == 4 {
+			proto = header.IPv4ProtocolNumber
+		} else if version == 6 {
+			proto = header.IPv6ProtocolNumber
+		} else {
+			continue
+		}
+
+		pkt := stack.NewPacketBuffer(stack.PacketBufferOptions{
+			Payload: buffer.MakeWithData(buf[:n]),
+		})
+		t.endpoint.InjectInbound(proto, pkt)
+		pkt.DecRef()
+	}
+}
+
+// injectLoop reads packets generated by gVisor and injects them back into Windows.
+func (t *Tunnel) injectLoop() {
+	var addr WinDivertAddress
+	addr.SetLayer(LayerNetwork)
+	addr.SetOutbound(false) // Inbound to the OS stack
+
+	for {
+		pkt := t.endpoint.ReadContext(t.ctx)
+		if pkt == nil {
+			return
+		}
+
+		view := pkt.ToView()
+		data := view.AsSlice()
+		if len(data) > 0 {
+			if (data[0] >> 4) == 6 {
+				addr.SetIPv6(true)
+			} else {
+				addr.SetIPv6(false)
+			}
+			WinDivertCalcChecksums(data, &addr, 0)
+			_, _ = WinDivertSend(t.netHandle, data, &addr)
+		}
+		view.Release()
+		pkt.DecRef()
+	}
+}
+
+// getSrcPort extracts the source port from an IPv4/IPv6 TCP/UDP packet.
+func getSrcPort(pkt []byte) (uint16, bool) {
+	if len(pkt) < 20 {
+		return 0, false
+	}
+	version := pkt[0] >> 4
+	if version == 4 {
+		ihl := int(pkt[0]&0x0F) * 4
+		if len(pkt) < ihl+4 {
+			return 0, false
+		}
+		proto := pkt[9]
+		if proto != 6 && proto != 17 { // TCP or UDP
+			return 0, false
+		}
+		return binary.BigEndian.Uint16(pkt[ihl : ihl+2]), true
+	} else if version == 6 {
+		if len(pkt) < 44 {
+			return 0, false
+		}
+		proto := pkt[6]
+		if proto != 6 && proto != 17 {
+			return 0, false
+		}
+		return binary.BigEndian.Uint16(pkt[40:42]), true
+	}
+	return 0, false
+}
+
+func toAddr(a tcpip.Address) netip.Addr {
+	if a.Len() == 4 {
+		return netip.AddrFrom4(a.As4())
+	}
+	return netip.AddrFrom16(a.As16())
+}
+
+func (t *Tunnel) forwardTCP(r *tcp.ForwarderRequest, dial Dialer, allow Allow, dns *FakeDNS) {
+	id := r.ID()
+	dst := netip.AddrPortFrom(toAddr(id.LocalAddress), id.LocalPort)
+	if dst.Port() == 53 {
+		var wq waiter.Queue
+		ep, e := r.CreateEndpoint(&wq)
+		if e != nil {
+			r.Complete(true)
+			return
+		}
+		r.Complete(false)
+		go func() {
+			conn := gonet.NewTCPConn(&wq, ep)
+			defer conn.Close()
+			_ = conn.SetDeadline(time.Now().Add(dnsIdle))
+			_ = dns.ServeStream(conn)
+		}()
+		return
+	}
+	if IsVPNAddress(dst.Addr()) || IsFilterAddress(dst.Addr()) {
+		r.Complete(true)
+		return
+	}
+	target, ok := dns.Target(dst)
+	if ok && allow != nil {
+		host, port, _ := net.SplitHostPort(target)
+		ok = allow(host, port)
+	}
+	if !ok {
+		r.Complete(true)
+		return
+	}
+	ctx, cancel := context.WithTimeout(t.ctx, dialTimeout)
+	go func() {
+		defer cancel()
+		upstream, err := dial(ctx, target)
+		if err != nil {
+			r.Complete(true)
+			if !errors.Is(err, context.Canceled) {
+				logx.Debug("WinDivert connection failed target=%s err=%s", target, logx.Err(err))
+			}
+			return
+		}
+		var wq waiter.Queue
+		ep, e := r.CreateEndpoint(&wq)
+		if e != nil {
+			r.Complete(true)
+			_ = upstream.Close()
+			return
+		}
+		r.Complete(false)
+		ep.SocketOptions().SetKeepAlive(true)
+		relay(gonet.NewTCPConn(&wq, ep), upstream)
+	}()
+}
+
+func (t *Tunnel) serveDNS(conn *gonet.UDPConn, dns *FakeDNS) {
+	defer conn.Close()
+	buf := make([]byte, 1500)
+	for {
+		_ = conn.SetReadDeadline(time.Now().Add(dnsIdle))
+		n, err := conn.Read(buf)
+		if err != nil {
+			return
+		}
+		reply, err := dns.Answer(buf[:n])
+		if err != nil {
+			continue
+		}
+		if _, err := conn.Write(reply); err != nil {
+			return
+		}
+	}
+}
+
+// Stop ends every connection, the stack, and closes WinDivert handles.
+func (t *Tunnel) Stop() {
+	t.once.Do(func() {
+		t.cancel()
+		t.s.Close()
+		_ = WinDivertClose(t.netHandle)
+		_ = WinDivertClose(t.flowHandle)
+		t.s.Wait()
+		logx.Info("WinDivert tunnel stopped")
+	})
+}
