@@ -258,12 +258,12 @@ class DesktopIntegration {
         enabled: canSet,
         checked: canSet && status.systemProxy == 'set',
       ),
-      if (Platform.isWindows && status.windivertSupported)
+      if (Platform.isWindows && (status?.windivertSupported ?? false))
         TrayItem(
           _windivert,
           l.trayWinDivert,
           enabled: canSet,
-          checked: canSet && status.systemProxy == 'windivert',
+          checked: canSet && status?.systemProxy == 'windivert',
         ),
       const TrayItem.separator(),
       TrayItem(_quit, l.trayQuit),
