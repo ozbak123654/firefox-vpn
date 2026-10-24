@@ -11,6 +11,7 @@ import (
 
 	"github.com/armanlife/firefox-vpn-client/core/internal/config"
 	"github.com/armanlife/firefox-vpn-client/core/internal/logx"
+	"github.com/armanlife/firefox-vpn-client/core/internal/routing"
 	"github.com/armanlife/firefox-vpn-client/core/internal/tun"
 )
 
