@@ -226,10 +226,14 @@ func runHosted(svc hostedService, stop <-chan string, loop func(context.Context)
 		logx.Error("app: the service stopped err=%s", logx.Err(err))
 	}
 	cancel()
-	<-loopDone
+	select {
+	case <-loopDone:
+	case <-time.After(1 * time.Second):
+	}
 	cleanup()
 	svc.Shutdown()
 	logx.Info("app: stopped")
+	os.Exit(0)
 	return err
 }
 

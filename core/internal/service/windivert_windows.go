@@ -51,7 +51,7 @@ func (d *Daemon) syncWinDivert() {
 
 	d.mu.Lock()
 	engine := d.engine
-	isConnected := engine != nil && engine.connected && d.state.Phase == PhaseRunning && !d.autoConnecting()
+	isConnected := engine != nil && engine.connected && d.state.Phase == PhaseRunning
 	var serverAddrs []string
 	if engine != nil && engine.selected.Addr != "" {
 		serverAddrs = append(serverAddrs, engine.selected.Addr)
@@ -66,7 +66,7 @@ func (d *Daemon) syncWinDivert() {
 		}
 		if engine != nil && !engine.connected {
 			go func(e *proxyEngine) {
-				_ = d.wake(e, wakeForTest)
+				_ = d.wake(e, wakeForClient)
 			}(engine)
 		}
 		return
