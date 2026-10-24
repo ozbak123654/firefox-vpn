@@ -43,6 +43,7 @@ var (
 	procWinDivertSend                = modWinDivert.NewProc("WinDivertSend")
 	procWinDivertClose               = modWinDivert.NewProc("WinDivertClose")
 	procWinDivertHelperCalcChecksums = modWinDivert.NewProc("WinDivertHelperCalcChecksums")
+	procWinDivertHelperCompileFilter = modWinDivert.NewProc("WinDivertHelperCompileFilter")
 )
 
 // WinDivertAddress matches WINDIVERT_ADDRESS (WinDivert 2.2).
@@ -110,6 +111,32 @@ func (a *WinDivertAddress) FlowProtocol() uint8 {
 	return a.data[56]
 }
 
+// WinDivertHelperCompileFilter checks syntax and compiles a filter string.
+func WinDivertHelperCompileFilter(filter string, layer uint32) (string, uint32, error) {
+	filterPtr, err := syscall.BytePtrFromString(filter)
+	if err != nil {
+		return "", 0, err
+	}
+	var errStrPtr *byte
+	var errPos uint32
+	r1, _, _ := procWinDivertHelperCompileFilter.Call(
+		uintptr(unsafe.Pointer(filterPtr)),
+		uintptr(layer),
+		0,
+		0,
+		uintptr(unsafe.Pointer(&errStrPtr)),
+		uintptr(unsafe.Pointer(&errPos)),
+	)
+	if r1 == 0 {
+		var msg string
+		if errStrPtr != nil {
+			msg = windows.BytePtrToString(errStrPtr)
+		}
+		return msg, errPos, fmt.Errorf("filter error at pos %d: %s", errPos, msg)
+	}
+	return "", 0, nil
+}
+
 // WinDivertOpen calls WinDivertOpen.
 func WinDivertOpen(filter string, layer uint32, priority int16, flags uint64) (windows.Handle, error) {
 	filterPtr, err := syscall.BytePtrFromString(filter)
@@ -124,6 +151,9 @@ func WinDivertOpen(filter string, layer uint32, priority int16, flags uint64) (w
 	)
 	h := windows.Handle(r1)
 	if h == windows.InvalidHandle {
+		if errMsg, pos, compErr := WinDivertHelperCompileFilter(filter, layer); compErr != nil {
+			return windows.InvalidHandle, fmt.Errorf("WinDivertOpen (filter error at pos %d: %s): %w", pos, errMsg, errSys)
+		}
 		if errSys != nil && errSys != windows.ERROR_SUCCESS {
 			return windows.InvalidHandle, fmt.Errorf("WinDivertOpen: %w", errSys)
 		}
@@ -166,8 +196,8 @@ func WinDivertSend(h windows.Handle, packet []byte, addr *WinDivertAddress) (int
 		uintptr(h),
 		pktPtr,
 		uintptr(len(packet)),
-		uintptr(unsafe.Pointer(addr)),
 		uintptr(unsafe.Pointer(&sendLen)),
+		uintptr(unsafe.Pointer(addr)),
 	)
 	if r1 == 0 {
 		if errSys != nil && errSys != windows.ERROR_SUCCESS {

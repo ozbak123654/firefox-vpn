@@ -12,6 +12,7 @@ import (
 	"os"
 	"strings"
 	"sync"
+	"sync/atomic"
 	"time"
 
 	"golang.org/x/sys/windows"
@@ -38,14 +39,17 @@ const (
 
 // Tunnel is a running userspace stack on WinDivert for Windows.
 type Tunnel struct {
-	s          *stack.Stack
-	endpoint   *channel.Endpoint
-	netHandle  windows.Handle
-	flowHandle windows.Handle
-	ctx        context.Context
-	cancel     context.CancelFunc
-	once       sync.Once
-	selfPorts  sync.Map
+	s            *stack.Stack
+	endpoint     *channel.Endpoint
+	netHandle    windows.Handle
+	flowHandle   windows.Handle
+	ctx          context.Context
+	cancel       context.CancelFunc
+	once         sync.Once
+	selfPorts    sync.Map
+	serverIPs    []net.IP
+	lastIfIdx    uint32
+	lastSubIfIdx uint32
 }
 
 // Start is not used with an fd on Windows; StartWinDivert is used instead.
@@ -64,18 +68,29 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		return nil, errors.New("administrator privileges required: please run as Administrator")
 	}
 
-	filter := buildDivertFilter(serverAddrs)
+	var serverIPs []net.IP
+	for _, s := range serverAddrs {
+		host := s
+		if h, _, err := net.SplitHostPort(s); err == nil {
+			host = h
+		}
+		if ip := net.ParseIP(host); ip != nil {
+			serverIPs = append(serverIPs, ip)
+		}
+	}
 
+	// Capture outbound TCP and UDP port 53 (DNS) that are not local loopback
+	filter := "outbound and !loopback and (tcp or (udp and udp.DstPort == 53))"
 	netH, err := WinDivertOpen(filter, LayerNetwork, 0, 0)
 	if err != nil {
 		return nil, fmt.Errorf("open network divert: %w", err)
 	}
 
-	// Open flow layer to sniff local ports opened by our process
-	flowH, err := WinDivertOpen("outbound and !loopback", LayerFlow, 10, FlagSniff)
+	// Open flow layer with FlagSniff|FlagRecvOnly to track our own process's ports
+	flowH, err := WinDivertOpen("true", LayerFlow, 0, FlagSniff|FlagRecvOnly)
 	if err != nil {
-		_ = WinDivertClose(netH)
-		return nil, fmt.Errorf("open flow divert: %w", err)
+		logx.Warn("open flow divert (self-traffic tracking): %s", logx.Err(err))
+		flowH = windows.InvalidHandle
 	}
 
 	if mtu == 0 {
@@ -90,20 +105,28 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 	})
 
 	ctx, cancel := context.WithCancel(context.Background())
+	defIf, defSubIf := getDefaultIfIdx()
 	t := &Tunnel{
-		s:          s,
-		endpoint:   chEndpoint,
-		netHandle:  netH,
-		flowHandle: flowH,
-		ctx:        ctx,
-		cancel:     cancel,
+		s:            s,
+		endpoint:     chEndpoint,
+		netHandle:    netH,
+		flowHandle:   flowH,
+		ctx:          ctx,
+		cancel:       cancel,
+		serverIPs:    serverIPs,
+		lastIfIdx:    defIf,
+		lastSubIfIdx: defSubIf,
 	}
 
 	fail := func(err error) (*Tunnel, error) {
 		cancel()
 		s.Close()
-		_ = WinDivertClose(netH)
-		_ = WinDivertClose(flowH)
+		if netH != windows.InvalidHandle {
+			_ = WinDivertClose(netH)
+		}
+		if flowH != windows.InvalidHandle {
+			_ = WinDivertClose(flowH)
+		}
 		return nil, err
 	}
 
@@ -143,7 +166,9 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 	s.SetTransportProtocolHandler(udp.ProtocolNumber, udpForwarder.HandlePacket)
 
 	// Monitor our own process outbound flows to avoid looping
-	go t.monitorFlows()
+	if flowH != windows.InvalidHandle {
+		go t.monitorFlows()
+	}
 
 	// Intercept inbound packets from WinDivert and feed into gVisor
 	go t.captureLoop()
@@ -153,36 +178,6 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 
 	logx.Info("WinDivert tunnel started mtu=%d", mtu)
 	return t, nil
-}
-
-// buildDivertFilter builds the WinDivert filter string.
-func buildDivertFilter(serverAddrs []string) string {
-	var parts []string
-	parts = append(parts, "outbound")
-	parts = append(parts, "!loopback")
-	parts = append(parts, "ip.DstAddr != 127.0.0.1")
-	// Exclude private and multicast networks from divert
-	parts = append(parts, "ip.DstAddr != 10.0.0.0/8")
-	parts = append(parts, "ip.DstAddr != 172.16.0.0/12")
-	parts = append(parts, "ip.DstAddr != 192.168.0.0/16")
-	parts = append(parts, "ip.DstAddr != 224.0.0.0/4")
-	parts = append(parts, "ip.DstAddr != 255.255.255.255")
-
-	// Exclude upstream proxy servers
-	for _, s := range serverAddrs {
-		host := s
-		if h, _, err := net.SplitHostPort(s); err == nil {
-			host = h
-		}
-		if ip := net.ParseIP(host); ip != nil && ip.To4() != nil {
-			parts = append(parts, fmt.Sprintf("ip.DstAddr != %s", ip.String()))
-		}
-	}
-
-	// Capture TCP and UDP DNS
-	parts = append(parts, "(tcp or (udp and udp.DstPort == 53))")
-
-	return strings.Join(parts, " and ")
 }
 
 // monitorFlows tracks flows belonging to our own process to prevent capturing self-traffic.
@@ -235,10 +230,23 @@ func (t *Tunnel) captureLoop() {
 			continue
 		}
 
+		if ifIdx := addr.NetworkIfIdx(); ifIdx != 0 {
+			atomic.StoreUint32(&t.lastIfIdx, ifIdx)
+			atomic.StoreUint32(&t.lastSubIfIdx, addr.NetworkSubIfIdx())
+		}
+
 		// Check if packet originates from our process's local port
 		if srcPort, ok := getSrcPort(buf[:n]); ok {
 			if _, isSelf := t.selfPorts.Load(srcPort); isSelf {
 				// Re-inject immediately without sending to gVisor
+				_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+				continue
+			}
+		}
+
+		// Also check if destination IP is private, multicast, loopback, or upstream server
+		if dstIP, ok := getDstIP(buf[:n]); ok {
+			if isPrivateOrExcluded(dstIP, t.serverIPs) {
 				_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
 				continue
 			}
@@ -264,10 +272,6 @@ func (t *Tunnel) captureLoop() {
 
 // injectLoop reads packets generated by gVisor and injects them back into Windows.
 func (t *Tunnel) injectLoop() {
-	var addr WinDivertAddress
-	addr.SetLayer(LayerNetwork)
-	addr.SetOutbound(false) // Inbound to the OS stack
-
 	for {
 		pkt := t.endpoint.ReadContext(t.ctx)
 		if pkt == nil {
@@ -277,6 +281,14 @@ func (t *Tunnel) injectLoop() {
 		view := pkt.ToView()
 		data := view.AsSlice()
 		if len(data) > 0 {
+			var addr WinDivertAddress
+			addr.SetLayer(LayerNetwork)
+			addr.SetOutbound(false) // Inbound to the OS stack
+			ifIdx := atomic.LoadUint32(&t.lastIfIdx)
+			subIfIdx := atomic.LoadUint32(&t.lastSubIfIdx)
+			if ifIdx != 0 {
+				addr.SetNetwork(ifIdx, subIfIdx)
+			}
 			if (data[0] >> 4) == 6 {
 				addr.SetIPv6(true)
 			} else {
@@ -288,6 +300,49 @@ func (t *Tunnel) injectLoop() {
 		view.Release()
 		pkt.DecRef()
 	}
+}
+
+func getDefaultIfIdx() (uint32, uint32) {
+	ifaces, err := net.Interfaces()
+	if err == nil {
+		for _, ifi := range ifaces {
+			if ifi.Flags&net.FlagUp != 0 && ifi.Flags&net.FlagLoopback == 0 {
+				return uint32(ifi.Index), 0
+			}
+		}
+	}
+	return 1, 0
+}
+
+func getDstIP(pkt []byte) (net.IP, bool) {
+	if len(pkt) < 20 {
+		return nil, false
+	}
+	version := pkt[0] >> 4
+	if version == 4 {
+		return net.IP(pkt[16:20]), true
+	} else if version == 6 {
+		if len(pkt) < 40 {
+			return nil, false
+		}
+		return net.IP(pkt[24:40]), true
+	}
+	return nil, false
+}
+
+func isPrivateOrExcluded(ip net.IP, serverIPs []net.IP) bool {
+	if ip == nil {
+		return false
+	}
+	if ip.IsLoopback() || ip.IsPrivate() || ip.IsLinkLocalUnicast() || ip.IsMulticast() || ip.IsUnspecified() {
+		return true
+	}
+	for _, s := range serverIPs {
+		if ip.Equal(s) {
+			return true
+		}
+	}
+	return false
 }
 
 // getSrcPort extracts the source port from an IPv4/IPv6 TCP/UDP packet.
@@ -406,8 +461,12 @@ func (t *Tunnel) Stop() {
 	t.once.Do(func() {
 		t.cancel()
 		t.s.Close()
-		_ = WinDivertClose(t.netHandle)
-		_ = WinDivertClose(t.flowHandle)
+		if t.netHandle != windows.InvalidHandle {
+			_ = WinDivertClose(t.netHandle)
+		}
+		if t.flowHandle != windows.InvalidHandle {
+			_ = WinDivertClose(t.flowHandle)
+		}
 		t.s.Wait()
 		logx.Info("WinDivert tunnel stopped")
 	})
