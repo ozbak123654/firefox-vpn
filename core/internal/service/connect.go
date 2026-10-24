@@ -38,6 +38,7 @@ func (d *Daemon) markConnected() {
 	d.mu.Lock()
 	d.lastConnected = time.Now()
 	d.mu.Unlock()
+	d.syncWinDivert()
 }
 
 // endConnect ends a connect attempt: the user acted.

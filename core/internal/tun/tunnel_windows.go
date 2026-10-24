@@ -13,6 +13,7 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+	"unsafe"
 
 	"golang.org/x/sys/windows"
 	"gvisor.dev/gvisor/pkg/buffer"
@@ -31,6 +32,84 @@ import (
 	"github.com/armanlife/firefox-vpn-client/core/internal/logx"
 )
 
+var (
+	modIphlpapi             = windows.NewLazyDLL("iphlpapi.dll")
+	procGetExtendedTcpTable = modIphlpapi.NewProc("GetExtendedTcpTable")
+)
+
+const tcpTableOwnerPidAll = 4
+
+func scanSelfTcpPorts(pid uint32) []uint16 {
+	var ports []uint16
+	ports = append(ports, scanTcpTableAf(pid, windows.AF_INET)...)
+	ports = append(ports, scanTcpTableAf(pid, 23)...) // AF_INET6 = 23
+	return ports
+}
+
+func scanTcpTableAf(pid uint32, af uint32) []uint16 {
+	var size uint32
+	r1, _, _ := procGetExtendedTcpTable.Call(
+		0,
+		uintptr(unsafe.Pointer(&size)),
+		0,
+		uintptr(af),
+		uintptr(tcpTableOwnerPidAll),
+		0,
+	)
+	if size == 0 {
+		return nil
+	}
+	buf := make([]byte, size)
+	r1, _, _ = procGetExtendedTcpTable.Call(
+		uintptr(unsafe.Pointer(&buf[0])),
+		uintptr(unsafe.Pointer(&size)),
+		0,
+		uintptr(af),
+		uintptr(tcpTableOwnerPidAll),
+		0,
+	)
+	if r1 != 0 || len(buf) < 4 {
+		return nil
+	}
+	numEntries := binary.LittleEndian.Uint32(buf[0:4])
+	var ports []uint16
+	if af == windows.AF_INET {
+		offset := 4
+		for i := uint32(0); i < numEntries && offset+24 <= len(buf); i++ {
+			owningPid := binary.LittleEndian.Uint32(buf[offset+20 : offset+24])
+			if owningPid == pid {
+				port := binary.BigEndian.Uint16(buf[offset+8 : offset+10])
+				if port != 0 {
+					ports = append(ports, port)
+				}
+			}
+			offset += 24
+		}
+	} else {
+		offset := 4
+		for i := uint32(0); i < numEntries && offset+56 <= len(buf); i++ {
+			owningPid := binary.LittleEndian.Uint32(buf[offset+52 : offset+56])
+			if owningPid == pid {
+				port := binary.BigEndian.Uint16(buf[offset+20 : offset+22])
+				if port != 0 {
+					ports = append(ports, port)
+				}
+			}
+			offset += 56
+		}
+	}
+	return ports
+}
+
+func isPortOwnedByPid(port uint16, pid uint32) bool {
+	for _, p := range scanSelfTcpPorts(pid) {
+		if p == port {
+			return true
+		}
+	}
+	return false
+}
+
 const (
 	nicID   = 1
 	dnsIdle = 10 * time.Second
@@ -41,6 +120,7 @@ type Tunnel struct {
 	s            *stack.Stack
 	endpoint     *channel.Endpoint
 	netHandle    windows.Handle
+	socketHandle windows.Handle
 	flowHandle   windows.Handle
 	ctx          context.Context
 	cancel       context.CancelFunc
@@ -49,6 +129,7 @@ type Tunnel struct {
 	serverIPs    []net.IP
 	lastIfIdx    uint32
 	lastSubIfIdx uint32
+	pid          uint32
 }
 
 // Start is not used with an fd on Windows; StartWinDivert is used instead.
@@ -67,6 +148,8 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		return nil, errors.New("administrator privileges required: please run as Administrator")
 	}
 
+	pid := uint32(os.Getpid())
+
 	var serverIPs []net.IP
 	for _, s := range serverAddrs {
 		host := s
@@ -75,6 +158,10 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		}
 		if ip := net.ParseIP(host); ip != nil {
 			serverIPs = append(serverIPs, ip)
+		} else {
+			if ips, err := net.LookupIP(host); err == nil {
+				serverIPs = append(serverIPs, ips...)
+			}
 		}
 	}
 
@@ -83,6 +170,14 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 	netH, err := WinDivertOpen(filter, LayerNetwork, 0, 0)
 	if err != nil {
 		return nil, fmt.Errorf("open network divert: %w", err)
+	}
+
+	// Open socket layer to track our process's socket connects
+	sockFilter := fmt.Sprintf("ProcessId == %d", pid)
+	sockH, err := WinDivertOpen(sockFilter, LayerSocket, 0, FlagSniff|FlagRecvOnly)
+	if err != nil {
+		logx.Warn("open socket divert (self-traffic tracking): %s", logx.Err(err))
+		sockH = windows.InvalidHandle
 	}
 
 	// Open flow layer with FlagSniff|FlagRecvOnly to track our own process's ports
@@ -109,12 +204,19 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		s:            s,
 		endpoint:     chEndpoint,
 		netHandle:    netH,
+		socketHandle: sockH,
 		flowHandle:   flowH,
 		ctx:          ctx,
 		cancel:       cancel,
 		serverIPs:    serverIPs,
 		lastIfIdx:    defIf,
 		lastSubIfIdx: defSubIf,
+		pid:          pid,
+	}
+
+	// Pre-seed self process TCP ports
+	for _, p := range scanSelfTcpPorts(pid) {
+		t.selfPorts.Store(p, true)
 	}
 
 	fail := func(err error) (*Tunnel, error) {
@@ -122,6 +224,9 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		s.Close()
 		if netH != windows.InvalidHandle {
 			_ = WinDivertClose(netH)
+		}
+		if sockH != windows.InvalidHandle {
+			_ = WinDivertClose(sockH)
 		}
 		if flowH != windows.InvalidHandle {
 			_ = WinDivertClose(flowH)
@@ -164,10 +269,14 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 	})
 	s.SetTransportProtocolHandler(udp.ProtocolNumber, udpForwarder.HandlePacket)
 
-	// Monitor our own process outbound flows to avoid looping
+	// Monitor our own process outbound sockets and flows
+	if sockH != windows.InvalidHandle {
+		go t.monitorSockets()
+	}
 	if flowH != windows.InvalidHandle {
 		go t.monitorFlows()
 	}
+	go t.periodicPortScan()
 
 	// Intercept inbound packets from WinDivert and feed into gVisor
 	go t.captureLoop()
@@ -179,9 +288,39 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 	return t, nil
 }
 
+// monitorSockets tracks socket events belonging to our own process.
+func (t *Tunnel) monitorSockets() {
+	var addr WinDivertAddress
+	buf := make([]byte, 1024)
+	for {
+		select {
+		case <-t.ctx.Done():
+			return
+		default:
+		}
+		_, err := WinDivertRecv(t.socketHandle, buf, &addr)
+		if err != nil {
+			if errors.Is(err, windows.ERROR_OPERATION_ABORTED) || errors.Is(err, windows.ERROR_INVALID_HANDLE) {
+				return
+			}
+			continue
+		}
+		if addr.FlowProcessID() == t.pid {
+			localPort := addr.FlowLocalPort()
+			if localPort != 0 {
+				event := addr.Event()
+				if event <= 3 { // Bind, Connect, Listen, Accept
+					t.selfPorts.Store(localPort, true)
+				} else if event == 4 { // Close
+					t.selfPorts.Delete(localPort)
+				}
+			}
+		}
+	}
+}
+
 // monitorFlows tracks flows belonging to our own process to prevent capturing self-traffic.
 func (t *Tunnel) monitorFlows() {
-	pid := uint32(os.Getpid())
 	var addr WinDivertAddress
 	buf := make([]byte, 1024)
 	for {
@@ -197,12 +336,28 @@ func (t *Tunnel) monitorFlows() {
 			}
 			continue
 		}
-		if addr.FlowProcessID() == pid {
+		if addr.FlowProcessID() == t.pid {
 			localPort := addr.FlowLocalPort()
 			if addr.Event() == EventConnect {
 				t.selfPorts.Store(localPort, true)
 			} else if addr.Event() == EventDisconnect {
 				t.selfPorts.Delete(localPort)
+			}
+		}
+	}
+}
+
+// periodicPortScan keeps selfPorts synchronized with active TCP connections of this process.
+func (t *Tunnel) periodicPortScan() {
+	ticker := time.NewTicker(2 * time.Second)
+	defer ticker.Stop()
+	for {
+		select {
+		case <-t.ctx.Done():
+			return
+		case <-ticker.C:
+			for _, p := range scanSelfTcpPorts(t.pid) {
+				t.selfPorts.Store(p, true)
 			}
 		}
 	}
@@ -234,16 +389,33 @@ func (t *Tunnel) captureLoop() {
 			atomic.StoreUint32(&t.lastSubIfIdx, addr.NetworkSubIfIdx())
 		}
 
-		// Check if packet originates from our process's local port
-		if srcPort, ok := getSrcPort(buf[:n]); ok {
+		srcPort, hasSrc := getSrcPort(buf[:n])
+		dstPort, hasDst := getDstPort(buf[:n])
+
+		// Always bypass upstream MASQUE port (2499) and local proxy/dashboard ports (10810, 10820)
+		if hasDst && (dstPort == 2499 || dstPort == 10810 || dstPort == 10820) {
+			_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+			continue
+		}
+		if hasSrc && (srcPort == 2499 || srcPort == 10810 || srcPort == 10820) {
+			_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+			continue
+		}
+
+		// Always bypass self process traffic
+		if hasSrc {
 			if _, isSelf := t.selfPorts.Load(srcPort); isSelf {
-				// Re-inject immediately without sending to gVisor
+				_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+				continue
+			}
+			if isPortOwnedByPid(srcPort, t.pid) {
+				t.selfPorts.Store(srcPort, true)
 				_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
 				continue
 			}
 		}
 
-		// Also check if destination IP is private, multicast, loopback, or upstream server
+		// Bypass private, multicast, loopback, and explicitly excluded server/DoH IPs
 		if dstIP, ok := getDstIP(buf[:n]); ok {
 			if isPrivateOrExcluded(dstIP, t.serverIPs) {
 				_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
@@ -373,6 +545,35 @@ func getSrcPort(pkt []byte) (uint16, bool) {
 	return 0, false
 }
 
+// getDstPort extracts the destination port from an IPv4/IPv6 TCP/UDP packet.
+func getDstPort(pkt []byte) (uint16, bool) {
+	if len(pkt) < 20 {
+		return 0, false
+	}
+	version := pkt[0] >> 4
+	if version == 4 {
+		ihl := int(pkt[0]&0x0F) * 4
+		if len(pkt) < ihl+4 {
+			return 0, false
+		}
+		proto := pkt[9]
+		if proto != 6 && proto != 17 {
+			return 0, false
+		}
+		return binary.BigEndian.Uint16(pkt[ihl+2 : ihl+4]), true
+	} else if version == 6 {
+		if len(pkt) < 44 {
+			return 0, false
+		}
+		proto := pkt[6]
+		if proto != 6 && proto != 17 {
+			return 0, false
+		}
+		return binary.BigEndian.Uint16(pkt[42:44]), true
+	}
+	return 0, false
+}
+
 func toAddr(a tcpip.Address) netip.Addr {
 	if a.Len() == 4 {
 		return netip.AddrFrom4(a.As4())
@@ -462,6 +663,9 @@ func (t *Tunnel) Stop() {
 		t.s.Close()
 		if t.netHandle != windows.InvalidHandle {
 			_ = WinDivertClose(t.netHandle)
+		}
+		if t.socketHandle != windows.InvalidHandle {
+			_ = WinDivertClose(t.socketHandle)
 		}
 		if t.flowHandle != windows.InvalidHandle {
 			_ = WinDivertClose(t.flowHandle)

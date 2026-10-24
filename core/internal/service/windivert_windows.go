@@ -40,13 +40,34 @@ func (d *Daemon) syncWinDivert() {
 	defer divertState.mu.Unlock()
 
 	cfg := d.config()
-	shouldRun := d.IsOn() && cfg.SystemProxy.Mode == config.SystemProxyWinDivert
-
-	if !shouldRun {
+	if cfg.SystemProxy.Mode != config.SystemProxyWinDivert || !d.IsOn() {
 		if divertState.tunnel != nil {
 			divertState.tunnel.Stop()
 			divertState.tunnel = nil
 			logx.Info("WinDivert tunnel stopped")
+		}
+		return
+	}
+
+	d.mu.Lock()
+	engine := d.engine
+	isConnected := engine != nil && engine.connected && d.state.Phase == PhaseRunning && !d.autoConnecting()
+	var serverAddrs []string
+	if engine != nil && engine.selected.Addr != "" {
+		serverAddrs = append(serverAddrs, engine.selected.Addr)
+	}
+	d.mu.Unlock()
+
+	if !isConnected {
+		if divertState.tunnel != nil {
+			divertState.tunnel.Stop()
+			divertState.tunnel = nil
+			logx.Info("WinDivert tunnel stopped (waiting for proxy connection)")
+		}
+		if engine != nil && !engine.connected {
+			go func(e *proxyEngine) {
+				_ = d.wake(e, wakeForTest)
+			}(engine)
 		}
 		return
 	}
@@ -71,12 +92,16 @@ func (d *Daemon) syncWinDivert() {
 		return dialer(ctx, target)
 	}
 
-	var serverAddrs []string
-	d.mu.Lock()
-	if d.engine != nil && d.engine.selected.Addr != "" {
-		serverAddrs = append(serverAddrs, d.engine.selected.Addr)
-	}
-	d.mu.Unlock()
+	// Always exclude DoH servers, Mozilla control plane domains, and upstream server
+	serverAddrs = append(serverAddrs,
+		"1.1.1.1", "1.0.0.1",
+		"8.8.8.8", "8.8.4.4",
+		"9.9.9.9", "149.112.112.112",
+		"vpn.mozilla.org",
+		"firefox.settings.services.mozilla.com",
+		"product-details.mozilla.org",
+		"api.accounts.firefox.com",
+	)
 
 	t, err := tun.StartWinDivert(1500, dial, d.TunnelAllows, divertState.fakeDNS, serverAddrs)
 	if err != nil {
