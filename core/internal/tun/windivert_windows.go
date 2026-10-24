@@ -54,8 +54,8 @@ type WinDivertAddress struct {
 	data      [64]byte
 }
 
-func (a *WinDivertAddress) Layer() uint8     { return uint8(a.bits & 0xFF) }
-func (a *WinDivertAddress) SetLayer(l uint8) { a.bits = (a.bits &^ 0xFF) | uint32(l) }
+func (a *WinDivertAddress) Layer() uint32     { return a.bits & 0xFF }
+func (a *WinDivertAddress) SetLayer(l uint32) { a.bits = (a.bits &^ 0xFF) | (l & 0xFF) }
 
 func (a *WinDivertAddress) Event() uint8     { return uint8((a.bits >> 8) & 0xFF) }
 func (a *WinDivertAddress) SetEvent(e uint8) { a.bits = (a.bits &^ 0xFF00) | (uint32(e) << 8) }
