@@ -258,7 +258,7 @@ class DesktopIntegration {
         enabled: canSet,
         checked: canSet && status.systemProxy == 'set',
       ),
-      if (Platform.isWindows)
+      if (Platform.isWindows && status.windivertSupported)
         TrayItem(
           _windivert,
           l.trayWinDivert,

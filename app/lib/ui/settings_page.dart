@@ -450,7 +450,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   options: [
                     ('clear', l.modeProxy, null),
                     ('set', l.systemProxy, null),
-                    if (defaultTargetPlatform == TargetPlatform.windows)
+                    if (Platform.isWindows && status.windivertSupported)
                       ('windivert', l.modeWinDivert, null),
                   ],
                 ),

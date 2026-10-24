@@ -564,7 +564,8 @@ class _DesktopHome extends StatelessWidget {
                   icon: const Icon(Icons.computer_rounded, size: 18),
                   label: Text(l.systemProxy),
                 ),
-                if (defaultTargetPlatform == TargetPlatform.windows)
+                if (defaultTargetPlatform == TargetPlatform.windows &&
+                    status.windivertSupported)
                   ButtonSegment(
                     value: 'windivert',
                     icon: const Icon(Icons.shield_rounded, size: 18),
