@@ -69,7 +69,11 @@ jobs:
         working-directory: app
         run: |
           flutter pub get
-          flutter analyze
+          flutter analyze 2>&1 | tee ../analyze.log || {
+            err=$(head -n 20 ../analyze.log | tr '\n' ' ')
+            echo "::error title=FlutterAnalyze::$err"
+            exit 1
+          }
           flutter test
 
   windows:
@@ -89,7 +93,11 @@ jobs:
           channel: stable
           cache: true
       - name: Inno Setup
-        run: choco upgrade innosetup -y --no-progress
+        shell: pwsh
+        run: |
+          choco install innosetup -y --no-progress
+          "C:\Program Files (x86)\Inno Setup 6" | Out-File -FilePath $env:GITHUB_PATH -Append
+          "C:\Program Files\Inno Setup 6" | Out-File -FilePath $env:GITHUB_PATH -Append
       - name: Fetch WinDivert Binaries
         shell: pwsh
         run: |
@@ -101,7 +109,14 @@ jobs:
           Remove-Item -Recurse -Force "core\tools\windivert\temp", "core\tools\windivert\windivert.zip" -ErrorAction SilentlyContinue
       - name: Build
         shell: pwsh
-        run: ./scripts/build-windows.ps1
+        run: |
+          try {
+            ./scripts/build-windows.ps1
+          } catch {
+            Write-Host "::error title=WindowsBuildError::$($_.Exception.Message)"
+            Write-Host "::error title=ScriptStackTrace::$($_.ScriptStackTrace)"
+            throw
+          }
       - name: Release names
         shell: pwsh
         run: |
