@@ -51,11 +51,17 @@ try {
     # The packages from the local cache when it has them; from pub.dev
     # otherwise (a new machine). pub.dev refuses some requests from some
     # countries (its security advisories), which an offline get avoids.
+    flutter config --enable-windows-desktop
     flutter pub get --offline
     if ($LASTEXITCODE -ne 0) { flutter pub get }
     if ($LASTEXITCODE -ne 0) { throw 'flutter pub get failed' }
-    flutter build windows --release --no-pub --dart-define=APP_VERSION=$version
-    if ($LASTEXITCODE -ne 0) { throw 'flutter build failed' }
+    $buildOut = & flutter build windows --release --dart-define=APP_VERSION=$version 2>&1
+    Write-Host ($buildOut -join "`n")
+    if ($LASTEXITCODE -ne 0) {
+        $lastLines = ($buildOut | Select-Object -Last 30) -join " "
+        Write-Host "::error title=FlutterBuildError::$lastLines"
+        throw "flutter build failed: $lastLines"
+    }
 } finally { Pop-Location }
 
 New-Item -ItemType Directory -Force "$root\dist" | Out-Null

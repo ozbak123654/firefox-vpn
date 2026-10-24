@@ -69,12 +69,12 @@ jobs:
         working-directory: app
         run: |
           flutter pub get
-          flutter analyze 2>&1 | tee ../analyze.log || {
-            err=$(head -n 20 ../analyze.log | tr '\n' ' ')
-            echo "::error title=FlutterAnalyze::$err"
+          flutter analyze
+          flutter test 2>&1 | tee ../test.log || {
+            err=$(grep -E "(FAILED|Expected|Actual)" ../test.log | head -n 20 | tr '\n' ' ')
+            echo "::error title=FlutterTestFailed::$err"
             exit 1
           }
-          flutter test
 
   windows:
     # Built unless the repository variable PLATFORMS (Settings, Secrets and
