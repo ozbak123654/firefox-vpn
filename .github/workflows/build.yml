@@ -73,7 +73,6 @@ jobs:
           flutter test
 
   windows:
-    needs: test
     # Built unless the repository variable PLATFORMS (Settings, Secrets and
     # variables, Actions, Variables) is set and leaves it out, e.g. "linux".
     if: (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main') && (vars.PLATFORMS == '' || contains(vars.PLATFORMS, 'windows'))
@@ -106,7 +105,8 @@ jobs:
       - name: Release names
         shell: pwsh
         run: |
-          $v = '${{ needs.test.outputs.version }}'
+          $match = Select-String -Path "app\pubspec.yaml" -Pattern '^version:\s*(\d+\.\d+\.\d+)'
+          $v = $match.Matches[0].Groups[1].Value
           New-Item -ItemType Directory out | Out-Null
           Move-Item "dist/Firefox-VPN-$v-Windows-x64.zip" out/Firefox-VPN-Windows-x64.zip
           Move-Item "dist/Firefox-VPN-$v-Windows-Setup-x64.exe" out/Firefox-VPN-Windows-Setup-x64.exe
