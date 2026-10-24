@@ -120,7 +120,15 @@ func (d *Daemon) syncWinDivert() {
 		}
 	}
 
-	t, err := tun.StartWinDivert(1500, dial, d.TunnelAllows, divertState.fakeDNS, serverAddrs, proxyPort, dashPort)
+	isDirect := func(host string) bool {
+		r := d.currentRouter()
+		if r == nil {
+			return false
+		}
+		return r.Decide(context.Background(), host, nil) == routing.Direct
+	}
+
+	t, err := tun.StartWinDivert(1500, dial, d.TunnelAllows, divertState.fakeDNS, serverAddrs, proxyPort, dashPort, isDirect)
 	if err != nil {
 		logx.Error("failed to start WinDivert tunnel: %s", logx.Err(err))
 		return

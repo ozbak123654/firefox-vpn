@@ -16,6 +16,7 @@ import (
 	"time"
 	"unsafe"
 
+	"golang.org/x/net/dns/dnsmessage"
 	"golang.org/x/sys/windows"
 	"gvisor.dev/gvisor/pkg/buffer"
 	"gvisor.dev/gvisor/pkg/tcpip"
@@ -36,14 +37,75 @@ import (
 var (
 	modIphlpapi             = windows.NewLazyDLL("iphlpapi.dll")
 	procGetExtendedTcpTable = modIphlpapi.NewProc("GetExtendedTcpTable")
+	procGetExtendedUdpTable = modIphlpapi.NewProc("GetExtendedUdpTable")
 )
 
-const tcpTableOwnerPidAll = 4
+const (
+	tcpTableOwnerPidAll = 4
+	udpTableOwnerPid    = 1
+)
 
-func scanSelfTcpPorts(pid uint32) []uint16 {
+func scanSelfPorts(pid uint32) []uint16 {
 	var ports []uint16
 	ports = append(ports, scanTcpTableAf(pid, windows.AF_INET)...)
 	ports = append(ports, scanTcpTableAf(pid, 23)...) // AF_INET6 = 23
+	ports = append(ports, scanUdpTableAf(pid, windows.AF_INET)...)
+	ports = append(ports, scanUdpTableAf(pid, 23)...)
+	return ports
+}
+
+func scanUdpTableAf(pid uint32, af uint32) []uint16 {
+	var size uint32
+	procGetExtendedUdpTable.Call(
+		0,
+		uintptr(unsafe.Pointer(&size)),
+		0,
+		uintptr(af),
+		uintptr(udpTableOwnerPid),
+		0,
+	)
+	if size == 0 {
+		return nil
+	}
+	buf := make([]byte, size)
+	r1, _, _ := procGetExtendedUdpTable.Call(
+		uintptr(unsafe.Pointer(&buf[0])),
+		uintptr(unsafe.Pointer(&size)),
+		0,
+		uintptr(af),
+		uintptr(udpTableOwnerPid),
+		0,
+	)
+	if r1 != 0 || len(buf) < 4 {
+		return nil
+	}
+	numEntries := binary.LittleEndian.Uint32(buf[0:4])
+	var ports []uint16
+	if af == windows.AF_INET {
+		offset := 4
+		for i := uint32(0); i < numEntries && offset+12 <= len(buf); i++ {
+			owningPid := binary.LittleEndian.Uint32(buf[offset+8 : offset+12])
+			if owningPid == pid {
+				port := binary.BigEndian.Uint16(buf[offset+4 : offset+6])
+				if port != 0 {
+					ports = append(ports, port)
+				}
+			}
+			offset += 12
+		}
+	} else {
+		offset := 4
+		for i := uint32(0); i < numEntries && offset+28 <= len(buf); i++ {
+			owningPid := binary.LittleEndian.Uint32(buf[offset+24 : offset+28])
+			if owningPid == pid {
+				port := binary.BigEndian.Uint16(buf[offset+20 : offset+22])
+				if port != 0 {
+					ports = append(ports, port)
+				}
+			}
+			offset += 28
+		}
+	}
 	return ports
 }
 
@@ -103,7 +165,7 @@ func scanTcpTableAf(pid uint32, af uint32) []uint16 {
 }
 
 func isPortOwnedByPid(port uint16, pid uint32) bool {
-	for _, p := range scanSelfTcpPorts(pid) {
+	for _, p := range scanSelfPorts(pid) {
 		if p == port {
 			return true
 		}
@@ -137,6 +199,25 @@ type Tunnel struct {
 	dashPort     uint16
 	logOnce      sync.Once
 	dnsOnce      sync.Once
+	isDirectFunc func(string) bool
+}
+
+func (t *Tunnel) isDirect(host string) bool {
+	host = strings.TrimSpace(strings.ToLower(host))
+	if host == "" {
+		return false
+	}
+	if h, _, err := net.SplitHostPort(host); err == nil {
+		host = h
+	}
+	host = strings.TrimSuffix(host, ".")
+	if strings.HasSuffix(host, ".ir") {
+		return true
+	}
+	if t.isDirectFunc != nil {
+		return t.isDirectFunc(host)
+	}
+	return false
 }
 
 // Start is not used with an fd on Windows; StartWinDivert is used instead.
@@ -147,7 +228,7 @@ func Start(fd int, mtu uint32, dial Dialer, allow Allow, dns *FakeDNS) (*Tunnel,
 // StartWinDivert starts the userspace TCP/IP stack and intercepts Windows traffic
 // using WinDivert. TCP connections go through dial, DNS (UDP 53) is answered by dns,
 // and other UDP is refused with ICMP unreachable so apps fall back to TCP.
-func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAddrs []string, proxyPort, dashPort uint16) (*Tunnel, error) {
+func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAddrs []string, proxyPort, dashPort uint16, isDirect func(string) bool) (*Tunnel, error) {
 	if !IsWinDivertAvailable() {
 		return nil, errors.New("WinDivert.dll not found: ensure WinDivert.dll and WinDivert64.sys are present")
 	}
@@ -232,10 +313,11 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		pid:          pid,
 		proxyPort:    proxyPort,
 		dashPort:     dashPort,
+		isDirectFunc: isDirect,
 	}
 
-	// Pre-seed self process TCP ports
-	for _, p := range scanSelfTcpPorts(pid) {
+	// Pre-seed self process ports (TCP + UDP)
+	for _, p := range scanSelfPorts(pid) {
 		t.selfPorts.Store(p, true)
 	}
 
@@ -367,7 +449,7 @@ func (t *Tunnel) monitorFlows() {
 	}
 }
 
-// periodicPortScan keeps selfPorts synchronized with active TCP connections of this process.
+// periodicPortScan keeps selfPorts synchronized with active TCP/UDP sockets of this process.
 func (t *Tunnel) periodicPortScan() {
 	ticker := time.NewTicker(2 * time.Second)
 	defer ticker.Stop()
@@ -376,7 +458,7 @@ func (t *Tunnel) periodicPortScan() {
 		case <-t.ctx.Done():
 			return
 		case <-ticker.C:
-			for _, p := range scanSelfTcpPorts(t.pid) {
+			for _, p := range scanSelfPorts(t.pid) {
 				t.selfPorts.Store(p, true)
 			}
 		}
@@ -438,11 +520,23 @@ func (t *Tunnel) captureLoop() {
 			}
 		}
 
-		// Bypass private, multicast, loopback, and explicitly excluded server/DoH IPs
-		// EXCEPT DNS queries (port 53), which must ALWAYS be captured and answered by FakeDNS!
+		// If it's a DNS query (UDP 53), check if the question domain is direct (e.g. .ir or direct routing rule)
+		if hasDst && dstPort == 53 {
+			if payload := getUDPPayload(buf[:n]); payload != nil {
+				if qName := getDNSQuestionName(payload); qName != "" {
+					if t.isDirect(qName) {
+						// Direct Iranian domain: let local ISP DNS resolve with real IP
+						_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+						continue
+					}
+				}
+			}
+		}
+
+		// Bypass private, multicast, loopback, explicitly excluded server IPs, or direct (Iranian) IPs
 		if !hasDst || dstPort != 53 {
 			if dstIP, ok := getDstIP(buf[:n]); ok {
-				if isPrivateOrExcluded(dstIP, t.serverIPs) {
+				if isPrivateOrExcluded(dstIP, t.serverIPs) || t.isDirect(dstIP.String()) {
 					_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
 					continue
 				}
@@ -654,6 +748,39 @@ func getDstPort(pkt []byte) (uint16, bool) {
 		return binary.BigEndian.Uint16(pkt[42:44]), true
 	}
 	return 0, false
+}
+
+func getUDPPayload(pkt []byte) []byte {
+	if len(pkt) < 28 { // min IPv4 (20) + UDP (8)
+		return nil
+	}
+	version := pkt[0] >> 4
+	if version == 4 {
+		ihl := int(pkt[0]&0x0F) * 4
+		if len(pkt) < ihl+8 || pkt[9] != 17 {
+			return nil
+		}
+		return pkt[ihl+8:]
+	} else if version == 6 {
+		if len(pkt) < 48 || pkt[6] != 17 {
+			return nil
+		}
+		return pkt[48:]
+	}
+	return nil
+}
+
+func getDNSQuestionName(payload []byte) string {
+	var p dnsmessage.Parser
+	hdr, err := p.Start(payload)
+	if err != nil || hdr.Response {
+		return ""
+	}
+	q, err := p.Question()
+	if err != nil {
+		return ""
+	}
+	return strings.ToLower(strings.TrimSuffix(q.Name.String(), "."))
 }
 
 func toAddr(a tcpip.Address) netip.Addr {
