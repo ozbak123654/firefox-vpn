@@ -121,6 +121,7 @@ type Tunnel struct {
 	s            *stack.Stack
 	endpoint     *channel.Endpoint
 	netHandle    windows.Handle
+	sendHandle   windows.Handle
 	socketHandle windows.Handle
 	flowHandle   windows.Handle
 	ctx          context.Context
@@ -178,8 +179,14 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		return nil, fmt.Errorf("open network divert: %w", err)
 	}
 
+	// Open dedicated send handle for injecting inbound packets without direction filter limitations
+	sendH, err := WinDivertOpen("false", LayerNetwork, 0, FlagSendOnly)
+	if err != nil {
+		sendH = netH
+	}
+
 	// Open socket layer to track our process's socket connects
-	sockFilter := fmt.Sprintf("Socket.ProcessId == %d", pid)
+	sockFilter := fmt.Sprintf("processId == %d", pid)
 	sockH, err := WinDivertOpen(sockFilter, LayerSocket, 0, FlagSniff|FlagRecvOnly)
 	if err != nil {
 		logx.Warn("open socket divert (self-traffic tracking): %s", logx.Err(err))
@@ -187,7 +194,7 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 	}
 
 	// Open flow layer with FlagSniff|FlagRecvOnly to track our own process's ports
-	flowFilter := fmt.Sprintf("Flow.ProcessId == %d", pid)
+	flowFilter := fmt.Sprintf("processId == %d", pid)
 	flowH, err := WinDivertOpen(flowFilter, LayerFlow, 0, FlagSniff|FlagRecvOnly)
 	if err != nil {
 		flowH, err = WinDivertOpen("true", LayerFlow, 0, FlagSniff|FlagRecvOnly)
@@ -214,6 +221,7 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		s:            s,
 		endpoint:     chEndpoint,
 		netHandle:    netH,
+		sendHandle:   sendH,
 		socketHandle: sockH,
 		flowHandle:   flowH,
 		ctx:          ctx,
@@ -451,9 +459,13 @@ func (t *Tunnel) captureLoop() {
 			continue
 		}
 
+		// Recalculate checksums so IPv4/transport headers are valid for gVisor
+		WinDivertCalcChecksums(buf[:n], &addr, 0)
+
 		pkt := stack.NewPacketBuffer(stack.PacketBufferOptions{
 			Payload: buffer.MakeWithData(buf[:n]),
 		})
+		pkt.RXChecksumValidated = true
 		t.endpoint.InjectInbound(proto, pkt)
 		pkt.DecRef()
 	}
@@ -473,7 +485,6 @@ func (t *Tunnel) injectLoop() {
 			var addr WinDivertAddress
 			addr.SetLayer(LayerNetwork)
 			addr.SetOutbound(false) // Inbound to the OS stack
-			addr.SetImpostor(true)
 
 			if dstIP, ok := getDstIP(data); ok {
 				if v, found := t.ifMap.Load(dstIP.String()); found {
@@ -492,8 +503,12 @@ func (t *Tunnel) injectLoop() {
 				addr.SetIPv6(false)
 			}
 			WinDivertCalcChecksums(data, &addr, 0)
-			if _, err := WinDivertSend(t.netHandle, data, &addr); err != nil {
-				logx.Debug("WinDivertSend inbound error: %s", logx.Err(err))
+			targetH := t.sendHandle
+			if targetH == windows.InvalidHandle {
+				targetH = t.netHandle
+			}
+			if _, err := WinDivertSend(targetH, data, &addr); err != nil {
+				logx.Warn("WinDivertSend inbound error: %s (len=%d)", logx.Err(err), len(data))
 			}
 		}
 		view.Release()
@@ -734,6 +749,10 @@ func (t *Tunnel) Stop() {
 	t.once.Do(func() {
 		t.cancel()
 		t.s.Close()
+		if t.sendHandle != windows.InvalidHandle && t.sendHandle != t.netHandle {
+			_ = WinDivertClose(t.sendHandle)
+			t.sendHandle = windows.InvalidHandle
+		}
 		if t.netHandle != windows.InvalidHandle {
 			_ = WinDivertClose(t.netHandle)
 			t.netHandle = windows.InvalidHandle
