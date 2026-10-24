@@ -211,6 +211,12 @@ func (t *Tunnel) isDirect(host string) bool {
 		host = h
 	}
 	host = strings.TrimSuffix(host, ".")
+	if addr, err := netip.ParseAddr(host); err == nil {
+		// FakeIPs belong exclusively to the userspace TUN stack and must NEVER be treated as direct.
+		if IsFake(addr) {
+			return false
+		}
+	}
 	if strings.HasSuffix(host, ".ir") {
 		return true
 	}
@@ -533,12 +539,15 @@ func (t *Tunnel) captureLoop() {
 			}
 		}
 
-		// Bypass private, multicast, loopback, explicitly excluded server IPs, or direct (Iranian) IPs
+		// Bypass private, multicast, loopback, explicitly excluded server IPs, or direct (Iranian) IPs.
+		// FakeIPs (198.18.0.0/15) belong to gVisor and must NEVER be bypassed!
 		if !hasDst || dstPort != 53 {
 			if dstIP, ok := getDstIP(buf[:n]); ok {
-				if isPrivateOrExcluded(dstIP, t.serverIPs) || t.isDirect(dstIP.String()) {
-					_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
-					continue
+				if addr, err := netip.ParseAddr(dstIP.String()); err == nil && !IsFake(addr) {
+					if isPrivateOrExcluded(dstIP, t.serverIPs) || t.isDirect(dstIP.String()) {
+						_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+						continue
+					}
 				}
 			}
 		}
