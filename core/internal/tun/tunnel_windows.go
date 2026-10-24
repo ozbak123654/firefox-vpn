@@ -663,14 +663,17 @@ func (t *Tunnel) Stop() {
 		t.s.Close()
 		if t.netHandle != windows.InvalidHandle {
 			_ = WinDivertClose(t.netHandle)
+			t.netHandle = windows.InvalidHandle
 		}
 		if t.socketHandle != windows.InvalidHandle {
 			_ = WinDivertClose(t.socketHandle)
+			t.socketHandle = windows.InvalidHandle
 		}
 		if t.flowHandle != windows.InvalidHandle {
 			_ = WinDivertClose(t.flowHandle)
+			t.flowHandle = windows.InvalidHandle
 		}
-		t.s.Wait()
+		go t.s.Wait()
 		logx.Info("WinDivert tunnel stopped")
 	})
 }
