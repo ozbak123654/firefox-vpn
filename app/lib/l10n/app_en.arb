@@ -767,5 +767,11 @@
     }
   },
   "systemProxyTakenOff": "Another program turned the system proxy off, so traffic doesn't go through the VPN.",
-  "setSystemProxyAgain": "Set it again"
+  "setSystemProxyAgain": "Set it again",
+  "modeWinDivert": "WinDivert Tunnel",
+  "modeWinDivertHint": "All Windows network traffic and DNS queries go through the VPN.",
+  "elevationRequiredTitle": "Administrator Privileges Required",
+  "elevationRequiredMessage": "WinDivert requires Administrator privileges to tunnel system network packets.",
+  "runAsAdmin": "Run as Administrator",
+  "trayWinDivert": "WinDivert Full Tunnel"
 }

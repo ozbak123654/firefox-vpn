@@ -1,4 +1,4 @@
-// ignore: unused_import
+﻿// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations.dart';
@@ -13,83 +13,83 @@ class AppLocalizationsVi extends AppLocalizations {
   String get appTitle => 'Firefox VPN';
 
   @override
-  String get navOverview => 'Tổng quan';
+  String get navOverview => 'Tá»•ng quan';
 
   @override
-  String get navAccounts => 'Tài khoản';
+  String get navAccounts => 'TÃ i khoáº£n';
 
   @override
-  String get navSettings => 'Cài đặt';
+  String get navSettings => 'CÃ i Ä‘áº·t';
 
   @override
-  String get stateConnected => 'Đã kết nối';
+  String get stateConnected => 'ÄÃ£ káº¿t ná»‘i';
 
   @override
-  String get stateConnecting => 'Đang kết nối…';
+  String get stateConnecting => 'Äang káº¿t ná»‘iâ€¦';
 
   @override
-  String get stateWaiting => 'Đang chờ';
+  String get stateWaiting => 'Äang chá»';
 
   @override
   String get waitingForAccount =>
-      'Thêm một Firefox Account ở trang Tài khoản để kết nối.';
+      'ThÃªm má»™t Firefox Account á»Ÿ trang TÃ i khoáº£n Ä‘á»ƒ káº¿t ná»‘i.';
 
   @override
   String get waitingForEnabledAccount =>
-      'Tất cả tài khoản đang tắt. Hãy bật một tài khoản ở trang Tài khoản.';
+      'Táº¥t cáº£ tÃ i khoáº£n Ä‘ang táº¯t. HÃ£y báº­t má»™t tÃ i khoáº£n á»Ÿ trang TÃ i khoáº£n.';
 
   @override
-  String get stateError => 'Lỗi';
+  String get stateError => 'Lá»—i';
 
   @override
-  String get stateUnknown => 'Không rõ';
+  String get stateUnknown => 'KhÃ´ng rÃµ';
 
   @override
-  String get restartProxy => 'Khởi động lại proxy';
+  String get restartProxy => 'Khá»Ÿi Ä‘á»™ng láº¡i proxy';
 
   @override
   String copied(String value) {
-    return 'Đã sao chép $value';
+    return 'ÄÃ£ sao chÃ©p $value';
   }
 
   @override
-  String get activeAccount => 'Tài khoản đang dùng';
+  String get activeAccount => 'TÃ i khoáº£n Ä‘ang dÃ¹ng';
 
   @override
-  String get noActiveAccount => 'Không có tài khoản đang dùng';
+  String get noActiveAccount => 'KhÃ´ng cÃ³ tÃ i khoáº£n Ä‘ang dÃ¹ng';
 
   @override
-  String get quotaNotRead => 'Chưa có thông tin dung lượng';
+  String get quotaNotRead => 'ChÆ°a cÃ³ thÃ´ng tin dung lÆ°á»£ng';
 
   @override
-  String get unlimited => 'Không giới hạn';
+  String get unlimited => 'KhÃ´ng giá»›i háº¡n';
 
   @override
   String usedOf(String used, String limit) {
-    return 'Đã dùng $used / $limit';
+    return 'ÄÃ£ dÃ¹ng $used / $limit';
   }
 
   @override
   String resets(String date) {
-    return 'làm mới vào $date';
+    return 'lÃ m má»›i vÃ o $date';
   }
 
   @override
   String switchAt(int percent) {
-    return 'Chuyển tài khoản khi đạt $percent%';
+    return 'Chuyá»ƒn tÃ i khoáº£n khi Ä‘áº¡t $percent%';
   }
 
   @override
-  String get publicIp => 'IP công khai';
+  String get publicIp => 'IP cÃ´ng khai';
 
   @override
-  String get testConnection => 'Kiểm tra kết nối';
+  String get testConnection => 'Kiá»ƒm tra káº¿t ná»‘i';
 
   @override
-  String get testing => 'Đang kiểm tra…';
+  String get testing => 'Äang kiá»ƒm traâ€¦';
 
   @override
-  String get testFailed => 'Thất bại';
+  String get testFailed => 'Tháº¥t báº¡i';
 
   @override
   String milliseconds(int value) {
@@ -97,16 +97,16 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get justNow => 'vừa xong';
+  String get justNow => 'vá»«a xong';
 
   @override
   String minutesAgo(int n) {
-    return '$n phút trước';
+    return '$n phÃºt trÆ°á»›c';
   }
 
   @override
   String hoursAgo(int n) {
-    return '$n giờ trước';
+    return '$n giá» trÆ°á»›c';
   }
 
   @override
@@ -114,390 +114,390 @@ class AppLocalizationsVi extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count ngày trước',
+      other: '$count ngÃ y trÆ°á»›c',
     );
     return '$_temp0';
   }
 
   @override
   String atTime(String time) {
-    return 'lúc $time';
+    return 'lÃºc $time';
   }
 
   @override
   String durationDays(int d, int h) {
-    return '$d ngày $h giờ';
+    return '$d ngÃ y $h giá»';
   }
 
   @override
   String durationHours(int h, int m) {
-    return '$h giờ $m phút';
+    return '$h giá» $m phÃºt';
   }
 
   @override
   String durationMinutes(int m, int s) {
-    return '$m phút $s giây';
+    return '$m phÃºt $s giÃ¢y';
   }
 
   @override
   String durationSeconds(int s) {
-    return '$s giây';
+    return '$s giÃ¢y';
   }
 
   @override
   String accountsGuide(String size) {
-    return 'Mỗi Firefox Account có $size dung lượng mỗi tháng. Bạn có thể thêm nhiều tài khoản: khi một tài khoản hết, ứng dụng tự chuyển sang tài khoản tiếp theo.';
+    return 'Má»—i Firefox Account cÃ³ $size dung lÆ°á»£ng má»—i thÃ¡ng. Báº¡n cÃ³ thá»ƒ thÃªm nhiá»u tÃ i khoáº£n: khi má»™t tÃ i khoáº£n háº¿t, á»©ng dá»¥ng tá»± chuyá»ƒn sang tÃ i khoáº£n tiáº¿p theo.';
   }
 
   @override
   String accountsOrderNote(int percent) {
-    return 'Theo thứ tự danh sách này: mỗi tài khoản đến $percent%, tài khoản cuối dùng đến khi hết dữ liệu.';
+    return 'Theo thá»© tá»± danh sÃ¡ch nÃ y: má»—i tÃ i khoáº£n Ä‘áº¿n $percent%, tÃ i khoáº£n cuá»‘i dÃ¹ng Ä‘áº¿n khi háº¿t dá»¯ liá»‡u.';
   }
 
   @override
-  String get addAccount => 'Thêm tài khoản';
+  String get addAccount => 'ThÃªm tÃ i khoáº£n';
 
   @override
   String lowQuotaNotice(String left, String size) {
-    return 'Dung lượng của tài khoản hiện tại sắp hết (còn $left). Thêm một tài khoản nữa để có thêm $size.';
+    return 'Dung lÆ°á»£ng cá»§a tÃ i khoáº£n hiá»‡n táº¡i sáº¯p háº¿t (cÃ²n $left). ThÃªm má»™t tÃ i khoáº£n ná»¯a Ä‘á»ƒ cÃ³ thÃªm $size.';
   }
 
   @override
-  String get noAccounts => 'Chưa có tài khoản';
+  String get noAccounts => 'ChÆ°a cÃ³ tÃ i khoáº£n';
 
   @override
-  String get noAccountsHint => 'Thêm một Firefox Account để kết nối.';
+  String get noAccountsHint => 'ThÃªm má»™t Firefox Account Ä‘á»ƒ káº¿t ná»‘i.';
 
   @override
-  String get createAccountTitle => 'Chưa có Firefox Account?';
+  String get createAccountTitle => 'ChÆ°a cÃ³ Firefox Account?';
 
   @override
   String get createAccountHint =>
-      'Hãy tạo miễn phí tại accounts.firefox.com, rồi quay lại và nhấn Thêm tài khoản.';
+      'HÃ£y táº¡o miá»…n phÃ­ táº¡i accounts.firefox.com, rá»“i quay láº¡i vÃ  nháº¥n ThÃªm tÃ i khoáº£n.';
 
   @override
-  String get moveUp => 'Lên trên';
+  String get moveUp => 'LÃªn trÃªn';
 
   @override
-  String get moveDown => 'Xuống dưới';
+  String get moveDown => 'Xuá»‘ng dÆ°á»›i';
 
   @override
-  String get statusActive => 'Đang dùng';
+  String get statusActive => 'Äang dÃ¹ng';
 
   @override
-  String get statusReady => 'Sẵn sàng';
+  String get statusReady => 'Sáºµn sÃ ng';
 
   @override
-  String get statusNeedsSignIn => 'Cần đăng nhập';
+  String get statusNeedsSignIn => 'Cáº§n Ä‘Äƒng nháº­p';
 
   @override
-  String get statusReserved => 'Dự phòng';
+  String get statusReserved => 'Dá»± phÃ²ng';
 
   @override
-  String get statusUnavailable => 'Không khả dụng';
+  String get statusUnavailable => 'KhÃ´ng kháº£ dá»¥ng';
 
   @override
   String statusUnavailableUntil(String date) {
-    return 'Không khả dụng đến $date';
+    return 'KhÃ´ng kháº£ dá»¥ng Ä‘áº¿n $date';
   }
 
   @override
-  String get statusDisabled => 'Đã tắt';
+  String get statusDisabled => 'ÄÃ£ táº¯t';
 
   @override
-  String get statusEnabled => 'Đã bật';
+  String get statusEnabled => 'ÄÃ£ báº­t';
 
   @override
-  String get useNow => 'Dùng ngay';
+  String get useNow => 'DÃ¹ng ngay';
 
   @override
-  String get signInAgain => 'Đăng nhập lại';
+  String get signInAgain => 'ÄÄƒng nháº­p láº¡i';
 
   @override
   String reasonQuotaThreshold(int percent) {
-    return 'Tài khoản này đã dùng $percent% dữ liệu, nên tài khoản tiếp theo đã thay thế.';
+    return 'TÃ i khoáº£n nÃ y Ä‘Ã£ dÃ¹ng $percent% dá»¯ liá»‡u, nÃªn tÃ i khoáº£n tiáº¿p theo Ä‘Ã£ thay tháº¿.';
   }
 
   @override
   String get reasonQuotaExhausted =>
-      'Dung lượng tháng này đã hết; sẽ dùng lại sau khi làm mới hằng tháng.';
+      'Dung lÆ°á»£ng thÃ¡ng nÃ y Ä‘Ã£ háº¿t; sáº½ dÃ¹ng láº¡i sau khi lÃ m má»›i háº±ng thÃ¡ng.';
 
   @override
-  String get reasonSignInRequired => 'Hãy đăng nhập lại để dùng tài khoản này.';
+  String get reasonSignInRequired => 'HÃ£y Ä‘Äƒng nháº­p láº¡i Ä‘á»ƒ dÃ¹ng tÃ i khoáº£n nÃ y.';
 
   @override
   String get reasonSignInConfirm =>
-      'Mozilla yêu cầu xác nhận đăng nhập: nhấn Đăng nhập lại (chỉ cần mã).';
+      'Mozilla yÃªu cáº§u xÃ¡c nháº­n Ä‘Äƒng nháº­p: nháº¥n ÄÄƒng nháº­p láº¡i (chá»‰ cáº§n mÃ£).';
 
   @override
   String reasonSignInFailed(String detail) {
-    return 'Đăng nhập tự động thất bại ($detail). Hãy đăng nhập lại.';
+    return 'ÄÄƒng nháº­p tá»± Ä‘á»™ng tháº¥t báº¡i ($detail). HÃ£y Ä‘Äƒng nháº­p láº¡i.';
   }
 
   @override
   String reasonSignInWait(String time) {
-    return 'Lần đăng nhập tự động gần nhất ngừng hoạt động ngay sau đó; lần thử tiếp theo lúc $time.';
+    return 'Láº§n Ä‘Äƒng nháº­p tá»± Ä‘á»™ng gáº§n nháº¥t ngá»«ng hoáº¡t Ä‘á»™ng ngay sau Ä‘Ã³; láº§n thá»­ tiáº¿p theo lÃºc $time.';
   }
 
   @override
   String reasonSignInRetry(String detail, String time) {
-    return 'Đăng nhập tự động chưa hoàn tất ($detail); sẽ thử lại lúc $time.';
+    return 'ÄÄƒng nháº­p tá»± Ä‘á»™ng chÆ°a hoÃ n táº¥t ($detail); sáº½ thá»­ láº¡i lÃºc $time.';
   }
 
   @override
   String get reasonNotEntitled =>
-      'Mozilla đã từ chối tài khoản này; sẽ thử lại sau.';
+      'Mozilla Ä‘Ã£ tá»« chá»‘i tÃ i khoáº£n nÃ y; sáº½ thá»­ láº¡i sau.';
 
   @override
-  String get more => 'Tùy chọn khác';
+  String get more => 'TÃ¹y chá»n khÃ¡c';
 
   @override
-  String get refreshQuota => 'Cập nhật dung lượng';
+  String get refreshQuota => 'Cáº­p nháº­t dung lÆ°á»£ng';
 
   @override
-  String get remove => 'Xóa';
+  String get remove => 'XÃ³a';
 
   @override
-  String get removeTitle => 'Xóa tài khoản?';
+  String get removeTitle => 'XÃ³a tÃ i khoáº£n?';
 
   @override
   String removeBody(String name) {
-    return '$name và thông tin đăng nhập đã lưu sẽ bị xóa khỏi máy tính này. Bạn có thể thêm lại sau.';
+    return '$name vÃ  thÃ´ng tin Ä‘Äƒng nháº­p Ä‘Ã£ lÆ°u sáº½ bá»‹ xÃ³a khá»i mÃ¡y tÃ­nh nÃ y. Báº¡n cÃ³ thá»ƒ thÃªm láº¡i sau.';
   }
 
   @override
-  String get unlimitedQuota => 'Dung lượng không giới hạn';
+  String get unlimitedQuota => 'Dung lÆ°á»£ng khÃ´ng giá»›i háº¡n';
 
   @override
-  String get signInTitle => 'Đăng nhập';
+  String get signInTitle => 'ÄÄƒng nháº­p';
 
   @override
-  String get signInIntro => 'Đăng nhập bằng Firefox Account.';
+  String get signInIntro => 'ÄÄƒng nháº­p báº±ng Firefox Account.';
 
   @override
   String get email => 'Email';
 
   @override
-  String get emailInvalid => 'Nhập email của tài khoản';
+  String get emailInvalid => 'Nháº­p email cá»§a tÃ i khoáº£n';
 
   @override
-  String get password => 'Mật khẩu';
+  String get password => 'Máº­t kháº©u';
 
   @override
-  String get passwordEmpty => 'Nhập mật khẩu';
+  String get passwordEmpty => 'Nháº­p máº­t kháº©u';
 
   @override
-  String get show => 'Hiện';
+  String get show => 'Hiá»‡n';
 
   @override
-  String get hide => 'Ẩn';
+  String get hide => 'áº¨n';
 
   @override
-  String get signIn => 'Đăng nhập';
+  String get signIn => 'ÄÄƒng nháº­p';
 
   @override
-  String get continueLabel => 'Tiếp tục';
+  String get continueLabel => 'Tiáº¿p tá»¥c';
 
   @override
   String get done => 'Xong';
 
   @override
-  String get close => 'Đóng';
+  String get close => 'ÄÃ³ng';
 
   @override
-  String get cancel => 'Hủy';
+  String get cancel => 'Há»§y';
 
   @override
-  String get tryAgain => 'Thử lại';
+  String get tryAgain => 'Thá»­ láº¡i';
 
   @override
-  String get signingIn => 'Đang đăng nhập…';
+  String get signingIn => 'Äang Ä‘Äƒng nháº­pâ€¦';
 
   @override
-  String get accountReady => 'Tài khoản đã sẵn sàng';
+  String get accountReady => 'TÃ i khoáº£n Ä‘Ã£ sáºµn sÃ ng';
 
   @override
-  String get accountReadyHint => 'Tài khoản đã được thêm vào cuối danh sách.';
+  String get accountReadyHint => 'TÃ i khoáº£n Ä‘Ã£ Ä‘Æ°á»£c thÃªm vÃ o cuá»‘i danh sÃ¡ch.';
 
   @override
-  String get captchaLabel => 'Ký tự trong ảnh';
+  String get captchaLabel => 'KÃ½ tá»± trong áº£nh';
 
   @override
-  String get codeLabel => 'Mã';
+  String get codeLabel => 'MÃ£';
 
   @override
-  String get captchaBroken => 'Không thể hiển thị ảnh CAPTCHA.';
+  String get captchaBroken => 'KhÃ´ng thá»ƒ hiá»ƒn thá»‹ áº£nh CAPTCHA.';
 
   @override
   String stepEmailCode(String email) {
-    return 'Mozilla đã gửi mã đến $email. Nhập mã vào đây.';
+    return 'Mozilla Ä‘Ã£ gá»­i mÃ£ Ä‘áº¿n $email. Nháº­p mÃ£ vÃ o Ä‘Ã¢y.';
   }
 
   @override
-  String get stepTotp => 'Nhập mã từ ứng dụng xác thực của bạn.';
+  String get stepTotp => 'Nháº­p mÃ£ tá»« á»©ng dá»¥ng xÃ¡c thá»±c cá»§a báº¡n.';
 
   @override
   String stepUnblockCode(String email) {
-    return 'Mozilla thấy lần đăng nhập này bất thường và đã gửi mã mở khóa đến $email. Nhập mã vào đây.';
+    return 'Mozilla tháº¥y láº§n Ä‘Äƒng nháº­p nÃ y báº¥t thÆ°á»ng vÃ  Ä‘Ã£ gá»­i mÃ£ má»Ÿ khÃ³a Ä‘áº¿n $email. Nháº­p mÃ£ vÃ o Ä‘Ã¢y.';
   }
 
   @override
-  String get stepCaptcha => 'Nhập các ký tự trong ảnh.';
+  String get stepCaptcha => 'Nháº­p cÃ¡c kÃ½ tá»± trong áº£nh.';
 
   @override
   String stepEmailLink(String email) {
-    return 'Mở liên kết xác nhận Mozilla đã gửi đến $email. Quá trình sẽ tự tiếp tục.';
+    return 'Má»Ÿ liÃªn káº¿t xÃ¡c nháº­n Mozilla Ä‘Ã£ gá»­i Ä‘áº¿n $email. QuÃ¡ trÃ¬nh sáº½ tá»± tiáº¿p tá»¥c.';
   }
 
   @override
-  String get signInFailed => 'Chưa thêm được tài khoản.';
+  String get signInFailed => 'ChÆ°a thÃªm Ä‘Æ°á»£c tÃ i khoáº£n.';
 
   @override
-  String get signInCancelled => 'Đã hủy đăng nhập.';
+  String get signInCancelled => 'ÄÃ£ há»§y Ä‘Äƒng nháº­p.';
 
   @override
-  String get signInNoAccount => 'Không có Firefox Account nào với email này.';
+  String get signInNoAccount => 'KhÃ´ng cÃ³ Firefox Account nÃ o vá»›i email nÃ y.';
 
   @override
   String get signInNoAccountHint =>
-      'Hãy kiểm tra email, hoặc tạo một Firefox Account miễn phí bằng email này trên trang của Mozilla, xác nhận từ hộp thư rồi thêm vào đây.';
+      'HÃ£y kiá»ƒm tra email, hoáº·c táº¡o má»™t Firefox Account miá»…n phÃ­ báº±ng email nÃ y trÃªn trang cá»§a Mozilla, xÃ¡c nháº­n tá»« há»™p thÆ° rá»“i thÃªm vÃ o Ä‘Ã¢y.';
 
   @override
-  String get createAccountButton => 'Tạo Firefox Account';
+  String get createAccountButton => 'Táº¡o Firefox Account';
 
   @override
-  String get signInWrongPassword => 'Mật khẩu không đúng.';
+  String get signInWrongPassword => 'Máº­t kháº©u khÃ´ng Ä‘Ãºng.';
 
   @override
   String get signInNoPassword =>
-      'Tài khoản này chưa có mật khẩu: nó được tạo bằng đăng nhập Google hoặc Apple. Hãy đặt mật khẩu, rồi đăng nhập tại đây bằng mật khẩu đó.';
+      'TÃ i khoáº£n nÃ y chÆ°a cÃ³ máº­t kháº©u: nÃ³ Ä‘Æ°á»£c táº¡o báº±ng Ä‘Äƒng nháº­p Google hoáº·c Apple. HÃ£y Ä‘áº·t máº­t kháº©u, rá»“i Ä‘Äƒng nháº­p táº¡i Ä‘Ã¢y báº±ng máº­t kháº©u Ä‘Ã³.';
 
   @override
-  String get setPasswordButton => 'Đặt mật khẩu';
+  String get setPasswordButton => 'Äáº·t máº­t kháº©u';
 
   @override
   String get signInTooManyAttempts =>
-      'Thử quá nhiều lần. Hãy đợi một lúc rồi thử lại.';
+      'Thá»­ quÃ¡ nhiá»u láº§n. HÃ£y Ä‘á»£i má»™t lÃºc rá»“i thá»­ láº¡i.';
 
   @override
   String get signInUnblockRejected =>
-      'Mã bỏ chặn không được chấp nhận. Hãy dùng mã trong email mới nhất của Mozilla.';
+      'MÃ£ bá» cháº·n khÃ´ng Ä‘Æ°á»£c cháº¥p nháº­n. HÃ£y dÃ¹ng mÃ£ trong email má»›i nháº¥t cá»§a Mozilla.';
 
   @override
   String get signInWrongCode =>
-      'Mã sai hoặc đã hết hạn. Hãy dùng mã trong email mới nhất của Mozilla; mã cũ không còn dùng được khi có mã mới.';
+      'MÃ£ sai hoáº·c Ä‘Ã£ háº¿t háº¡n. HÃ£y dÃ¹ng mÃ£ trong email má»›i nháº¥t cá»§a Mozilla; mÃ£ cÅ© khÃ´ng cÃ²n dÃ¹ng Ä‘Æ°á»£c khi cÃ³ mÃ£ má»›i.';
 
   @override
   String get signInWrongTotp =>
-      'Mã sai. Nhập mã mà ứng dụng xác thực đang hiển thị.';
+      'MÃ£ sai. Nháº­p mÃ£ mÃ  á»©ng dá»¥ng xÃ¡c thá»±c Ä‘ang hiá»ƒn thá»‹.';
 
   @override
   String get signInTooManyCodes =>
-      'Nhập sai mã quá nhiều lần. Hãy đăng nhập lại từ đầu.';
+      'Nháº­p sai mÃ£ quÃ¡ nhiá»u láº§n. HÃ£y Ä‘Äƒng nháº­p láº¡i tá»« Ä‘áº§u.';
 
   @override
   String get signInTimedOut =>
-      'Đăng nhập mất quá nhiều thời gian. Hãy bắt đầu lại.';
+      'ÄÄƒng nháº­p máº¥t quÃ¡ nhiá»u thá»i gian. HÃ£y báº¯t Ä‘áº§u láº¡i.';
 
   @override
   String get signInNetwork =>
-      'Không kết nối được tới Mozilla. Hãy kiểm tra internet rồi thử lại.';
+      'KhÃ´ng káº¿t ná»‘i Ä‘Æ°á»£c tá»›i Mozilla. HÃ£y kiá»ƒm tra internet rá»“i thá»­ láº¡i.';
 
   @override
-  String get coreConnecting => 'Đang kết nối với lõi…';
+  String get coreConnecting => 'Äang káº¿t ná»‘i vá»›i lÃµiâ€¦';
 
   @override
-  String get coreLost => 'Mất kết nối với lõi. Đang thử lại…';
+  String get coreLost => 'Máº¥t káº¿t ná»‘i vá»›i lÃµi. Äang thá»­ láº¡iâ€¦';
 
   @override
-  String get cantReachCore => 'Không kết nối được với lõi';
+  String get cantReachCore => 'KhÃ´ng káº¿t ná»‘i Ä‘Æ°á»£c vá»›i lÃµi';
 
   @override
-  String get startingCore => 'Đang khởi động lõi…';
+  String get startingCore => 'Äang khá»Ÿi Ä‘á»™ng lÃµiâ€¦';
 
   @override
-  String get retry => 'Thử lại';
+  String get retry => 'Thá»­ láº¡i';
 
   @override
   String errNoCore(String path) {
-    return 'Không tìm thấy chương trình lõi bên cạnh ứng dụng ($path).';
+    return 'KhÃ´ng tÃ¬m tháº¥y chÆ°Æ¡ng trÃ¬nh lÃµi bÃªn cáº¡nh á»©ng dá»¥ng ($path).';
   }
 
   @override
   String errCoreExited(String detail) {
-    return 'Lõi đã dừng: $detail';
+    return 'LÃµi Ä‘Ã£ dá»«ng: $detail';
   }
 
   @override
-  String get errNotAnswering => 'Lõi không phản hồi.';
+  String get errNotAnswering => 'LÃµi khÃ´ng pháº£n há»“i.';
 
   @override
   String get errRefused =>
-      'Lõi từ chối kết nối từ ứng dụng; có thể lõi này thuộc về một bản cài đặt khác.';
+      'LÃµi tá»« chá»‘i káº¿t ná»‘i tá»« á»©ng dá»¥ng; cÃ³ thá»ƒ lÃµi nÃ y thuá»™c vá» má»™t báº£n cÃ i Ä‘áº·t khÃ¡c.';
 
   @override
-  String get settingsTitle => 'Cài đặt';
+  String get settingsTitle => 'CÃ i Ä‘áº·t';
 
   @override
   String get sectionGeneral => 'Chung';
 
   @override
-  String get language => 'Ngôn ngữ';
+  String get language => 'NgÃ´n ngá»¯';
 
   @override
-  String get languageSystem => 'Theo hệ thống';
+  String get languageSystem => 'Theo há»‡ thá»‘ng';
 
   @override
-  String get theme => 'Giao diện';
+  String get theme => 'Giao diá»‡n';
 
   @override
-  String get themeSystem => 'Theo hệ thống';
+  String get themeSystem => 'Theo há»‡ thá»‘ng';
 
   @override
-  String get themeLight => 'Sáng';
+  String get themeLight => 'SÃ¡ng';
 
   @override
-  String get themeDark => 'Tối';
+  String get themeDark => 'Tá»‘i';
 
   @override
-  String get closeBehavior => 'Khi đóng cửa sổ';
+  String get closeBehavior => 'Khi Ä‘Ã³ng cá»­a sá»•';
 
   @override
-  String get closeAsk => 'Luôn hỏi';
+  String get closeAsk => 'LuÃ´n há»i';
 
   @override
-  String get closeTray => 'Thu nhỏ xuống khay hệ thống';
+  String get closeTray => 'Thu nhá» xuá»‘ng khay há»‡ thá»‘ng';
 
   @override
-  String get closeQuit => 'Thoát ứng dụng';
+  String get closeQuit => 'ThoÃ¡t á»©ng dá»¥ng';
 
   @override
-  String get sectionConnection => 'Kết nối';
+  String get sectionConnection => 'Káº¿t ná»‘i';
 
   @override
-  String get localProxy => 'Proxy cục bộ';
+  String get localProxy => 'Proxy cá»¥c bá»™';
 
   @override
-  String get systemProxy => 'Proxy hệ thống';
+  String get systemProxy => 'Proxy há»‡ thá»‘ng';
 
   @override
-  String get sectionRouting => 'Định tuyến';
+  String get sectionRouting => 'Äá»‹nh tuyáº¿n';
 
   @override
-  String get routingDirect => 'Kết nối trực tiếp cho trang trong nước';
+  String get routingDirect => 'Káº¿t ná»‘i trá»±c tiáº¿p cho trang trong nÆ°á»›c';
 
   @override
   String get routingDirectHint =>
-      'Các trang và IP của quốc gia đã chọn sẽ không qua VPN: mở nhanh hơn và tiết kiệm dung lượng.';
+      'CÃ¡c trang vÃ  IP cá»§a quá»‘c gia Ä‘Ã£ chá»n sáº½ khÃ´ng qua VPN: má»Ÿ nhanh hÆ¡n vÃ  tiáº¿t kiá»‡m dung lÆ°á»£ng.';
 
   @override
-  String get region => 'Quốc gia';
+  String get region => 'Quá»‘c gia';
 
   @override
   String get regionIr => 'Iran';
 
   @override
-  String get regionCn => 'Trung Quốc';
+  String get regionCn => 'Trung Quá»‘c';
 
   @override
   String get regionRu => 'Nga';
@@ -506,7 +506,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get regionAf => 'Afghanistan';
 
   @override
-  String get regionTr => 'Thổ Nhĩ Kỳ';
+  String get regionTr => 'Thá»• NhÄ© Ká»³';
 
   @override
   String get regionId => 'Indonesia';
@@ -515,244 +515,244 @@ class AppLocalizationsVi extends AppLocalizations {
   String get regionBr => 'Brazil';
 
   @override
-  String get regionNone => 'Không chọn';
+  String get regionNone => 'KhÃ´ng chá»n';
 
   @override
-  String get saved => 'Đã lưu';
+  String get saved => 'ÄÃ£ lÆ°u';
 
   @override
-  String get dataFolder => 'Thư mục dữ liệu';
+  String get dataFolder => 'ThÆ° má»¥c dá»¯ liá»‡u';
 
   @override
-  String get openFolder => 'Mở thư mục';
+  String get openFolder => 'Má»Ÿ thÆ° má»¥c';
 
   @override
   String get unofficialNote =>
-      'Ứng dụng không chính thức. Không liên kết với Mozilla.';
+      'á»¨ng dá»¥ng khÃ´ng chÃ­nh thá»©c. KhÃ´ng liÃªn káº¿t vá»›i Mozilla.';
 
   @override
-  String get closeTitle => 'Đóng cửa sổ?';
+  String get closeTitle => 'ÄÃ³ng cá»­a sá»•?';
 
   @override
   String get closeBody =>
-      'Khi thu nhỏ xuống khay hệ thống, VPN vẫn giữ kết nối. Thoát ứng dụng sẽ ngắt VPN.';
+      'Khi thu nhá» xuá»‘ng khay há»‡ thá»‘ng, VPN váº«n giá»¯ káº¿t ná»‘i. ThoÃ¡t á»©ng dá»¥ng sáº½ ngáº¯t VPN.';
 
   @override
-  String get rememberChoice => 'Ghi nhớ lựa chọn';
+  String get rememberChoice => 'Ghi nhá»› lá»±a chá»n';
 
   @override
-  String get minimizeToTray => 'Thu nhỏ xuống khay';
+  String get minimizeToTray => 'Thu nhá» xuá»‘ng khay';
 
   @override
-  String get quit => 'Thoát';
+  String get quit => 'ThoÃ¡t';
 
   @override
-  String get trayOpen => 'Mở';
+  String get trayOpen => 'Má»Ÿ';
 
   @override
-  String get trayQuit => 'Thoát';
+  String get trayQuit => 'ThoÃ¡t';
 
   @override
-  String get trayProxyOnly => 'Chỉ dịch vụ proxy';
+  String get trayProxyOnly => 'Chá»‰ dá»‹ch vá»¥ proxy';
 
   @override
-  String get traySetSystemProxy => 'Đặt proxy hệ thống';
+  String get traySetSystemProxy => 'Äáº·t proxy há»‡ thá»‘ng';
 
   @override
   String errPortInUse(String port) {
-    return 'Cổng $port đang được chương trình khác sử dụng, nên ứng dụng không thể kết nối với lõi.';
+    return 'Cá»•ng $port Ä‘ang Ä‘Æ°á»£c chÆ°Æ¡ng trÃ¬nh khÃ¡c sá»­ dá»¥ng, nÃªn á»©ng dá»¥ng khÃ´ng thá»ƒ káº¿t ná»‘i vá»›i lÃµi.';
   }
 
   @override
   String proxyPortInUse(String port) {
-    return 'Cổng $port đang được chương trình khác sử dụng, nên proxy không thể khởi động.';
+    return 'Cá»•ng $port Ä‘ang Ä‘Æ°á»£c chÆ°Æ¡ng trÃ¬nh khÃ¡c sá»­ dá»¥ng, nÃªn proxy khÃ´ng thá»ƒ khá»Ÿi Ä‘á»™ng.';
   }
 
   @override
-  String get changePort => 'Đổi cổng';
+  String get changePort => 'Äá»•i cá»•ng';
 
   @override
-  String get portDialogTitle => 'Chọn cổng';
+  String get portDialogTitle => 'Chá»n cá»•ng';
 
   @override
   String portDialogBody(String port) {
-    return 'Cổng $port đã bị chiếm. Một cổng trống được gợi ý bên dưới; bạn có thể nhập cổng khác.';
+    return 'Cá»•ng $port Ä‘Ã£ bá»‹ chiáº¿m. Má»™t cá»•ng trá»‘ng Ä‘Æ°á»£c gá»£i Ã½ bÃªn dÆ°á»›i; báº¡n cÃ³ thá»ƒ nháº­p cá»•ng khÃ¡c.';
   }
 
   @override
   String get portChangeBody =>
-      'Các ứng dụng kết nối tới cổng này. Hãy chọn một cổng từ 1024 đến 65535.';
+      'CÃ¡c á»©ng dá»¥ng káº¿t ná»‘i tá»›i cá»•ng nÃ y. HÃ£y chá»n má»™t cá»•ng tá»« 1024 Ä‘áº¿n 65535.';
 
   @override
-  String get portLabel => 'Cổng';
+  String get portLabel => 'Cá»•ng';
 
   @override
-  String get portInvalid => 'Nhập cổng từ 1024 đến 65535';
+  String get portInvalid => 'Nháº­p cá»•ng tá»« 1024 Ä‘áº¿n 65535';
 
   @override
-  String get portBusy => 'Cổng này cũng đang được dùng';
+  String get portBusy => 'Cá»•ng nÃ y cÅ©ng Ä‘ang Ä‘Æ°á»£c dÃ¹ng';
 
   @override
-  String get portInUse => 'Một chương trình khác đang dùng cổng này';
+  String get portInUse => 'Má»™t chÆ°Æ¡ng trÃ¬nh khÃ¡c Ä‘ang dÃ¹ng cá»•ng nÃ y';
 
   @override
-  String get save => 'Lưu';
+  String get save => 'LÆ°u';
 
   @override
-  String get proxyPort => 'Cổng proxy';
+  String get proxyPort => 'Cá»•ng proxy';
 
   @override
-  String get appPort => 'Cổng ứng dụng';
+  String get appPort => 'Cá»•ng á»©ng dá»¥ng';
 
   @override
-  String get welcomeTitle => 'Chào mừng';
+  String get welcomeTitle => 'ChÃ o má»«ng';
 
   @override
   String get welcomeBody =>
-      'Chọn ngôn ngữ và quốc gia của bạn. Các trang trong nước sẽ mở trực tiếp, không qua VPN, giúp nhanh hơn và tiết kiệm dung lượng.';
+      'Chá»n ngÃ´n ngá»¯ vÃ  quá»‘c gia cá»§a báº¡n. CÃ¡c trang trong nÆ°á»›c sáº½ má»Ÿ trá»±c tiáº¿p, khÃ´ng qua VPN, giÃºp nhanh hÆ¡n vÃ  tiáº¿t kiá»‡m dung lÆ°á»£ng.';
 
   @override
-  String get start => 'Bắt đầu';
+  String get start => 'Báº¯t Ä‘áº§u';
 
   @override
   String routingSuggestTitle(String country) {
-    return 'Mở trực tiếp các trang của $country?';
+    return 'Má»Ÿ trá»±c tiáº¿p cÃ¡c trang cá»§a $country?';
   }
 
   @override
   String routingSuggestBody(String country) {
-    return 'Các trang và IP của $country sẽ mở trực tiếp, không qua VPN. Bạn có thể thay đổi trong mục Định tuyến.';
+    return 'CÃ¡c trang vÃ  IP cá»§a $country sáº½ má»Ÿ trá»±c tiáº¿p, khÃ´ng qua VPN. Báº¡n cÃ³ thá»ƒ thay Ä‘á»•i trong má»¥c Äá»‹nh tuyáº¿n.';
   }
 
   @override
-  String get yes => 'Có';
+  String get yes => 'CÃ³';
 
   @override
-  String get notNow => 'Để sau';
+  String get notNow => 'Äá»ƒ sau';
 
   @override
-  String get navServers => 'Máy chủ';
+  String get navServers => 'MÃ¡y chá»§';
 
   @override
-  String get navLogs => 'Nhật ký';
+  String get navLogs => 'Nháº­t kÃ½';
 
   @override
-  String get realDelay => 'Độ trễ thực';
+  String get realDelay => 'Äá»™ trá»… thá»±c';
 
   @override
   String noticePort(String port) {
-    return 'Proxy của Mozilla không kết nối tới cổng $port. Chỉ các cổng 80, 443, 8080 và 8443 đi qua VPN.';
+    return 'Proxy cá»§a Mozilla khÃ´ng káº¿t ná»‘i tá»›i cá»•ng $port. Chá»‰ cÃ¡c cá»•ng 80, 443, 8080 vÃ  8443 Ä‘i qua VPN.';
   }
 
   @override
   String get noticeCommand =>
-      'Một ứng dụng yêu cầu UDP (trò chơi, gọi thoại và video). Proxy của Mozilla chỉ hỗ trợ TCP, nên lưu lượng này không thể đi qua.';
+      'Má»™t á»©ng dá»¥ng yÃªu cáº§u UDP (trÃ² chÆ¡i, gá»i thoáº¡i vÃ  video). Proxy cá»§a Mozilla chá»‰ há»— trá»£ TCP, nÃªn lÆ°u lÆ°á»£ng nÃ y khÃ´ng thá»ƒ Ä‘i qua.';
 
   @override
   String noticeTimes(int count, String time) {
-    return '$count lần, gần nhất $time';
+    return '$count láº§n, gáº§n nháº¥t $time';
   }
 
   @override
-  String get dismiss => 'Bỏ qua';
+  String get dismiss => 'Bá» qua';
 
   @override
-  String get modeRecommended => 'Đề xuất';
+  String get modeRecommended => 'Äá» xuáº¥t';
 
   @override
-  String get modeFastest => 'Nhanh nhất';
+  String get modeFastest => 'Nhanh nháº¥t';
 
   @override
-  String get modeRecommendedHint => 'Mozilla chọn vị trí cho bạn.';
+  String get modeRecommendedHint => 'Mozilla chá»n vá»‹ trÃ­ cho báº¡n.';
 
   @override
   String get modeFastestHint =>
-      'Mỗi lần kết nối, chọn vị trí có độ trễ thấp nhất.';
+      'Má»—i láº§n káº¿t ná»‘i, chá»n vá»‹ trÃ­ cÃ³ Ä‘á»™ trá»… tháº¥p nháº¥t.';
 
   @override
-  String get testDelay => 'Đo độ trễ thực';
+  String get testDelay => 'Äo Ä‘á»™ trá»… thá»±c';
 
   @override
-  String get testingDelay => 'Đang đo… có thể mất một phút';
+  String get testingDelay => 'Äang Ä‘oâ€¦ cÃ³ thá»ƒ máº¥t má»™t phÃºt';
 
   @override
-  String get search => 'Tìm kiếm';
+  String get search => 'TÃ¬m kiáº¿m';
 
   @override
-  String get noAnswer => 'Không phản hồi';
+  String get noAnswer => 'KhÃ´ng pháº£n há»“i';
 
   @override
   String testedAgo(String ago) {
-    return 'Đã đo $ago';
+    return 'ÄÃ£ Ä‘o $ago';
   }
 
   @override
   String delaySummary(int answered, int total) {
-    return '$answered / $total đã phản hồi';
+    return '$answered / $total Ä‘Ã£ pháº£n há»“i';
   }
 
   @override
   String get noServers =>
-      'Chưa có máy chủ. Danh sách sẽ hiện khi lõi kết nối được với Mozilla.';
+      'ChÆ°a cÃ³ mÃ¡y chá»§. Danh sÃ¡ch sáº½ hiá»‡n khi lÃµi káº¿t ná»‘i Ä‘Æ°á»£c vá»›i Mozilla.';
 
   @override
-  String get levelAll => 'Tất cả';
+  String get levelAll => 'Táº¥t cáº£';
 
   @override
-  String get filter => 'Lọc';
+  String get filter => 'Lá»c';
 
   @override
-  String get follow => 'Tự động cuộn';
+  String get follow => 'Tá»± Ä‘á»™ng cuá»™n';
 
   @override
-  String get clear => 'Xóa';
+  String get clear => 'XÃ³a';
 
   @override
-  String get copyAll => 'Sao chép';
+  String get copyAll => 'Sao chÃ©p';
 
   @override
-  String get logsCopied => 'Đã sao chép nhật ký';
+  String get logsCopied => 'ÄÃ£ sao chÃ©p nháº­t kÃ½';
 
   @override
-  String get noLogs => 'Chưa có dòng nhật ký nào.';
+  String get noLogs => 'ChÆ°a cÃ³ dÃ²ng nháº­t kÃ½ nÃ o.';
 
   @override
-  String get sectionAccounts => 'Tự động chuyển tài khoản';
+  String get sectionAccounts => 'Tá»± Ä‘á»™ng chuyá»ƒn tÃ i khoáº£n';
 
   @override
-  String get switchThreshold => 'Chuyển tài khoản khi đạt';
+  String get switchThreshold => 'Chuyá»ƒn tÃ i khoáº£n khi Ä‘áº¡t';
 
   @override
   String get switchThresholdHint =>
-      'Khi dung lượng đã dùng đạt mức này, ứng dụng chuyển sang tài khoản tiếp theo.';
+      'Khi dung lÆ°á»£ng Ä‘Ã£ dÃ¹ng Ä‘áº¡t má»©c nÃ y, á»©ng dá»¥ng chuyá»ƒn sang tÃ i khoáº£n tiáº¿p theo.';
 
   @override
   String get sectionDns => 'DNS';
 
   @override
-  String get dnsPreset => 'Máy chủ DNS';
+  String get dnsPreset => 'MÃ¡y chá»§ DNS';
 
   @override
-  String get dnsSystem => 'Hệ thống';
+  String get dnsSystem => 'Há»‡ thá»‘ng';
 
   @override
-  String get dnsAuto => 'Tự động (Cloudflare, Google, Quad9)';
+  String get dnsAuto => 'Tá»± Ä‘á»™ng (Cloudflare, Google, Quad9)';
 
   @override
-  String get dnsCustom => 'Tùy chỉnh';
+  String get dnsCustom => 'TÃ¹y chá»‰nh';
 
   @override
   String get dnsCustomHint =>
-      'Mỗi dòng một máy chủ: https://…/dns-query, tls://…, hoặc một địa chỉ IP.';
+      'Má»—i dÃ²ng má»™t mÃ¡y chá»§: https://â€¦/dns-query, tls://â€¦, hoáº·c má»™t Ä‘á»‹a chá»‰ IP.';
 
   @override
-  String get dnsFallback => 'Dùng DNS hệ thống làm dự phòng';
+  String get dnsFallback => 'DÃ¹ng DNS há»‡ thá»‘ng lÃ m dá»± phÃ²ng';
 
   @override
-  String get testDns => 'Kiểm tra DNS';
+  String get testDns => 'Kiá»ƒm tra DNS';
 
   @override
-  String get transport => 'Giao thức';
+  String get transport => 'Giao thá»©c';
 
   @override
   String get transportH3 => 'HTTP/3 (QUIC)';
@@ -761,229 +761,229 @@ class AppLocalizationsVi extends AppLocalizations {
   String get transportH2 => 'HTTP/2 (TCP)';
 
   @override
-  String get directRules => 'Trực tiếp';
+  String get directRules => 'Trá»±c tiáº¿p';
 
   @override
   String get directRulesHint =>
-      'Các trang và địa chỉ trong danh sách này mở không qua VPN, trực tiếp bằng mạng của bạn. Quy tắc của quốc gia đã chọn đã có sẵn ở đây: bạn có thể thêm, sửa hoặc xóa dòng. Chọn quốc gia khác sẽ thay bằng quy tắc của quốc gia đó.';
+      'CÃ¡c trang vÃ  Ä‘á»‹a chá»‰ trong danh sÃ¡ch nÃ y má»Ÿ khÃ´ng qua VPN, trá»±c tiáº¿p báº±ng máº¡ng cá»§a báº¡n. Quy táº¯c cá»§a quá»‘c gia Ä‘Ã£ chá»n Ä‘Ã£ cÃ³ sáºµn á»Ÿ Ä‘Ã¢y: báº¡n cÃ³ thá»ƒ thÃªm, sá»­a hoáº·c xÃ³a dÃ²ng. Chá»n quá»‘c gia khÃ¡c sáº½ thay báº±ng quy táº¯c cá»§a quá»‘c gia Ä‘Ã³.';
 
   @override
-  String get restoreRegionRules => 'Khôi phục quy tắc của quốc gia';
+  String get restoreRegionRules => 'KhÃ´i phá»¥c quy táº¯c cá»§a quá»‘c gia';
 
   @override
-  String get blockRules => 'Chặn';
+  String get blockRules => 'Cháº·n';
 
   @override
   String get blockRulesHint =>
-      'Các trang và địa chỉ trong danh sách này hoàn toàn không mở được, dù trực tiếp hay qua VPN: dùng cho quảng cáo hoặc những trang bạn không bao giờ muốn truy cập.';
+      'CÃ¡c trang vÃ  Ä‘á»‹a chá»‰ trong danh sÃ¡ch nÃ y hoÃ n toÃ n khÃ´ng má»Ÿ Ä‘Æ°á»£c, dÃ¹ trá»±c tiáº¿p hay qua VPN: dÃ¹ng cho quáº£ng cÃ¡o hoáº·c nhá»¯ng trang báº¡n khÃ´ng bao giá» muá»‘n truy cáº­p.';
 
   @override
-  String get rulesTitle => 'Quy tắc';
+  String get rulesTitle => 'Quy táº¯c';
 
   @override
-  String get ruleSyntaxTitle => 'Cách viết quy tắc';
+  String get ruleSyntaxTitle => 'CÃ¡ch viáº¿t quy táº¯c';
 
   @override
-  String get resolveDomains => 'Áp dụng quy tắc IP cho tên miền';
+  String get resolveDomains => 'Ãp dá»¥ng quy táº¯c IP cho tÃªn miá»n';
 
   @override
-  String get routingLists => 'Tệp geo';
+  String get routingLists => 'Tá»‡p geo';
 
   @override
-  String get listSource => 'Nguồn danh sách';
+  String get listSource => 'Nguá»“n danh sÃ¡ch';
 
   @override
-  String get listSourceCustom => 'Nhập thủ công';
+  String get listSourceCustom => 'Nháº­p thá»§ cÃ´ng';
 
   @override
   String listsUpdatedAgo(String ago) {
-    return 'Cập nhật $ago';
+    return 'Cáº­p nháº­t $ago';
   }
 
   @override
-  String get updateLists => 'Cập nhật tệp geo';
+  String get updateLists => 'Cáº­p nháº­t tá»‡p geo';
 
   @override
-  String get listsUpdated => 'Đã cập nhật tệp geo.';
+  String get listsUpdated => 'ÄÃ£ cáº­p nháº­t tá»‡p geo.';
 
   @override
-  String get testDestination => 'Kiểm tra định tuyến';
+  String get testDestination => 'Kiá»ƒm tra Ä‘á»‹nh tuyáº¿n';
 
   @override
-  String get destinationHint => 'Tên miền, địa chỉ hoặc URL';
+  String get destinationHint => 'TÃªn miá»n, Ä‘á»‹a chá»‰ hoáº·c URL';
 
   @override
-  String get check => 'Kiểm tra';
+  String get check => 'Kiá»ƒm tra';
 
   @override
-  String get routeDirect => 'Đi trực tiếp';
+  String get routeDirect => 'Äi trá»±c tiáº¿p';
 
   @override
-  String get routeProxy => 'Đi qua VPN';
+  String get routeProxy => 'Äi qua VPN';
 
   @override
-  String get routeBlock => 'Bị chặn';
+  String get routeBlock => 'Bá»‹ cháº·n';
 
   @override
   String ruleMatched(String rule) {
-    return 'Quy tắc: $rule';
+    return 'Quy táº¯c: $rule';
   }
 
   @override
-  String get portRefusedNote => 'Proxy của Mozilla không kết nối tới cổng này.';
+  String get portRefusedNote => 'Proxy cá»§a Mozilla khÃ´ng káº¿t ná»‘i tá»›i cá»•ng nÃ y.';
 
   @override
-  String get sectionAdvanced => 'Nâng cao';
+  String get sectionAdvanced => 'NÃ¢ng cao';
 
   @override
-  String get listenAddress => 'Quyền truy cập proxy';
+  String get listenAddress => 'Quyá»n truy cáº­p proxy';
 
   @override
-  String get listenLocal => '127.0.0.1 · chỉ thiết bị này';
+  String get listenLocal => '127.0.0.1 Â· chá»‰ thiáº¿t bá»‹ nÃ y';
 
   @override
-  String get listenAll => '0.0.0.0 · mọi mạng (LAN)';
+  String get listenAll => '0.0.0.0 Â· má»i máº¡ng (LAN)';
 
   @override
-  String get proxyUsername => 'Tên người dùng proxy';
+  String get proxyUsername => 'TÃªn ngÆ°á»i dÃ¹ng proxy';
 
   @override
-  String get proxyPassword => 'Mật khẩu proxy';
+  String get proxyPassword => 'Máº­t kháº©u proxy';
 
   @override
   String get proxyLoginHint =>
-      'Các ứng dụng phải dùng thông tin này để kết nối. Để trống cả hai nếu không cần xác thực.';
+      'CÃ¡c á»©ng dá»¥ng pháº£i dÃ¹ng thÃ´ng tin nÃ y Ä‘á»ƒ káº¿t ná»‘i. Äá»ƒ trá»‘ng cáº£ hai náº¿u khÃ´ng cáº§n xÃ¡c thá»±c.';
 
   @override
-  String get loginBothOrNone => 'Điền cả hai, hoặc để trống cả hai.';
+  String get loginBothOrNone => 'Äiá»n cáº£ hai, hoáº·c Ä‘á»ƒ trá»‘ng cáº£ hai.';
 
   @override
-  String get proxyLogin => 'Xác thực proxy';
+  String get proxyLogin => 'XÃ¡c thá»±c proxy';
 
   @override
-  String get idleSleep => 'Tạm dừng khi không dùng sau';
+  String get idleSleep => 'Táº¡m dá»«ng khi khÃ´ng dÃ¹ng sau';
 
   @override
-  String get sleepNever => 'Không bao giờ';
+  String get sleepNever => 'KhÃ´ng bao giá»';
 
   @override
   String sleepMinutes(int count) {
-    return '$count phút';
+    return '$count phÃºt';
   }
 
   @override
-  String get sleepHour => '1 giờ';
+  String get sleepHour => '1 giá»';
 
   @override
-  String get showPublicIp => 'Hiện IP công khai';
+  String get showPublicIp => 'Hiá»‡n IP cÃ´ng khai';
 
   @override
-  String get speedInNotification => 'Hiện tốc độ trong thông báo';
+  String get speedInNotification => 'Hiá»‡n tá»‘c Ä‘á»™ trong thÃ´ng bÃ¡o';
 
   @override
-  String get liveTraffic => 'Lưu lượng hiện tại';
+  String get liveTraffic => 'LÆ°u lÆ°á»£ng hiá»‡n táº¡i';
 
   @override
-  String get totalTraffic => 'Tổng lưu lượng';
+  String get totalTraffic => 'Tá»•ng lÆ°u lÆ°á»£ng';
 
   @override
-  String get verboseLogs => 'Nhật ký chi tiết';
+  String get verboseLogs => 'Nháº­t kÃ½ chi tiáº¿t';
 
   @override
-  String get webDashboard => 'Bảng điều khiển web';
+  String get webDashboard => 'Báº£ng Ä‘iá»u khiá»ƒn web';
 
   @override
-  String get webDashboardOpen => 'Mở';
+  String get webDashboardOpen => 'Má»Ÿ';
 
   @override
-  String get webDashboardHint => 'Cài đặt nâng cao và thêm công cụ';
+  String get webDashboardHint => 'CÃ i Ä‘áº·t nÃ¢ng cao vÃ  thÃªm cÃ´ng cá»¥';
 
   @override
   String numberInvalid(int min, int max) {
-    return 'Nhập một số từ $min đến $max';
+    return 'Nháº­p má»™t sá»‘ tá»« $min Ä‘áº¿n $max';
   }
 
   @override
-  String get notifySwitchedTitle => 'Đã chuyển tài khoản';
+  String get notifySwitchedTitle => 'ÄÃ£ chuyá»ƒn tÃ i khoáº£n';
 
   @override
   String notifySwitchedBody(String name) {
-    return 'Đang dùng $name.';
+    return 'Äang dÃ¹ng $name.';
   }
 
   @override
-  String get notifySignInTitle => 'Cần đăng nhập';
+  String get notifySignInTitle => 'Cáº§n Ä‘Äƒng nháº­p';
 
   @override
   String get notifySignInBody =>
-      'Một tài khoản cần đăng nhập lại ở trang Tài khoản.';
+      'Má»™t tÃ i khoáº£n cáº§n Ä‘Äƒng nháº­p láº¡i á»Ÿ trang TÃ i khoáº£n.';
 
   @override
-  String get navAbout => 'Giới thiệu';
+  String get navAbout => 'Giá»›i thiá»‡u';
 
   @override
-  String get appVersionLabel => 'Phiên bản ứng dụng';
+  String get appVersionLabel => 'PhiÃªn báº£n á»©ng dá»¥ng';
 
   @override
-  String get coreVersionLabel => 'Phiên bản lõi';
+  String get coreVersionLabel => 'PhiÃªn báº£n lÃµi';
 
   @override
-  String get checkUpdates => 'Kiểm tra cập nhật';
+  String get checkUpdates => 'Kiá»ƒm tra cáº­p nháº­t';
 
   @override
-  String get checkingUpdates => 'Đang kiểm tra…';
+  String get checkingUpdates => 'Äang kiá»ƒm traâ€¦';
 
   @override
-  String get upToDate => 'Bạn đang dùng phiên bản mới nhất.';
+  String get upToDate => 'Báº¡n Ä‘ang dÃ¹ng phiÃªn báº£n má»›i nháº¥t.';
 
   @override
   String updateAvailable(String version) {
-    return 'Đã có phiên bản mới $version.';
+    return 'ÄÃ£ cÃ³ phiÃªn báº£n má»›i $version.';
   }
 
   @override
-  String get download => 'Tải xuống';
+  String get download => 'Táº£i xuá»‘ng';
 
   @override
   String updateCheckFailed(String error) {
-    return 'Không thể kiểm tra cập nhật: $error';
+    return 'KhÃ´ng thá»ƒ kiá»ƒm tra cáº­p nháº­t: $error';
   }
 
   @override
-  String get repoNotSet => 'Chưa thiết lập kho GitHub.';
+  String get repoNotSet => 'ChÆ°a thiáº¿t láº­p kho GitHub.';
 
   @override
-  String get sourceCode => 'Mã nguồn';
+  String get sourceCode => 'MÃ£ nguá»“n';
 
   @override
-  String get tapToConnect => 'Nhấp để kết nối';
+  String get tapToConnect => 'Nháº¥p Ä‘á»ƒ káº¿t ná»‘i';
 
   @override
-  String get tapToDisconnect => 'Nhấp để ngắt kết nối';
+  String get tapToDisconnect => 'Nháº¥p Ä‘á»ƒ ngáº¯t káº¿t ná»‘i';
 
   @override
-  String get startOnBoot => 'Khởi động cùng hệ thống';
+  String get startOnBoot => 'Khá»Ÿi Ä‘á»™ng cÃ¹ng há»‡ thá»‘ng';
 
   @override
-  String get connectOnStartup => 'Tự động kết nối khi khởi động';
+  String get connectOnStartup => 'Tá»± Ä‘á»™ng káº¿t ná»‘i khi khá»Ÿi Ä‘á»™ng';
 
   @override
-  String get proxyServiceActive => 'Dịch vụ proxy đang hoạt động';
+  String get proxyServiceActive => 'Dá»‹ch vá»¥ proxy Ä‘ang hoáº¡t Ä‘á»™ng';
 
   @override
-  String get navHome => 'Trang chủ';
+  String get navHome => 'Trang chá»§';
 
   @override
-  String get groupApp => 'Ứng dụng';
+  String get groupApp => 'á»¨ng dá»¥ng';
 
   @override
-  String get stateOff => 'Đã ngắt kết nối';
+  String get stateOff => 'ÄÃ£ ngáº¯t káº¿t ná»‘i';
 
   @override
-  String get tapToConnectPhone => 'Chạm để kết nối';
+  String get tapToConnectPhone => 'Cháº¡m Ä‘á»ƒ káº¿t ná»‘i';
 
   @override
-  String get tapToDisconnectPhone => 'Chạm để ngắt kết nối';
+  String get tapToDisconnectPhone => 'Cháº¡m Ä‘á»ƒ ngáº¯t káº¿t ná»‘i';
 
   @override
   String lanAddress(String address) {
@@ -991,7 +991,7 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get recommendedLocation => 'Vị trí đề xuất';
+  String get recommendedLocation => 'Vá»‹ trÃ­ Ä‘á» xuáº¥t';
 
   @override
   String dataLeftOf(String limit) {
@@ -999,161 +999,161 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get homeLocation => 'Vị trí';
+  String get homeLocation => 'Vá»‹ trÃ­';
 
   @override
-  String get connectedTo => 'Đã kết nối tới';
+  String get connectedTo => 'ÄÃ£ káº¿t ná»‘i tá»›i';
 
   @override
   String get vpnNotAllowed =>
-      'VPN cần sự cho phép của bạn. Chạm nút lần nữa và cho phép.';
+      'VPN cáº§n sá»± cho phÃ©p cá»§a báº¡n. Cháº¡m nÃºt láº§n ná»¯a vÃ  cho phÃ©p.';
 
   @override
-  String get dataUsedTitle => 'Dung lượng đã dùng';
+  String get dataUsedTitle => 'Dung lÆ°á»£ng Ä‘Ã£ dÃ¹ng';
 
   @override
-  String get bypassApps => 'Proxy theo ứng dụng';
+  String get bypassApps => 'Proxy theo á»©ng dá»¥ng';
 
   @override
-  String get connectRetrying => 'Không thể kết nối. Hãy kiểm tra internet.';
+  String get connectRetrying => 'KhÃ´ng thá»ƒ káº¿t ná»‘i. HÃ£y kiá»ƒm tra internet.';
 
   @override
   String get failUnreachable =>
-      'Máy chủ Mozilla bị chặn trên mạng này. Hãy thử kết nối internet khác.';
+      'MÃ¡y chá»§ Mozilla bá»‹ cháº·n trÃªn máº¡ng nÃ y. HÃ£y thá»­ káº¿t ná»‘i internet khÃ¡c.';
 
   @override
   String get failRefused =>
-      'Máy chủ Mozilla đã từ chối kết nối. Hãy thử lại sau vài phút.';
+      'MÃ¡y chá»§ Mozilla Ä‘Ã£ tá»« chá»‘i káº¿t ná»‘i. HÃ£y thá»­ láº¡i sau vÃ i phÃºt.';
 
   @override
   String get failLocationRefused =>
-      'Quốc gia này không mở cho tài khoản của bạn. Hãy chọn quốc gia khác.';
+      'Quá»‘c gia nÃ y khÃ´ng má»Ÿ cho tÃ i khoáº£n cá»§a báº¡n. HÃ£y chá»n quá»‘c gia khÃ¡c.';
 
   @override
-  String get useRecommendedLocation => 'Dùng vị trí đề xuất';
+  String get useRecommendedLocation => 'DÃ¹ng vá»‹ trÃ­ Ä‘á» xuáº¥t';
 
   @override
   String exitMismatch(String exit, String chosen) {
-    return 'Bạn đã chọn $chosen, nhưng IP của bạn ở $exit.';
+    return 'Báº¡n Ä‘Ã£ chá»n $chosen, nhÆ°ng IP cá»§a báº¡n á»Ÿ $exit.';
   }
 
   @override
   String get failSignIn =>
-      'Phiên đăng nhập của tài khoản này đã hết hạn. Hãy đăng nhập lại ở trang Tài khoản.';
+      'PhiÃªn Ä‘Äƒng nháº­p cá»§a tÃ i khoáº£n nÃ y Ä‘Ã£ háº¿t háº¡n. HÃ£y Ä‘Äƒng nháº­p láº¡i á»Ÿ trang TÃ i khoáº£n.';
 
   @override
   String get failQuota =>
-      'Dung lượng tháng này đã hết. Hãy thêm tài khoản khác.';
+      'Dung lÆ°á»£ng thÃ¡ng nÃ y Ä‘Ã£ háº¿t. HÃ£y thÃªm tÃ i khoáº£n khÃ¡c.';
 
   @override
   String get failNotEntitled =>
-      'Mozilla không cho tài khoản này dùng VPN. Hãy thêm tài khoản khác.';
+      'Mozilla khÃ´ng cho tÃ i khoáº£n nÃ y dÃ¹ng VPN. HÃ£y thÃªm tÃ i khoáº£n khÃ¡c.';
 
   @override
   String get failRegion =>
-      'Mozilla không cung cấp dịch vụ tại quốc gia của bạn.';
+      'Mozilla khÃ´ng cung cáº¥p dá»‹ch vá»¥ táº¡i quá»‘c gia cá»§a báº¡n.';
 
   @override
   String get failServer =>
-      'Dịch vụ Mozilla đang gặp sự cố tạm thời. Ứng dụng sẽ tự thử lại.';
+      'Dá»‹ch vá»¥ Mozilla Ä‘ang gáº·p sá»± cá»‘ táº¡m thá»i. á»¨ng dá»¥ng sáº½ tá»± thá»­ láº¡i.';
 
   @override
   String get failNoAccount =>
-      'Không có tài khoản nào sẵn sàng. Hãy mở trang Tài khoản.';
+      'KhÃ´ng cÃ³ tÃ i khoáº£n nÃ o sáºµn sÃ ng. HÃ£y má»Ÿ trang TÃ i khoáº£n.';
 
   @override
   String get failTestSite =>
-      'Đã kết nối máy chủ nhưng không mở được trang web. Hãy thử quốc gia khác.';
+      'ÄÃ£ káº¿t ná»‘i mÃ¡y chá»§ nhÆ°ng khÃ´ng má»Ÿ Ä‘Æ°á»£c trang web. HÃ£y thá»­ quá»‘c gia khÃ¡c.';
 
   @override
-  String get failOther => 'Không thể kết nối. Hãy thử lại.';
+  String get failOther => 'KhÃ´ng thá»ƒ káº¿t ná»‘i. HÃ£y thá»­ láº¡i.';
 
   @override
   String get failNoInternet =>
-      'Không có internet. Hãy kiểm tra Wi-Fi hoặc dữ liệu di động.';
+      'KhÃ´ng cÃ³ internet. HÃ£y kiá»ƒm tra Wi-Fi hoáº·c dá»¯ liá»‡u di Ä‘á»™ng.';
 
   @override
-  String get waitingForNetwork => 'Đang chờ kết nối internet…';
+  String get waitingForNetwork => 'Äang chá» káº¿t ná»‘i internetâ€¦';
 
   @override
   String proxyStartFailed(String port) {
-    return 'Không thể khởi động proxy trên cổng $port. Hãy chọn cổng khác.';
+    return 'KhÃ´ng thá»ƒ khá»Ÿi Ä‘á»™ng proxy trÃªn cá»•ng $port. HÃ£y chá»n cá»•ng khÃ¡c.';
   }
 
   @override
-  String get connectionSettings => 'Cài đặt kết nối';
+  String get connectionSettings => 'CÃ i Ä‘áº·t káº¿t ná»‘i';
 
   @override
-  String get appModeExclude => 'Ứng dụng đã chọn không qua VPN';
+  String get appModeExclude => 'á»¨ng dá»¥ng Ä‘Ã£ chá»n khÃ´ng qua VPN';
 
   @override
-  String get appModeInclude => 'Chỉ ứng dụng đã chọn qua VPN';
+  String get appModeInclude => 'Chá»‰ á»©ng dá»¥ng Ä‘Ã£ chá»n qua VPN';
 
   @override
   String get appModeExcludeHint =>
-      'Ứng dụng đã chọn kết nối trực tiếp, không qua VPN: ví dụ ứng dụng ngân hàng chặn IP nước ngoài.';
+      'á»¨ng dá»¥ng Ä‘Ã£ chá»n káº¿t ná»‘i trá»±c tiáº¿p, khÃ´ng qua VPN: vÃ­ dá»¥ á»©ng dá»¥ng ngÃ¢n hÃ ng cháº·n IP nÆ°á»›c ngoÃ i.';
 
   @override
   String get appModeIncludeHint =>
-      'Chỉ các ứng dụng đã chọn đi qua VPN; các ứng dụng khác kết nối trực tiếp.';
+      'Chá»‰ cÃ¡c á»©ng dá»¥ng Ä‘Ã£ chá»n Ä‘i qua VPN; cÃ¡c á»©ng dá»¥ng khÃ¡c káº¿t ná»‘i trá»±c tiáº¿p.';
 
   @override
   String fromRegionList(String region) {
-    return 'Gợi ý: có trong danh sách $region';
+    return 'Gá»£i Ã½: cÃ³ trong danh sÃ¡ch $region';
   }
 
   @override
   String get modeProxy => 'Proxy';
 
   @override
-  String get connectionMode => 'Chế độ kết nối';
+  String get connectionMode => 'Cháº¿ Ä‘á»™ káº¿t ná»‘i';
 
   @override
   String get modeProxyHint =>
-      'Chỉ những ứng dụng được cài đặt dùng proxy mới đi qua proxy; cài đặt của Windows không bị thay đổi.';
+      'Chá»‰ nhá»¯ng á»©ng dá»¥ng Ä‘Æ°á»£c cÃ i Ä‘áº·t dÃ¹ng proxy má»›i Ä‘i qua proxy; cÃ i Ä‘áº·t cá»§a Windows khÃ´ng bá»‹ thay Ä‘á»•i.';
 
   @override
-  String get modeSystemProxyHint => 'Windows và hầu hết ứng dụng đi qua proxy.';
+  String get modeSystemProxyHint => 'Windows vÃ  háº§u háº¿t á»©ng dá»¥ng Ä‘i qua proxy.';
 
   @override
   String get modeProxyHintOther =>
-      'Chỉ những ứng dụng được cài đặt dùng proxy mới đi qua proxy; cài đặt của hệ thống không bị thay đổi.';
+      'Chá»‰ nhá»¯ng á»©ng dá»¥ng Ä‘Æ°á»£c cÃ i Ä‘áº·t dÃ¹ng proxy má»›i Ä‘i qua proxy; cÃ i Ä‘áº·t cá»§a há»‡ thá»‘ng khÃ´ng bá»‹ thay Ä‘á»•i.';
 
   @override
   String get modeSystemProxyHintOther =>
-      'Trình duyệt và hầu hết ứng dụng đi qua proxy.';
+      'TrÃ¬nh duyá»‡t vÃ  háº§u háº¿t á»©ng dá»¥ng Ä‘i qua proxy.';
 
   @override
-  String get suggestedApps => 'Ứng dụng gợi ý';
+  String get suggestedApps => 'á»¨ng dá»¥ng gá»£i Ã½';
 
   @override
   String suggestedAdded(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Đã chọn $count ứng dụng gợi ý',
-      one: 'Đã chọn 1 ứng dụng gợi ý',
-      zero: 'Các ứng dụng gợi ý đã được chọn sẵn',
+      other: 'ÄÃ£ chá»n $count á»©ng dá»¥ng gá»£i Ã½',
+      one: 'ÄÃ£ chá»n 1 á»©ng dá»¥ng gá»£i Ã½',
+      zero: 'CÃ¡c á»©ng dá»¥ng gá»£i Ã½ Ä‘Ã£ Ä‘Æ°á»£c chá»n sáºµn',
     );
     return '$_temp0';
   }
 
   @override
-  String get autoSection => 'Tự động';
+  String get autoSection => 'Tá»± Ä‘á»™ng';
 
   @override
-  String get locationsSection => 'Vị trí';
+  String get locationsSection => 'Vá»‹ trÃ­';
 
   @override
-  String get dnsSummaryOk => 'DNS mã hóa hoạt động tốt';
+  String get dnsSummaryOk => 'DNS mÃ£ hÃ³a hoáº¡t Ä‘á»™ng tá»‘t';
 
   @override
   String dnsSummaryFailed(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Không phân giải được $count tên miền',
-      one: 'Không phân giải được 1 tên miền',
+      other: 'KhÃ´ng phÃ¢n giáº£i Ä‘Æ°á»£c $count tÃªn miá»n',
+      one: 'KhÃ´ng phÃ¢n giáº£i Ä‘Æ°á»£c 1 tÃªn miá»n',
     );
     return '$_temp0';
   }
@@ -1169,64 +1169,83 @@ class AppLocalizationsVi extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          'DNS của mạng bạn trả về địa chỉ bị lọc cho $count tên miền. Ứng dụng không dùng DNS đó cho các tên miền này.',
-      one: 'DNS của mạng bạn trả về địa chỉ bị lọc cho 1 tên miền. Ứng dụng không dùng DNS đó cho tên miền này.',
+          'DNS cá»§a máº¡ng báº¡n tráº£ vá» Ä‘á»‹a chá»‰ bá»‹ lá»c cho $count tÃªn miá»n. á»¨ng dá»¥ng khÃ´ng dÃ¹ng DNS Ä‘Ã³ cho cÃ¡c tÃªn miá»n nÃ y.',
+      one: 'DNS cá»§a máº¡ng báº¡n tráº£ vá» Ä‘á»‹a chá»‰ bá»‹ lá»c cho 1 tÃªn miá»n. á»¨ng dá»¥ng khÃ´ng dÃ¹ng DNS Ä‘Ã³ cho tÃªn miá»n nÃ y.',
     );
     return '$_temp0';
   }
 
   @override
-  String get dnsAnswer => 'Kết quả:';
+  String get dnsAnswer => 'Káº¿t quáº£:';
 
   @override
-  String get dnsNetworkAnswer => 'DNS của mạng:';
+  String get dnsNetworkAnswer => 'DNS cá»§a máº¡ng:';
 
   @override
-  String get dnsFiltered => 'bị lọc';
+  String get dnsFiltered => 'bá»‹ lá»c';
 
   @override
-  String get rulesSyntaxTitle => 'Mỗi dòng một quy tắc';
+  String get rulesSyntaxTitle => 'Má»—i dÃ²ng má»™t quy táº¯c';
 
   @override
-  String get ruleDomain => 'Trang web và các tên miền con';
+  String get ruleDomain => 'Trang web vÃ  cÃ¡c tÃªn miá»n con';
 
   @override
-  String get ruleFull => 'Đúng chính xác tên miền này';
+  String get ruleFull => 'ÄÃºng chÃ­nh xÃ¡c tÃªn miá»n nÃ y';
 
   @override
-  String get ruleKeyword => 'Tên miền chứa từ khóa này';
+  String get ruleKeyword => 'TÃªn miá»n chá»©a tá»« khÃ³a nÃ y';
 
   @override
-  String get ruleGeosite => 'Các trang của một thẻ trong tệp geo';
+  String get ruleGeosite => 'CÃ¡c trang cá»§a má»™t tháº» trong tá»‡p geo';
 
   @override
-  String get ruleGeoip => 'Các địa chỉ của một quốc gia trong tệp geo';
+  String get ruleGeoip => 'CÃ¡c Ä‘á»‹a chá»‰ cá»§a má»™t quá»‘c gia trong tá»‡p geo';
 
   @override
-  String get ruleIp => 'Một địa chỉ hoặc một mạng';
+  String get ruleIp => 'Má»™t Ä‘á»‹a chá»‰ hoáº·c má»™t máº¡ng';
 
   @override
   String get modeVpn => 'VPN';
 
   @override
-  String get modeProxyOnly => 'Chỉ proxy';
+  String get modeProxyOnly => 'Chá»‰ proxy';
 
   @override
   String get noNetwork =>
-      'Không có kết nối internet. Hãy bật Wi-Fi hoặc dữ liệu di động.';
+      'KhÃ´ng cÃ³ káº¿t ná»‘i internet. HÃ£y báº­t Wi-Fi hoáº·c dá»¯ liá»‡u di Ä‘á»™ng.';
 
   @override
-  String get blockAds => 'Chặn quảng cáo';
+  String get blockAds => 'Cháº·n quáº£ng cÃ¡o';
 
   @override
   String systemProxyTakenBy(String address) {
-    return 'Một chương trình khác đã đặt proxy hệ thống thành $address, nên lưu lượng không đi qua VPN.';
+    return 'Má»™t chÆ°Æ¡ng trÃ¬nh khÃ¡c Ä‘Ã£ Ä‘áº·t proxy há»‡ thá»‘ng thÃ nh $address, nÃªn lÆ°u lÆ°á»£ng khÃ´ng Ä‘i qua VPN.';
   }
 
   @override
   String get systemProxyTakenOff =>
-      'Một chương trình khác đã tắt proxy hệ thống, nên lưu lượng không đi qua VPN.';
+      'Má»™t chÆ°Æ¡ng trÃ¬nh khÃ¡c Ä‘Ã£ táº¯t proxy há»‡ thá»‘ng, nÃªn lÆ°u lÆ°á»£ng khÃ´ng Ä‘i qua VPN.';
 
   @override
-  String get setSystemProxyAgain => 'Đặt lại';
+  String get setSystemProxyAgain => 'Äáº·t láº¡i';
+  @override
+  String get modeWinDivert => 'WinDivert Tunnel';
+
+  @override
+  String get modeWinDivertHint =>
+      'All Windows network traffic and DNS queries go through the VPN.';
+
+  @override
+  String get elevationRequiredTitle => 'Administrator Privileges Required';
+
+  @override
+  String get elevationRequiredMessage =>
+      'WinDivert requires Administrator privileges to tunnel system network packets.';
+
+  @override
+  String get runAsAdmin => 'Run as Administrator';
+
+  @override
+  String get trayWinDivert => 'WinDivert Full Tunnel';
 }

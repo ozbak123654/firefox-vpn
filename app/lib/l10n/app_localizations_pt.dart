@@ -1,4 +1,4 @@
-// ignore: unused_import
+﻿// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations.dart';
@@ -13,30 +13,30 @@ class AppLocalizationsPt extends AppLocalizations {
   String get appTitle => 'Firefox VPN';
 
   @override
-  String get navOverview => 'Visão geral';
+  String get navOverview => 'VisÃ£o geral';
 
   @override
   String get navAccounts => 'Contas';
 
   @override
-  String get navSettings => 'Configurações';
+  String get navSettings => 'ConfiguraÃ§Ãµes';
 
   @override
   String get stateConnected => 'Conectado';
 
   @override
-  String get stateConnecting => 'Conectando…';
+  String get stateConnecting => 'Conectandoâ€¦';
 
   @override
   String get stateWaiting => 'Aguardando';
 
   @override
   String get waitingForAccount =>
-      'Adicione uma Firefox Account na página Contas para conectar.';
+      'Adicione uma Firefox Account na pÃ¡gina Contas para conectar.';
 
   @override
   String get waitingForEnabledAccount =>
-      'Todas as contas estão desativadas. Ative uma na página Contas.';
+      'Todas as contas estÃ£o desativadas. Ative uma na pÃ¡gina Contas.';
 
   @override
   String get stateError => 'Erro';
@@ -59,7 +59,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noActiveAccount => 'Nenhuma conta ativa';
 
   @override
-  String get quotaNotRead => 'Franquia ainda não verificada';
+  String get quotaNotRead => 'Franquia ainda nÃ£o verificada';
 
   @override
   String get unlimited => 'Ilimitado';
@@ -80,13 +80,13 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get publicIp => 'IP público';
+  String get publicIp => 'IP pÃºblico';
 
   @override
-  String get testConnection => 'Testar conexão';
+  String get testConnection => 'Testar conexÃ£o';
 
   @override
-  String get testing => 'Testando…';
+  String get testing => 'Testandoâ€¦';
 
   @override
   String get testFailed => 'Falhou';
@@ -101,12 +101,12 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String minutesAgo(int n) {
-    return 'há $n min';
+    return 'hÃ¡ $n min';
   }
 
   @override
   String hoursAgo(int n) {
-    return 'há $n h';
+    return 'hÃ¡ $n h';
   }
 
   @override
@@ -114,15 +114,15 @@ class AppLocalizationsPt extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'há $count dias',
-      one: 'há 1 dia',
+      other: 'hÃ¡ $count dias',
+      one: 'hÃ¡ 1 dia',
     );
     return '$_temp0';
   }
 
   @override
   String atTime(String time) {
-    return 'às $time';
+    return 'Ã s $time';
   }
 
   @override
@@ -147,12 +147,12 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String accountsGuide(String size) {
-    return 'Cada Firefox Account tem $size de franquia por mês. Você pode adicionar várias: quando uma acaba, o app passa sozinho para a próxima.';
+    return 'Cada Firefox Account tem $size de franquia por mÃªs. VocÃª pode adicionar vÃ¡rias: quando uma acaba, o app passa sozinho para a prÃ³xima.';
   }
 
   @override
   String accountsOrderNote(int percent) {
-    return 'Na ordem desta lista: cada uma até $percent%, a última até acabarem os dados.';
+    return 'Na ordem desta lista: cada uma atÃ© $percent%, a Ãºltima atÃ© acabarem os dados.';
   }
 
   @override
@@ -160,7 +160,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String lowQuotaNotice(String left, String size) {
-    return 'A franquia da conta atual está acabando (restam $left). Adicione outra conta para ter mais $size.';
+    return 'A franquia da conta atual estÃ¡ acabando (restam $left). Adicione outra conta para ter mais $size.';
   }
 
   @override
@@ -170,11 +170,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noAccountsHint => 'Adicione uma Firefox Account para conectar.';
 
   @override
-  String get createAccountTitle => 'Não tem uma Firefox Account?';
+  String get createAccountTitle => 'NÃ£o tem uma Firefox Account?';
 
   @override
   String get createAccountHint =>
-      'Crie uma grátis em accounts.firefox.com, depois volte e toque em Adicionar conta.';
+      'Crie uma grÃ¡tis em accounts.firefox.com, depois volte e toque em Adicionar conta.';
 
   @override
   String get moveUp => 'Mover para cima';
@@ -195,11 +195,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get statusReserved => 'Reservada';
 
   @override
-  String get statusUnavailable => 'Indisponível';
+  String get statusUnavailable => 'IndisponÃ­vel';
 
   @override
   String statusUnavailableUntil(String date) {
-    return 'Indisponível até $date';
+    return 'IndisponÃ­vel atÃ© $date';
   }
 
   @override
@@ -216,33 +216,33 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String reasonQuotaThreshold(int percent) {
-    return 'Esta conta usou $percent% dos dados, então a próxima assumiu.';
+    return 'Esta conta usou $percent% dos dados, entÃ£o a prÃ³xima assumiu.';
   }
 
   @override
   String get reasonQuotaExhausted =>
-      'A franquia deste mês acabou; volta a ser usada após a renovação mensal.';
+      'A franquia deste mÃªs acabou; volta a ser usada apÃ³s a renovaÃ§Ã£o mensal.';
 
   @override
   String get reasonSignInRequired => 'Entre de novo para usar esta conta.';
 
   @override
   String get reasonSignInConfirm =>
-      'A Mozilla pede para confirmar o login: toque em «Entrar novamente» (só o código é necessário).';
+      'A Mozilla pede para confirmar o login: toque em Â«Entrar novamenteÂ» (sÃ³ o cÃ³digo Ã© necessÃ¡rio).';
 
   @override
   String reasonSignInFailed(String detail) {
-    return 'O login automático falhou ($detail). Entre de novo.';
+    return 'O login automÃ¡tico falhou ($detail). Entre de novo.';
   }
 
   @override
   String reasonSignInWait(String time) {
-    return 'O último login automático parou de funcionar logo depois; a próxima tentativa é às $time.';
+    return 'O Ãºltimo login automÃ¡tico parou de funcionar logo depois; a prÃ³xima tentativa Ã© Ã s $time.';
   }
 
   @override
   String reasonSignInRetry(String detail, String time) {
-    return 'O login automático não terminou ($detail); nova tentativa às $time.';
+    return 'O login automÃ¡tico nÃ£o terminou ($detail); nova tentativa Ã s $time.';
   }
 
   @override
@@ -263,7 +263,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String removeBody(String name) {
-    return '$name e o login salvo serão removidos deste computador. Você pode adicioná-la novamente depois.';
+    return '$name e o login salvo serÃ£o removidos deste computador. VocÃª pode adicionÃ¡-la novamente depois.';
   }
 
   @override
@@ -300,7 +300,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get continueLabel => 'Continuar';
 
   @override
-  String get done => 'Concluído';
+  String get done => 'ConcluÃ­do';
 
   @override
   String get close => 'Fechar';
@@ -312,7 +312,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tryAgain => 'Tentar novamente';
 
   @override
-  String get signingIn => 'Entrando…';
+  String get signingIn => 'Entrandoâ€¦';
 
   @override
   String get accountReady => 'Conta pronta';
@@ -324,22 +324,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get captchaLabel => 'Caracteres da imagem';
 
   @override
-  String get codeLabel => 'Código';
+  String get codeLabel => 'CÃ³digo';
 
   @override
-  String get captchaBroken => 'Não foi possível mostrar a imagem do CAPTCHA.';
+  String get captchaBroken => 'NÃ£o foi possÃ­vel mostrar a imagem do CAPTCHA.';
 
   @override
   String stepEmailCode(String email) {
-    return 'A Mozilla enviou um código para $email. Digite-o aqui.';
+    return 'A Mozilla enviou um cÃ³digo para $email. Digite-o aqui.';
   }
 
   @override
-  String get stepTotp => 'Digite o código do seu app autenticador.';
+  String get stepTotp => 'Digite o cÃ³digo do seu app autenticador.';
 
   @override
   String stepUnblockCode(String email) {
-    return 'A Mozilla considerou este login incomum e enviou um código de desbloqueio para $email. Digite-o aqui.';
+    return 'A Mozilla considerou este login incomum e enviou um cÃ³digo de desbloqueio para $email. Digite-o aqui.';
   }
 
   @override
@@ -347,17 +347,17 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String stepEmailLink(String email) {
-    return 'Abra o link de confirmação que a Mozilla enviou para $email. O app continua automaticamente.';
+    return 'Abra o link de confirmaÃ§Ã£o que a Mozilla enviou para $email. O app continua automaticamente.';
   }
 
   @override
-  String get signInFailed => 'A conta não foi adicionada.';
+  String get signInFailed => 'A conta nÃ£o foi adicionada.';
 
   @override
   String get signInCancelled => 'Entrada cancelada.';
 
   @override
-  String get signInNoAccount => 'Não existe Firefox Account com este e-mail.';
+  String get signInNoAccount => 'NÃ£o existe Firefox Account com este e-mail.';
 
   @override
   String get signInNoAccountHint =>
@@ -371,7 +371,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get signInNoPassword =>
-      'Esta conta não tem senha: foi criada com o login do Google ou da Apple. Defina uma senha e depois entre aqui com ela.';
+      'Esta conta nÃ£o tem senha: foi criada com o login do Google ou da Apple. Defina uma senha e depois entre aqui com ela.';
 
   @override
   String get setPasswordButton => 'Definir senha';
@@ -382,62 +382,62 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get signInUnblockRejected =>
-      'O código de desbloqueio não foi aceito. Use o código do e-mail mais recente da Mozilla.';
+      'O cÃ³digo de desbloqueio nÃ£o foi aceito. Use o cÃ³digo do e-mail mais recente da Mozilla.';
 
   @override
   String get signInWrongCode =>
-      'Código errado ou expirado. Use o código do e-mail mais recente da Mozilla; um código antigo para de funcionar quando um novo é enviado.';
+      'CÃ³digo errado ou expirado. Use o cÃ³digo do e-mail mais recente da Mozilla; um cÃ³digo antigo para de funcionar quando um novo Ã© enviado.';
 
   @override
   String get signInWrongTotp =>
-      'Código errado. Digite o código que o app autenticador mostra agora.';
+      'CÃ³digo errado. Digite o cÃ³digo que o app autenticador mostra agora.';
 
   @override
   String get signInTooManyCodes =>
-      'Códigos errados demais. Comece a entrada de novo.';
+      'CÃ³digos errados demais. Comece a entrada de novo.';
 
   @override
   String get signInTimedOut => 'A entrada demorou demais. Comece de novo.';
 
   @override
   String get signInNetwork =>
-      'Não foi possível alcançar a Mozilla. Verifique sua internet e tente de novo.';
+      'NÃ£o foi possÃ­vel alcanÃ§ar a Mozilla. Verifique sua internet e tente de novo.';
 
   @override
-  String get coreConnecting => 'Conectando ao núcleo…';
+  String get coreConnecting => 'Conectando ao nÃºcleoâ€¦';
 
   @override
   String get coreLost =>
-      'A conexão com o núcleo foi perdida. Tentando novamente…';
+      'A conexÃ£o com o nÃºcleo foi perdida. Tentando novamenteâ€¦';
 
   @override
-  String get cantReachCore => 'Não foi possível conectar ao núcleo';
+  String get cantReachCore => 'NÃ£o foi possÃ­vel conectar ao nÃºcleo';
 
   @override
-  String get startingCore => 'Iniciando o núcleo…';
+  String get startingCore => 'Iniciando o nÃºcleoâ€¦';
 
   @override
   String get retry => 'Tentar de novo';
 
   @override
   String errNoCore(String path) {
-    return 'O núcleo não foi encontrado na pasta do app ($path).';
+    return 'O nÃºcleo nÃ£o foi encontrado na pasta do app ($path).';
   }
 
   @override
   String errCoreExited(String detail) {
-    return 'O núcleo parou: $detail';
+    return 'O nÃºcleo parou: $detail';
   }
 
   @override
-  String get errNotAnswering => 'O núcleo não está respondendo.';
+  String get errNotAnswering => 'O nÃºcleo nÃ£o estÃ¡ respondendo.';
 
   @override
   String get errRefused =>
-      'O núcleo recusou a conexão; talvez ele pertença a outra cópia do app.';
+      'O nÃºcleo recusou a conexÃ£o; talvez ele pertenÃ§a a outra cÃ³pia do app.';
 
   @override
-  String get settingsTitle => 'Configurações';
+  String get settingsTitle => 'ConfiguraÃ§Ãµes';
 
   @override
   String get sectionGeneral => 'Geral';
@@ -446,7 +446,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get language => 'Idioma';
 
   @override
-  String get languageSystem => 'Padrão do sistema';
+  String get languageSystem => 'PadrÃ£o do sistema';
 
   @override
   String get theme => 'Tema';
@@ -473,7 +473,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get closeQuit => 'Sair do app';
 
   @override
-  String get sectionConnection => 'Conexão';
+  String get sectionConnection => 'ConexÃ£o';
 
   @override
   String get localProxy => 'Proxy local';
@@ -485,32 +485,32 @@ class AppLocalizationsPt extends AppLocalizations {
   String get sectionRouting => 'Roteamento';
 
   @override
-  String get routingDirect => 'Conexão direta para sites locais';
+  String get routingDirect => 'ConexÃ£o direta para sites locais';
 
   @override
   String get routingDirectHint =>
-      'Sites e IPs do país escolhido não passam pela VPN: abrem mais rápido e não gastam a franquia.';
+      'Sites e IPs do paÃ­s escolhido nÃ£o passam pela VPN: abrem mais rÃ¡pido e nÃ£o gastam a franquia.';
 
   @override
-  String get region => 'País';
+  String get region => 'PaÃ­s';
 
   @override
-  String get regionIr => 'Irã';
+  String get regionIr => 'IrÃ£';
 
   @override
   String get regionCn => 'China';
 
   @override
-  String get regionRu => 'Rússia';
+  String get regionRu => 'RÃºssia';
 
   @override
-  String get regionAf => 'Afeganistão';
+  String get regionAf => 'AfeganistÃ£o';
 
   @override
   String get regionTr => 'Turquia';
 
   @override
-  String get regionId => 'Indonésia';
+  String get regionId => 'IndonÃ©sia';
 
   @override
   String get regionBr => 'Brasil';
@@ -529,14 +529,14 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get unofficialNote =>
-      'Cliente não oficial. Sem vínculo com a Mozilla.';
+      'Cliente nÃ£o oficial. Sem vÃ­nculo com a Mozilla.';
 
   @override
   String get closeTitle => 'Fechar a janela?';
 
   @override
   String get closeBody =>
-      'Minimizada na bandeja, a VPN continua conectada. Ao sair, ela é desligada.';
+      'Minimizada na bandeja, a VPN continua conectada. Ao sair, ela Ã© desligada.';
 
   @override
   String get rememberChoice => 'Lembrar minha escolha';
@@ -554,19 +554,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get trayQuit => 'Sair';
 
   @override
-  String get trayProxyOnly => 'Somente serviço de proxy';
+  String get trayProxyOnly => 'Somente serviÃ§o de proxy';
 
   @override
   String get traySetSystemProxy => 'Definir proxy do sistema';
 
   @override
   String errPortInUse(String port) {
-    return 'A porta $port está sendo usada por outro programa, por isso o app não consegue se conectar ao núcleo.';
+    return 'A porta $port estÃ¡ sendo usada por outro programa, por isso o app nÃ£o consegue se conectar ao nÃºcleo.';
   }
 
   @override
   String proxyPortInUse(String port) {
-    return 'A porta $port está sendo usada por outro programa, por isso o proxy não consegue iniciar.';
+    return 'A porta $port estÃ¡ sendo usada por outro programa, por isso o proxy nÃ£o consegue iniciar.';
   }
 
   @override
@@ -577,7 +577,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String portDialogBody(String port) {
-    return 'A porta $port está ocupada. Uma porta livre é sugerida abaixo; você pode digitar outra.';
+    return 'A porta $port estÃ¡ ocupada. Uma porta livre Ã© sugerida abaixo; vocÃª pode digitar outra.';
   }
 
   @override
@@ -591,7 +591,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get portInvalid => 'Digite uma porta de 1024 a 65535';
 
   @override
-  String get portBusy => 'Esta porta também está em uso';
+  String get portBusy => 'Esta porta tambÃ©m estÃ¡ em uso';
 
   @override
   String get portInUse => 'Outro programa usa esta porta';
@@ -610,10 +610,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get welcomeBody =>
-      'Escolha seu idioma e seu país. Os sites do seu país abrem diretamente, sem a VPN: mais rápido e sem gastar a franquia.';
+      'Escolha seu idioma e seu paÃ­s. Os sites do seu paÃ­s abrem diretamente, sem a VPN: mais rÃ¡pido e sem gastar a franquia.';
 
   @override
-  String get start => 'Começar';
+  String get start => 'ComeÃ§ar';
 
   @override
   String routingSuggestTitle(String country) {
@@ -622,14 +622,14 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String routingSuggestBody(String country) {
-    return 'Sites e IPs do país escolhido ($country) abririam diretamente, sem a VPN. Você pode mudar isso em Roteamento.';
+    return 'Sites e IPs do paÃ­s escolhido ($country) abririam diretamente, sem a VPN. VocÃª pode mudar isso em Roteamento.';
   }
 
   @override
   String get yes => 'Sim';
 
   @override
-  String get notNow => 'Agora não';
+  String get notNow => 'Agora nÃ£o';
 
   @override
   String get navServers => 'Servidores';
@@ -638,20 +638,20 @@ class AppLocalizationsPt extends AppLocalizations {
   String get navLogs => 'Logs';
 
   @override
-  String get realDelay => 'Latência real';
+  String get realDelay => 'LatÃªncia real';
 
   @override
   String noticePort(String port) {
-    return 'O proxy da Mozilla não se conecta à porta $port. Apenas as portas 80, 443, 8080 e 8443 passam pela VPN.';
+    return 'O proxy da Mozilla nÃ£o se conecta Ã  porta $port. Apenas as portas 80, 443, 8080 e 8443 passam pela VPN.';
   }
 
   @override
   String get noticeCommand =>
-      'Um app tentou usar UDP (jogos, chamadas de voz e vídeo). O proxy da Mozilla só aceita TCP, então essa conexão não pode passar.';
+      'Um app tentou usar UDP (jogos, chamadas de voz e vÃ­deo). O proxy da Mozilla sÃ³ aceita TCP, entÃ£o essa conexÃ£o nÃ£o pode passar.';
 
   @override
   String noticeTimes(int count, String time) {
-    return '$count vezes, última às $time';
+    return '$count vezes, Ãºltima Ã s $time';
   }
 
   @override
@@ -661,19 +661,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get modeRecommended => 'Recomendado';
 
   @override
-  String get modeFastest => 'Mais rápido';
+  String get modeFastest => 'Mais rÃ¡pido';
 
   @override
-  String get modeRecommendedHint => 'A Mozilla escolhe o local para você.';
+  String get modeRecommendedHint => 'A Mozilla escolhe o local para vocÃª.';
 
   @override
-  String get modeFastestHint => 'O local com menor latência a cada conexão.';
+  String get modeFastestHint => 'O local com menor latÃªncia a cada conexÃ£o.';
 
   @override
-  String get testDelay => 'Testar latência real';
+  String get testDelay => 'Testar latÃªncia real';
 
   @override
-  String get testingDelay => 'Testando… isso pode levar um minuto';
+  String get testingDelay => 'Testandoâ€¦ isso pode levar um minuto';
 
   @override
   String get search => 'Pesquisar';
@@ -693,7 +693,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get noServers =>
-      'Nenhum servidor ainda. Eles aparecem assim que o núcleo se conectar à Mozilla.';
+      'Nenhum servidor ainda. Eles aparecem assim que o nÃºcleo se conectar Ã  Mozilla.';
 
   @override
   String get levelAll => 'Todos';
@@ -702,7 +702,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get filter => 'Filtrar';
 
   @override
-  String get follow => 'Rolagem automática';
+  String get follow => 'Rolagem automÃ¡tica';
 
   @override
   String get clear => 'Limpar';
@@ -717,14 +717,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noLogs => 'Nenhuma linha de log ainda.';
 
   @override
-  String get sectionAccounts => 'Troca automática de conta';
+  String get sectionAccounts => 'Troca automÃ¡tica de conta';
 
   @override
   String get switchThreshold => 'Trocar de conta em';
 
   @override
   String get switchThresholdHint =>
-      'A próxima conta assume quando esta porcentagem da franquia for consumida.';
+      'A prÃ³xima conta assume quando esta porcentagem da franquia for consumida.';
 
   @override
   String get sectionDns => 'DNS';
@@ -736,14 +736,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String get dnsSystem => 'Sistema';
 
   @override
-  String get dnsAuto => 'Automático (Cloudflare, Google, Quad9)';
+  String get dnsAuto => 'AutomÃ¡tico (Cloudflare, Google, Quad9)';
 
   @override
   String get dnsCustom => 'Personalizado';
 
   @override
   String get dnsCustomHint =>
-      'Um por linha: https://…/dns-query, tls://… ou um endereço IP.';
+      'Um por linha: https://â€¦/dns-query, tls://â€¦ ou um endereÃ§o IP.';
 
   @override
   String get dnsFallback => 'Usar o DNS do sistema como alternativa';
@@ -765,17 +765,17 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get directRulesHint =>
-      'Os sites e endereços desta lista abrem sem a VPN, direto pela sua própria internet. As regras do país escolhido já estão aqui: adicione, altere ou remova linhas. Escolher outro país as substitui pelas dele.';
+      'Os sites e endereÃ§os desta lista abrem sem a VPN, direto pela sua prÃ³pria internet. As regras do paÃ­s escolhido jÃ¡ estÃ£o aqui: adicione, altere ou remova linhas. Escolher outro paÃ­s as substitui pelas dele.';
 
   @override
-  String get restoreRegionRules => 'Restaurar as regras do país';
+  String get restoreRegionRules => 'Restaurar as regras do paÃ­s';
 
   @override
   String get blockRules => 'Bloquear';
 
   @override
   String get blockRulesHint =>
-      'Os sites e endereços desta lista não abrem de jeito nenhum, nem direto nem pela VPN: para anúncios ou sites que você nunca quer acessar.';
+      'Os sites e endereÃ§os desta lista nÃ£o abrem de jeito nenhum, nem direto nem pela VPN: para anÃºncios ou sites que vocÃª nunca quer acessar.';
 
   @override
   String get rulesTitle => 'Regras';
@@ -784,7 +784,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get ruleSyntaxTitle => 'Como escrever uma regra';
 
   @override
-  String get resolveDomains => 'Aplicar regras de IP aos domínios';
+  String get resolveDomains => 'Aplicar regras de IP aos domÃ­nios';
 
   @override
   String get routingLists => 'Arquivos geo';
@@ -810,7 +810,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get testDestination => 'Testar a rota de um site';
 
   @override
-  String get destinationHint => 'Um nome, um endereço ou uma URL';
+  String get destinationHint => 'Um nome, um endereÃ§o ou uma URL';
 
   @override
   String get check => 'Verificar';
@@ -831,38 +831,38 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get portRefusedNote =>
-      'O proxy da Mozilla não se conecta a esta porta.';
+      'O proxy da Mozilla nÃ£o se conecta a esta porta.';
 
   @override
-  String get sectionAdvanced => 'Avançado';
+  String get sectionAdvanced => 'AvanÃ§ado';
 
   @override
   String get listenAddress => 'Acesso ao proxy';
 
   @override
-  String get listenLocal => '127.0.0.1 · somente este dispositivo';
+  String get listenLocal => '127.0.0.1 Â· somente este dispositivo';
 
   @override
-  String get listenAll => '0.0.0.0 · todas as redes (LAN)';
+  String get listenAll => '0.0.0.0 Â· todas as redes (LAN)';
 
   @override
-  String get proxyUsername => 'Usuário do proxy';
+  String get proxyUsername => 'UsuÃ¡rio do proxy';
 
   @override
   String get proxyPassword => 'Senha do proxy';
 
   @override
   String get proxyLoginHint =>
-      'Os apps terão que usar este usuário e senha. Deixe os dois em branco para não exigir senha.';
+      'Os apps terÃ£o que usar este usuÃ¡rio e senha. Deixe os dois em branco para nÃ£o exigir senha.';
 
   @override
   String get loginBothOrNone => 'Preencha os dois ou deixe os dois vazios.';
 
   @override
-  String get proxyLogin => 'Usuário e senha do proxy';
+  String get proxyLogin => 'UsuÃ¡rio e senha do proxy';
 
   @override
-  String get idleSleep => 'Pausar após inatividade de';
+  String get idleSleep => 'Pausar apÃ³s inatividade de';
 
   @override
   String get sleepNever => 'Nunca';
@@ -876,16 +876,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get sleepHour => '1 hora';
 
   @override
-  String get showPublicIp => 'Mostrar o IP público';
+  String get showPublicIp => 'Mostrar o IP pÃºblico';
 
   @override
-  String get speedInNotification => 'Mostrar a velocidade na notificação';
+  String get speedInNotification => 'Mostrar a velocidade na notificaÃ§Ã£o';
 
   @override
-  String get liveTraffic => 'Tráfego ao vivo';
+  String get liveTraffic => 'TrÃ¡fego ao vivo';
 
   @override
-  String get totalTraffic => 'Tráfego total';
+  String get totalTraffic => 'TrÃ¡fego total';
 
   @override
   String get verboseLogs => 'Logs detalhados';
@@ -897,11 +897,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get webDashboardOpen => 'Abrir';
 
   @override
-  String get webDashboardHint => 'Configurações avançadas e mais ferramentas';
+  String get webDashboardHint => 'ConfiguraÃ§Ãµes avanÃ§adas e mais ferramentas';
 
   @override
   String numberInvalid(int min, int max) {
-    return 'Digite um número de $min a $max';
+    return 'Digite um nÃºmero de $min a $max';
   }
 
   @override
@@ -913,33 +913,33 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get notifySignInTitle => 'Login necessário';
+  String get notifySignInTitle => 'Login necessÃ¡rio';
 
   @override
   String get notifySignInBody =>
-      'Uma conta precisa fazer login novamente. Abra a página Contas.';
+      'Uma conta precisa fazer login novamente. Abra a pÃ¡gina Contas.';
 
   @override
   String get navAbout => 'Sobre';
 
   @override
-  String get appVersionLabel => 'Versão do app';
+  String get appVersionLabel => 'VersÃ£o do app';
 
   @override
-  String get coreVersionLabel => 'Versão do núcleo';
+  String get coreVersionLabel => 'VersÃ£o do nÃºcleo';
 
   @override
-  String get checkUpdates => 'Verificar atualizações';
+  String get checkUpdates => 'Verificar atualizaÃ§Ãµes';
 
   @override
-  String get checkingUpdates => 'Verificando…';
+  String get checkingUpdates => 'Verificandoâ€¦';
 
   @override
-  String get upToDate => 'Você tem a versão mais recente.';
+  String get upToDate => 'VocÃª tem a versÃ£o mais recente.';
 
   @override
   String updateAvailable(String version) {
-    return 'A versão $version está disponível.';
+    return 'A versÃ£o $version estÃ¡ disponÃ­vel.';
   }
 
   @override
@@ -947,14 +947,14 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String updateCheckFailed(String error) {
-    return 'Não foi possível verificar atualizações: $error';
+    return 'NÃ£o foi possÃ­vel verificar atualizaÃ§Ãµes: $error';
   }
 
   @override
-  String get repoNotSet => 'O repositório do GitHub ainda não foi definido.';
+  String get repoNotSet => 'O repositÃ³rio do GitHub ainda nÃ£o foi definido.';
 
   @override
-  String get sourceCode => 'Código-fonte';
+  String get sourceCode => 'CÃ³digo-fonte';
 
   @override
   String get tapToConnect => 'Clique para conectar';
@@ -969,10 +969,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get connectOnStartup => 'Conectar ao iniciar o sistema';
 
   @override
-  String get proxyServiceActive => 'Serviço de proxy ativo';
+  String get proxyServiceActive => 'ServiÃ§o de proxy ativo';
 
   @override
-  String get navHome => 'Início';
+  String get navHome => 'InÃ­cio';
 
   @override
   String get groupApp => 'App';
@@ -1007,7 +1007,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get vpnNotAllowed =>
-      'A VPN precisa da sua permissão. Toque no botão de novo e permita.';
+      'A VPN precisa da sua permissÃ£o. Toque no botÃ£o de novo e permita.';
 
   @override
   String get dataUsedTitle => 'Dados usados';
@@ -1017,71 +1017,71 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get connectRetrying =>
-      'Não foi possível conectar. Verifique sua internet.';
+      'NÃ£o foi possÃ­vel conectar. Verifique sua internet.';
 
   @override
   String get failUnreachable =>
-      'Os servidores da Mozilla estão bloqueados nesta internet. Tente outra conexão.';
+      'Os servidores da Mozilla estÃ£o bloqueados nesta internet. Tente outra conexÃ£o.';
 
   @override
   String get failRefused =>
-      'O servidor da Mozilla recusou a conexão. Tente de novo em alguns minutos.';
+      'O servidor da Mozilla recusou a conexÃ£o. Tente de novo em alguns minutos.';
 
   @override
   String get failLocationRefused =>
-      'Este país não está disponível para sua conta. Escolha outro país.';
+      'Este paÃ­s nÃ£o estÃ¡ disponÃ­vel para sua conta. Escolha outro paÃ­s.';
 
   @override
   String get useRecommendedLocation => 'Usar o local recomendado';
 
   @override
   String exitMismatch(String exit, String chosen) {
-    return 'País escolhido: $chosen. País do seu IP: $exit.';
+    return 'PaÃ­s escolhido: $chosen. PaÃ­s do seu IP: $exit.';
   }
 
   @override
   String get failSignIn =>
-      'O login desta conta expirou. Entre novamente na página Contas.';
+      'O login desta conta expirou. Entre novamente na pÃ¡gina Contas.';
 
   @override
-  String get failQuota => 'Os dados deste mês acabaram. Adicione outra conta.';
+  String get failQuota => 'Os dados deste mÃªs acabaram. Adicione outra conta.';
 
   @override
   String get failNotEntitled =>
-      'A Mozilla não permite que esta conta use a VPN. Adicione outra conta.';
+      'A Mozilla nÃ£o permite que esta conta use a VPN. Adicione outra conta.';
 
   @override
-  String get failRegion => 'A Mozilla não oferece o serviço no seu país.';
+  String get failRegion => 'A Mozilla nÃ£o oferece o serviÃ§o no seu paÃ­s.';
 
   @override
   String get failServer =>
-      'O serviço da Mozilla está com um problema temporário. O app tentará de novo sozinho.';
+      'O serviÃ§o da Mozilla estÃ¡ com um problema temporÃ¡rio. O app tentarÃ¡ de novo sozinho.';
 
   @override
   String get failNoAccount =>
-      'Nenhuma conta está pronta. Abra a página Contas.';
+      'Nenhuma conta estÃ¡ pronta. Abra a pÃ¡gina Contas.';
 
   @override
   String get failTestSite =>
-      'Conectado ao servidor, mas os sites não abrem. Tente outro país.';
+      'Conectado ao servidor, mas os sites nÃ£o abrem. Tente outro paÃ­s.';
 
   @override
-  String get failOther => 'Não foi possível conectar. Tente de novo.';
+  String get failOther => 'NÃ£o foi possÃ­vel conectar. Tente de novo.';
 
   @override
   String get failNoInternet =>
-      'Sem internet. Verifique o Wi-Fi ou os dados móveis.';
+      'Sem internet. Verifique o Wi-Fi ou os dados mÃ³veis.';
 
   @override
-  String get waitingForNetwork => 'Aguardando conexão com a internet…';
+  String get waitingForNetwork => 'Aguardando conexÃ£o com a internetâ€¦';
 
   @override
   String proxyStartFailed(String port) {
-    return 'O proxy não conseguiu iniciar na porta $port. Escolha outra porta.';
+    return 'O proxy nÃ£o conseguiu iniciar na porta $port. Escolha outra porta.';
   }
 
   @override
-  String get connectionSettings => 'Configurações de conexão';
+  String get connectionSettings => 'ConfiguraÃ§Ãµes de conexÃ£o';
 
   @override
   String get appModeExclude => 'Excluir apps selecionados';
@@ -1091,7 +1091,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get appModeExcludeHint =>
-      'Os apps selecionados se conectam diretamente, sem a VPN: por exemplo, apps de banco que recusam endereços estrangeiros.';
+      'Os apps selecionados se conectam diretamente, sem a VPN: por exemplo, apps de banco que recusam endereÃ§os estrangeiros.';
 
   @override
   String get appModeIncludeHint =>
@@ -1106,11 +1106,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get modeProxy => 'Proxy';
 
   @override
-  String get connectionMode => 'Modo de conexão';
+  String get connectionMode => 'Modo de conexÃ£o';
 
   @override
   String get modeProxyHint =>
-      'Apenas os apps configurados para usar o proxy passam por ele; o Windows fica como está.';
+      'Apenas os apps configurados para usar o proxy passam por ele; o Windows fica como estÃ¡.';
 
   @override
   String get modeSystemProxyHint =>
@@ -1118,7 +1118,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get modeProxyHintOther =>
-      'Apenas os apps configurados para usar o proxy passam por ele; as configurações do sistema ficam como estão.';
+      'Apenas os apps configurados para usar o proxy passam por ele; as configuraÃ§Ãµes do sistema ficam como estÃ£o.';
 
   @override
   String get modeSystemProxyHintOther =>
@@ -1134,27 +1134,27 @@ class AppLocalizationsPt extends AppLocalizations {
       locale: localeName,
       other: '$count apps sugeridos selecionados',
       one: '1 app sugerido selecionado',
-      zero: 'Os apps sugeridos já estão selecionados',
+      zero: 'Os apps sugeridos jÃ¡ estÃ£o selecionados',
     );
     return '$_temp0';
   }
 
   @override
-  String get autoSection => 'Automático';
+  String get autoSection => 'AutomÃ¡tico';
 
   @override
   String get locationsSection => 'Locais';
 
   @override
-  String get dnsSummaryOk => 'O DNS criptografado está funcionando';
+  String get dnsSummaryOk => 'O DNS criptografado estÃ¡ funcionando';
 
   @override
   String dnsSummaryFailed(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count nomes não foram resolvidos',
-      one: '1 nome não foi resolvido',
+      other: '$count nomes nÃ£o foram resolvidos',
+      one: '1 nome nÃ£o foi resolvido',
     );
     return '$_temp0';
   }
@@ -1170,8 +1170,8 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          'O DNS da sua rede respondeu $count nomes com um endereço de bloqueio. Este app não usa esse DNS para eles.',
-      one: 'O DNS da sua rede respondeu 1 nome com um endereço de bloqueio. Este app não usa esse DNS para ele.',
+          'O DNS da sua rede respondeu $count nomes com um endereÃ§o de bloqueio. Este app nÃ£o usa esse DNS para eles.',
+      one: 'O DNS da sua rede respondeu 1 nome com um endereÃ§o de bloqueio. Este app nÃ£o usa esse DNS para ele.',
     );
     return '$_temp0';
   }
@@ -1189,22 +1189,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get rulesSyntaxTitle => 'Uma regra por linha';
 
   @override
-  String get ruleDomain => 'O site e seus subdomínios';
+  String get ruleDomain => 'O site e seus subdomÃ­nios';
 
   @override
   String get ruleFull => 'Exatamente este nome';
 
   @override
-  String get ruleKeyword => 'Nomes que contêm a palavra';
+  String get ruleKeyword => 'Nomes que contÃªm a palavra';
 
   @override
   String get ruleGeosite => 'Sites de uma tag nos arquivos geo';
 
   @override
-  String get ruleGeoip => 'Endereços de um país nos arquivos geo';
+  String get ruleGeoip => 'EndereÃ§os de um paÃ­s nos arquivos geo';
 
   @override
-  String get ruleIp => 'Um endereço ou uma rede';
+  String get ruleIp => 'Um endereÃ§o ou uma rede';
 
   @override
   String get modeVpn => 'VPN';
@@ -1214,20 +1214,39 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get noNetwork =>
-      'Sem conexão com a internet. Ative o Wi-Fi ou os dados móveis.';
+      'Sem conexÃ£o com a internet. Ative o Wi-Fi ou os dados mÃ³veis.';
 
   @override
-  String get blockAds => 'Bloquear anúncios';
+  String get blockAds => 'Bloquear anÃºncios';
 
   @override
   String systemProxyTakenBy(String address) {
-    return 'Outro programa mudou o proxy do sistema para $address, então o tráfego não passa pela VPN.';
+    return 'Outro programa mudou o proxy do sistema para $address, entÃ£o o trÃ¡fego nÃ£o passa pela VPN.';
   }
 
   @override
   String get systemProxyTakenOff =>
-      'Outro programa desativou o proxy do sistema, então o tráfego não passa pela VPN.';
+      'Outro programa desativou o proxy do sistema, entÃ£o o trÃ¡fego nÃ£o passa pela VPN.';
 
   @override
   String get setSystemProxyAgain => 'Configurar de novo';
+  @override
+  String get modeWinDivert => 'WinDivert Tunnel';
+
+  @override
+  String get modeWinDivertHint =>
+      'All Windows network traffic and DNS queries go through the VPN.';
+
+  @override
+  String get elevationRequiredTitle => 'Administrator Privileges Required';
+
+  @override
+  String get elevationRequiredMessage =>
+      'WinDivert requires Administrator privileges to tunnel system network packets.';
+
+  @override
+  String get runAsAdmin => 'Run as Administrator';
+
+  @override
+  String get trayWinDivert => 'WinDivert Full Tunnel';
 }

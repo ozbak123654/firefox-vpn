@@ -346,5 +346,11 @@
   "blockAds": "مسدود کردن تبلیغات",
   "systemProxyTakenBy": "برنامه دیگری پروکسی سیستم را روی {address} گذاشته و ترافیک از VPN نمی‌رود.",
   "systemProxyTakenOff": "برنامه دیگری پروکسی سیستم را خاموش کرده و ترافیک از VPN نمی‌رود.",
-  "setSystemProxyAgain": "دوباره تنظیم کن"
+  "setSystemProxyAgain": "دوباره تنظیم کن",
+  "modeWinDivert": "تونل WinDivert",
+  "modeWinDivertHint": "تمام ترافیک شبکه ویندوز و کوئری‌های DNS از طریق VPN هدایت می‌شوند.",
+  "elevationRequiredTitle": "نیاز به دسترسی مدیر (Administrator)",
+  "elevationRequiredMessage": "استفاده از تونل WinDivert برای ضبط و هدایت پکت‌های سیستم نیازمند دسترسی مدیر است.",
+  "runAsAdmin": "اجرا با دسترسی ادمین (UAC)",
+  "trayWinDivert": "تونل کل سیستم (WinDivert)"
 }

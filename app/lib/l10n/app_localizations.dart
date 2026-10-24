@@ -2055,12 +2055,12 @@ abstract class AppLocalizations {
   /// **'Browsers and most apps go through the proxy.'**
   String get modeSystemProxyHintOther;
 
-  String get modeWinDivert => 'WinDivert Tunnel';
-  String get modeWinDivertHint => 'All Windows network traffic and DNS queries go through the VPN.';
-  String get elevationRequiredTitle => 'Administrator Privileges Required';
-  String get elevationRequiredMessage => 'WinDivert requires Administrator privileges to tunnel system network packets.';
-  String get runAsAdmin => 'Run as Administrator';
-  String get trayWinDivert => 'WinDivert Full Tunnel';
+  String get modeWinDivert;
+  String get modeWinDivertHint;
+  String get elevationRequiredTitle;
+  String get elevationRequiredMessage;
+  String get runAsAdmin;
+  String get trayWinDivert;
 
   /// No description provided for @suggestedApps.
   ///

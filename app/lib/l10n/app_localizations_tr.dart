@@ -1,4 +1,4 @@
-// ignore: unused_import
+﻿// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations.dart';
@@ -13,7 +13,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get appTitle => 'Firefox VPN';
 
   @override
-  String get navOverview => 'Genel bakış';
+  String get navOverview => 'Genel bakÄ±ÅŸ';
 
   @override
   String get navAccounts => 'Hesaplar';
@@ -22,21 +22,21 @@ class AppLocalizationsTr extends AppLocalizations {
   String get navSettings => 'Ayarlar';
 
   @override
-  String get stateConnected => 'Bağlı';
+  String get stateConnected => 'BaÄŸlÄ±';
 
   @override
-  String get stateConnecting => 'Bağlanıyor…';
+  String get stateConnecting => 'BaÄŸlanÄ±yorâ€¦';
 
   @override
   String get stateWaiting => 'Beklemede';
 
   @override
   String get waitingForAccount =>
-      'Bağlanmak için Hesaplar sayfasından bir Firefox Account ekleyin.';
+      'BaÄŸlanmak iÃ§in Hesaplar sayfasÄ±ndan bir Firefox Account ekleyin.';
 
   @override
   String get waitingForEnabledAccount =>
-      'Tüm hesaplar kapalı. Hesaplar sayfasından birini açın.';
+      'TÃ¼m hesaplar kapalÄ±. Hesaplar sayfasÄ±ndan birini aÃ§Ä±n.';
 
   @override
   String get stateError => 'Hata';
@@ -45,11 +45,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get stateUnknown => 'Bilinmiyor';
 
   @override
-  String get restartProxy => 'Proxy\'yi yeniden başlat';
+  String get restartProxy => 'Proxy\'yi yeniden baÅŸlat';
 
   @override
   String copied(String value) {
-    return '$value kopyalandı';
+    return '$value kopyalandÄ±';
   }
 
   @override
@@ -59,37 +59,37 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noActiveAccount => 'Etkin hesap yok';
 
   @override
-  String get quotaNotRead => 'Kota bilgisi henüz alınmadı';
+  String get quotaNotRead => 'Kota bilgisi henÃ¼z alÄ±nmadÄ±';
 
   @override
-  String get unlimited => 'Sınırsız';
+  String get unlimited => 'SÄ±nÄ±rsÄ±z';
 
   @override
   String usedOf(String used, String limit) {
-    return '$used / $limit kullanıldı';
+    return '$used / $limit kullanÄ±ldÄ±';
   }
 
   @override
   String resets(String date) {
-    return '$date tarihinde sıfırlanır';
+    return '$date tarihinde sÄ±fÄ±rlanÄ±r';
   }
 
   @override
   String switchAt(int percent) {
-    return 'Kota %$percent dolunca hesap değişir';
+    return 'Kota %$percent dolunca hesap deÄŸiÅŸir';
   }
 
   @override
   String get publicIp => 'Genel IP';
 
   @override
-  String get testConnection => 'Bağlantıyı test et';
+  String get testConnection => 'BaÄŸlantÄ±yÄ± test et';
 
   @override
-  String get testing => 'Test ediliyor…';
+  String get testing => 'Test ediliyorâ€¦';
 
   @override
-  String get testFailed => 'Başarısız';
+  String get testFailed => 'BaÅŸarÄ±sÄ±z';
 
   @override
   String milliseconds(int value) {
@@ -97,16 +97,16 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get justNow => 'az önce';
+  String get justNow => 'az Ã¶nce';
 
   @override
   String minutesAgo(int n) {
-    return '$n dk önce';
+    return '$n dk Ã¶nce';
   }
 
   @override
   String hoursAgo(int n) {
-    return '$n sa önce';
+    return '$n sa Ã¶nce';
   }
 
   @override
@@ -114,7 +114,7 @@ class AppLocalizationsTr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count gün önce',
+      other: '$count gÃ¼n Ã¶nce',
     );
     return '$_temp0';
   }
@@ -146,12 +146,12 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String accountsGuide(String size) {
-    return 'Her Firefox Account\'un ayda $size kotası var. Birden fazla hesap ekleyebilirsiniz: biri bitince uygulama kendiliğinden sıradakine geçer.';
+    return 'Her Firefox Account\'un ayda $size kotasÄ± var. Birden fazla hesap ekleyebilirsiniz: biri bitince uygulama kendiliÄŸinden sÄ±radakine geÃ§er.';
   }
 
   @override
   String accountsOrderNote(int percent) {
-    return 'Bu listedeki sırayla: her biri %$percent oranına kadar, sonuncusu verisi bitene kadar.';
+    return 'Bu listedeki sÄ±rayla: her biri %$percent oranÄ±na kadar, sonuncusu verisi bitene kadar.';
   }
 
   @override
@@ -159,142 +159,142 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String lowQuotaNotice(String left, String size) {
-    return 'Geçerli hesabın kotası bitmek üzere ($left kaldı). Bir hesap daha ekleyerek $size daha kazanın.';
+    return 'GeÃ§erli hesabÄ±n kotasÄ± bitmek Ã¼zere ($left kaldÄ±). Bir hesap daha ekleyerek $size daha kazanÄ±n.';
   }
 
   @override
-  String get noAccounts => 'Henüz hesap yok';
+  String get noAccounts => 'HenÃ¼z hesap yok';
 
   @override
-  String get noAccountsHint => 'Bağlanmak için bir Firefox Account ekleyin.';
+  String get noAccountsHint => 'BaÄŸlanmak iÃ§in bir Firefox Account ekleyin.';
 
   @override
   String get createAccountTitle => 'Firefox Account\'unuz yok mu?';
 
   @override
   String get createAccountHint =>
-      'accounts.firefox.com adresinden ücretsiz bir hesap oluşturun, ardından buraya dönüp Hesap ekle\'ye basın.';
+      'accounts.firefox.com adresinden Ã¼cretsiz bir hesap oluÅŸturun, ardÄ±ndan buraya dÃ¶nÃ¼p Hesap ekle\'ye basÄ±n.';
 
   @override
-  String get moveUp => 'Yukarı taşı';
+  String get moveUp => 'YukarÄ± taÅŸÄ±';
 
   @override
-  String get moveDown => 'Aşağı taşı';
+  String get moveDown => 'AÅŸaÄŸÄ± taÅŸÄ±';
 
   @override
-  String get statusActive => 'Kullanımda';
+  String get statusActive => 'KullanÄ±mda';
 
   @override
-  String get statusReady => 'Hazır';
+  String get statusReady => 'HazÄ±r';
 
   @override
-  String get statusNeedsSignIn => 'Oturum açılmalı';
+  String get statusNeedsSignIn => 'Oturum aÃ§Ä±lmalÄ±';
 
   @override
   String get statusReserved => 'Yedekte';
 
   @override
-  String get statusUnavailable => 'Kullanılamıyor';
+  String get statusUnavailable => 'KullanÄ±lamÄ±yor';
 
   @override
   String statusUnavailableUntil(String date) {
-    return '$date tarihine kadar kullanılamaz';
+    return '$date tarihine kadar kullanÄ±lamaz';
   }
 
   @override
-  String get statusDisabled => 'Devre dışı';
+  String get statusDisabled => 'Devre dÄ±ÅŸÄ±';
 
   @override
   String get statusEnabled => 'Etkin';
 
   @override
-  String get useNow => 'Şimdi kullan';
+  String get useNow => 'Åžimdi kullan';
 
   @override
-  String get signInAgain => 'Yeniden oturum aç';
+  String get signInAgain => 'Yeniden oturum aÃ§';
 
   @override
   String reasonQuotaThreshold(int percent) {
-    return 'Bu hesap verisinin %$percent kadarını kullandı; sıradaki hesap devreye girdi.';
+    return 'Bu hesap verisinin %$percent kadarÄ±nÄ± kullandÄ±; sÄ±radaki hesap devreye girdi.';
   }
 
   @override
   String get reasonQuotaExhausted =>
-      'Bu ayın kotası bitti; aylık sıfırlamadan sonra yeniden kullanılır.';
+      'Bu ayÄ±n kotasÄ± bitti; aylÄ±k sÄ±fÄ±rlamadan sonra yeniden kullanÄ±lÄ±r.';
 
   @override
   String get reasonSignInRequired =>
-      'Bu hesabı kullanmak için yeniden giriş yapın.';
+      'Bu hesabÄ± kullanmak iÃ§in yeniden giriÅŸ yapÄ±n.';
 
   @override
   String get reasonSignInConfirm =>
-      'Mozilla girişin onaylanmasını istiyor: «Yeniden oturum aç» düğmesine basın (yalnızca kod gerekir).';
+      'Mozilla giriÅŸin onaylanmasÄ±nÄ± istiyor: Â«Yeniden oturum aÃ§Â» dÃ¼ÄŸmesine basÄ±n (yalnÄ±zca kod gerekir).';
 
   @override
   String reasonSignInFailed(String detail) {
-    return 'Otomatik giriş başarısız oldu ($detail). Yeniden giriş yapın.';
+    return 'Otomatik giriÅŸ baÅŸarÄ±sÄ±z oldu ($detail). Yeniden giriÅŸ yapÄ±n.';
   }
 
   @override
   String reasonSignInWait(String time) {
-    return 'Son otomatik giriş kısa süre sonra çalışmayı bıraktı; sonraki deneme $time.';
+    return 'Son otomatik giriÅŸ kÄ±sa sÃ¼re sonra Ã§alÄ±ÅŸmayÄ± bÄ±raktÄ±; sonraki deneme $time.';
   }
 
   @override
   String reasonSignInRetry(String detail, String time) {
-    return 'Otomatik giriş tamamlanamadı ($detail); $time saatinde yeniden denenecek.';
+    return 'Otomatik giriÅŸ tamamlanamadÄ± ($detail); $time saatinde yeniden denenecek.';
   }
 
   @override
   String get reasonNotEntitled =>
-      'Mozilla bu hesabı reddetti; daha sonra yeniden denenecek.';
+      'Mozilla bu hesabÄ± reddetti; daha sonra yeniden denenecek.';
 
   @override
   String get more => 'Daha fazla';
 
   @override
-  String get refreshQuota => 'Kotayı yenile';
+  String get refreshQuota => 'KotayÄ± yenile';
 
   @override
-  String get remove => 'Kaldır';
+  String get remove => 'KaldÄ±r';
 
   @override
-  String get removeTitle => 'Hesap kaldırılsın mı?';
+  String get removeTitle => 'Hesap kaldÄ±rÄ±lsÄ±n mÄ±?';
 
   @override
   String removeBody(String name) {
-    return '$name ve kayıtlı oturumu bu bilgisayardan kaldırılacak. Daha sonra yeniden ekleyebilirsiniz.';
+    return '$name ve kayÄ±tlÄ± oturumu bu bilgisayardan kaldÄ±rÄ±lacak. Daha sonra yeniden ekleyebilirsiniz.';
   }
 
   @override
-  String get unlimitedQuota => 'Sınırsız kota';
+  String get unlimitedQuota => 'SÄ±nÄ±rsÄ±z kota';
 
   @override
-  String get signInTitle => 'Oturum aç';
+  String get signInTitle => 'Oturum aÃ§';
 
   @override
-  String get signInIntro => 'Bir Firefox Account ile oturum açın.';
+  String get signInIntro => 'Bir Firefox Account ile oturum aÃ§Ä±n.';
 
   @override
   String get email => 'E-posta';
 
   @override
-  String get emailInvalid => 'Hesabın e-posta adresini girin';
+  String get emailInvalid => 'HesabÄ±n e-posta adresini girin';
 
   @override
   String get password => 'Parola';
 
   @override
-  String get passwordEmpty => 'Parolayı girin';
+  String get passwordEmpty => 'ParolayÄ± girin';
 
   @override
-  String get show => 'Göster';
+  String get show => 'GÃ¶ster';
 
   @override
   String get hide => 'Gizle';
 
   @override
-  String get signIn => 'Oturum aç';
+  String get signIn => 'Oturum aÃ§';
 
   @override
   String get continueLabel => 'Devam';
@@ -306,19 +306,19 @@ class AppLocalizationsTr extends AppLocalizations {
   String get close => 'Kapat';
 
   @override
-  String get cancel => 'İptal';
+  String get cancel => 'Ä°ptal';
 
   @override
   String get tryAgain => 'Tekrar dene';
 
   @override
-  String get signingIn => 'Oturum açılıyor…';
+  String get signingIn => 'Oturum aÃ§Ä±lÄ±yorâ€¦';
 
   @override
-  String get accountReady => 'Hesap hazır';
+  String get accountReady => 'Hesap hazÄ±r';
 
   @override
-  String get accountReadyHint => 'Hesap sırasının sonuna eklendi.';
+  String get accountReadyHint => 'Hesap sÄ±rasÄ±nÄ±n sonuna eklendi.';
 
   @override
   String get captchaLabel => 'Resimdeki karakterler';
@@ -327,113 +327,113 @@ class AppLocalizationsTr extends AppLocalizations {
   String get codeLabel => 'Kod';
 
   @override
-  String get captchaBroken => 'CAPTCHA resmi gösterilemedi.';
+  String get captchaBroken => 'CAPTCHA resmi gÃ¶sterilemedi.';
 
   @override
   String stepEmailCode(String email) {
-    return 'Mozilla, $email adresine bir kod gönderdi. Kodu buraya girin.';
+    return 'Mozilla, $email adresine bir kod gÃ¶nderdi. Kodu buraya girin.';
   }
 
   @override
-  String get stepTotp => 'Kimlik doğrulama uygulamanızdaki kodu girin.';
+  String get stepTotp => 'Kimlik doÄŸrulama uygulamanÄ±zdaki kodu girin.';
 
   @override
   String stepUnblockCode(String email) {
-    return 'Mozilla bu oturum açma girişimini olağan dışı buldu ve $email adresine bir engel kaldırma kodu gönderdi. Kodu buraya girin.';
+    return 'Mozilla bu oturum aÃ§ma giriÅŸimini olaÄŸan dÄ±ÅŸÄ± buldu ve $email adresine bir engel kaldÄ±rma kodu gÃ¶nderdi. Kodu buraya girin.';
   }
 
   @override
-  String get stepCaptcha => 'Resimdeki karakterleri yazın.';
+  String get stepCaptcha => 'Resimdeki karakterleri yazÄ±n.';
 
   @override
   String stepEmailLink(String email) {
-    return 'Mozilla\'nın $email adresine gönderdiği onay bağlantısını açın. İşlem kendiliğinden devam eder.';
+    return 'Mozilla\'nÄ±n $email adresine gÃ¶nderdiÄŸi onay baÄŸlantÄ±sÄ±nÄ± aÃ§Ä±n. Ä°ÅŸlem kendiliÄŸinden devam eder.';
   }
 
   @override
   String get signInFailed => 'Hesap eklenmedi.';
 
   @override
-  String get signInCancelled => 'Oturum açma iptal edildi.';
+  String get signInCancelled => 'Oturum aÃ§ma iptal edildi.';
 
   @override
   String get signInNoAccount => 'Bu e-postayla bir Firefox Account yok.';
 
   @override
   String get signInNoAccountHint =>
-      'E-postayı kontrol edin ya da bu e-postayla Mozilla\'nın sitesinde ücretsiz bir Firefox Account oluşturun, gelen kutunuzdan onaylayın ve buraya ekleyin.';
+      'E-postayÄ± kontrol edin ya da bu e-postayla Mozilla\'nÄ±n sitesinde Ã¼cretsiz bir Firefox Account oluÅŸturun, gelen kutunuzdan onaylayÄ±n ve buraya ekleyin.';
 
   @override
-  String get createAccountButton => 'Firefox Account oluştur';
+  String get createAccountButton => 'Firefox Account oluÅŸtur';
 
   @override
-  String get signInWrongPassword => 'Parola yanlış.';
+  String get signInWrongPassword => 'Parola yanlÄ±ÅŸ.';
 
   @override
   String get signInNoPassword =>
-      'Bu hesabın parolası yok: Google veya Apple ile oturum açılarak oluşturulmuş. Bir parola belirleyin, ardından onunla burada oturum açın.';
+      'Bu hesabÄ±n parolasÄ± yok: Google veya Apple ile oturum aÃ§Ä±larak oluÅŸturulmuÅŸ. Bir parola belirleyin, ardÄ±ndan onunla burada oturum aÃ§Ä±n.';
 
   @override
   String get setPasswordButton => 'Parola belirle';
 
   @override
   String get signInTooManyAttempts =>
-      'Çok fazla deneme yapıldı. Biraz bekleyip yeniden deneyin.';
+      'Ã‡ok fazla deneme yapÄ±ldÄ±. Biraz bekleyip yeniden deneyin.';
 
   @override
   String get signInUnblockRejected =>
-      'Engel kaldırma kodu kabul edilmedi. Mozilla\'nın son e-postasındaki kodu kullanın.';
+      'Engel kaldÄ±rma kodu kabul edilmedi. Mozilla\'nÄ±n son e-postasÄ±ndaki kodu kullanÄ±n.';
 
   @override
   String get signInWrongCode =>
-      'Kod yanlış veya süresi dolmuş. Mozilla\'nın son e-postasındaki kodu kullanın; yeni kod gönderilince eskisi çalışmaz.';
+      'Kod yanlÄ±ÅŸ veya sÃ¼resi dolmuÅŸ. Mozilla\'nÄ±n son e-postasÄ±ndaki kodu kullanÄ±n; yeni kod gÃ¶nderilince eskisi Ã§alÄ±ÅŸmaz.';
 
   @override
   String get signInWrongTotp =>
-      'Kod yanlış. Kimlik doğrulama uygulamasının şu an gösterdiği kodu girin.';
+      'Kod yanlÄ±ÅŸ. Kimlik doÄŸrulama uygulamasÄ±nÄ±n ÅŸu an gÃ¶sterdiÄŸi kodu girin.';
 
   @override
   String get signInTooManyCodes =>
-      'Çok fazla yanlış kod girildi. Oturum açmaya baştan başlayın.';
+      'Ã‡ok fazla yanlÄ±ÅŸ kod girildi. Oturum aÃ§maya baÅŸtan baÅŸlayÄ±n.';
 
   @override
-  String get signInTimedOut => 'Oturum açma çok uzun sürdü. Yeniden başlayın.';
+  String get signInTimedOut => 'Oturum aÃ§ma Ã§ok uzun sÃ¼rdÃ¼. Yeniden baÅŸlayÄ±n.';
 
   @override
   String get signInNetwork =>
-      'Mozilla\'ya ulaşılamadı. İnternetinizi kontrol edip yeniden deneyin.';
+      'Mozilla\'ya ulaÅŸÄ±lamadÄ±. Ä°nternetinizi kontrol edip yeniden deneyin.';
 
   @override
-  String get coreConnecting => 'Çekirdeğe bağlanılıyor…';
+  String get coreConnecting => 'Ã‡ekirdeÄŸe baÄŸlanÄ±lÄ±yorâ€¦';
 
   @override
-  String get coreLost => 'Çekirdekle bağlantı koptu. Yeniden deneniyor…';
+  String get coreLost => 'Ã‡ekirdekle baÄŸlantÄ± koptu. Yeniden deneniyorâ€¦';
 
   @override
-  String get cantReachCore => 'Çekirdeğe ulaşılamıyor';
+  String get cantReachCore => 'Ã‡ekirdeÄŸe ulaÅŸÄ±lamÄ±yor';
 
   @override
-  String get startingCore => 'Çekirdek başlatılıyor…';
+  String get startingCore => 'Ã‡ekirdek baÅŸlatÄ±lÄ±yorâ€¦';
 
   @override
   String get retry => 'Yeniden dene';
 
   @override
   String errNoCore(String path) {
-    return 'Çekirdek programı uygulamanın yanında bulunamadı ($path).';
+    return 'Ã‡ekirdek programÄ± uygulamanÄ±n yanÄ±nda bulunamadÄ± ($path).';
   }
 
   @override
   String errCoreExited(String detail) {
-    return 'Çekirdek durdu: $detail';
+    return 'Ã‡ekirdek durdu: $detail';
   }
 
   @override
-  String get errNotAnswering => 'Çekirdek yanıt vermiyor.';
+  String get errNotAnswering => 'Ã‡ekirdek yanÄ±t vermiyor.';
 
   @override
   String get errRefused =>
-      'Çekirdek uygulamayı reddetti; başka bir kopyaya ait olabilir.';
+      'Ã‡ekirdek uygulamayÄ± reddetti; baÅŸka bir kopyaya ait olabilir.';
 
   @override
   String get settingsTitle => 'Ayarlar';
@@ -445,7 +445,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get language => 'Dil';
 
   @override
-  String get languageSystem => 'Sistem varsayılanı';
+  String get languageSystem => 'Sistem varsayÄ±lanÄ±';
 
   @override
   String get theme => 'Tema';
@@ -454,25 +454,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String get themeSystem => 'Sistem';
 
   @override
-  String get themeLight => 'Açık';
+  String get themeLight => 'AÃ§Ä±k';
 
   @override
   String get themeDark => 'Koyu';
 
   @override
-  String get closeBehavior => 'Pencere kapatılırken';
+  String get closeBehavior => 'Pencere kapatÄ±lÄ±rken';
 
   @override
   String get closeAsk => 'Her seferinde sor';
 
   @override
-  String get closeTray => 'Sistem tepsisine küçült';
+  String get closeTray => 'Sistem tepsisine kÃ¼Ã§Ã¼lt';
 
   @override
-  String get closeQuit => 'Uygulamadan çık';
+  String get closeQuit => 'Uygulamadan Ã§Ä±k';
 
   @override
-  String get sectionConnection => 'Bağlantı';
+  String get sectionConnection => 'BaÄŸlantÄ±';
 
   @override
   String get localProxy => 'Yerel proxy';
@@ -481,23 +481,23 @@ class AppLocalizationsTr extends AppLocalizations {
   String get systemProxy => 'Sistem proxy\'si';
 
   @override
-  String get sectionRouting => 'Yönlendirme';
+  String get sectionRouting => 'YÃ¶nlendirme';
 
   @override
-  String get routingDirect => 'Yerel siteler için doğrudan bağlantı';
+  String get routingDirect => 'Yerel siteler iÃ§in doÄŸrudan baÄŸlantÄ±';
 
   @override
   String get routingDirectHint =>
-      'Seçilen ülkenin siteleri ve IP\'leri VPN kullanmadan açılır: daha hızlı yüklenir ve kotanızı harcamaz.';
+      'SeÃ§ilen Ã¼lkenin siteleri ve IP\'leri VPN kullanmadan aÃ§Ä±lÄ±r: daha hÄ±zlÄ± yÃ¼klenir ve kotanÄ±zÄ± harcamaz.';
 
   @override
-  String get region => 'Ülke';
+  String get region => 'Ãœlke';
 
   @override
-  String get regionIr => 'İran';
+  String get regionIr => 'Ä°ran';
 
   @override
-  String get regionCn => 'Çin';
+  String get regionCn => 'Ã‡in';
 
   @override
   String get regionRu => 'Rusya';
@@ -506,7 +506,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get regionAf => 'Afganistan';
 
   @override
-  String get regionTr => 'Türkiye';
+  String get regionTr => 'TÃ¼rkiye';
 
   @override
   String get regionId => 'Endonezya';
@@ -515,85 +515,85 @@ class AppLocalizationsTr extends AppLocalizations {
   String get regionBr => 'Brezilya';
 
   @override
-  String get regionNone => 'Hiçbiri';
+  String get regionNone => 'HiÃ§biri';
 
   @override
   String get saved => 'Kaydedildi';
 
   @override
-  String get dataFolder => 'Veri klasörü';
+  String get dataFolder => 'Veri klasÃ¶rÃ¼';
 
   @override
-  String get openFolder => 'Klasörü aç';
+  String get openFolder => 'KlasÃ¶rÃ¼ aÃ§';
 
   @override
   String get unofficialNote =>
-      'Resmî olmayan istemci. Mozilla ile bir ilişkisi yoktur.';
+      'ResmÃ® olmayan istemci. Mozilla ile bir iliÅŸkisi yoktur.';
 
   @override
-  String get closeTitle => 'Pencere kapatılsın mı?';
+  String get closeTitle => 'Pencere kapatÄ±lsÄ±n mÄ±?';
 
   @override
   String get closeBody =>
-      'Tepsiye küçültülünce VPN bağlı kalır. Çıkarsanız bağlantı kesilir.';
+      'Tepsiye kÃ¼Ã§Ã¼ltÃ¼lÃ¼nce VPN baÄŸlÄ± kalÄ±r. Ã‡Ä±karsanÄ±z baÄŸlantÄ± kesilir.';
 
   @override
-  String get rememberChoice => 'Seçimimi hatırla';
+  String get rememberChoice => 'SeÃ§imimi hatÄ±rla';
 
   @override
-  String get minimizeToTray => 'Tepsiye küçült';
+  String get minimizeToTray => 'Tepsiye kÃ¼Ã§Ã¼lt';
 
   @override
-  String get quit => 'Çık';
+  String get quit => 'Ã‡Ä±k';
 
   @override
-  String get trayOpen => 'Aç';
+  String get trayOpen => 'AÃ§';
 
   @override
-  String get trayQuit => 'Çık';
+  String get trayQuit => 'Ã‡Ä±k';
 
   @override
-  String get trayProxyOnly => 'Yalnızca proxy hizmeti';
+  String get trayProxyOnly => 'YalnÄ±zca proxy hizmeti';
 
   @override
   String get traySetSystemProxy => 'Sistem proxy\'sini ayarla';
 
   @override
   String errPortInUse(String port) {
-    return '$port portu başka bir program tarafından kullanılıyor, bu yüzden uygulama çekirdeğine ulaşamıyor.';
+    return '$port portu baÅŸka bir program tarafÄ±ndan kullanÄ±lÄ±yor, bu yÃ¼zden uygulama Ã§ekirdeÄŸine ulaÅŸamÄ±yor.';
   }
 
   @override
   String proxyPortInUse(String port) {
-    return '$port portu başka bir program tarafından kullanılıyor, bu yüzden proxy başlatılamıyor.';
+    return '$port portu baÅŸka bir program tarafÄ±ndan kullanÄ±lÄ±yor, bu yÃ¼zden proxy baÅŸlatÄ±lamÄ±yor.';
   }
 
   @override
-  String get changePort => 'Portu değiştir';
+  String get changePort => 'Portu deÄŸiÅŸtir';
 
   @override
-  String get portDialogTitle => 'Port seçin';
+  String get portDialogTitle => 'Port seÃ§in';
 
   @override
   String portDialogBody(String port) {
-    return '$port portu kullanımda. Aşağıda boş bir port önerildi; isterseniz başka bir port yazabilirsiniz.';
+    return '$port portu kullanÄ±mda. AÅŸaÄŸÄ±da boÅŸ bir port Ã¶nerildi; isterseniz baÅŸka bir port yazabilirsiniz.';
   }
 
   @override
   String get portChangeBody =>
-      'Uygulamalar bu porta bağlanır. 1024 ile 65535 arasında bir port seçin.';
+      'Uygulamalar bu porta baÄŸlanÄ±r. 1024 ile 65535 arasÄ±nda bir port seÃ§in.';
 
   @override
   String get portLabel => 'Port';
 
   @override
-  String get portInvalid => '1024 ile 65535 arasında bir port girin';
+  String get portInvalid => '1024 ile 65535 arasÄ±nda bir port girin';
 
   @override
-  String get portBusy => 'Bu port da kullanımda';
+  String get portBusy => 'Bu port da kullanÄ±mda';
 
   @override
-  String get portInUse => 'Bu portu başka bir program kullanıyor';
+  String get portInUse => 'Bu portu baÅŸka bir program kullanÄ±yor';
 
   @override
   String get save => 'Kaydet';
@@ -605,48 +605,48 @@ class AppLocalizationsTr extends AppLocalizations {
   String get appPort => 'Uygulama portu';
 
   @override
-  String get welcomeTitle => 'Hoş geldiniz';
+  String get welcomeTitle => 'HoÅŸ geldiniz';
 
   @override
   String get welcomeBody =>
-      'Dilinizi ve ülkenizi seçin. Ülkenizin siteleri VPN olmadan doğrudan açılır; böylece daha hızlı yüklenir ve kotanızı harcamaz.';
+      'Dilinizi ve Ã¼lkenizi seÃ§in. Ãœlkenizin siteleri VPN olmadan doÄŸrudan aÃ§Ä±lÄ±r; bÃ¶ylece daha hÄ±zlÄ± yÃ¼klenir ve kotanÄ±zÄ± harcamaz.';
 
   @override
-  String get start => 'Başla';
+  String get start => 'BaÅŸla';
 
   @override
   String routingSuggestTitle(String country) {
-    return '$country siteleri doğrudan açılsın mı?';
+    return '$country siteleri doÄŸrudan aÃ§Ä±lsÄ±n mÄ±?';
   }
 
   @override
   String routingSuggestBody(String country) {
-    return '$country siteleri ve IP\'leri VPN olmadan doğrudan açılır. Bunu Yönlendirme bölümünden değiştirebilirsiniz.';
+    return '$country siteleri ve IP\'leri VPN olmadan doÄŸrudan aÃ§Ä±lÄ±r. Bunu YÃ¶nlendirme bÃ¶lÃ¼mÃ¼nden deÄŸiÅŸtirebilirsiniz.';
   }
 
   @override
   String get yes => 'Evet';
 
   @override
-  String get notNow => 'Şimdi değil';
+  String get notNow => 'Åžimdi deÄŸil';
 
   @override
   String get navServers => 'Sunucular';
 
   @override
-  String get navLogs => 'Günlükler';
+  String get navLogs => 'GÃ¼nlÃ¼kler';
 
   @override
-  String get realDelay => 'Gerçek gecikme';
+  String get realDelay => 'GerÃ§ek gecikme';
 
   @override
   String noticePort(String port) {
-    return 'Mozilla\'nın proxy\'si $port portuna bağlanmaz. Yalnızca 80, 443, 8080 ve 8443 portları VPN üzerinden geçer.';
+    return 'Mozilla\'nÄ±n proxy\'si $port portuna baÄŸlanmaz. YalnÄ±zca 80, 443, 8080 ve 8443 portlarÄ± VPN Ã¼zerinden geÃ§er.';
   }
 
   @override
   String get noticeCommand =>
-      'Bir uygulama UDP istedi (oyunlar, sesli ve görüntülü aramalar). Mozilla\'nın proxy\'si yalnızca TCP taşıdığı için bu trafik geçemez.';
+      'Bir uygulama UDP istedi (oyunlar, sesli ve gÃ¶rÃ¼ntÃ¼lÃ¼ aramalar). Mozilla\'nÄ±n proxy\'si yalnÄ±zca TCP taÅŸÄ±dÄ±ÄŸÄ± iÃ§in bu trafik geÃ§emez.';
 
   @override
   String noticeTimes(int count, String time) {
@@ -657,28 +657,28 @@ class AppLocalizationsTr extends AppLocalizations {
   String get dismiss => 'Kapat';
 
   @override
-  String get modeRecommended => 'Önerilen';
+  String get modeRecommended => 'Ã–nerilen';
 
   @override
-  String get modeFastest => 'En hızlı';
+  String get modeFastest => 'En hÄ±zlÄ±';
 
   @override
-  String get modeRecommendedHint => 'Konumu Mozilla sizin için seçer.';
+  String get modeRecommendedHint => 'Konumu Mozilla sizin iÃ§in seÃ§er.';
 
   @override
-  String get modeFastestHint => 'Her bağlantıda en düşük gecikmeli konum.';
+  String get modeFastestHint => 'Her baÄŸlantÄ±da en dÃ¼ÅŸÃ¼k gecikmeli konum.';
 
   @override
-  String get testDelay => 'Gerçek gecikmeyi test et';
+  String get testDelay => 'GerÃ§ek gecikmeyi test et';
 
   @override
-  String get testingDelay => 'Test ediliyor… bu bir dakika sürebilir';
+  String get testingDelay => 'Test ediliyorâ€¦ bu bir dakika sÃ¼rebilir';
 
   @override
   String get search => 'Ara';
 
   @override
-  String get noAnswer => 'Yanıt yok';
+  String get noAnswer => 'YanÄ±t yok';
 
   @override
   String testedAgo(String ago) {
@@ -687,21 +687,21 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String delaySummary(int answered, int total) {
-    return '$total konumdan $answered tanesi yanıt verdi';
+    return '$total konumdan $answered tanesi yanÄ±t verdi';
   }
 
   @override
   String get noServers =>
-      'Henüz sunucu yok. Çekirdek Mozilla\'ya ulaşınca burada görünür.';
+      'HenÃ¼z sunucu yok. Ã‡ekirdek Mozilla\'ya ulaÅŸÄ±nca burada gÃ¶rÃ¼nÃ¼r.';
 
   @override
-  String get levelAll => 'Tümü';
+  String get levelAll => 'TÃ¼mÃ¼';
 
   @override
   String get filter => 'Filtre';
 
   @override
-  String get follow => 'Otomatik kaydır';
+  String get follow => 'Otomatik kaydÄ±r';
 
   @override
   String get clear => 'Temizle';
@@ -710,26 +710,26 @@ class AppLocalizationsTr extends AppLocalizations {
   String get copyAll => 'Kopyala';
 
   @override
-  String get logsCopied => 'Günlükler kopyalandı';
+  String get logsCopied => 'GÃ¼nlÃ¼kler kopyalandÄ±';
 
   @override
-  String get noLogs => 'Henüz günlük satırı yok.';
+  String get noLogs => 'HenÃ¼z gÃ¼nlÃ¼k satÄ±rÄ± yok.';
 
   @override
-  String get sectionAccounts => 'Otomatik hesap değiştirme';
+  String get sectionAccounts => 'Otomatik hesap deÄŸiÅŸtirme';
 
   @override
-  String get switchThreshold => 'Hesap değiştirme eşiği';
+  String get switchThreshold => 'Hesap deÄŸiÅŸtirme eÅŸiÄŸi';
 
   @override
   String get switchThresholdHint =>
-      'Kotanın bu kadarı dolunca sıradaki hesaba geçilir.';
+      'KotanÄ±n bu kadarÄ± dolunca sÄ±radaki hesaba geÃ§ilir.';
 
   @override
   String get sectionDns => 'DNS';
 
   @override
-  String get dnsPreset => 'DNS sunucuları';
+  String get dnsPreset => 'DNS sunucularÄ±';
 
   @override
   String get dnsSystem => 'Sistem';
@@ -738,14 +738,14 @@ class AppLocalizationsTr extends AppLocalizations {
   String get dnsAuto => 'Otomatik (Cloudflare, Google, Quad9)';
 
   @override
-  String get dnsCustom => 'Özel';
+  String get dnsCustom => 'Ã–zel';
 
   @override
   String get dnsCustomHint =>
-      'Her satıra bir tane: https://…/dns-query, tls://… veya bir IP adresi.';
+      'Her satÄ±ra bir tane: https://â€¦/dns-query, tls://â€¦ veya bir IP adresi.';
 
   @override
-  String get dnsFallback => 'Gerekirse sistem DNS\'ine geri dön';
+  String get dnsFallback => 'Gerekirse sistem DNS\'ine geri dÃ¶n';
 
   @override
   String get testDns => 'DNS\'i test et';
@@ -760,65 +760,65 @@ class AppLocalizationsTr extends AppLocalizations {
   String get transportH2 => 'HTTP/2 (TCP)';
 
   @override
-  String get directRules => 'Doğrudan';
+  String get directRules => 'DoÄŸrudan';
 
   @override
   String get directRulesHint =>
-      'Bu listedeki siteler ve adresler VPN olmadan, doğrudan kendi internetinizle açılır. Seçilen ülkenin kuralları zaten burada: satır ekleyebilir, değiştirebilir veya silebilirsiniz. Başka bir ülke seçmek bunları o ülkenin kurallarıyla değiştirir.';
+      'Bu listedeki siteler ve adresler VPN olmadan, doÄŸrudan kendi internetinizle aÃ§Ä±lÄ±r. SeÃ§ilen Ã¼lkenin kurallarÄ± zaten burada: satÄ±r ekleyebilir, deÄŸiÅŸtirebilir veya silebilirsiniz. BaÅŸka bir Ã¼lke seÃ§mek bunlarÄ± o Ã¼lkenin kurallarÄ±yla deÄŸiÅŸtirir.';
 
   @override
-  String get restoreRegionRules => 'Ülke kurallarını geri yükle';
+  String get restoreRegionRules => 'Ãœlke kurallarÄ±nÄ± geri yÃ¼kle';
 
   @override
   String get blockRules => 'Engelle';
 
   @override
   String get blockRulesHint =>
-      'Bu listedeki siteler ve adresler hiç açılmaz; ne doğrudan ne de VPN üzerinden: reklamlar veya asla açılmasını istemediğiniz siteler için.';
+      'Bu listedeki siteler ve adresler hiÃ§ aÃ§Ä±lmaz; ne doÄŸrudan ne de VPN Ã¼zerinden: reklamlar veya asla aÃ§Ä±lmasÄ±nÄ± istemediÄŸiniz siteler iÃ§in.';
 
   @override
   String get rulesTitle => 'Kurallar';
 
   @override
-  String get ruleSyntaxTitle => 'Kural nasıl yazılır';
+  String get ruleSyntaxTitle => 'Kural nasÄ±l yazÄ±lÄ±r';
 
   @override
-  String get resolveDomains => 'IP kurallarını alan adlarına da uygula';
+  String get resolveDomains => 'IP kurallarÄ±nÄ± alan adlarÄ±na da uygula';
 
   @override
-  String get routingLists => 'Geo dosyaları';
+  String get routingLists => 'Geo dosyalarÄ±';
 
   @override
-  String get listSource => 'Liste kaynağı';
+  String get listSource => 'Liste kaynaÄŸÄ±';
 
   @override
-  String get listSourceCustom => 'Elle ayarlandı';
+  String get listSourceCustom => 'Elle ayarlandÄ±';
 
   @override
   String listsUpdatedAgo(String ago) {
-    return 'Güncellendi: $ago';
+    return 'GÃ¼ncellendi: $ago';
   }
 
   @override
-  String get updateLists => 'Geo dosyalarını güncelle';
+  String get updateLists => 'Geo dosyalarÄ±nÄ± gÃ¼ncelle';
 
   @override
-  String get listsUpdated => 'Geo dosyaları güncellendi.';
+  String get listsUpdated => 'Geo dosyalarÄ± gÃ¼ncellendi.';
 
   @override
-  String get testDestination => 'Bir sitenin rotasını test et';
+  String get testDestination => 'Bir sitenin rotasÄ±nÄ± test et';
 
   @override
-  String get destinationHint => 'Alan adı, IP adresi veya URL';
+  String get destinationHint => 'Alan adÄ±, IP adresi veya URL';
 
   @override
   String get check => 'Kontrol et';
 
   @override
-  String get routeDirect => 'Doğrudan gider';
+  String get routeDirect => 'DoÄŸrudan gider';
 
   @override
-  String get routeProxy => 'VPN üzerinden gider';
+  String get routeProxy => 'VPN Ã¼zerinden gider';
 
   @override
   String get routeBlock => 'Engellendi';
@@ -829,39 +829,39 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get portRefusedNote => 'Mozilla\'nın proxy\'si bu porta bağlanmaz.';
+  String get portRefusedNote => 'Mozilla\'nÄ±n proxy\'si bu porta baÄŸlanmaz.';
 
   @override
-  String get sectionAdvanced => 'Gelişmiş';
+  String get sectionAdvanced => 'GeliÅŸmiÅŸ';
 
   @override
-  String get listenAddress => 'Proxy erişimi';
+  String get listenAddress => 'Proxy eriÅŸimi';
 
   @override
-  String get listenLocal => '127.0.0.1 · yalnızca bu cihaz';
+  String get listenLocal => '127.0.0.1 Â· yalnÄ±zca bu cihaz';
 
   @override
-  String get listenAll => '0.0.0.0 · tüm ağlar (LAN)';
+  String get listenAll => '0.0.0.0 Â· tÃ¼m aÄŸlar (LAN)';
 
   @override
-  String get proxyUsername => 'Proxy kullanıcı adı';
+  String get proxyUsername => 'Proxy kullanÄ±cÄ± adÄ±';
 
   @override
-  String get proxyPassword => 'Proxy parolası';
+  String get proxyPassword => 'Proxy parolasÄ±';
 
   @override
   String get proxyLoginHint =>
-      'Uygulamalar bu bilgilerle bağlanmalıdır. Parolasız kullanım için ikisini de boş bırakın.';
+      'Uygulamalar bu bilgilerle baÄŸlanmalÄ±dÄ±r. ParolasÄ±z kullanÄ±m iÃ§in ikisini de boÅŸ bÄ±rakÄ±n.';
 
   @override
   String get loginBothOrNone =>
-      'İkisini de doldurun ya da ikisini de boş bırakın.';
+      'Ä°kisini de doldurun ya da ikisini de boÅŸ bÄ±rakÄ±n.';
 
   @override
-  String get proxyLogin => 'Proxy kullanıcı adı ve parolası';
+  String get proxyLogin => 'Proxy kullanÄ±cÄ± adÄ± ve parolasÄ±';
 
   @override
-  String get idleSleep => 'Boşta kalınca uykuya geç';
+  String get idleSleep => 'BoÅŸta kalÄ±nca uykuya geÃ§';
 
   @override
   String get sleepNever => 'Asla';
@@ -875,97 +875,97 @@ class AppLocalizationsTr extends AppLocalizations {
   String get sleepHour => '1 saat';
 
   @override
-  String get showPublicIp => 'Genel IP\'yi göster';
+  String get showPublicIp => 'Genel IP\'yi gÃ¶ster';
 
   @override
-  String get speedInNotification => 'Bildirimde hızı göster';
+  String get speedInNotification => 'Bildirimde hÄ±zÄ± gÃ¶ster';
 
   @override
-  String get liveTraffic => 'Anlık trafik';
+  String get liveTraffic => 'AnlÄ±k trafik';
 
   @override
   String get totalTraffic => 'Toplam trafik';
 
   @override
-  String get verboseLogs => 'Ayrıntılı günlükler';
+  String get verboseLogs => 'AyrÄ±ntÄ±lÄ± gÃ¼nlÃ¼kler';
 
   @override
   String get webDashboard => 'Web paneli';
 
   @override
-  String get webDashboardOpen => 'Aç';
+  String get webDashboardOpen => 'AÃ§';
 
   @override
-  String get webDashboardHint => 'Gelişmiş ayarlar ve daha fazla araç';
+  String get webDashboardHint => 'GeliÅŸmiÅŸ ayarlar ve daha fazla araÃ§';
 
   @override
   String numberInvalid(int min, int max) {
-    return '$min ile $max arasında bir sayı girin';
+    return '$min ile $max arasÄ±nda bir sayÄ± girin';
   }
 
   @override
-  String get notifySwitchedTitle => 'Hesap değiştirildi';
+  String get notifySwitchedTitle => 'Hesap deÄŸiÅŸtirildi';
 
   @override
   String notifySwitchedBody(String name) {
-    return 'Şu an $name kullanılıyor.';
+    return 'Åžu an $name kullanÄ±lÄ±yor.';
   }
 
   @override
-  String get notifySignInTitle => 'Oturum açmanız gerekiyor';
+  String get notifySignInTitle => 'Oturum aÃ§manÄ±z gerekiyor';
 
   @override
   String get notifySignInBody =>
-      'Hesaplar sayfasından bir hesapta yeniden oturum açın.';
+      'Hesaplar sayfasÄ±ndan bir hesapta yeniden oturum aÃ§Ä±n.';
 
   @override
-  String get navAbout => 'Hakkında';
+  String get navAbout => 'HakkÄ±nda';
 
   @override
-  String get appVersionLabel => 'Uygulama sürümü';
+  String get appVersionLabel => 'Uygulama sÃ¼rÃ¼mÃ¼';
 
   @override
-  String get coreVersionLabel => 'Çekirdek sürümü';
+  String get coreVersionLabel => 'Ã‡ekirdek sÃ¼rÃ¼mÃ¼';
 
   @override
-  String get checkUpdates => 'Güncellemeleri kontrol et';
+  String get checkUpdates => 'GÃ¼ncellemeleri kontrol et';
 
   @override
-  String get checkingUpdates => 'Kontrol ediliyor…';
+  String get checkingUpdates => 'Kontrol ediliyorâ€¦';
 
   @override
-  String get upToDate => 'En son sürümü kullanıyorsunuz.';
+  String get upToDate => 'En son sÃ¼rÃ¼mÃ¼ kullanÄ±yorsunuz.';
 
   @override
   String updateAvailable(String version) {
-    return '$version sürümü mevcut.';
+    return '$version sÃ¼rÃ¼mÃ¼ mevcut.';
   }
 
   @override
-  String get download => 'İndir';
+  String get download => 'Ä°ndir';
 
   @override
   String updateCheckFailed(String error) {
-    return 'Güncellemeler kontrol edilemedi: $error';
+    return 'GÃ¼ncellemeler kontrol edilemedi: $error';
   }
 
   @override
-  String get repoNotSet => 'GitHub deposu henüz ayarlanmadı.';
+  String get repoNotSet => 'GitHub deposu henÃ¼z ayarlanmadÄ±.';
 
   @override
   String get sourceCode => 'Kaynak kodu';
 
   @override
-  String get tapToConnect => 'Bağlanmak için tıklayın';
+  String get tapToConnect => 'BaÄŸlanmak iÃ§in tÄ±klayÄ±n';
 
   @override
-  String get tapToDisconnect => 'Bağlantıyı kesmek için tıklayın';
+  String get tapToDisconnect => 'BaÄŸlantÄ±yÄ± kesmek iÃ§in tÄ±klayÄ±n';
 
   @override
-  String get startOnBoot => 'Açılışta başlat';
+  String get startOnBoot => 'AÃ§Ä±lÄ±ÅŸta baÅŸlat';
 
   @override
-  String get connectOnStartup => 'Açılışta bağlan';
+  String get connectOnStartup => 'AÃ§Ä±lÄ±ÅŸta baÄŸlan';
 
   @override
   String get proxyServiceActive => 'Proxy hizmeti etkin';
@@ -977,13 +977,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get groupApp => 'Uygulama';
 
   @override
-  String get stateOff => 'Bağlı değil';
+  String get stateOff => 'BaÄŸlÄ± deÄŸil';
 
   @override
-  String get tapToConnectPhone => 'Bağlanmak için dokunun';
+  String get tapToConnectPhone => 'BaÄŸlanmak iÃ§in dokunun';
 
   @override
-  String get tapToDisconnectPhone => 'Bağlantıyı kesmek için dokunun';
+  String get tapToDisconnectPhone => 'BaÄŸlantÄ±yÄ± kesmek iÃ§in dokunun';
 
   @override
   String lanAddress(String address) {
@@ -991,7 +991,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get recommendedLocation => 'Önerilen konum';
+  String get recommendedLocation => 'Ã–nerilen konum';
 
   @override
   String dataLeftOf(String limit) {
@@ -1002,136 +1002,136 @@ class AppLocalizationsTr extends AppLocalizations {
   String get homeLocation => 'Konum';
 
   @override
-  String get connectedTo => 'Bağlı konum';
+  String get connectedTo => 'BaÄŸlÄ± konum';
 
   @override
   String get vpnNotAllowed =>
-      'VPN için izniniz gerekiyor. Düğmeye tekrar dokunun ve izin verin.';
+      'VPN iÃ§in izniniz gerekiyor. DÃ¼ÄŸmeye tekrar dokunun ve izin verin.';
 
   @override
-  String get dataUsedTitle => 'Kullanılan veri';
+  String get dataUsedTitle => 'KullanÄ±lan veri';
 
   @override
-  String get bypassApps => 'Uygulama bazlı proxy';
+  String get bypassApps => 'Uygulama bazlÄ± proxy';
 
   @override
-  String get connectRetrying => 'Bağlanılamadı. İnternetinizi kontrol edin.';
+  String get connectRetrying => 'BaÄŸlanÄ±lamadÄ±. Ä°nternetinizi kontrol edin.';
 
   @override
   String get failUnreachable =>
-      'Mozilla sunucuları bu internette engelli. Başka bir internet bağlantısı deneyin.';
+      'Mozilla sunucularÄ± bu internette engelli. BaÅŸka bir internet baÄŸlantÄ±sÄ± deneyin.';
 
   @override
   String get failRefused =>
-      'Mozilla sunucusu bağlantıyı reddetti. Birkaç dakika sonra tekrar deneyin.';
+      'Mozilla sunucusu baÄŸlantÄ±yÄ± reddetti. BirkaÃ§ dakika sonra tekrar deneyin.';
 
   @override
   String get failLocationRefused =>
-      'Bu ülke hesabınıza açık değil. Başka bir ülke seçin.';
+      'Bu Ã¼lke hesabÄ±nÄ±za aÃ§Ä±k deÄŸil. BaÅŸka bir Ã¼lke seÃ§in.';
 
   @override
-  String get useRecommendedLocation => 'Önerilen konumu kullan';
+  String get useRecommendedLocation => 'Ã–nerilen konumu kullan';
 
   @override
   String exitMismatch(String exit, String chosen) {
-    return 'Seçtiğiniz ülke: $chosen; IP adresinizin ülkesi: $exit.';
+    return 'SeÃ§tiÄŸiniz Ã¼lke: $chosen; IP adresinizin Ã¼lkesi: $exit.';
   }
 
   @override
   String get failSignIn =>
-      'Bu hesabın oturumu sona erdi. Hesaplar sayfasından yeniden giriş yapın.';
+      'Bu hesabÄ±n oturumu sona erdi. Hesaplar sayfasÄ±ndan yeniden giriÅŸ yapÄ±n.';
 
   @override
-  String get failQuota => 'Bu ayın verisi bitti. Başka bir hesap ekleyin.';
+  String get failQuota => 'Bu ayÄ±n verisi bitti. BaÅŸka bir hesap ekleyin.';
 
   @override
   String get failNotEntitled =>
-      'Mozilla bu hesabın VPN kullanmasına izin vermiyor. Başka bir hesap ekleyin.';
+      'Mozilla bu hesabÄ±n VPN kullanmasÄ±na izin vermiyor. BaÅŸka bir hesap ekleyin.';
 
   @override
-  String get failRegion => 'Mozilla ülkenizde hizmet vermiyor.';
+  String get failRegion => 'Mozilla Ã¼lkenizde hizmet vermiyor.';
 
   @override
   String get failServer =>
-      'Mozilla hizmetinde geçici bir sorun var. Uygulama kendisi tekrar deneyecek.';
+      'Mozilla hizmetinde geÃ§ici bir sorun var. Uygulama kendisi tekrar deneyecek.';
 
   @override
-  String get failNoAccount => 'Hazır hesap yok. Hesaplar sayfasını açın.';
+  String get failNoAccount => 'HazÄ±r hesap yok. Hesaplar sayfasÄ±nÄ± aÃ§Ä±n.';
 
   @override
   String get failTestSite =>
-      'Sunucuya bağlandı ama siteler açılmıyor. Başka bir ülke deneyin.';
+      'Sunucuya baÄŸlandÄ± ama siteler aÃ§Ä±lmÄ±yor. BaÅŸka bir Ã¼lke deneyin.';
 
   @override
-  String get failOther => 'Bağlanılamadı. Tekrar deneyin.';
+  String get failOther => 'BaÄŸlanÄ±lamadÄ±. Tekrar deneyin.';
 
   @override
   String get failNoInternet =>
-      'İnternet yok. Wi-Fi\'yi veya mobil veriyi kontrol edin.';
+      'Ä°nternet yok. Wi-Fi\'yi veya mobil veriyi kontrol edin.';
 
   @override
-  String get waitingForNetwork => 'İnternet bağlantısı bekleniyor…';
+  String get waitingForNetwork => 'Ä°nternet baÄŸlantÄ±sÄ± bekleniyorâ€¦';
 
   @override
   String proxyStartFailed(String port) {
-    return 'Proxy $port portunda başlatılamadı. Başka bir port seçin.';
+    return 'Proxy $port portunda baÅŸlatÄ±lamadÄ±. BaÅŸka bir port seÃ§in.';
   }
 
   @override
-  String get connectionSettings => 'Bağlantı ayarları';
+  String get connectionSettings => 'BaÄŸlantÄ± ayarlarÄ±';
 
   @override
-  String get appModeExclude => 'Seçili uygulamaları hariç tut';
+  String get appModeExclude => 'SeÃ§ili uygulamalarÄ± hariÃ§ tut';
 
   @override
-  String get appModeInclude => 'Yalnızca seçili uygulamalar';
+  String get appModeInclude => 'YalnÄ±zca seÃ§ili uygulamalar';
 
   @override
   String get appModeExcludeHint =>
-      'Seçili uygulamalar VPN yerine doğrudan bağlanır: örneğin yabancı adresleri reddeden bankacılık uygulamaları.';
+      'SeÃ§ili uygulamalar VPN yerine doÄŸrudan baÄŸlanÄ±r: Ã¶rneÄŸin yabancÄ± adresleri reddeden bankacÄ±lÄ±k uygulamalarÄ±.';
 
   @override
   String get appModeIncludeHint =>
-      'Yalnızca seçili uygulamalar VPN üzerinden gider; diğerleri doğrudan bağlanır.';
+      'YalnÄ±zca seÃ§ili uygulamalar VPN Ã¼zerinden gider; diÄŸerleri doÄŸrudan baÄŸlanÄ±r.';
 
   @override
   String fromRegionList(String region) {
-    return 'Önerilen: $region listesinde';
+    return 'Ã–nerilen: $region listesinde';
   }
 
   @override
   String get modeProxy => 'Proxy';
 
   @override
-  String get connectionMode => 'Bağlantı modu';
+  String get connectionMode => 'BaÄŸlantÄ± modu';
 
   @override
   String get modeProxyHint =>
-      'Yalnızca proxy ayarı yapılmış uygulamalar proxy\'den geçer; Windows ayarlarına dokunulmaz.';
+      'YalnÄ±zca proxy ayarÄ± yapÄ±lmÄ±ÅŸ uygulamalar proxy\'den geÃ§er; Windows ayarlarÄ±na dokunulmaz.';
 
   @override
   String get modeSystemProxyHint =>
-      'Windows ve çoğu uygulama proxy üzerinden geçer.';
+      'Windows ve Ã§oÄŸu uygulama proxy Ã¼zerinden geÃ§er.';
 
   @override
   String get modeProxyHintOther =>
-      'Yalnızca proxy ayarı yapılmış uygulamalar proxy\'den geçer; sistem ayarlarına dokunulmaz.';
+      'YalnÄ±zca proxy ayarÄ± yapÄ±lmÄ±ÅŸ uygulamalar proxy\'den geÃ§er; sistem ayarlarÄ±na dokunulmaz.';
 
   @override
   String get modeSystemProxyHintOther =>
-      'Tarayıcılar ve çoğu uygulama proxy üzerinden geçer.';
+      'TarayÄ±cÄ±lar ve Ã§oÄŸu uygulama proxy Ã¼zerinden geÃ§er.';
 
   @override
-  String get suggestedApps => 'Önerilen uygulamalar';
+  String get suggestedApps => 'Ã–nerilen uygulamalar';
 
   @override
   String suggestedAdded(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count önerilen uygulama seçildi',
-      one: '1 önerilen uygulama seçildi',
-      zero: 'Önerilen uygulamalar zaten seçili',
+      other: '$count Ã¶nerilen uygulama seÃ§ildi',
+      one: '1 Ã¶nerilen uygulama seÃ§ildi',
+      zero: 'Ã–nerilen uygulamalar zaten seÃ§ili',
     );
     return '$_temp0';
   }
@@ -1143,22 +1143,22 @@ class AppLocalizationsTr extends AppLocalizations {
   String get locationsSection => 'Konumlar';
 
   @override
-  String get dnsSummaryOk => 'Şifreli DNS çalışıyor';
+  String get dnsSummaryOk => 'Åžifreli DNS Ã§alÄ±ÅŸÄ±yor';
 
   @override
   String dnsSummaryFailed(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count alan adı çözümlenemedi',
-      one: '1 alan adı çözümlenemedi',
+      other: '$count alan adÄ± Ã§Ã¶zÃ¼mlenemedi',
+      one: '1 alan adÄ± Ã§Ã¶zÃ¼mlenemedi',
     );
     return '$_temp0';
   }
 
   @override
   String dnsVia(String server) {
-    return '$server üzerinden';
+    return '$server Ã¼zerinden';
   }
 
   @override
@@ -1167,64 +1167,83 @@ class AppLocalizationsTr extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          'Ağınızın DNS\'i $count alan adı için filtreleme adresi döndürdü. Bu uygulama bu yanıtları kullanmaz.',
-      one: 'Ağınızın DNS\'i 1 alan adı için filtreleme adresi döndürdü. Bu uygulama o yanıtı kullanmaz.',
+          'AÄŸÄ±nÄ±zÄ±n DNS\'i $count alan adÄ± iÃ§in filtreleme adresi dÃ¶ndÃ¼rdÃ¼. Bu uygulama bu yanÄ±tlarÄ± kullanmaz.',
+      one: 'AÄŸÄ±nÄ±zÄ±n DNS\'i 1 alan adÄ± iÃ§in filtreleme adresi dÃ¶ndÃ¼rdÃ¼. Bu uygulama o yanÄ±tÄ± kullanmaz.',
     );
     return '$_temp0';
   }
 
   @override
-  String get dnsAnswer => 'Yanıt:';
+  String get dnsAnswer => 'YanÄ±t:';
 
   @override
-  String get dnsNetworkAnswer => 'Ağ DNS\'i:';
+  String get dnsNetworkAnswer => 'AÄŸ DNS\'i:';
 
   @override
   String get dnsFiltered => 'filtrelendi';
 
   @override
-  String get rulesSyntaxTitle => 'Her satıra bir kural';
+  String get rulesSyntaxTitle => 'Her satÄ±ra bir kural';
 
   @override
-  String get ruleDomain => 'Site ve alt alan adları';
+  String get ruleDomain => 'Site ve alt alan adlarÄ±';
 
   @override
-  String get ruleFull => 'Yalnızca bu alan adı';
+  String get ruleFull => 'YalnÄ±zca bu alan adÄ±';
 
   @override
-  String get ruleKeyword => 'Bu kelimeyi içeren alan adları';
+  String get ruleKeyword => 'Bu kelimeyi iÃ§eren alan adlarÄ±';
 
   @override
-  String get ruleGeosite => 'Geo dosyalarında bir etiketteki siteler';
+  String get ruleGeosite => 'Geo dosyalarÄ±nda bir etiketteki siteler';
 
   @override
-  String get ruleGeoip => 'Geo dosyalarında bir ülkenin IP adresleri';
+  String get ruleGeoip => 'Geo dosyalarÄ±nda bir Ã¼lkenin IP adresleri';
 
   @override
-  String get ruleIp => 'Bir IP adresi veya ağ';
+  String get ruleIp => 'Bir IP adresi veya aÄŸ';
 
   @override
   String get modeVpn => 'VPN';
 
   @override
-  String get modeProxyOnly => 'Yalnızca proxy';
+  String get modeProxyOnly => 'YalnÄ±zca proxy';
 
   @override
   String get noNetwork =>
-      'İnternet bağlantısı yok. Wi-Fi\'yi veya mobil veriyi açın.';
+      'Ä°nternet baÄŸlantÄ±sÄ± yok. Wi-Fi\'yi veya mobil veriyi aÃ§Ä±n.';
 
   @override
-  String get blockAds => 'Reklamları engelle';
+  String get blockAds => 'ReklamlarÄ± engelle';
 
   @override
   String systemProxyTakenBy(String address) {
-    return 'Başka bir program sistem proxy\'sini $address olarak değiştirdi, bu yüzden trafik VPN\'den geçmiyor.';
+    return 'BaÅŸka bir program sistem proxy\'sini $address olarak deÄŸiÅŸtirdi, bu yÃ¼zden trafik VPN\'den geÃ§miyor.';
   }
 
   @override
   String get systemProxyTakenOff =>
-      'Başka bir program sistem proxy\'sini kapattı, bu yüzden trafik VPN\'den geçmiyor.';
+      'BaÅŸka bir program sistem proxy\'sini kapattÄ±, bu yÃ¼zden trafik VPN\'den geÃ§miyor.';
 
   @override
   String get setSystemProxyAgain => 'Yeniden ayarla';
+  @override
+  String get modeWinDivert => 'WinDivert Tunnel';
+
+  @override
+  String get modeWinDivertHint =>
+      'All Windows network traffic and DNS queries go through the VPN.';
+
+  @override
+  String get elevationRequiredTitle => 'Administrator Privileges Required';
+
+  @override
+  String get elevationRequiredMessage =>
+      'WinDivert requires Administrator privileges to tunnel system network packets.';
+
+  @override
+  String get runAsAdmin => 'Run as Administrator';
+
+  @override
+  String get trayWinDivert => 'WinDivert Full Tunnel';
 }

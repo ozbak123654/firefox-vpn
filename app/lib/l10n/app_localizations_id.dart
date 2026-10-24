@@ -1,4 +1,4 @@
-// ignore: unused_import
+﻿// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations.dart';
@@ -25,7 +25,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get stateConnected => 'Terhubung';
 
   @override
-  String get stateConnecting => 'Menghubungkan…';
+  String get stateConnecting => 'Menghubungkanâ€¦';
 
   @override
   String get stateWaiting => 'Menunggu';
@@ -86,7 +86,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get testConnection => 'Uji koneksi';
 
   @override
-  String get testing => 'Menguji…';
+  String get testing => 'Mengujiâ€¦';
 
   @override
   String get testFailed => 'Gagal';
@@ -311,7 +311,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get tryAgain => 'Coba lagi';
 
   @override
-  String get signingIn => 'Sedang masuk…';
+  String get signingIn => 'Sedang masukâ€¦';
 
   @override
   String get accountReady => 'Akun siap';
@@ -403,16 +403,16 @@ class AppLocalizationsId extends AppLocalizations {
       'Mozilla tidak dapat dihubungi. Periksa internet Anda lalu coba lagi.';
 
   @override
-  String get coreConnecting => 'Menghubungkan ke core…';
+  String get coreConnecting => 'Menghubungkan ke coreâ€¦';
 
   @override
-  String get coreLost => 'Koneksi ke core terputus. Mencoba lagi…';
+  String get coreLost => 'Koneksi ke core terputus. Mencoba lagiâ€¦';
 
   @override
   String get cantReachCore => 'Tidak dapat terhubung ke core';
 
   @override
-  String get startingCore => 'Memulai core…';
+  String get startingCore => 'Memulai coreâ€¦';
 
   @override
   String get retry => 'Coba lagi';
@@ -672,7 +672,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get testDelay => 'Uji ping asli';
 
   @override
-  String get testingDelay => 'Menguji… bisa sampai satu menit';
+  String get testingDelay => 'Mengujiâ€¦ bisa sampai satu menit';
 
   @override
   String get search => 'Cari';
@@ -742,7 +742,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get dnsCustomHint =>
-      'Satu per baris: https://…/dns-query, tls://…, atau alamat IP.';
+      'Satu per baris: https://â€¦/dns-query, tls://â€¦, atau alamat IP.';
 
   @override
   String get dnsFallback => 'Gunakan DNS sistem sebagai cadangan';
@@ -839,10 +839,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get listenAddress => 'Akses proxy';
 
   @override
-  String get listenLocal => '127.0.0.1 · hanya perangkat ini';
+  String get listenLocal => '127.0.0.1 Â· hanya perangkat ini';
 
   @override
-  String get listenAll => '0.0.0.0 · semua jaringan (LAN)';
+  String get listenAll => '0.0.0.0 Â· semua jaringan (LAN)';
 
   @override
   String get proxyUsername => 'Nama pengguna proxy';
@@ -931,7 +931,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get checkUpdates => 'Periksa pembaruan';
 
   @override
-  String get checkingUpdates => 'Memeriksa…';
+  String get checkingUpdates => 'Memeriksaâ€¦';
 
   @override
   String get upToDate => 'Anda memiliki versi terbaru.';
@@ -1071,7 +1071,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Tidak ada internet. Periksa Wi-Fi atau data seluler.';
 
   @override
-  String get waitingForNetwork => 'Menunggu koneksi internet…';
+  String get waitingForNetwork => 'Menunggu koneksi internetâ€¦';
 
   @override
   String proxyStartFailed(String port) {
@@ -1228,4 +1228,23 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get setSystemProxyAgain => 'Atur lagi';
+  @override
+  String get modeWinDivert => 'WinDivert Tunnel';
+
+  @override
+  String get modeWinDivertHint =>
+      'All Windows network traffic and DNS queries go through the VPN.';
+
+  @override
+  String get elevationRequiredTitle => 'Administrator Privileges Required';
+
+  @override
+  String get elevationRequiredMessage =>
+      'WinDivert requires Administrator privileges to tunnel system network packets.';
+
+  @override
+  String get runAsAdmin => 'Run as Administrator';
+
+  @override
+  String get trayWinDivert => 'WinDivert Full Tunnel';
 }

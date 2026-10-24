@@ -1,4 +1,4 @@
-// ignore: unused_import
+﻿// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations.dart';
@@ -13,83 +13,83 @@ class AppLocalizationsBn extends AppLocalizations {
   String get appTitle => 'Firefox VPN';
 
   @override
-  String get navOverview => 'সারসংক্ষেপ';
+  String get navOverview => 'à¦¸à¦¾à¦°à¦¸à¦‚à¦•à§à¦·à§‡à¦ª';
 
   @override
-  String get navAccounts => 'অ্যাকাউন্ট';
+  String get navAccounts => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ';
 
   @override
-  String get navSettings => 'সেটিংস';
+  String get navSettings => 'à¦¸à§‡à¦Ÿà¦¿à¦‚à¦¸';
 
   @override
-  String get stateConnected => 'সংযুক্ত';
+  String get stateConnected => 'à¦¸à¦‚à¦¯à§à¦•à§à¦¤';
 
   @override
-  String get stateConnecting => 'সংযোগ হচ্ছে…';
+  String get stateConnecting => 'à¦¸à¦‚à¦¯à§‹à¦— à¦¹à¦šà§à¦›à§‡â€¦';
 
   @override
-  String get stateWaiting => 'অপেক্ষা করছে';
+  String get stateWaiting => 'à¦…à¦ªà§‡à¦•à§à¦·à¦¾ à¦•à¦°à¦›à§‡';
 
   @override
   String get waitingForAccount =>
-      'সংযোগ করতে অ্যাকাউন্ট পাতায় একটি Firefox Account যোগ করুন।';
+      'à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà¦¾à¦¤à¦¾à¦¯à¦¼ à¦à¦•à¦Ÿà¦¿ Firefox Account à¦¯à§‹à¦— à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get waitingForEnabledAccount =>
-      'সব অ্যাকাউন্ট বন্ধ আছে। অ্যাকাউন্ট পাতা থেকে একটি চালু করুন।';
+      'à¦¸à¦¬ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¬à¦¨à§à¦§ à¦†à¦›à§‡à¥¤ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà¦¾à¦¤à¦¾ à¦¥à§‡à¦•à§‡ à¦à¦•à¦Ÿà¦¿ à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get stateError => 'ত্রুটি';
+  String get stateError => 'à¦¤à§à¦°à§à¦Ÿà¦¿';
 
   @override
-  String get stateUnknown => 'অজানা';
+  String get stateUnknown => 'à¦…à¦œà¦¾à¦¨à¦¾';
 
   @override
-  String get restartProxy => 'প্রক্সি পুনরায় চালু করুন';
+  String get restartProxy => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦ªà§à¦¨à¦°à¦¾à¦¯à¦¼ à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨';
 
   @override
   String copied(String value) {
-    return '$value কপি হয়েছে';
+    return '$value à¦•à¦ªà¦¿ à¦¹à¦¯à¦¼à§‡à¦›à§‡';
   }
 
   @override
-  String get activeAccount => 'সক্রিয় অ্যাকাউন্ট';
+  String get activeAccount => 'à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ';
 
   @override
-  String get noActiveAccount => 'কোনো সক্রিয় অ্যাকাউন্ট নেই';
+  String get noActiveAccount => 'à¦•à§‹à¦¨à§‹ à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¨à§‡à¦‡';
 
   @override
-  String get quotaNotRead => 'ডেটার তথ্য এখনও আসেনি';
+  String get quotaNotRead => 'à¦¡à§‡à¦Ÿà¦¾à¦° à¦¤à¦¥à§à¦¯ à¦à¦–à¦¨à¦“ à¦†à¦¸à§‡à¦¨à¦¿';
 
   @override
-  String get unlimited => 'সীমাহীন';
+  String get unlimited => 'à¦¸à§€à¦®à¦¾à¦¹à§€à¦¨';
 
   @override
   String usedOf(String used, String limit) {
-    return '$limit-এর মধ্যে $used ব্যবহৃত';
+    return '$limit-à¦à¦° à¦®à¦§à§à¦¯à§‡ $used à¦¬à§à¦¯à¦¬à¦¹à§ƒà¦¤';
   }
 
   @override
   String resets(String date) {
-    return '$date তারিখে রিসেট হবে';
+    return '$date à¦¤à¦¾à¦°à¦¿à¦–à§‡ à¦°à¦¿à¦¸à§‡à¦Ÿ à¦¹à¦¬à§‡';
   }
 
   @override
   String switchAt(int percent) {
-    return '$percent% হলে অ্যাকাউন্ট বদলাবে';
+    return '$percent% à¦¹à¦²à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¬à¦¦à¦²à¦¾à¦¬à§‡';
   }
 
   @override
-  String get publicIp => 'পাবলিক IP';
+  String get publicIp => 'à¦ªà¦¾à¦¬à¦²à¦¿à¦• IP';
 
   @override
-  String get testConnection => 'সংযোগ পরীক্ষা করুন';
+  String get testConnection => 'à¦¸à¦‚à¦¯à§‹à¦— à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦•à¦°à§à¦¨';
 
   @override
-  String get testing => 'পরীক্ষা চলছে…';
+  String get testing => 'à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦šà¦²à¦›à§‡â€¦';
 
   @override
-  String get testFailed => 'ব্যর্থ';
+  String get testFailed => 'à¦¬à§à¦¯à¦°à§à¦¥';
 
   @override
   String milliseconds(int value) {
@@ -97,16 +97,16 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get justNow => 'এইমাত্র';
+  String get justNow => 'à¦à¦‡à¦®à¦¾à¦¤à§à¦°';
 
   @override
   String minutesAgo(int n) {
-    return '$n মিনিট আগে';
+    return '$n à¦®à¦¿à¦¨à¦¿à¦Ÿ à¦†à¦—à§‡';
   }
 
   @override
   String hoursAgo(int n) {
-    return '$n ঘণ্টা আগে';
+    return '$n à¦˜à¦£à§à¦Ÿà¦¾ à¦†à¦—à§‡';
   }
 
   @override
@@ -114,645 +114,645 @@ class AppLocalizationsBn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count দিন আগে',
+      other: '$count à¦¦à¦¿à¦¨ à¦†à¦—à§‡',
     );
     return '$_temp0';
   }
 
   @override
   String atTime(String time) {
-    return '$time-এ';
+    return '$time-à¦';
   }
 
   @override
   String durationDays(int d, int h) {
-    return '$d দিন $h ঘণ্টা';
+    return '$d à¦¦à¦¿à¦¨ $h à¦˜à¦£à§à¦Ÿà¦¾';
   }
 
   @override
   String durationHours(int h, int m) {
-    return '$h ঘ $m মি';
+    return '$h à¦˜ $m à¦®à¦¿';
   }
 
   @override
   String durationMinutes(int m, int s) {
-    return '$m মি $s সে';
+    return '$m à¦®à¦¿ $s à¦¸à§‡';
   }
 
   @override
   String durationSeconds(int s) {
-    return '$s সে';
+    return '$s à¦¸à§‡';
   }
 
   @override
   String accountsGuide(String size) {
-    return 'প্রতিটি Firefox Account-এ মাসে $size ডেটা থাকে। আপনি একাধিক অ্যাকাউন্ট যোগ করতে পারেন: একটির ডেটা শেষ হলে অ্যাপ নিজে থেকেই পরেরটিতে যায়।';
+    return 'à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ Firefox Account-à¦ à¦®à¦¾à¦¸à§‡ $size à¦¡à§‡à¦Ÿà¦¾ à¦¥à¦¾à¦•à§‡à¥¤ à¦†à¦ªà¦¨à¦¿ à¦à¦•à¦¾à¦§à¦¿à¦• à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à§‡à¦¨: à¦à¦•à¦Ÿà¦¿à¦° à¦¡à§‡à¦Ÿà¦¾ à¦¶à§‡à¦· à¦¹à¦²à§‡ à¦…à§à¦¯à¦¾à¦ª à¦¨à¦¿à¦œà§‡ à¦¥à§‡à¦•à§‡à¦‡ à¦ªà¦°à§‡à¦°à¦Ÿà¦¿à¦¤à§‡ à¦¯à¦¾à¦¯à¦¼à¥¤';
   }
 
   @override
   String accountsOrderNote(int percent) {
-    return 'এই তালিকার ক্রমে: প্রতিটি অ্যাকাউন্ট $percent% পর্যন্ত, শেষটি ডেটা শেষ না হওয়া পর্যন্ত।';
+    return 'à¦à¦‡ à¦¤à¦¾à¦²à¦¿à¦•à¦¾à¦° à¦•à§à¦°à¦®à§‡: à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ $percent% à¦ªà¦°à§à¦¯à¦¨à§à¦¤, à¦¶à§‡à¦·à¦Ÿà¦¿ à¦¡à§‡à¦Ÿà¦¾ à¦¶à§‡à¦· à¦¨à¦¾ à¦¹à¦“à¦¯à¦¼à¦¾ à¦ªà¦°à§à¦¯à¦¨à§à¦¤à¥¤';
   }
 
   @override
-  String get addAccount => 'অ্যাকাউন্ট যোগ করুন';
+  String get addAccount => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¯à§‹à¦— à¦•à¦°à§à¦¨';
 
   @override
   String lowQuotaNotice(String left, String size) {
-    return 'বর্তমান অ্যাকাউন্টের ডেটা প্রায় শেষ ($left বাকি)। আরেকটি অ্যাকাউন্ট যোগ করলে আরও $size পাবেন।';
+    return 'à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡à¦° à¦¡à§‡à¦Ÿà¦¾ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦¶à§‡à¦· ($left à¦¬à¦¾à¦•à¦¿)à¥¤ à¦†à¦°à§‡à¦•à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¯à§‹à¦— à¦•à¦°à¦²à§‡ à¦†à¦°à¦“ $size à¦ªà¦¾à¦¬à§‡à¦¨à¥¤';
   }
 
   @override
-  String get noAccounts => 'এখনও কোনো অ্যাকাউন্ট নেই';
+  String get noAccounts => 'à¦à¦–à¦¨à¦“ à¦•à§‹à¦¨à§‹ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¨à§‡à¦‡';
 
   @override
-  String get noAccountsHint => 'সংযোগ করতে একটি Firefox Account যোগ করুন।';
+  String get noAccountsHint => 'à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦à¦•à¦Ÿà¦¿ Firefox Account à¦¯à§‹à¦— à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get createAccountTitle => 'Firefox Account নেই?';
+  String get createAccountTitle => 'Firefox Account à¦¨à§‡à¦‡?';
 
   @override
   String get createAccountHint =>
-      'accounts.firefox.com-এ বিনামূল্যে একটি তৈরি করুন, তারপর এখানে ফিরে “অ্যাকাউন্ট যোগ করুন” চাপুন।';
+      'accounts.firefox.com-à¦ à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡ à¦à¦•à¦Ÿà¦¿ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§à¦¨, à¦¤à¦¾à¦°à¦ªà¦° à¦à¦–à¦¾à¦¨à§‡ à¦«à¦¿à¦°à§‡ â€œà¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¯à§‹à¦— à¦•à¦°à§à¦¨â€ à¦šà¦¾à¦ªà§à¦¨à¥¤';
 
   @override
-  String get moveUp => 'উপরে সরান';
+  String get moveUp => 'à¦‰à¦ªà¦°à§‡ à¦¸à¦°à¦¾à¦¨';
 
   @override
-  String get moveDown => 'নিচে সরান';
+  String get moveDown => 'à¦¨à¦¿à¦šà§‡ à¦¸à¦°à¦¾à¦¨';
 
   @override
-  String get statusActive => 'সক্রিয়';
+  String get statusActive => 'à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼';
 
   @override
-  String get statusReady => 'প্রস্তুত';
+  String get statusReady => 'à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤';
 
   @override
-  String get statusNeedsSignIn => 'সাইন-ইন দরকার';
+  String get statusNeedsSignIn => 'à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨ à¦¦à¦°à¦•à¦¾à¦°';
 
   @override
-  String get statusReserved => 'রিজার্ভ';
+  String get statusReserved => 'à¦°à¦¿à¦œà¦¾à¦°à§à¦­';
 
   @override
-  String get statusUnavailable => 'উপলভ্য নয়';
+  String get statusUnavailable => 'à¦‰à¦ªà¦²à¦­à§à¦¯ à¦¨à¦¯à¦¼';
 
   @override
   String statusUnavailableUntil(String date) {
-    return '$date পর্যন্ত উপলভ্য নয়';
+    return '$date à¦ªà¦°à§à¦¯à¦¨à§à¦¤ à¦‰à¦ªà¦²à¦­à§à¦¯ à¦¨à¦¯à¦¼';
   }
 
   @override
-  String get statusDisabled => 'বন্ধ';
+  String get statusDisabled => 'à¦¬à¦¨à§à¦§';
 
   @override
-  String get statusEnabled => 'চালু';
+  String get statusEnabled => 'à¦šà¦¾à¦²à§';
 
   @override
-  String get useNow => 'এখন ব্যবহার করুন';
+  String get useNow => 'à¦à¦–à¦¨ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨';
 
   @override
-  String get signInAgain => 'আবার সাইন ইন করুন';
+  String get signInAgain => 'à¦†à¦¬à¦¾à¦° à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨';
 
   @override
   String reasonQuotaThreshold(int percent) {
-    return 'এই অ্যাকাউন্টের ডেটা $percent% ব্যবহৃত হয়েছে, তাই পরের অ্যাকাউন্টটি চালু হয়েছে।';
+    return 'à¦à¦‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡à¦° à¦¡à§‡à¦Ÿà¦¾ $percent% à¦¬à§à¦¯à¦¬à¦¹à§ƒà¦¤ à¦¹à¦¯à¦¼à§‡à¦›à§‡, à¦¤à¦¾à¦‡ à¦ªà¦°à§‡à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà¦Ÿà¦¿ à¦šà¦¾à¦²à§ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤';
   }
 
   @override
   String get reasonQuotaExhausted =>
-      'এই মাসের ডেটা শেষ; মাসিক রিসেটের পর আবার ব্যবহার হবে।';
+      'à¦à¦‡ à¦®à¦¾à¦¸à§‡à¦° à¦¡à§‡à¦Ÿà¦¾ à¦¶à§‡à¦·; à¦®à¦¾à¦¸à¦¿à¦• à¦°à¦¿à¦¸à§‡à¦Ÿà§‡à¦° à¦ªà¦° à¦†à¦¬à¦¾à¦° à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦¹à¦¬à§‡à¥¤';
 
   @override
   String get reasonSignInRequired =>
-      'এই অ্যাকাউন্ট ব্যবহার করতে আবার সাইন ইন করুন।';
+      'à¦à¦‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¤à§‡ à¦†à¦¬à¦¾à¦° à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get reasonSignInConfirm =>
-      'Mozilla সাইন-ইন নিশ্চিত করতে বলছে: «আবার সাইন ইন করুন» চাপুন (শুধু কোড লাগবে)।';
+      'Mozilla à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨ à¦¨à¦¿à¦¶à§à¦šà¦¿à¦¤ à¦•à¦°à¦¤à§‡ à¦¬à¦²à¦›à§‡: Â«à¦†à¦¬à¦¾à¦° à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨Â» à¦šà¦¾à¦ªà§à¦¨ (à¦¶à§à¦§à§ à¦•à§‹à¦¡ à¦²à¦¾à¦—à¦¬à§‡)à¥¤';
 
   @override
   String reasonSignInFailed(String detail) {
-    return 'স্বয়ংক্রিয় সাইন-ইন ব্যর্থ হয়েছে ($detail)। আবার সাইন ইন করুন।';
+    return 'à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼ à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨ à¦¬à§à¦¯à¦°à§à¦¥ à¦¹à¦¯à¦¼à§‡à¦›à§‡ ($detail)à¥¤ à¦†à¦¬à¦¾à¦° à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨à¥¤';
   }
 
   @override
   String reasonSignInWait(String time) {
-    return 'শেষ স্বয়ংক্রিয় সাইন-ইন কিছুক্ষণ পরেই কাজ করা বন্ধ করেছে; পরের চেষ্টা $time-এ।';
+    return 'à¦¶à§‡à¦· à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼ à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨ à¦•à¦¿à¦›à§à¦•à§à¦·à¦£ à¦ªà¦°à§‡à¦‡ à¦•à¦¾à¦œ à¦•à¦°à¦¾ à¦¬à¦¨à§à¦§ à¦•à¦°à§‡à¦›à§‡; à¦ªà¦°à§‡à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ $time-à¦à¥¤';
   }
 
   @override
   String reasonSignInRetry(String detail, String time) {
-    return 'স্বয়ংক্রিয় সাইন-ইন শেষ হয়নি ($detail); $time-এ আবার চেষ্টা হবে।';
+    return 'à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼ à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨ à¦¶à§‡à¦· à¦¹à¦¯à¦¼à¦¨à¦¿ ($detail); $time-à¦ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦¹à¦¬à§‡à¥¤';
   }
 
   @override
   String get reasonNotEntitled =>
-      'Mozilla এই অ্যাকাউন্টটি গ্রহণ করেনি; পরে আবার চেষ্টা হবে।';
+      'Mozilla à¦à¦‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà¦Ÿà¦¿ à¦—à§à¦°à¦¹à¦£ à¦•à¦°à§‡à¦¨à¦¿; à¦ªà¦°à§‡ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦¹à¦¬à§‡à¥¤';
 
   @override
-  String get more => 'আরও';
+  String get more => 'à¦†à¦°à¦“';
 
   @override
-  String get refreshQuota => 'ডেটার হিসাব রিফ্রেশ করুন';
+  String get refreshQuota => 'à¦¡à§‡à¦Ÿà¦¾à¦° à¦¹à¦¿à¦¸à¦¾à¦¬ à¦°à¦¿à¦«à§à¦°à§‡à¦¶ à¦•à¦°à§à¦¨';
 
   @override
-  String get remove => 'সরান';
+  String get remove => 'à¦¸à¦°à¦¾à¦¨';
 
   @override
-  String get removeTitle => 'অ্যাকাউন্ট সরাবেন?';
+  String get removeTitle => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¸à¦°à¦¾à¦¬à§‡à¦¨?';
 
   @override
   String removeBody(String name) {
-    return '$name এবং এর সেভ করা সাইন-ইন এই ডিভাইস থেকে মুছে যাবে। পরে আবার যোগ করতে পারবেন।';
+    return '$name à¦à¦¬à¦‚ à¦à¦° à¦¸à§‡à¦­ à¦•à¦°à¦¾ à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨ à¦à¦‡ à¦¡à¦¿à¦­à¦¾à¦‡à¦¸ à¦¥à§‡à¦•à§‡ à¦®à§à¦›à§‡ à¦¯à¦¾à¦¬à§‡à¥¤ à¦ªà¦°à§‡ à¦†à¦¬à¦¾à¦° à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à¦¬à§‡à¦¨à¥¤';
   }
 
   @override
-  String get unlimitedQuota => 'সীমাহীন ডেটা';
+  String get unlimitedQuota => 'à¦¸à§€à¦®à¦¾à¦¹à§€à¦¨ à¦¡à§‡à¦Ÿà¦¾';
 
   @override
-  String get signInTitle => 'সাইন ইন';
+  String get signInTitle => 'à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨';
 
   @override
-  String get signInIntro => 'একটি Firefox Account দিয়ে সাইন ইন করুন।';
+  String get signInIntro => 'à¦à¦•à¦Ÿà¦¿ Firefox Account à¦¦à¦¿à¦¯à¦¼à§‡ à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get email => 'ইমেইল';
+  String get email => 'à¦‡à¦®à§‡à¦‡à¦²';
 
   @override
-  String get emailInvalid => 'অ্যাকাউন্টের ইমেইল লিখুন';
+  String get emailInvalid => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡à¦° à¦‡à¦®à§‡à¦‡à¦² à¦²à¦¿à¦–à§à¦¨';
 
   @override
-  String get password => 'পাসওয়ার্ড';
+  String get password => 'à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡';
 
   @override
-  String get passwordEmpty => 'পাসওয়ার্ড লিখুন';
+  String get passwordEmpty => 'à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦²à¦¿à¦–à§à¦¨';
 
   @override
-  String get show => 'দেখান';
+  String get show => 'à¦¦à§‡à¦–à¦¾à¦¨';
 
   @override
-  String get hide => 'লুকান';
+  String get hide => 'à¦²à§à¦•à¦¾à¦¨';
 
   @override
-  String get signIn => 'সাইন ইন';
+  String get signIn => 'à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨';
 
   @override
-  String get continueLabel => 'চালিয়ে যান';
+  String get continueLabel => 'à¦šà¦¾à¦²à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¨';
 
   @override
-  String get done => 'সম্পন্ন';
+  String get done => 'à¦¸à¦®à§à¦ªà¦¨à§à¦¨';
 
   @override
-  String get close => 'বন্ধ';
+  String get close => 'à¦¬à¦¨à§à¦§';
 
   @override
-  String get cancel => 'বাতিল';
+  String get cancel => 'à¦¬à¦¾à¦¤à¦¿à¦²';
 
   @override
-  String get tryAgain => 'আবার চেষ্টা করুন';
+  String get tryAgain => 'à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨';
 
   @override
-  String get signingIn => 'সাইন ইন হচ্ছে…';
+  String get signingIn => 'à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦¹à¦šà§à¦›à§‡â€¦';
 
   @override
-  String get accountReady => 'অ্যাকাউন্ট প্রস্তুত';
+  String get accountReady => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤';
 
   @override
-  String get accountReadyHint => 'এটি অ্যাকাউন্ট তালিকার শেষে যোগ হয়েছে।';
+  String get accountReadyHint => 'à¦à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¤à¦¾à¦²à¦¿à¦•à¦¾à¦° à¦¶à§‡à¦·à§‡ à¦¯à§‹à¦— à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤';
 
   @override
-  String get captchaLabel => 'ছবির অক্ষরগুলো';
+  String get captchaLabel => 'à¦›à¦¬à¦¿à¦° à¦…à¦•à§à¦·à¦°à¦—à§à¦²à§‹';
 
   @override
-  String get codeLabel => 'কোড';
+  String get codeLabel => 'à¦•à§‹à¦¡';
 
   @override
-  String get captchaBroken => 'CAPTCHA ছবিটি দেখানো যায়নি।';
+  String get captchaBroken => 'CAPTCHA à¦›à¦¬à¦¿à¦Ÿà¦¿ à¦¦à§‡à¦–à¦¾à¦¨à§‹ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿à¥¤';
 
   @override
   String stepEmailCode(String email) {
-    return 'Mozilla $email-এ একটি কোড ইমেইল করেছে। এখানে লিখুন।';
+    return 'Mozilla $email-à¦ à¦à¦•à¦Ÿà¦¿ à¦•à§‹à¦¡ à¦‡à¦®à§‡à¦‡à¦² à¦•à¦°à§‡à¦›à§‡à¥¤ à¦à¦–à¦¾à¦¨à§‡ à¦²à¦¿à¦–à§à¦¨à¥¤';
   }
 
   @override
-  String get stepTotp => 'আপনার অথেনটিকেটর অ্যাপের কোডটি লিখুন।';
+  String get stepTotp => 'à¦†à¦ªà¦¨à¦¾à¦° à¦…à¦¥à§‡à¦¨à¦Ÿà¦¿à¦•à§‡à¦Ÿà¦° à¦…à§à¦¯à¦¾à¦ªà§‡à¦° à¦•à§‹à¦¡à¦Ÿà¦¿ à¦²à¦¿à¦–à§à¦¨à¥¤';
 
   @override
   String stepUnblockCode(String email) {
-    return 'Mozilla এই সাইন-ইনটিকে অস্বাভাবিক মনে করছে এবং $email-এ একটি আনব্লক কোড ইমেইল করেছে। এখানে লিখুন।';
+    return 'Mozilla à¦à¦‡ à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨à¦Ÿà¦¿à¦•à§‡ à¦…à¦¸à§à¦¬à¦¾à¦­à¦¾à¦¬à¦¿à¦• à¦®à¦¨à§‡ à¦•à¦°à¦›à§‡ à¦à¦¬à¦‚ $email-à¦ à¦à¦•à¦Ÿà¦¿ à¦†à¦¨à¦¬à§à¦²à¦• à¦•à§‹à¦¡ à¦‡à¦®à§‡à¦‡à¦² à¦•à¦°à§‡à¦›à§‡à¥¤ à¦à¦–à¦¾à¦¨à§‡ à¦²à¦¿à¦–à§à¦¨à¥¤';
   }
 
   @override
-  String get stepCaptcha => 'ছবির অক্ষরগুলো টাইপ করুন।';
+  String get stepCaptcha => 'à¦›à¦¬à¦¿à¦° à¦…à¦•à§à¦·à¦°à¦—à§à¦²à§‹ à¦Ÿà¦¾à¦‡à¦ª à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String stepEmailLink(String email) {
-    return 'Mozilla $email-এ যে নিশ্চিতকরণ লিংক পাঠিয়েছে সেটি খুলুন। বাকিটা নিজে থেকেই হয়ে যাবে।';
+    return 'Mozilla $email-à¦ à¦¯à§‡ à¦¨à¦¿à¦¶à§à¦šà¦¿à¦¤à¦•à¦°à¦£ à¦²à¦¿à¦‚à¦• à¦ªà¦¾à¦ à¦¿à¦¯à¦¼à§‡à¦›à§‡ à¦¸à§‡à¦Ÿà¦¿ à¦–à§à¦²à§à¦¨à¥¤ à¦¬à¦¾à¦•à¦¿à¦Ÿà¦¾ à¦¨à¦¿à¦œà§‡ à¦¥à§‡à¦•à§‡à¦‡ à¦¹à¦¯à¦¼à§‡ à¦¯à¦¾à¦¬à§‡à¥¤';
   }
 
   @override
-  String get signInFailed => 'অ্যাকাউন্ট যোগ হয়নি।';
+  String get signInFailed => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¯à§‹à¦— à¦¹à¦¯à¦¼à¦¨à¦¿à¥¤';
 
   @override
-  String get signInCancelled => 'সাইন ইন বাতিল হয়েছে।';
+  String get signInCancelled => 'à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦¬à¦¾à¦¤à¦¿à¦² à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤';
 
   @override
-  String get signInNoAccount => 'এই ইমেইলে কোনো Firefox Account নেই।';
+  String get signInNoAccount => 'à¦à¦‡ à¦‡à¦®à§‡à¦‡à¦²à§‡ à¦•à§‹à¦¨à§‹ Firefox Account à¦¨à§‡à¦‡à¥¤';
 
   @override
   String get signInNoAccountHint =>
-      'ইমেইলটি দেখুন, অথবা এই ইমেইল দিয়ে Mozilla-র সাইটে একটি বিনামূল্যের Firefox Account তৈরি করুন, ইনবক্স থেকে নিশ্চিত করুন, তারপর এখানে যোগ করুন।';
+      'à¦‡à¦®à§‡à¦‡à¦²à¦Ÿà¦¿ à¦¦à§‡à¦–à§à¦¨, à¦…à¦¥à¦¬à¦¾ à¦à¦‡ à¦‡à¦®à§‡à¦‡à¦² à¦¦à¦¿à¦¯à¦¼à§‡ Mozilla-à¦° à¦¸à¦¾à¦‡à¦Ÿà§‡ à¦à¦•à¦Ÿà¦¿ à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡à¦° Firefox Account à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§à¦¨, à¦‡à¦¨à¦¬à¦•à§à¦¸ à¦¥à§‡à¦•à§‡ à¦¨à¦¿à¦¶à§à¦šà¦¿à¦¤ à¦•à¦°à§à¦¨, à¦¤à¦¾à¦°à¦ªà¦° à¦à¦–à¦¾à¦¨à§‡ à¦¯à§‹à¦— à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get createAccountButton => 'Firefox Account তৈরি করুন';
+  String get createAccountButton => 'Firefox Account à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§à¦¨';
 
   @override
-  String get signInWrongPassword => 'পাসওয়ার্ড ভুল।';
+  String get signInWrongPassword => 'à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦­à§à¦²à¥¤';
 
   @override
   String get signInNoPassword =>
-      'এই অ্যাকাউন্টের কোনো পাসওয়ার্ড নেই: এটি Google বা Apple দিয়ে সাইন ইন করে তৈরি। একটি পাসওয়ার্ড সেট করুন, তারপর সেটি দিয়ে এখানে সাইন ইন করুন।';
+      'à¦à¦‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡à¦° à¦•à§‹à¦¨à§‹ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦¨à§‡à¦‡: à¦à¦Ÿà¦¿ Google à¦¬à¦¾ Apple à¦¦à¦¿à¦¯à¦¼à§‡ à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§‡ à¦¤à§ˆà¦°à¦¿à¥¤ à¦à¦•à¦Ÿà¦¿ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦¸à§‡à¦Ÿ à¦•à¦°à§à¦¨, à¦¤à¦¾à¦°à¦ªà¦° à¦¸à§‡à¦Ÿà¦¿ à¦¦à¦¿à¦¯à¦¼à§‡ à¦à¦–à¦¾à¦¨à§‡ à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get setPasswordButton => 'পাসওয়ার্ড সেট করুন';
+  String get setPasswordButton => 'à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦¸à§‡à¦Ÿ à¦•à¦°à§à¦¨';
 
   @override
   String get signInTooManyAttempts =>
-      'অনেকবার চেষ্টা হয়েছে। কিছুক্ষণ অপেক্ষা করে আবার চেষ্টা করুন।';
+      'à¦…à¦¨à§‡à¦•à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤ à¦•à¦¿à¦›à§à¦•à§à¦·à¦£ à¦…à¦ªà§‡à¦•à§à¦·à¦¾ à¦•à¦°à§‡ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get signInUnblockRejected =>
-      'আনব্লক কোড গৃহীত হয়নি। Mozilla-র সর্বশেষ ইমেইলের কোডটি ব্যবহার করুন।';
+      'à¦†à¦¨à¦¬à§à¦²à¦• à¦•à§‹à¦¡ à¦—à§ƒà¦¹à§€à¦¤ à¦¹à¦¯à¦¼à¦¨à¦¿à¥¤ Mozilla-à¦° à¦¸à¦°à§à¦¬à¦¶à§‡à¦· à¦‡à¦®à§‡à¦‡à¦²à§‡à¦° à¦•à§‹à¦¡à¦Ÿà¦¿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get signInWrongCode =>
-      'কোড ভুল বা মেয়াদোত্তীর্ণ। Mozilla-র সর্বশেষ ইমেইলের কোডটি ব্যবহার করুন; নতুন কোড পাঠালে পুরোনোটি আর কাজ করে না।';
+      'à¦•à§‹à¦¡ à¦­à§à¦² à¦¬à¦¾ à¦®à§‡à¦¯à¦¼à¦¾à¦¦à§‹à¦¤à§à¦¤à§€à¦°à§à¦£à¥¤ Mozilla-à¦° à¦¸à¦°à§à¦¬à¦¶à§‡à¦· à¦‡à¦®à§‡à¦‡à¦²à§‡à¦° à¦•à§‹à¦¡à¦Ÿà¦¿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨; à¦¨à¦¤à§à¦¨ à¦•à§‹à¦¡ à¦ªà¦¾à¦ à¦¾à¦²à§‡ à¦ªà§à¦°à§‹à¦¨à§‹à¦Ÿà¦¿ à¦†à¦° à¦•à¦¾à¦œ à¦•à¦°à§‡ à¦¨à¦¾à¥¤';
 
   @override
   String get signInWrongTotp =>
-      'কোড ভুল। অথেনটিকেটর অ্যাপ এখন যে কোড দেখাচ্ছে সেটি লিখুন।';
+      'à¦•à§‹à¦¡ à¦­à§à¦²à¥¤ à¦…à¦¥à§‡à¦¨à¦Ÿà¦¿à¦•à§‡à¦Ÿà¦° à¦…à§à¦¯à¦¾à¦ª à¦à¦–à¦¨ à¦¯à§‡ à¦•à§‹à¦¡ à¦¦à§‡à¦–à¦¾à¦šà§à¦›à§‡ à¦¸à§‡à¦Ÿà¦¿ à¦²à¦¿à¦–à§à¦¨à¥¤';
 
   @override
   String get signInTooManyCodes =>
-      'অনেকগুলো ভুল কোড। আবার শুরু থেকে সাইন ইন করুন।';
+      'à¦…à¦¨à§‡à¦•à¦—à§à¦²à§‹ à¦­à§à¦² à¦•à§‹à¦¡à¥¤ à¦†à¦¬à¦¾à¦° à¦¶à§à¦°à§ à¦¥à§‡à¦•à§‡ à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get signInTimedOut => 'সাইন ইনে অনেক সময় লেগেছে। আবার শুরু করুন।';
+  String get signInTimedOut => 'à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨à§‡ à¦…à¦¨à§‡à¦• à¦¸à¦®à¦¯à¦¼ à¦²à§‡à¦—à§‡à¦›à§‡à¥¤ à¦†à¦¬à¦¾à¦° à¦¶à§à¦°à§ à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get signInNetwork =>
-      'Mozilla-তে পৌঁছানো যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন।';
+      'Mozilla-à¦¤à§‡ à¦ªà§Œà¦à¦›à¦¾à¦¨à§‹ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿à¥¤ à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦¦à§‡à¦–à§‡ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get coreConnecting => 'কোরের সাথে সংযোগ হচ্ছে…';
+  String get coreConnecting => 'à¦•à§‹à¦°à§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦¸à¦‚à¦¯à§‹à¦— à¦¹à¦šà§à¦›à§‡â€¦';
 
   @override
-  String get coreLost => 'কোরের সাথে সংযোগ বিচ্ছিন্ন। আবার চেষ্টা হচ্ছে…';
+  String get coreLost => 'à¦•à§‹à¦°à§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦¸à¦‚à¦¯à§‹à¦— à¦¬à¦¿à¦šà§à¦›à¦¿à¦¨à§à¦¨à¥¤ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦¹à¦šà§à¦›à§‡â€¦';
 
   @override
-  String get cantReachCore => 'কোরে পৌঁছানো যাচ্ছে না';
+  String get cantReachCore => 'à¦•à§‹à¦°à§‡ à¦ªà§Œà¦à¦›à¦¾à¦¨à§‹ à¦¯à¦¾à¦šà§à¦›à§‡ à¦¨à¦¾';
 
   @override
-  String get startingCore => 'কোর চালু হচ্ছে…';
+  String get startingCore => 'à¦•à§‹à¦° à¦šà¦¾à¦²à§ à¦¹à¦šà§à¦›à§‡â€¦';
 
   @override
-  String get retry => 'আবার চেষ্টা';
+  String get retry => 'à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾';
 
   @override
   String errNoCore(String path) {
-    return 'অ্যাপের পাশে কোর প্রোগ্রামটি পাওয়া যায়নি ($path)।';
+    return 'à¦…à§à¦¯à¦¾à¦ªà§‡à¦° à¦ªà¦¾à¦¶à§‡ à¦•à§‹à¦° à¦ªà§à¦°à§‹à¦—à§à¦°à¦¾à¦®à¦Ÿà¦¿ à¦ªà¦¾à¦“à¦¯à¦¼à¦¾ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿ ($path)à¥¤';
   }
 
   @override
   String errCoreExited(String detail) {
-    return 'কোর বন্ধ হয়ে গেছে: $detail';
+    return 'à¦•à§‹à¦° à¦¬à¦¨à§à¦§ à¦¹à¦¯à¦¼à§‡ à¦—à§‡à¦›à§‡: $detail';
   }
 
   @override
-  String get errNotAnswering => 'কোর সাড়া দিচ্ছে না।';
+  String get errNotAnswering => 'à¦•à§‹à¦° à¦¸à¦¾à¦¡à¦¼à¦¾ à¦¦à¦¿à¦šà§à¦›à§‡ à¦¨à¦¾à¥¤';
 
   @override
   String get errRefused =>
-      'কোর এই অ্যাপকে সংযোগ করতে দিচ্ছে না; সম্ভবত এটি অ্যাপের অন্য কোনো কপির কোর।';
+      'à¦•à§‹à¦° à¦à¦‡ à¦…à§à¦¯à¦¾à¦ªà¦•à§‡ à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦¦à¦¿à¦šà§à¦›à§‡ à¦¨à¦¾; à¦¸à¦®à§à¦­à¦¬à¦¤ à¦à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦ªà§‡à¦° à¦…à¦¨à§à¦¯ à¦•à§‹à¦¨à§‹ à¦•à¦ªà¦¿à¦° à¦•à§‹à¦°à¥¤';
 
   @override
-  String get settingsTitle => 'সেটিংস';
+  String get settingsTitle => 'à¦¸à§‡à¦Ÿà¦¿à¦‚à¦¸';
 
   @override
-  String get sectionGeneral => 'সাধারণ';
+  String get sectionGeneral => 'à¦¸à¦¾à¦§à¦¾à¦°à¦£';
 
   @override
-  String get language => 'ভাষা';
+  String get language => 'à¦­à¦¾à¦·à¦¾';
 
   @override
-  String get languageSystem => 'সিস্টেম ডিফল্ট';
+  String get languageSystem => 'à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦¡à¦¿à¦«à¦²à§à¦Ÿ';
 
   @override
-  String get theme => 'থিম';
+  String get theme => 'à¦¥à¦¿à¦®';
 
   @override
-  String get themeSystem => 'সিস্টেম';
+  String get themeSystem => 'à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦®';
 
   @override
-  String get themeLight => 'লাইট';
+  String get themeLight => 'à¦²à¦¾à¦‡à¦Ÿ';
 
   @override
-  String get themeDark => 'ডার্ক';
+  String get themeDark => 'à¦¡à¦¾à¦°à§à¦•';
 
   @override
-  String get closeBehavior => 'উইন্ডো বন্ধ করার সময়';
+  String get closeBehavior => 'à¦‰à¦‡à¦¨à§à¦¡à§‹ à¦¬à¦¨à§à¦§ à¦•à¦°à¦¾à¦° à¦¸à¦®à¦¯à¦¼';
 
   @override
-  String get closeAsk => 'প্রতিবার জিজ্ঞেস করুন';
+  String get closeAsk => 'à¦ªà§à¦°à¦¤à¦¿à¦¬à¦¾à¦° à¦œà¦¿à¦œà§à¦žà§‡à¦¸ à¦•à¦°à§à¦¨';
 
   @override
-  String get closeTray => 'সিস্টেম ট্রে-তে লুকান';
+  String get closeTray => 'à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦Ÿà§à¦°à§‡-à¦¤à§‡ à¦²à§à¦•à¦¾à¦¨';
 
   @override
-  String get closeQuit => 'অ্যাপ বন্ধ করুন';
+  String get closeQuit => 'à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¨à§à¦§ à¦•à¦°à§à¦¨';
 
   @override
-  String get sectionConnection => 'সংযোগ';
+  String get sectionConnection => 'à¦¸à¦‚à¦¯à§‹à¦—';
 
   @override
-  String get localProxy => 'লোকাল প্রক্সি';
+  String get localProxy => 'à¦²à§‹à¦•à¦¾à¦² à¦ªà§à¦°à¦•à§à¦¸à¦¿';
 
   @override
-  String get systemProxy => 'সিস্টেম প্রক্সি';
+  String get systemProxy => 'à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦ªà§à¦°à¦•à§à¦¸à¦¿';
 
   @override
-  String get sectionRouting => 'রাউটিং';
+  String get sectionRouting => 'à¦°à¦¾à¦‰à¦Ÿà¦¿à¦‚';
 
   @override
-  String get routingDirect => 'দেশি সাইটে সরাসরি সংযোগ';
+  String get routingDirect => 'à¦¦à§‡à¦¶à¦¿ à¦¸à¦¾à¦‡à¦Ÿà§‡ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦¸à¦‚à¦¯à§‹à¦—';
 
   @override
   String get routingDirectHint =>
-      'নির্বাচিত দেশের সাইট ও IP VPN ছাড়া সরাসরি খোলে, তাই দ্রুত লোড হয় এবং ডেটা বাঁচে।';
+      'à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦¦à§‡à¦¶à§‡à¦° à¦¸à¦¾à¦‡à¦Ÿ à¦“ IP VPN à¦›à¦¾à¦¡à¦¼à¦¾ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦–à§‹à¦²à§‡, à¦¤à¦¾à¦‡ à¦¦à§à¦°à§à¦¤ à¦²à§‹à¦¡ à¦¹à¦¯à¦¼ à¦à¦¬à¦‚ à¦¡à§‡à¦Ÿà¦¾ à¦¬à¦¾à¦à¦šà§‡à¥¤';
 
   @override
-  String get region => 'দেশ';
+  String get region => 'à¦¦à§‡à¦¶';
 
   @override
-  String get regionIr => 'ইরান';
+  String get regionIr => 'à¦‡à¦°à¦¾à¦¨';
 
   @override
-  String get regionCn => 'চীন';
+  String get regionCn => 'à¦šà§€à¦¨';
 
   @override
-  String get regionRu => 'রাশিয়া';
+  String get regionRu => 'à¦°à¦¾à¦¶à¦¿à¦¯à¦¼à¦¾';
 
   @override
-  String get regionAf => 'আফগানিস্তান';
+  String get regionAf => 'à¦†à¦«à¦—à¦¾à¦¨à¦¿à¦¸à§à¦¤à¦¾à¦¨';
 
   @override
-  String get regionTr => 'তুরস্ক';
+  String get regionTr => 'à¦¤à§à¦°à¦¸à§à¦•';
 
   @override
-  String get regionId => 'ইন্দোনেশিয়া';
+  String get regionId => 'à¦‡à¦¨à§à¦¦à§‹à¦¨à§‡à¦¶à¦¿à¦¯à¦¼à¦¾';
 
   @override
-  String get regionBr => 'ব্রাজিল';
+  String get regionBr => 'à¦¬à§à¦°à¦¾à¦œà¦¿à¦²';
 
   @override
-  String get regionNone => 'কোনোটি নয়';
+  String get regionNone => 'à¦•à§‹à¦¨à§‹à¦Ÿà¦¿ à¦¨à¦¯à¦¼';
 
   @override
-  String get saved => 'সেভ হয়েছে';
+  String get saved => 'à¦¸à§‡à¦­ à¦¹à¦¯à¦¼à§‡à¦›à§‡';
 
   @override
-  String get dataFolder => 'ডেটা ফোল্ডার';
+  String get dataFolder => 'à¦¡à§‡à¦Ÿà¦¾ à¦«à§‹à¦²à§à¦¡à¦¾à¦°';
 
   @override
-  String get openFolder => 'ফোল্ডার খুলুন';
+  String get openFolder => 'à¦«à§‹à¦²à§à¦¡à¦¾à¦° à¦–à§à¦²à§à¦¨';
 
   @override
   String get unofficialNote =>
-      'এটি অফিসিয়াল ক্লায়েন্ট নয়। Mozilla-র সাথে এর কোনো সম্পর্ক নেই।';
+      'à¦à¦Ÿà¦¿ à¦…à¦«à¦¿à¦¸à¦¿à¦¯à¦¼à¦¾à¦² à¦•à§à¦²à¦¾à¦¯à¦¼à§‡à¦¨à§à¦Ÿ à¦¨à¦¯à¦¼à¥¤ Mozilla-à¦° à¦¸à¦¾à¦¥à§‡ à¦à¦° à¦•à§‹à¦¨à§‹ à¦¸à¦®à§à¦ªà¦°à§à¦• à¦¨à§‡à¦‡à¥¤';
 
   @override
-  String get closeTitle => 'উইন্ডো বন্ধ করবেন?';
+  String get closeTitle => 'à¦‰à¦‡à¦¨à§à¦¡à§‹ à¦¬à¦¨à§à¦§ à¦•à¦°à¦¬à§‡à¦¨?';
 
   @override
   String get closeBody =>
-      'ট্রে-তে থাকলে VPN চালু থাকে। অ্যাপ বন্ধ করলে VPN-ও বন্ধ হয়ে যাবে।';
+      'à¦Ÿà§à¦°à§‡-à¦¤à§‡ à¦¥à¦¾à¦•à¦²à§‡ VPN à¦šà¦¾à¦²à§ à¦¥à¦¾à¦•à§‡à¥¤ à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¨à§à¦§ à¦•à¦°à¦²à§‡ VPN-à¦“ à¦¬à¦¨à§à¦§ à¦¹à¦¯à¦¼à§‡ à¦¯à¦¾à¦¬à§‡à¥¤';
 
   @override
-  String get rememberChoice => 'আমার পছন্দ মনে রাখুন';
+  String get rememberChoice => 'à¦†à¦®à¦¾à¦° à¦ªà¦›à¦¨à§à¦¦ à¦®à¦¨à§‡ à¦°à¦¾à¦–à§à¦¨';
 
   @override
-  String get minimizeToTray => 'ট্রে-তে লুকান';
+  String get minimizeToTray => 'à¦Ÿà§à¦°à§‡-à¦¤à§‡ à¦²à§à¦•à¦¾à¦¨';
 
   @override
-  String get quit => 'বেরিয়ে যান';
+  String get quit => 'à¦¬à§‡à¦°à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¨';
 
   @override
-  String get trayOpen => 'খুলুন';
+  String get trayOpen => 'à¦–à§à¦²à§à¦¨';
 
   @override
-  String get trayQuit => 'বেরিয়ে যান';
+  String get trayQuit => 'à¦¬à§‡à¦°à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¨';
 
   @override
-  String get trayProxyOnly => 'শুধু প্রক্সি সার্ভিস';
+  String get trayProxyOnly => 'à¦¶à§à¦§à§ à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¸à¦¾à¦°à§à¦­à¦¿à¦¸';
 
   @override
-  String get traySetSystemProxy => 'সিস্টেম প্রক্সি সেট করুন';
+  String get traySetSystemProxy => 'à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¸à§‡à¦Ÿ à¦•à¦°à§à¦¨';
 
   @override
   String errPortInUse(String port) {
-    return 'পোর্ট $port অন্য একটি প্রোগ্রাম ব্যবহার করছে, তাই অ্যাপটি তার কোরে পৌঁছাতে পারছে না।';
+    return 'à¦ªà§‹à¦°à§à¦Ÿ $port à¦…à¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦°à§‹à¦—à§à¦°à¦¾à¦® à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦›à§‡, à¦¤à¦¾à¦‡ à¦…à§à¦¯à¦¾à¦ªà¦Ÿà¦¿ à¦¤à¦¾à¦° à¦•à§‹à¦°à§‡ à¦ªà§Œà¦à¦›à¦¾à¦¤à§‡ à¦ªà¦¾à¦°à¦›à§‡ à¦¨à¦¾à¥¤';
   }
 
   @override
   String proxyPortInUse(String port) {
-    return 'পোর্ট $port অন্য একটি প্রোগ্রাম ব্যবহার করছে, তাই প্রক্সি চালু হতে পারছে না।';
+    return 'à¦ªà§‹à¦°à§à¦Ÿ $port à¦…à¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦°à§‹à¦—à§à¦°à¦¾à¦® à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦›à§‡, à¦¤à¦¾à¦‡ à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦šà¦¾à¦²à§ à¦¹à¦¤à§‡ à¦ªà¦¾à¦°à¦›à§‡ à¦¨à¦¾à¥¤';
   }
 
   @override
-  String get changePort => 'পোর্ট বদলান';
+  String get changePort => 'à¦ªà§‹à¦°à§à¦Ÿ à¦¬à¦¦à¦²à¦¾à¦¨';
 
   @override
-  String get portDialogTitle => 'একটি পোর্ট বেছে নিন';
+  String get portDialogTitle => 'à¦à¦•à¦Ÿà¦¿ à¦ªà§‹à¦°à§à¦Ÿ à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦¨';
 
   @override
   String portDialogBody(String port) {
-    return 'পোর্ট $port ব্যস্ত। নিচে একটি খালি পোর্ট দেওয়া হয়েছে; চাইলে অন্য একটি লিখতে পারেন।';
+    return 'à¦ªà§‹à¦°à§à¦Ÿ $port à¦¬à§à¦¯à¦¸à§à¦¤à¥¤ à¦¨à¦¿à¦šà§‡ à¦à¦•à¦Ÿà¦¿ à¦–à¦¾à¦²à¦¿ à¦ªà§‹à¦°à§à¦Ÿ à¦¦à§‡à¦“à¦¯à¦¼à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡; à¦šà¦¾à¦‡à¦²à§‡ à¦…à¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦²à¦¿à¦–à¦¤à§‡ à¦ªà¦¾à¦°à§‡à¦¨à¥¤';
   }
 
   @override
   String get portChangeBody =>
-      'অ্যাপগুলো এই পোর্টে সংযোগ করে। 1024 থেকে 65535-এর মধ্যে একটি বেছে নিন।';
+      'à¦…à§à¦¯à¦¾à¦ªà¦—à§à¦²à§‹ à¦à¦‡ à¦ªà§‹à¦°à§à¦Ÿà§‡ à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à§‡à¥¤ 1024 à¦¥à§‡à¦•à§‡ 65535-à¦à¦° à¦®à¦§à§à¦¯à§‡ à¦à¦•à¦Ÿà¦¿ à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦¨à¥¤';
 
   @override
-  String get portLabel => 'পোর্ট';
+  String get portLabel => 'à¦ªà§‹à¦°à§à¦Ÿ';
 
   @override
-  String get portInvalid => '1024 থেকে 65535-এর মধ্যে একটি পোর্ট লিখুন';
+  String get portInvalid => '1024 à¦¥à§‡à¦•à§‡ 65535-à¦à¦° à¦®à¦§à§à¦¯à§‡ à¦à¦•à¦Ÿà¦¿ à¦ªà§‹à¦°à§à¦Ÿ à¦²à¦¿à¦–à§à¦¨';
 
   @override
-  String get portBusy => 'এই পোর্টটিও ব্যস্ত';
+  String get portBusy => 'à¦à¦‡ à¦ªà§‹à¦°à§à¦Ÿà¦Ÿà¦¿à¦“ à¦¬à§à¦¯à¦¸à§à¦¤';
 
   @override
-  String get portInUse => 'অন্য একটি প্রোগ্রাম এই পোর্ট ব্যবহার করছে';
+  String get portInUse => 'à¦…à¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦°à§‹à¦—à§à¦°à¦¾à¦® à¦à¦‡ à¦ªà§‹à¦°à§à¦Ÿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦›à§‡';
 
   @override
-  String get save => 'সংরক্ষণ';
+  String get save => 'à¦¸à¦‚à¦°à¦•à§à¦·à¦£';
 
   @override
-  String get proxyPort => 'প্রক্সি পোর্ট';
+  String get proxyPort => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦ªà§‹à¦°à§à¦Ÿ';
 
   @override
-  String get appPort => 'অ্যাপ পোর্ট';
+  String get appPort => 'à¦…à§à¦¯à¦¾à¦ª à¦ªà§‹à¦°à§à¦Ÿ';
 
   @override
-  String get welcomeTitle => 'স্বাগতম';
+  String get welcomeTitle => 'à¦¸à§à¦¬à¦¾à¦—à¦¤à¦®';
 
   @override
   String get welcomeBody =>
-      'আপনার ভাষা ও দেশ বেছে নিন। আপনার দেশের সাইটগুলো VPN ছাড়া সরাসরি খুলবে, তাই দ্রুত লোড হবে এবং ডেটা বাঁচবে।';
+      'à¦†à¦ªà¦¨à¦¾à¦° à¦­à¦¾à¦·à¦¾ à¦“ à¦¦à§‡à¦¶ à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦¨à¥¤ à¦†à¦ªà¦¨à¦¾à¦° à¦¦à§‡à¦¶à§‡à¦° à¦¸à¦¾à¦‡à¦Ÿà¦—à§à¦²à§‹ VPN à¦›à¦¾à¦¡à¦¼à¦¾ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦–à§à¦²à¦¬à§‡, à¦¤à¦¾à¦‡ à¦¦à§à¦°à§à¦¤ à¦²à§‹à¦¡ à¦¹à¦¬à§‡ à¦à¦¬à¦‚ à¦¡à§‡à¦Ÿà¦¾ à¦¬à¦¾à¦à¦šà¦¬à§‡à¥¤';
 
   @override
-  String get start => 'শুরু';
+  String get start => 'à¦¶à§à¦°à§';
 
   @override
   String routingSuggestTitle(String country) {
-    return '$country-এর সাইট সরাসরি খুলবেন?';
+    return '$country-à¦à¦° à¦¸à¦¾à¦‡à¦Ÿ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦–à§à¦²à¦¬à§‡à¦¨?';
   }
 
   @override
   String routingSuggestBody(String country) {
-    return '$country-এর সাইট ও IP VPN ছাড়া সরাসরি খুলবে। পরে রাউটিং থেকে এটি বদলাতে পারবেন।';
+    return '$country-à¦à¦° à¦¸à¦¾à¦‡à¦Ÿ à¦“ IP VPN à¦›à¦¾à¦¡à¦¼à¦¾ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦–à§à¦²à¦¬à§‡à¥¤ à¦ªà¦°à§‡ à¦°à¦¾à¦‰à¦Ÿà¦¿à¦‚ à¦¥à§‡à¦•à§‡ à¦à¦Ÿà¦¿ à¦¬à¦¦à¦²à¦¾à¦¤à§‡ à¦ªà¦¾à¦°à¦¬à§‡à¦¨à¥¤';
   }
 
   @override
-  String get yes => 'হ্যাঁ';
+  String get yes => 'à¦¹à§à¦¯à¦¾à¦';
 
   @override
-  String get notNow => 'এখন নয়';
+  String get notNow => 'à¦à¦–à¦¨ à¦¨à¦¯à¦¼';
 
   @override
-  String get navServers => 'সার্ভার';
+  String get navServers => 'à¦¸à¦¾à¦°à§à¦­à¦¾à¦°';
 
   @override
-  String get navLogs => 'লগ';
+  String get navLogs => 'à¦²à¦—';
 
   @override
-  String get realDelay => 'আসল ডিলে';
+  String get realDelay => 'à¦†à¦¸à¦² à¦¡à¦¿à¦²à§‡';
 
   @override
   String noticePort(String port) {
-    return 'Mozilla-র প্রক্সি পোর্ট $port-এ সংযোগ করে না। শুধু 80, 443, 8080 ও 8443 পোর্ট VPN দিয়ে যায়।';
+    return 'Mozilla-à¦° à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦ªà§‹à¦°à§à¦Ÿ $port-à¦ à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à§‡ à¦¨à¦¾à¥¤ à¦¶à§à¦§à§ 80, 443, 8080 à¦“ 8443 à¦ªà§‹à¦°à§à¦Ÿ VPN à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¯à¦¼à¥¤';
   }
 
   @override
   String get noticeCommand =>
-      'একটি অ্যাপ UDP ব্যবহার করতে চেয়েছে (গেম, ভয়েস ও ভিডিও কল)। Mozilla-র প্রক্সি শুধু TCP সমর্থন করে, তাই এই ট্রাফিক যেতে পারে না।';
+      'à¦à¦•à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦ª UDP à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¤à§‡ à¦šà§‡à¦¯à¦¼à§‡à¦›à§‡ (à¦—à§‡à¦®, à¦­à¦¯à¦¼à§‡à¦¸ à¦“ à¦­à¦¿à¦¡à¦¿à¦“ à¦•à¦²)à¥¤ Mozilla-à¦° à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¶à§à¦§à§ TCP à¦¸à¦®à¦°à§à¦¥à¦¨ à¦•à¦°à§‡, à¦¤à¦¾à¦‡ à¦à¦‡ à¦Ÿà§à¦°à¦¾à¦«à¦¿à¦• à¦¯à§‡à¦¤à§‡ à¦ªà¦¾à¦°à§‡ à¦¨à¦¾à¥¤';
 
   @override
   String noticeTimes(int count, String time) {
-    return '$count বার, শেষবার $time';
+    return '$count à¦¬à¦¾à¦°, à¦¶à§‡à¦·à¦¬à¦¾à¦° $time';
   }
 
   @override
-  String get dismiss => 'বাদ দিন';
+  String get dismiss => 'à¦¬à¦¾à¦¦ à¦¦à¦¿à¦¨';
 
   @override
-  String get modeRecommended => 'প্রস্তাবিত';
+  String get modeRecommended => 'à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤';
 
   @override
-  String get modeFastest => 'দ্রুততম';
+  String get modeFastest => 'à¦¦à§à¦°à§à¦¤à¦¤à¦®';
 
   @override
-  String get modeRecommendedHint => 'Mozilla আপনার জন্য লোকেশন বেছে নেয়।';
+  String get modeRecommendedHint => 'Mozilla à¦†à¦ªà¦¨à¦¾à¦° à¦œà¦¨à§à¦¯ à¦²à§‹à¦•à§‡à¦¶à¦¨ à¦¬à§‡à¦›à§‡ à¦¨à§‡à¦¯à¦¼à¥¤';
 
   @override
   String get modeFastestHint =>
-      'প্রতিবার সংযোগের সময় সবচেয়ে কম ডিলের লোকেশন।';
+      'à¦ªà§à¦°à¦¤à¦¿à¦¬à¦¾à¦° à¦¸à¦‚à¦¯à§‹à¦—à§‡à¦° à¦¸à¦®à¦¯à¦¼ à¦¸à¦¬à¦šà§‡à¦¯à¦¼à§‡ à¦•à¦® à¦¡à¦¿à¦²à§‡à¦° à¦²à§‹à¦•à§‡à¦¶à¦¨à¥¤';
 
   @override
-  String get testDelay => 'আসল ডিলে পরীক্ষা করুন';
+  String get testDelay => 'à¦†à¦¸à¦² à¦¡à¦¿à¦²à§‡ à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦•à¦°à§à¦¨';
 
   @override
-  String get testingDelay => 'পরীক্ষা চলছে… এতে এক মিনিট লাগতে পারে';
+  String get testingDelay => 'à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦šà¦²à¦›à§‡â€¦ à¦à¦¤à§‡ à¦à¦• à¦®à¦¿à¦¨à¦¿à¦Ÿ à¦²à¦¾à¦—à¦¤à§‡ à¦ªà¦¾à¦°à§‡';
 
   @override
-  String get search => 'খুঁজুন';
+  String get search => 'à¦–à§à¦à¦œà§à¦¨';
 
   @override
-  String get noAnswer => 'সাড়া নেই';
+  String get noAnswer => 'à¦¸à¦¾à¦¡à¦¼à¦¾ à¦¨à§‡à¦‡';
 
   @override
   String testedAgo(String ago) {
-    return '$ago পরীক্ষা করা হয়েছে';
+    return '$ago à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡';
   }
 
   @override
   String delaySummary(int answered, int total) {
-    return '$totalটির মধ্যে $answeredটি সাড়া দিয়েছে';
+    return '$totalà¦Ÿà¦¿à¦° à¦®à¦§à§à¦¯à§‡ $answeredà¦Ÿà¦¿ à¦¸à¦¾à¦¡à¦¼à¦¾ à¦¦à¦¿à¦¯à¦¼à§‡à¦›à§‡';
   }
 
   @override
   String get noServers =>
-      'এখনও কোনো সার্ভার নেই। কোর Mozilla-র সাথে সংযুক্ত হলে এখানে দেখা যাবে।';
+      'à¦à¦–à¦¨à¦“ à¦•à§‹à¦¨à§‹ à¦¸à¦¾à¦°à§à¦­à¦¾à¦° à¦¨à§‡à¦‡à¥¤ à¦•à§‹à¦° Mozilla-à¦° à¦¸à¦¾à¦¥à§‡ à¦¸à¦‚à¦¯à§à¦•à§à¦¤ à¦¹à¦²à§‡ à¦à¦–à¦¾à¦¨à§‡ à¦¦à§‡à¦–à¦¾ à¦¯à¦¾à¦¬à§‡à¥¤';
 
   @override
-  String get levelAll => 'সব';
+  String get levelAll => 'à¦¸à¦¬';
 
   @override
-  String get filter => 'ফিল্টার';
+  String get filter => 'à¦«à¦¿à¦²à§à¦Ÿà¦¾à¦°';
 
   @override
-  String get follow => 'স্বয়ংক্রিয় স্ক্রল';
+  String get follow => 'à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼ à¦¸à§à¦•à§à¦°à¦²';
 
   @override
-  String get clear => 'মুছুন';
+  String get clear => 'à¦®à§à¦›à§à¦¨';
 
   @override
-  String get copyAll => 'কপি';
+  String get copyAll => 'à¦•à¦ªà¦¿';
 
   @override
-  String get logsCopied => 'লগ কপি হয়েছে';
+  String get logsCopied => 'à¦²à¦— à¦•à¦ªà¦¿ à¦¹à¦¯à¦¼à§‡à¦›à§‡';
 
   @override
-  String get noLogs => 'এখনও কোনো লগ নেই।';
+  String get noLogs => 'à¦à¦–à¦¨à¦“ à¦•à§‹à¦¨à§‹ à¦²à¦— à¦¨à§‡à¦‡à¥¤';
 
   @override
-  String get sectionAccounts => 'স্বয়ংক্রিয় অ্যাকাউন্ট বদল';
+  String get sectionAccounts => 'à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¬à¦¦à¦²';
 
   @override
-  String get switchThreshold => 'অ্যাকাউন্ট বদলের সীমা';
+  String get switchThreshold => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¬à¦¦à¦²à§‡à¦° à¦¸à§€à¦®à¦¾';
 
   @override
   String get switchThresholdHint =>
-      'ডেটার এই অংশ খরচ হলে পরের অ্যাকাউন্টে চলে যায়।';
+      'à¦¡à§‡à¦Ÿà¦¾à¦° à¦à¦‡ à¦…à¦‚à¦¶ à¦–à¦°à¦š à¦¹à¦²à§‡ à¦ªà¦°à§‡à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡ à¦šà¦²à§‡ à¦¯à¦¾à¦¯à¦¼à¥¤';
 
   @override
   String get sectionDns => 'DNS';
 
   @override
-  String get dnsPreset => 'DNS সার্ভার';
+  String get dnsPreset => 'DNS à¦¸à¦¾à¦°à§à¦­à¦¾à¦°';
 
   @override
-  String get dnsSystem => 'সিস্টেম';
+  String get dnsSystem => 'à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦®';
 
   @override
-  String get dnsAuto => 'স্বয়ংক্রিয় (Cloudflare, Google, Quad9)';
+  String get dnsAuto => 'à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼ (Cloudflare, Google, Quad9)';
 
   @override
-  String get dnsCustom => 'কাস্টম';
+  String get dnsCustom => 'à¦•à¦¾à¦¸à§à¦Ÿà¦®';
 
   @override
   String get dnsCustomHint =>
-      'প্রতি লাইনে একটি: https://…/dns-query, tls://…, অথবা একটি IP ঠিকানা।';
+      'à¦ªà§à¦°à¦¤à¦¿ à¦²à¦¾à¦‡à¦¨à§‡ à¦à¦•à¦Ÿà¦¿: https://â€¦/dns-query, tls://â€¦, à¦…à¦¥à¦¬à¦¾ à¦à¦•à¦Ÿà¦¿ IP à¦ à¦¿à¦•à¦¾à¦¨à¦¾à¥¤';
 
   @override
-  String get dnsFallback => 'প্রয়োজনে সিস্টেম DNS ব্যবহার করুন';
+  String get dnsFallback => 'à¦ªà§à¦°à¦¯à¦¼à§‹à¦œà¦¨à§‡ à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® DNS à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨';
 
   @override
-  String get testDns => 'DNS পরীক্ষা করুন';
+  String get testDns => 'DNS à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦•à¦°à§à¦¨';
 
   @override
-  String get transport => 'প্রোটোকল';
+  String get transport => 'à¦ªà§à¦°à§‹à¦Ÿà§‹à¦•à¦²';
 
   @override
   String get transportH3 => 'HTTP/3 (QUIC)';
@@ -761,229 +761,229 @@ class AppLocalizationsBn extends AppLocalizations {
   String get transportH2 => 'HTTP/2 (TCP)';
 
   @override
-  String get directRules => 'সরাসরি';
+  String get directRules => 'à¦¸à¦°à¦¾à¦¸à¦°à¦¿';
 
   @override
   String get directRulesHint =>
-      'এই তালিকার সাইট ও ঠিকানাগুলো VPN ছাড়া, সরাসরি আপনার নিজের ইন্টারনেটে খোলে। বেছে নেওয়া দেশের নিয়মগুলো আগে থেকেই এখানে আছে: লাইন যোগ, বদল বা মুছতে পারেন। অন্য দেশ বেছে নিলে সেগুলো সেই দেশের নিয়মে বদলে যায়।';
+      'à¦à¦‡ à¦¤à¦¾à¦²à¦¿à¦•à¦¾à¦° à¦¸à¦¾à¦‡à¦Ÿ à¦“ à¦ à¦¿à¦•à¦¾à¦¨à¦¾à¦—à§à¦²à§‹ VPN à¦›à¦¾à¦¡à¦¼à¦¾, à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦†à¦ªà¦¨à¦¾à¦° à¦¨à¦¿à¦œà§‡à¦° à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿà§‡ à¦–à§‹à¦²à§‡à¥¤ à¦¬à§‡à¦›à§‡ à¦¨à§‡à¦“à¦¯à¦¼à¦¾ à¦¦à§‡à¦¶à§‡à¦° à¦¨à¦¿à¦¯à¦¼à¦®à¦—à§à¦²à§‹ à¦†à¦—à§‡ à¦¥à§‡à¦•à§‡à¦‡ à¦à¦–à¦¾à¦¨à§‡ à¦†à¦›à§‡: à¦²à¦¾à¦‡à¦¨ à¦¯à§‹à¦—, à¦¬à¦¦à¦² à¦¬à¦¾ à¦®à§à¦›à¦¤à§‡ à¦ªà¦¾à¦°à§‡à¦¨à¥¤ à¦…à¦¨à§à¦¯ à¦¦à§‡à¦¶ à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦²à§‡ à¦¸à§‡à¦—à§à¦²à§‹ à¦¸à§‡à¦‡ à¦¦à§‡à¦¶à§‡à¦° à¦¨à¦¿à¦¯à¦¼à¦®à§‡ à¦¬à¦¦à¦²à§‡ à¦¯à¦¾à¦¯à¦¼à¥¤';
 
   @override
-  String get restoreRegionRules => 'দেশের নিয়ম ফিরিয়ে আনুন';
+  String get restoreRegionRules => 'à¦¦à§‡à¦¶à§‡à¦° à¦¨à¦¿à¦¯à¦¼à¦® à¦«à¦¿à¦°à¦¿à¦¯à¦¼à§‡ à¦†à¦¨à§à¦¨';
 
   @override
-  String get blockRules => 'ব্লক';
+  String get blockRules => 'à¦¬à§à¦²à¦•';
 
   @override
   String get blockRulesHint =>
-      'এই তালিকার সাইট ও ঠিকানাগুলো একেবারেই খোলে না, সরাসরিও না, VPN দিয়েও না: বিজ্ঞাপন বা যেসব সাইট কখনো খুলতে চান না সেগুলোর জন্য।';
+      'à¦à¦‡ à¦¤à¦¾à¦²à¦¿à¦•à¦¾à¦° à¦¸à¦¾à¦‡à¦Ÿ à¦“ à¦ à¦¿à¦•à¦¾à¦¨à¦¾à¦—à§à¦²à§‹ à¦à¦•à§‡à¦¬à¦¾à¦°à§‡à¦‡ à¦–à§‹à¦²à§‡ à¦¨à¦¾, à¦¸à¦°à¦¾à¦¸à¦°à¦¿à¦“ à¦¨à¦¾, VPN à¦¦à¦¿à¦¯à¦¼à§‡à¦“ à¦¨à¦¾: à¦¬à¦¿à¦œà§à¦žà¦¾à¦ªà¦¨ à¦¬à¦¾ à¦¯à§‡à¦¸à¦¬ à¦¸à¦¾à¦‡à¦Ÿ à¦•à¦–à¦¨à§‹ à¦–à§à¦²à¦¤à§‡ à¦šà¦¾à¦¨ à¦¨à¦¾ à¦¸à§‡à¦—à§à¦²à§‹à¦° à¦œà¦¨à§à¦¯à¥¤';
 
   @override
-  String get rulesTitle => 'নিয়ম';
+  String get rulesTitle => 'à¦¨à¦¿à¦¯à¦¼à¦®';
 
   @override
-  String get ruleSyntaxTitle => 'নিয়ম কীভাবে লিখবেন';
+  String get ruleSyntaxTitle => 'à¦¨à¦¿à¦¯à¦¼à¦® à¦•à§€à¦­à¦¾à¦¬à§‡ à¦²à¦¿à¦–à¦¬à§‡à¦¨';
 
   @override
-  String get resolveDomains => 'ডোমেইনেও IP নিয়ম প্রয়োগ করুন';
+  String get resolveDomains => 'à¦¡à§‹à¦®à§‡à¦‡à¦¨à§‡à¦“ IP à¦¨à¦¿à¦¯à¦¼à¦® à¦ªà§à¦°à¦¯à¦¼à§‹à¦— à¦•à¦°à§à¦¨';
 
   @override
-  String get routingLists => 'Geo ফাইল';
+  String get routingLists => 'Geo à¦«à¦¾à¦‡à¦²';
 
   @override
-  String get listSource => 'তালিকার উৎস';
+  String get listSource => 'à¦¤à¦¾à¦²à¦¿à¦•à¦¾à¦° à¦‰à§Žà¦¸';
 
   @override
-  String get listSourceCustom => 'কাস্টম';
+  String get listSourceCustom => 'à¦•à¦¾à¦¸à§à¦Ÿà¦®';
 
   @override
   String listsUpdatedAgo(String ago) {
-    return 'আপডেট হয়েছে $ago';
+    return 'à¦†à¦ªà¦¡à§‡à¦Ÿ à¦¹à¦¯à¦¼à§‡à¦›à§‡ $ago';
   }
 
   @override
-  String get updateLists => 'Geo ফাইল আপডেট করুন';
+  String get updateLists => 'Geo à¦«à¦¾à¦‡à¦² à¦†à¦ªà¦¡à§‡à¦Ÿ à¦•à¦°à§à¦¨';
 
   @override
-  String get listsUpdated => 'Geo ফাইলগুলো আপডেট হয়েছে।';
+  String get listsUpdated => 'Geo à¦«à¦¾à¦‡à¦²à¦—à§à¦²à§‹ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤';
 
   @override
-  String get testDestination => 'সাইটের রুট যাচাই';
+  String get testDestination => 'à¦¸à¦¾à¦‡à¦Ÿà§‡à¦° à¦°à§à¦Ÿ à¦¯à¦¾à¦šà¦¾à¦‡';
 
   @override
-  String get destinationHint => 'সাইটের নাম, ঠিকানা বা URL';
+  String get destinationHint => 'à¦¸à¦¾à¦‡à¦Ÿà§‡à¦° à¦¨à¦¾à¦®, à¦ à¦¿à¦•à¦¾à¦¨à¦¾ à¦¬à¦¾ URL';
 
   @override
-  String get check => 'যাচাই';
+  String get check => 'à¦¯à¦¾à¦šà¦¾à¦‡';
 
   @override
-  String get routeDirect => 'সরাসরি যায়';
+  String get routeDirect => 'à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦¯à¦¾à¦¯à¦¼';
 
   @override
-  String get routeProxy => 'VPN দিয়ে যায়';
+  String get routeProxy => 'VPN à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¯à¦¼';
 
   @override
-  String get routeBlock => 'ব্লক করা';
+  String get routeBlock => 'à¦¬à§à¦²à¦• à¦•à¦°à¦¾';
 
   @override
   String ruleMatched(String rule) {
-    return 'নিয়ম: $rule';
+    return 'à¦¨à¦¿à¦¯à¦¼à¦®: $rule';
   }
 
   @override
-  String get portRefusedNote => 'Mozilla-র প্রক্সি এই পোর্টে সংযোগ করে না।';
+  String get portRefusedNote => 'Mozilla-à¦° à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦à¦‡ à¦ªà§‹à¦°à§à¦Ÿà§‡ à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à§‡ à¦¨à¦¾à¥¤';
 
   @override
-  String get sectionAdvanced => 'উন্নত';
+  String get sectionAdvanced => 'à¦‰à¦¨à§à¦¨à¦¤';
 
   @override
-  String get listenAddress => 'প্রক্সি অ্যাক্সেস';
+  String get listenAddress => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦…à§à¦¯à¦¾à¦•à§à¦¸à§‡à¦¸';
 
   @override
-  String get listenLocal => '127.0.0.1 · শুধু এই ডিভাইস';
+  String get listenLocal => '127.0.0.1 Â· à¦¶à§à¦§à§ à¦à¦‡ à¦¡à¦¿à¦­à¦¾à¦‡à¦¸';
 
   @override
-  String get listenAll => '0.0.0.0 · সব নেটওয়ার্ক (LAN)';
+  String get listenAll => '0.0.0.0 Â· à¦¸à¦¬ à¦¨à§‡à¦Ÿà¦“à¦¯à¦¼à¦¾à¦°à§à¦• (LAN)';
 
   @override
-  String get proxyUsername => 'প্রক্সি ইউজারনেম';
+  String get proxyUsername => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦‡à¦‰à¦œà¦¾à¦°à¦¨à§‡à¦®';
 
   @override
-  String get proxyPassword => 'প্রক্সি পাসওয়ার্ড';
+  String get proxyPassword => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡';
 
   @override
   String get proxyLoginHint =>
-      'প্রক্সি ব্যবহার করতে অ্যাপগুলোকে এই ইউজারনেম ও পাসওয়ার্ড দিতে হবে। পাসওয়ার্ড ছাড়া চালাতে দুটোই খালি রাখুন।';
+      'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¤à§‡ à¦…à§à¦¯à¦¾à¦ªà¦—à§à¦²à§‹à¦•à§‡ à¦à¦‡ à¦‡à¦‰à¦œà¦¾à¦°à¦¨à§‡à¦® à¦“ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦¦à¦¿à¦¤à§‡ à¦¹à¦¬à§‡à¥¤ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦›à¦¾à¦¡à¦¼à¦¾ à¦šà¦¾à¦²à¦¾à¦¤à§‡ à¦¦à§à¦Ÿà§‹à¦‡ à¦–à¦¾à¦²à¦¿ à¦°à¦¾à¦–à§à¦¨à¥¤';
 
   @override
-  String get loginBothOrNone => 'দুটোই পূরণ করুন, অথবা দুটোই খালি রাখুন।';
+  String get loginBothOrNone => 'à¦¦à§à¦Ÿà§‹à¦‡ à¦ªà§‚à¦°à¦£ à¦•à¦°à§à¦¨, à¦…à¦¥à¦¬à¦¾ à¦¦à§à¦Ÿà§‹à¦‡ à¦–à¦¾à¦²à¦¿ à¦°à¦¾à¦–à§à¦¨à¥¤';
 
   @override
-  String get proxyLogin => 'প্রক্সি ইউজারনেম ও পাসওয়ার্ড';
+  String get proxyLogin => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦‡à¦‰à¦œà¦¾à¦°à¦¨à§‡à¦® à¦“ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡';
 
   @override
-  String get idleSleep => 'কতক্ষণ নিষ্ক্রিয় থাকলে স্লিপ';
+  String get idleSleep => 'à¦•à¦¤à¦•à§à¦·à¦£ à¦¨à¦¿à¦·à§à¦•à§à¦°à¦¿à¦¯à¦¼ à¦¥à¦¾à¦•à¦²à§‡ à¦¸à§à¦²à¦¿à¦ª';
 
   @override
-  String get sleepNever => 'কখনো না';
+  String get sleepNever => 'à¦•à¦–à¦¨à§‹ à¦¨à¦¾';
 
   @override
   String sleepMinutes(int count) {
-    return '$count মিনিট';
+    return '$count à¦®à¦¿à¦¨à¦¿à¦Ÿ';
   }
 
   @override
-  String get sleepHour => '1 ঘণ্টা';
+  String get sleepHour => '1 à¦˜à¦£à§à¦Ÿà¦¾';
 
   @override
-  String get showPublicIp => 'পাবলিক IP দেখান';
+  String get showPublicIp => 'à¦ªà¦¾à¦¬à¦²à¦¿à¦• IP à¦¦à§‡à¦–à¦¾à¦¨';
 
   @override
-  String get speedInNotification => 'বিজ্ঞপ্তিতে গতি দেখান';
+  String get speedInNotification => 'à¦¬à¦¿à¦œà§à¦žà¦ªà§à¦¤à¦¿à¦¤à§‡ à¦—à¦¤à¦¿ à¦¦à§‡à¦–à¦¾à¦¨';
 
   @override
-  String get liveTraffic => 'লাইভ ট্রাফিক';
+  String get liveTraffic => 'à¦²à¦¾à¦‡à¦­ à¦Ÿà§à¦°à¦¾à¦«à¦¿à¦•';
 
   @override
-  String get totalTraffic => 'মোট ট্রাফিক';
+  String get totalTraffic => 'à¦®à§‹à¦Ÿ à¦Ÿà§à¦°à¦¾à¦«à¦¿à¦•';
 
   @override
-  String get verboseLogs => 'বিস্তারিত লগ';
+  String get verboseLogs => 'à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤ à¦²à¦—';
 
   @override
-  String get webDashboard => 'ওয়েব ড্যাশবোর্ড';
+  String get webDashboard => 'à¦“à¦¯à¦¼à§‡à¦¬ à¦¡à§à¦¯à¦¾à¦¶à¦¬à§‹à¦°à§à¦¡';
 
   @override
-  String get webDashboardOpen => 'খুলুন';
+  String get webDashboardOpen => 'à¦–à§à¦²à§à¦¨';
 
   @override
-  String get webDashboardHint => 'উন্নত সেটিংস ও আরও টুল';
+  String get webDashboardHint => 'à¦‰à¦¨à§à¦¨à¦¤ à¦¸à§‡à¦Ÿà¦¿à¦‚à¦¸ à¦“ à¦†à¦°à¦“ à¦Ÿà§à¦²';
 
   @override
   String numberInvalid(int min, int max) {
-    return '$min থেকে $max-এর মধ্যে একটি সংখ্যা লিখুন';
+    return '$min à¦¥à§‡à¦•à§‡ $max-à¦à¦° à¦®à¦§à§à¦¯à§‡ à¦à¦•à¦Ÿà¦¿ à¦¸à¦‚à¦–à§à¦¯à¦¾ à¦²à¦¿à¦–à§à¦¨';
   }
 
   @override
-  String get notifySwitchedTitle => 'অ্যাকাউন্ট বদলানো হয়েছে';
+  String get notifySwitchedTitle => 'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¬à¦¦à¦²à¦¾à¦¨à§‹ à¦¹à¦¯à¦¼à§‡à¦›à§‡';
 
   @override
   String notifySwitchedBody(String name) {
-    return 'এখন $name ব্যবহার হচ্ছে।';
+    return 'à¦à¦–à¦¨ $name à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦¹à¦šà§à¦›à§‡à¥¤';
   }
 
   @override
-  String get notifySignInTitle => 'সাইন-ইন দরকার';
+  String get notifySignInTitle => 'à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨ à¦¦à¦°à¦•à¦¾à¦°';
 
   @override
   String get notifySignInBody =>
-      'একটি অ্যাকাউন্টে আবার সাইন ইন করা দরকার। অ্যাকাউন্ট পাতায় যান।';
+      'à¦à¦•à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡ à¦†à¦¬à¦¾à¦° à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à¦¾ à¦¦à¦°à¦•à¦¾à¦°à¥¤ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà¦¾à¦¤à¦¾à¦¯à¦¼ à¦¯à¦¾à¦¨à¥¤';
 
   @override
-  String get navAbout => 'সম্পর্কে';
+  String get navAbout => 'à¦¸à¦®à§à¦ªà¦°à§à¦•à§‡';
 
   @override
-  String get appVersionLabel => 'অ্যাপ সংস্করণ';
+  String get appVersionLabel => 'à¦…à§à¦¯à¦¾à¦ª à¦¸à¦‚à¦¸à§à¦•à¦°à¦£';
 
   @override
-  String get coreVersionLabel => 'কোর সংস্করণ';
+  String get coreVersionLabel => 'à¦•à§‹à¦° à¦¸à¦‚à¦¸à§à¦•à¦°à¦£';
 
   @override
-  String get checkUpdates => 'আপডেট আছে কিনা দেখুন';
+  String get checkUpdates => 'à¦†à¦ªà¦¡à§‡à¦Ÿ à¦†à¦›à§‡ à¦•à¦¿à¦¨à¦¾ à¦¦à§‡à¦–à§à¦¨';
 
   @override
-  String get checkingUpdates => 'যাচাই হচ্ছে…';
+  String get checkingUpdates => 'à¦¯à¦¾à¦šà¦¾à¦‡ à¦¹à¦šà§à¦›à§‡â€¦';
 
   @override
-  String get upToDate => 'আপনার কাছে সর্বশেষ সংস্করণ আছে।';
+  String get upToDate => 'à¦†à¦ªà¦¨à¦¾à¦° à¦•à¦¾à¦›à§‡ à¦¸à¦°à§à¦¬à¦¶à§‡à¦· à¦¸à¦‚à¦¸à§à¦•à¦°à¦£ à¦†à¦›à§‡à¥¤';
 
   @override
   String updateAvailable(String version) {
-    return 'সংস্করণ $version পাওয়া যাচ্ছে।';
+    return 'à¦¸à¦‚à¦¸à§à¦•à¦°à¦£ $version à¦ªà¦¾à¦“à¦¯à¦¼à¦¾ à¦¯à¦¾à¦šà§à¦›à§‡à¥¤';
   }
 
   @override
-  String get download => 'ডাউনলোড';
+  String get download => 'à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡';
 
   @override
   String updateCheckFailed(String error) {
-    return 'আপডেট যাচাই করা যায়নি: $error';
+    return 'à¦†à¦ªà¦¡à§‡à¦Ÿ à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à¦¾ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿: $error';
   }
 
   @override
-  String get repoNotSet => 'GitHub রিপোজিটরি এখনও সেট করা হয়নি।';
+  String get repoNotSet => 'GitHub à¦°à¦¿à¦ªà§‹à¦œà¦¿à¦Ÿà¦°à¦¿ à¦à¦–à¦¨à¦“ à¦¸à§‡à¦Ÿ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à¦¨à¦¿à¥¤';
 
   @override
-  String get sourceCode => 'সোর্স কোড';
+  String get sourceCode => 'à¦¸à§‹à¦°à§à¦¸ à¦•à§‹à¦¡';
 
   @override
-  String get tapToConnect => 'সংযোগ করতে ক্লিক করুন';
+  String get tapToConnect => 'à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦•à§à¦²à¦¿à¦• à¦•à¦°à§à¦¨';
 
   @override
-  String get tapToDisconnect => 'সংযোগ বিচ্ছিন্ন করতে ক্লিক করুন';
+  String get tapToDisconnect => 'à¦¸à¦‚à¦¯à§‹à¦— à¦¬à¦¿à¦šà§à¦›à¦¿à¦¨à§à¦¨ à¦•à¦°à¦¤à§‡ à¦•à§à¦²à¦¿à¦• à¦•à¦°à§à¦¨';
 
   @override
-  String get startOnBoot => 'সিস্টেম চালু হলে শুরু করুন';
+  String get startOnBoot => 'à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦šà¦¾à¦²à§ à¦¹à¦²à§‡ à¦¶à§à¦°à§ à¦•à¦°à§à¦¨';
 
   @override
-  String get connectOnStartup => 'চালু হলে স্বয়ংক্রিয়ভাবে সংযোগ করুন';
+  String get connectOnStartup => 'à¦šà¦¾à¦²à§ à¦¹à¦²à§‡ à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼à¦­à¦¾à¦¬à§‡ à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à§à¦¨';
 
   @override
-  String get proxyServiceActive => 'প্রক্সি সার্ভিস চালু আছে';
+  String get proxyServiceActive => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¸à¦¾à¦°à§à¦­à¦¿à¦¸ à¦šà¦¾à¦²à§ à¦†à¦›à§‡';
 
   @override
-  String get navHome => 'হোম';
+  String get navHome => 'à¦¹à§‹à¦®';
 
   @override
-  String get groupApp => 'অ্যাপ';
+  String get groupApp => 'à¦…à§à¦¯à¦¾à¦ª';
 
   @override
-  String get stateOff => 'সংযোগ বিচ্ছিন্ন';
+  String get stateOff => 'à¦¸à¦‚à¦¯à§‹à¦— à¦¬à¦¿à¦šà§à¦›à¦¿à¦¨à§à¦¨';
 
   @override
-  String get tapToConnectPhone => 'সংযোগ করতে ট্যাপ করুন';
+  String get tapToConnectPhone => 'à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦Ÿà§à¦¯à¦¾à¦ª à¦•à¦°à§à¦¨';
 
   @override
-  String get tapToDisconnectPhone => 'সংযোগ বিচ্ছিন্ন করতে ট্যাপ করুন';
+  String get tapToDisconnectPhone => 'à¦¸à¦‚à¦¯à§‹à¦— à¦¬à¦¿à¦šà§à¦›à¦¿à¦¨à§à¦¨ à¦•à¦°à¦¤à§‡ à¦Ÿà§à¦¯à¦¾à¦ª à¦•à¦°à§à¦¨';
 
   @override
   String lanAddress(String address) {
@@ -991,175 +991,175 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get recommendedLocation => 'প্রস্তাবিত লোকেশন';
+  String get recommendedLocation => 'à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤ à¦²à§‹à¦•à§‡à¦¶à¦¨';
 
   @override
   String dataLeftOf(String limit) {
-    return '$limit-এর মধ্যে';
+    return '$limit-à¦à¦° à¦®à¦§à§à¦¯à§‡';
   }
 
   @override
-  String get homeLocation => 'লোকেশন';
+  String get homeLocation => 'à¦²à§‹à¦•à§‡à¦¶à¦¨';
 
   @override
-  String get connectedTo => 'সংযুক্ত:';
+  String get connectedTo => 'à¦¸à¦‚à¦¯à§à¦•à§à¦¤:';
 
   @override
   String get vpnNotAllowed =>
-      'VPN-এর জন্য আপনার অনুমতি দরকার। বোতামটি আবার ট্যাপ করে অনুমতি দিন।';
+      'VPN-à¦à¦° à¦œà¦¨à§à¦¯ à¦†à¦ªà¦¨à¦¾à¦° à¦…à¦¨à§à¦®à¦¤à¦¿ à¦¦à¦°à¦•à¦¾à¦°à¥¤ à¦¬à§‹à¦¤à¦¾à¦®à¦Ÿà¦¿ à¦†à¦¬à¦¾à¦° à¦Ÿà§à¦¯à¦¾à¦ª à¦•à¦°à§‡ à¦…à¦¨à§à¦®à¦¤à¦¿ à¦¦à¦¿à¦¨à¥¤';
 
   @override
-  String get dataUsedTitle => 'ব্যবহৃত ডেটা';
+  String get dataUsedTitle => 'à¦¬à§à¦¯à¦¬à¦¹à§ƒà¦¤ à¦¡à§‡à¦Ÿà¦¾';
 
   @override
-  String get bypassApps => 'অ্যাপভিত্তিক প্রক্সি';
+  String get bypassApps => 'à¦…à§à¦¯à¦¾à¦ªà¦­à¦¿à¦¤à§à¦¤à¦¿à¦• à¦ªà§à¦°à¦•à§à¦¸à¦¿';
 
   @override
-  String get connectRetrying => 'সংযোগ করা যায়নি। ইন্টারনেট পরীক্ষা করুন।';
+  String get connectRetrying => 'à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à¦¾ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿à¥¤ à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get failUnreachable =>
-      'এই ইন্টারনেটে Mozilla-র সার্ভার ব্লক করা আছে। অন্য ইন্টারনেট সংযোগ চেষ্টা করুন।';
+      'à¦à¦‡ à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿà§‡ Mozilla-à¦° à¦¸à¦¾à¦°à§à¦­à¦¾à¦° à¦¬à§à¦²à¦• à¦•à¦°à¦¾ à¦†à¦›à§‡à¥¤ à¦…à¦¨à§à¦¯ à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦¸à¦‚à¦¯à§‹à¦— à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get failRefused =>
-      'Mozilla-র সার্ভার সংযোগ প্রত্যাখ্যান করেছে। কয়েক মিনিট পরে আবার চেষ্টা করুন।';
+      'Mozilla-à¦° à¦¸à¦¾à¦°à§à¦­à¦¾à¦° à¦¸à¦‚à¦¯à§‹à¦— à¦ªà§à¦°à¦¤à§à¦¯à¦¾à¦–à§à¦¯à¦¾à¦¨ à¦•à¦°à§‡à¦›à§‡à¥¤ à¦•à¦¯à¦¼à§‡à¦• à¦®à¦¿à¦¨à¦¿à¦Ÿ à¦ªà¦°à§‡ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get failLocationRefused =>
-      'এই দেশটি আপনার অ্যাকাউন্টের জন্য খোলা নয়। অন্য দেশ বেছে নিন।';
+      'à¦à¦‡ à¦¦à§‡à¦¶à¦Ÿà¦¿ à¦†à¦ªà¦¨à¦¾à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡à¦° à¦œà¦¨à§à¦¯ à¦–à§‹à¦²à¦¾ à¦¨à¦¯à¦¼à¥¤ à¦…à¦¨à§à¦¯ à¦¦à§‡à¦¶ à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦¨à¥¤';
 
   @override
-  String get useRecommendedLocation => 'প্রস্তাবিত লোকেশন ব্যবহার করুন';
+  String get useRecommendedLocation => 'à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤ à¦²à§‹à¦•à§‡à¦¶à¦¨ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨';
 
   @override
   String exitMismatch(String exit, String chosen) {
-    return 'আপনি $chosen বেছে নিয়েছেন, কিন্তু আপনার IP-র দেশ: $exit।';
+    return 'à¦†à¦ªà¦¨à¦¿ $chosen à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦¯à¦¼à§‡à¦›à§‡à¦¨, à¦•à¦¿à¦¨à§à¦¤à§ à¦†à¦ªà¦¨à¦¾à¦° IP-à¦° à¦¦à§‡à¦¶: $exità¥¤';
   }
 
   @override
   String get failSignIn =>
-      'এই অ্যাকাউন্টের সাইন-ইনের মেয়াদ শেষ। অ্যাকাউন্ট পাতা থেকে আবার সাইন ইন করুন।';
+      'à¦à¦‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡à¦° à¦¸à¦¾à¦‡à¦¨-à¦‡à¦¨à§‡à¦° à¦®à§‡à¦¯à¦¼à¦¾à¦¦ à¦¶à§‡à¦·à¥¤ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà¦¾à¦¤à¦¾ à¦¥à§‡à¦•à§‡ à¦†à¦¬à¦¾à¦° à¦¸à¦¾à¦‡à¦¨ à¦‡à¦¨ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get failQuota => 'এই মাসের ডেটা শেষ। আরেকটি অ্যাকাউন্ট যোগ করুন।';
+  String get failQuota => 'à¦à¦‡ à¦®à¦¾à¦¸à§‡à¦° à¦¡à§‡à¦Ÿà¦¾ à¦¶à§‡à¦·à¥¤ à¦†à¦°à§‡à¦•à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¯à§‹à¦— à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get failNotEntitled =>
-      'Mozilla এই অ্যাকাউন্টকে VPN ব্যবহার করতে দেয় না। আরেকটি অ্যাকাউন্ট যোগ করুন।';
+      'Mozilla à¦à¦‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà¦•à§‡ VPN à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¤à§‡ à¦¦à§‡à¦¯à¦¼ à¦¨à¦¾à¥¤ à¦†à¦°à§‡à¦•à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¯à§‹à¦— à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get failRegion => 'আপনার দেশে Mozilla তার পরিষেবা দেয় না।';
+  String get failRegion => 'à¦†à¦ªà¦¨à¦¾à¦° à¦¦à§‡à¦¶à§‡ Mozilla à¦¤à¦¾à¦° à¦ªà¦°à¦¿à¦·à§‡à¦¬à¦¾ à¦¦à§‡à¦¯à¦¼ à¦¨à¦¾à¥¤';
 
   @override
   String get failServer =>
-      'Mozilla-র পরিষেবায় সাময়িক সমস্যা হয়েছে। অ্যাপ নিজেই আবার চেষ্টা করবে।';
+      'Mozilla-à¦° à¦ªà¦°à¦¿à¦·à§‡à¦¬à¦¾à¦¯à¦¼ à¦¸à¦¾à¦®à¦¯à¦¼à¦¿à¦• à¦¸à¦®à¦¸à§à¦¯à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤ à¦…à§à¦¯à¦¾à¦ª à¦¨à¦¿à¦œà§‡à¦‡ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à¦¬à§‡à¥¤';
 
   @override
   String get failNoAccount =>
-      'কোনো অ্যাকাউন্ট প্রস্তুত নেই। অ্যাকাউন্ট পাতা খুলুন।';
+      'à¦•à§‹à¦¨à§‹ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤ à¦¨à§‡à¦‡à¥¤ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà¦¾à¦¤à¦¾ à¦–à§à¦²à§à¦¨à¥¤';
 
   @override
   String get failTestSite =>
-      'সার্ভারে সংযুক্ত হয়েছে, কিন্তু সাইট খুলছে না। অন্য দেশ চেষ্টা করুন।';
+      'à¦¸à¦¾à¦°à§à¦­à¦¾à¦°à§‡ à¦¸à¦‚à¦¯à§à¦•à§à¦¤ à¦¹à¦¯à¦¼à§‡à¦›à§‡, à¦•à¦¿à¦¨à§à¦¤à§ à¦¸à¦¾à¦‡à¦Ÿ à¦–à§à¦²à¦›à§‡ à¦¨à¦¾à¥¤ à¦…à¦¨à§à¦¯ à¦¦à§‡à¦¶ à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get failOther => 'সংযোগ করা যায়নি। আবার চেষ্টা করুন।';
+  String get failOther => 'à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à¦¾ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿à¥¤ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
   String get failNoInternet =>
-      'ইন্টারনেট নেই। Wi-Fi বা মোবাইল ডেটা পরীক্ষা করুন।';
+      'à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦¨à§‡à¦‡à¥¤ Wi-Fi à¦¬à¦¾ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¡à§‡à¦Ÿà¦¾ à¦ªà¦°à§€à¦•à§à¦·à¦¾ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get waitingForNetwork => 'ইন্টারনেট সংযোগের অপেক্ষায়…';
+  String get waitingForNetwork => 'à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦¸à¦‚à¦¯à§‹à¦—à§‡à¦° à¦…à¦ªà§‡à¦•à§à¦·à¦¾à¦¯à¦¼â€¦';
 
   @override
   String proxyStartFailed(String port) {
-    return 'পোর্ট $port-এ প্রক্সি চালু হয়নি। অন্য একটি পোর্ট বেছে নিন।';
+    return 'à¦ªà§‹à¦°à§à¦Ÿ $port-à¦ à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦šà¦¾à¦²à§ à¦¹à¦¯à¦¼à¦¨à¦¿à¥¤ à¦…à¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦ªà§‹à¦°à§à¦Ÿ à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦¨à¥¤';
   }
 
   @override
-  String get connectionSettings => 'সংযোগ সেটিংস';
+  String get connectionSettings => 'à¦¸à¦‚à¦¯à§‹à¦— à¦¸à§‡à¦Ÿà¦¿à¦‚à¦¸';
 
   @override
-  String get appModeExclude => 'নির্বাচিত অ্যাপ VPN ছাড়া';
+  String get appModeExclude => 'à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ª VPN à¦›à¦¾à¦¡à¦¼à¦¾';
 
   @override
-  String get appModeInclude => 'শুধু নির্বাচিত অ্যাপ VPN-এ';
+  String get appModeInclude => 'à¦¶à§à¦§à§ à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ª VPN-à¦';
 
   @override
   String get appModeExcludeHint =>
-      'নির্বাচিত অ্যাপগুলো VPN ছাড়া সরাসরি সংযোগ করে: যেমন বিদেশি ঠিকানা প্রত্যাখ্যান করে এমন ব্যাংকিং অ্যাপ।';
+      'à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ªà¦—à§à¦²à§‹ VPN à¦›à¦¾à¦¡à¦¼à¦¾ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à§‡: à¦¯à§‡à¦®à¦¨ à¦¬à¦¿à¦¦à§‡à¦¶à¦¿ à¦ à¦¿à¦•à¦¾à¦¨à¦¾ à¦ªà§à¦°à¦¤à§à¦¯à¦¾à¦–à§à¦¯à¦¾à¦¨ à¦•à¦°à§‡ à¦à¦®à¦¨ à¦¬à§à¦¯à¦¾à¦‚à¦•à¦¿à¦‚ à¦…à§à¦¯à¦¾à¦ªà¥¤';
 
   @override
   String get appModeIncludeHint =>
-      'শুধু নির্বাচিত অ্যাপগুলো VPN দিয়ে যায়; বাকিগুলো সরাসরি সংযোগ করে।';
+      'à¦¶à§à¦§à§ à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ªà¦—à§à¦²à§‹ VPN à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¯à¦¼; à¦¬à¦¾à¦•à¦¿à¦—à§à¦²à§‹ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦¸à¦‚à¦¯à§‹à¦— à¦•à¦°à§‡à¥¤';
 
   @override
   String fromRegionList(String region) {
-    return 'প্রস্তাবিত: $region-এর তালিকায় আছে';
+    return 'à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤: $region-à¦à¦° à¦¤à¦¾à¦²à¦¿à¦•à¦¾à¦¯à¦¼ à¦†à¦›à§‡';
   }
 
   @override
-  String get modeProxy => 'প্রক্সি';
+  String get modeProxy => 'à¦ªà§à¦°à¦•à§à¦¸à¦¿';
 
   @override
-  String get connectionMode => 'সংযোগ মোড';
+  String get connectionMode => 'à¦¸à¦‚à¦¯à§‹à¦— à¦®à§‹à¦¡';
 
   @override
   String get modeProxyHint =>
-      'শুধু যেসব অ্যাপে প্রক্সি সেট করা আছে সেগুলোই এর মধ্য দিয়ে যায়; Windows-এর সেটিংস বদলায় না।';
+      'à¦¶à§à¦§à§ à¦¯à§‡à¦¸à¦¬ à¦…à§à¦¯à¦¾à¦ªà§‡ à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¸à§‡à¦Ÿ à¦•à¦°à¦¾ à¦†à¦›à§‡ à¦¸à§‡à¦—à§à¦²à§‹à¦‡ à¦à¦° à¦®à¦§à§à¦¯ à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¯à¦¼; Windows-à¦à¦° à¦¸à§‡à¦Ÿà¦¿à¦‚à¦¸ à¦¬à¦¦à¦²à¦¾à¦¯à¦¼ à¦¨à¦¾à¥¤';
 
   @override
   String get modeSystemProxyHint =>
-      'Windows ও বেশিরভাগ অ্যাপ প্রক্সি দিয়ে যায়।';
+      'Windows à¦“ à¦¬à§‡à¦¶à¦¿à¦°à¦­à¦¾à¦— à¦…à§à¦¯à¦¾à¦ª à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¯à¦¼à¥¤';
 
   @override
   String get modeProxyHintOther =>
-      'শুধু যেসব অ্যাপে প্রক্সি সেট করা আছে সেগুলোই এর মধ্য দিয়ে যায়; সিস্টেমের সেটিংস বদলায় না।';
+      'à¦¶à§à¦§à§ à¦¯à§‡à¦¸à¦¬ à¦…à§à¦¯à¦¾à¦ªà§‡ à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¸à§‡à¦Ÿ à¦•à¦°à¦¾ à¦†à¦›à§‡ à¦¸à§‡à¦—à§à¦²à§‹à¦‡ à¦à¦° à¦®à¦§à§à¦¯ à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¯à¦¼; à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦®à§‡à¦° à¦¸à§‡à¦Ÿà¦¿à¦‚à¦¸ à¦¬à¦¦à¦²à¦¾à¦¯à¦¼ à¦¨à¦¾à¥¤';
 
   @override
   String get modeSystemProxyHintOther =>
-      'ব্রাউজার ও বেশিরভাগ অ্যাপ প্রক্সি দিয়ে যায়।';
+      'à¦¬à§à¦°à¦¾à¦‰à¦œà¦¾à¦° à¦“ à¦¬à§‡à¦¶à¦¿à¦°à¦­à¦¾à¦— à¦…à§à¦¯à¦¾à¦ª à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¯à¦¼à¥¤';
 
   @override
-  String get suggestedApps => 'প্রস্তাবিত অ্যাপ';
+  String get suggestedApps => 'à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ª';
 
   @override
   String suggestedAdded(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$countটি প্রস্তাবিত অ্যাপ নির্বাচিত',
-      one: '1টি প্রস্তাবিত অ্যাপ নির্বাচিত',
-      zero: 'প্রস্তাবিত অ্যাপগুলো আগেই নির্বাচিত',
+      other: '$countà¦Ÿà¦¿ à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ª à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤',
+      one: '1à¦Ÿà¦¿ à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ª à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤',
+      zero: 'à¦ªà§à¦°à¦¸à§à¦¤à¦¾à¦¬à¦¿à¦¤ à¦…à§à¦¯à¦¾à¦ªà¦—à§à¦²à§‹ à¦†à¦—à§‡à¦‡ à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¿à¦¤',
     );
     return '$_temp0';
   }
 
   @override
-  String get autoSection => 'স্বয়ংক্রিয়';
+  String get autoSection => 'à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼';
 
   @override
-  String get locationsSection => 'লোকেশন';
+  String get locationsSection => 'à¦²à§‹à¦•à§‡à¦¶à¦¨';
 
   @override
-  String get dnsSummaryOk => 'এনক্রিপ্টেড DNS কাজ করছে';
+  String get dnsSummaryOk => 'à¦à¦¨à¦•à§à¦°à¦¿à¦ªà§à¦Ÿà§‡à¦¡ DNS à¦•à¦¾à¦œ à¦•à¦°à¦›à§‡';
 
   @override
   String dnsSummaryFailed(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$countটি নাম রিজলভ হয়নি',
-      one: '1টি নাম রিজলভ হয়নি',
+      other: '$countà¦Ÿà¦¿ à¦¨à¦¾à¦® à¦°à¦¿à¦œà¦²à¦­ à¦¹à¦¯à¦¼à¦¨à¦¿',
+      one: '1à¦Ÿà¦¿ à¦¨à¦¾à¦® à¦°à¦¿à¦œà¦²à¦­ à¦¹à¦¯à¦¼à¦¨à¦¿',
     );
     return '$_temp0';
   }
 
   @override
   String dnsVia(String server) {
-    return '$server দিয়ে';
+    return '$server à¦¦à¦¿à¦¯à¦¼à§‡';
   }
 
   @override
@@ -1168,64 +1168,83 @@ class AppLocalizationsBn extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          'আপনার নেটওয়ার্কের DNS $countটি নামের জন্য একটি ফিল্টারিং ঠিকানা দিয়েছে। এই অ্যাপ সেই উত্তরগুলো ব্যবহার করে না।',
-      one: 'আপনার নেটওয়ার্কের DNS 1টি নামের জন্য একটি ফিল্টারিং ঠিকানা দিয়েছে। এই অ্যাপ সেই উত্তর ব্যবহার করে না।',
+          'à¦†à¦ªà¦¨à¦¾à¦° à¦¨à§‡à¦Ÿà¦“à¦¯à¦¼à¦¾à¦°à§à¦•à§‡à¦° DNS $countà¦Ÿà¦¿ à¦¨à¦¾à¦®à§‡à¦° à¦œà¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦«à¦¿à¦²à§à¦Ÿà¦¾à¦°à¦¿à¦‚ à¦ à¦¿à¦•à¦¾à¦¨à¦¾ à¦¦à¦¿à¦¯à¦¼à§‡à¦›à§‡à¥¤ à¦à¦‡ à¦…à§à¦¯à¦¾à¦ª à¦¸à§‡à¦‡ à¦‰à¦¤à§à¦¤à¦°à¦—à§à¦²à§‹ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§‡ à¦¨à¦¾à¥¤',
+      one: 'à¦†à¦ªà¦¨à¦¾à¦° à¦¨à§‡à¦Ÿà¦“à¦¯à¦¼à¦¾à¦°à§à¦•à§‡à¦° DNS 1à¦Ÿà¦¿ à¦¨à¦¾à¦®à§‡à¦° à¦œà¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦«à¦¿à¦²à§à¦Ÿà¦¾à¦°à¦¿à¦‚ à¦ à¦¿à¦•à¦¾à¦¨à¦¾ à¦¦à¦¿à¦¯à¦¼à§‡à¦›à§‡à¥¤ à¦à¦‡ à¦…à§à¦¯à¦¾à¦ª à¦¸à§‡à¦‡ à¦‰à¦¤à§à¦¤à¦° à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§‡ à¦¨à¦¾à¥¤',
     );
     return '$_temp0';
   }
 
   @override
-  String get dnsAnswer => 'উত্তর:';
+  String get dnsAnswer => 'à¦‰à¦¤à§à¦¤à¦°:';
 
   @override
-  String get dnsNetworkAnswer => 'নেটওয়ার্ক DNS:';
+  String get dnsNetworkAnswer => 'à¦¨à§‡à¦Ÿà¦“à¦¯à¦¼à¦¾à¦°à§à¦• DNS:';
 
   @override
-  String get dnsFiltered => 'ফিল্টার করা';
+  String get dnsFiltered => 'à¦«à¦¿à¦²à§à¦Ÿà¦¾à¦° à¦•à¦°à¦¾';
 
   @override
-  String get rulesSyntaxTitle => 'প্রতি লাইনে একটি নিয়ম';
+  String get rulesSyntaxTitle => 'à¦ªà§à¦°à¦¤à¦¿ à¦²à¦¾à¦‡à¦¨à§‡ à¦à¦•à¦Ÿà¦¿ à¦¨à¦¿à¦¯à¦¼à¦®';
 
   @override
-  String get ruleDomain => 'সাইট ও এর সাবডোমেইন';
+  String get ruleDomain => 'à¦¸à¦¾à¦‡à¦Ÿ à¦“ à¦à¦° à¦¸à¦¾à¦¬à¦¡à§‹à¦®à§‡à¦‡à¦¨';
 
   @override
-  String get ruleFull => 'ঠিক এই নামটি';
+  String get ruleFull => 'à¦ à¦¿à¦• à¦à¦‡ à¦¨à¦¾à¦®à¦Ÿà¦¿';
 
   @override
-  String get ruleKeyword => 'যেসব নামে শব্দটি আছে';
+  String get ruleKeyword => 'à¦¯à§‡à¦¸à¦¬ à¦¨à¦¾à¦®à§‡ à¦¶à¦¬à§à¦¦à¦Ÿà¦¿ à¦†à¦›à§‡';
 
   @override
-  String get ruleGeosite => 'Geo ফাইলের একটি ট্যাগের সাইট';
+  String get ruleGeosite => 'Geo à¦«à¦¾à¦‡à¦²à§‡à¦° à¦à¦•à¦Ÿà¦¿ à¦Ÿà§à¦¯à¦¾à¦—à§‡à¦° à¦¸à¦¾à¦‡à¦Ÿ';
 
   @override
-  String get ruleGeoip => 'Geo ফাইলে থাকা একটি দেশের ঠিকানা';
+  String get ruleGeoip => 'Geo à¦«à¦¾à¦‡à¦²à§‡ à¦¥à¦¾à¦•à¦¾ à¦à¦•à¦Ÿà¦¿ à¦¦à§‡à¦¶à§‡à¦° à¦ à¦¿à¦•à¦¾à¦¨à¦¾';
 
   @override
-  String get ruleIp => 'একটি ঠিকানা বা নেটওয়ার্ক';
+  String get ruleIp => 'à¦à¦•à¦Ÿà¦¿ à¦ à¦¿à¦•à¦¾à¦¨à¦¾ à¦¬à¦¾ à¦¨à§‡à¦Ÿà¦“à¦¯à¦¼à¦¾à¦°à§à¦•';
 
   @override
   String get modeVpn => 'VPN';
 
   @override
-  String get modeProxyOnly => 'শুধু প্রক্সি';
+  String get modeProxyOnly => 'à¦¶à§à¦§à§ à¦ªà§à¦°à¦•à§à¦¸à¦¿';
 
   @override
   String get noNetwork =>
-      'ইন্টারনেট সংযোগ নেই। Wi-Fi বা মোবাইল ডেটা চালু করুন।';
+      'à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦¸à¦‚à¦¯à§‹à¦— à¦¨à§‡à¦‡à¥¤ Wi-Fi à¦¬à¦¾ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¡à§‡à¦Ÿà¦¾ à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨à¥¤';
 
   @override
-  String get blockAds => 'বিজ্ঞাপন ব্লক করুন';
+  String get blockAds => 'à¦¬à¦¿à¦œà§à¦žà¦¾à¦ªà¦¨ à¦¬à§à¦²à¦• à¦•à¦°à§à¦¨';
 
   @override
   String systemProxyTakenBy(String address) {
-    return 'অন্য একটি প্রোগ্রাম সিস্টেম প্রক্সি $address-এ বদলে দিয়েছে, তাই ট্রাফিক VPN দিয়ে যাচ্ছে না।';
+    return 'à¦…à¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦°à§‹à¦—à§à¦°à¦¾à¦® à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦ªà§à¦°à¦•à§à¦¸à¦¿ $address-à¦ à¦¬à¦¦à¦²à§‡ à¦¦à¦¿à¦¯à¦¼à§‡à¦›à§‡, à¦¤à¦¾à¦‡ à¦Ÿà§à¦°à¦¾à¦«à¦¿à¦• VPN à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦šà§à¦›à§‡ à¦¨à¦¾à¥¤';
   }
 
   @override
   String get systemProxyTakenOff =>
-      'অন্য একটি প্রোগ্রাম সিস্টেম প্রক্সি বন্ধ করে দিয়েছে, তাই ট্রাফিক VPN দিয়ে যাচ্ছে না।';
+      'à¦…à¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦°à§‹à¦—à§à¦°à¦¾à¦® à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦¬à¦¨à§à¦§ à¦•à¦°à§‡ à¦¦à¦¿à¦¯à¦¼à§‡à¦›à§‡, à¦¤à¦¾à¦‡ à¦Ÿà§à¦°à¦¾à¦«à¦¿à¦• VPN à¦¦à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦šà§à¦›à§‡ à¦¨à¦¾à¥¤';
 
   @override
-  String get setSystemProxyAgain => 'আবার সেট করুন';
+  String get setSystemProxyAgain => 'à¦†à¦¬à¦¾à¦° à¦¸à§‡à¦Ÿ à¦•à¦°à§à¦¨';
+  @override
+  String get modeWinDivert => 'WinDivert Tunnel';
+
+  @override
+  String get modeWinDivertHint =>
+      'All Windows network traffic and DNS queries go through the VPN.';
+
+  @override
+  String get elevationRequiredTitle => 'Administrator Privileges Required';
+
+  @override
+  String get elevationRequiredMessage =>
+      'WinDivert requires Administrator privileges to tunnel system network packets.';
+
+  @override
+  String get runAsAdmin => 'Run as Administrator';
+
+  @override
+  String get trayWinDivert => 'WinDivert Full Tunnel';
 }

@@ -1,4 +1,4 @@
-// ignore: unused_import
+﻿// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations.dart';
@@ -13,81 +13,81 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appTitle => 'Firefox VPN';
 
   @override
-  String get navOverview => '概览';
+  String get navOverview => 'æ¦‚è§ˆ';
 
   @override
-  String get navAccounts => '账户';
+  String get navAccounts => 'è´¦æˆ·';
 
   @override
-  String get navSettings => '设置';
+  String get navSettings => 'è®¾ç½®';
 
   @override
-  String get stateConnected => '已连接';
+  String get stateConnected => 'å·²è¿žæŽ¥';
 
   @override
-  String get stateConnecting => '正在连接…';
+  String get stateConnecting => 'æ­£åœ¨è¿žæŽ¥â€¦';
 
   @override
-  String get stateWaiting => '等待中';
+  String get stateWaiting => 'ç­‰å¾…ä¸­';
 
   @override
-  String get waitingForAccount => '在“账户”页添加 Firefox 账户后即可连接。';
+  String get waitingForAccount => 'åœ¨â€œè´¦æˆ·â€é¡µæ·»åŠ  Firefox è´¦æˆ·åŽå³å¯è¿žæŽ¥ã€‚';
 
   @override
-  String get waitingForEnabledAccount => '所有账户都已关闭。请在“账户”页启用一个。';
+  String get waitingForEnabledAccount => 'æ‰€æœ‰è´¦æˆ·éƒ½å·²å…³é—­ã€‚è¯·åœ¨â€œè´¦æˆ·â€é¡µå¯ç”¨ä¸€ä¸ªã€‚';
 
   @override
-  String get stateError => '错误';
+  String get stateError => 'é”™è¯¯';
 
   @override
-  String get stateUnknown => '未知';
+  String get stateUnknown => 'æœªçŸ¥';
 
   @override
-  String get restartProxy => '重启代理';
+  String get restartProxy => 'é‡å¯ä»£ç†';
 
   @override
   String copied(String value) {
-    return '已复制 $value';
+    return 'å·²å¤åˆ¶ $value';
   }
 
   @override
-  String get activeAccount => '当前账户';
+  String get activeAccount => 'å½“å‰è´¦æˆ·';
 
   @override
-  String get noActiveAccount => '暂无使用中的账户';
+  String get noActiveAccount => 'æš‚æ— ä½¿ç”¨ä¸­çš„è´¦æˆ·';
 
   @override
-  String get quotaNotRead => '尚未获取流量信息';
+  String get quotaNotRead => 'å°šæœªèŽ·å–æµé‡ä¿¡æ¯';
 
   @override
-  String get unlimited => '不限量';
+  String get unlimited => 'ä¸é™é‡';
 
   @override
   String usedOf(String used, String limit) {
-    return '已用 $used / $limit';
+    return 'å·²ç”¨ $used / $limit';
   }
 
   @override
   String resets(String date) {
-    return '$date 重置';
+    return '$date é‡ç½®';
   }
 
   @override
   String switchAt(int percent) {
-    return '流量用到 $percent% 时切换账户';
+    return 'æµé‡ç”¨åˆ° $percent% æ—¶åˆ‡æ¢è´¦æˆ·';
   }
 
   @override
-  String get publicIp => '公网 IP';
+  String get publicIp => 'å…¬ç½‘ IP';
 
   @override
-  String get testConnection => '测试连接';
+  String get testConnection => 'æµ‹è¯•è¿žæŽ¥';
 
   @override
-  String get testing => '正在测试…';
+  String get testing => 'æ­£åœ¨æµ‹è¯•â€¦';
 
   @override
-  String get testFailed => '失败';
+  String get testFailed => 'å¤±è´¥';
 
   @override
   String milliseconds(int value) {
@@ -95,16 +95,16 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get justNow => '刚刚';
+  String get justNow => 'åˆšåˆš';
 
   @override
   String minutesAgo(int n) {
-    return '$n 分钟前';
+    return '$n åˆ†é’Ÿå‰';
   }
 
   @override
   String hoursAgo(int n) {
-    return '$n 小时前';
+    return '$n å°æ—¶å‰';
   }
 
   @override
@@ -112,7 +112,7 @@ class AppLocalizationsZh extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count 天前',
+      other: '$count å¤©å‰',
     );
     return '$_temp0';
   }
@@ -124,614 +124,614 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String durationDays(int d, int h) {
-    return '$d 天 $h 小时';
+    return '$d å¤© $h å°æ—¶';
   }
 
   @override
   String durationHours(int h, int m) {
-    return '$h 小时 $m 分';
+    return '$h å°æ—¶ $m åˆ†';
   }
 
   @override
   String durationMinutes(int m, int s) {
-    return '$m 分 $s 秒';
+    return '$m åˆ† $s ç§’';
   }
 
   @override
   String durationSeconds(int s) {
-    return '$s 秒';
+    return '$s ç§’';
   }
 
   @override
   String accountsGuide(String size) {
-    return '每个 Firefox 账户每月有 $size 流量。你可以添加多个账户：一个用完后，应用会自动切换到下一个。';
+    return 'æ¯ä¸ª Firefox è´¦æˆ·æ¯æœˆæœ‰ $size æµé‡ã€‚ä½ å¯ä»¥æ·»åŠ å¤šä¸ªè´¦æˆ·ï¼šä¸€ä¸ªç”¨å®ŒåŽï¼Œåº”ç”¨ä¼šè‡ªåŠ¨åˆ‡æ¢åˆ°ä¸‹ä¸€ä¸ªã€‚';
   }
 
   @override
   String accountsOrderNote(int percent) {
-    return '按此列表顺序使用：每个账户用到 $percent%，最后一个用到流量耗尽。';
+    return 'æŒ‰æ­¤åˆ—è¡¨é¡ºåºä½¿ç”¨ï¼šæ¯ä¸ªè´¦æˆ·ç”¨åˆ° $percent%ï¼Œæœ€åŽä¸€ä¸ªç”¨åˆ°æµé‡è€—å°½ã€‚';
   }
 
   @override
-  String get addAccount => '添加账户';
+  String get addAccount => 'æ·»åŠ è´¦æˆ·';
 
   @override
   String lowQuotaNotice(String left, String size) {
-    return '当前账户的流量快用完了（剩余 $left）。再添加一个账户，可再获得 $size。';
+    return 'å½“å‰è´¦æˆ·çš„æµé‡å¿«ç”¨å®Œäº†ï¼ˆå‰©ä½™ $leftï¼‰ã€‚å†æ·»åŠ ä¸€ä¸ªè´¦æˆ·ï¼Œå¯å†èŽ·å¾— $sizeã€‚';
   }
 
   @override
-  String get noAccounts => '还没有账户';
+  String get noAccounts => 'è¿˜æ²¡æœ‰è´¦æˆ·';
 
   @override
-  String get noAccountsHint => '添加 Firefox 账户即可连接。';
+  String get noAccountsHint => 'æ·»åŠ  Firefox è´¦æˆ·å³å¯è¿žæŽ¥ã€‚';
 
   @override
-  String get createAccountTitle => '还没有 Firefox 账户？';
+  String get createAccountTitle => 'è¿˜æ²¡æœ‰ Firefox è´¦æˆ·ï¼Ÿ';
 
   @override
   String get createAccountHint =>
-      '可在 accounts.firefox.com 免费注册，然后回到这里点击“添加账户”。';
+      'å¯åœ¨ accounts.firefox.com å…è´¹æ³¨å†Œï¼Œç„¶åŽå›žåˆ°è¿™é‡Œç‚¹å‡»â€œæ·»åŠ è´¦æˆ·â€ã€‚';
 
   @override
-  String get moveUp => '上移';
+  String get moveUp => 'ä¸Šç§»';
 
   @override
-  String get moveDown => '下移';
+  String get moveDown => 'ä¸‹ç§»';
 
   @override
-  String get statusActive => '使用中';
+  String get statusActive => 'ä½¿ç”¨ä¸­';
 
   @override
-  String get statusReady => '可用';
+  String get statusReady => 'å¯ç”¨';
 
   @override
-  String get statusNeedsSignIn => '需要登录';
+  String get statusNeedsSignIn => 'éœ€è¦ç™»å½•';
 
   @override
-  String get statusReserved => '备用';
+  String get statusReserved => 'å¤‡ç”¨';
 
   @override
-  String get statusUnavailable => '不可用';
+  String get statusUnavailable => 'ä¸å¯ç”¨';
 
   @override
   String statusUnavailableUntil(String date) {
-    return '$date 前不可用';
+    return '$date å‰ä¸å¯ç”¨';
   }
 
   @override
-  String get statusDisabled => '已停用';
+  String get statusDisabled => 'å·²åœç”¨';
 
   @override
-  String get statusEnabled => '已启用';
+  String get statusEnabled => 'å·²å¯ç”¨';
 
   @override
-  String get useNow => '立即使用';
+  String get useNow => 'ç«‹å³ä½¿ç”¨';
 
   @override
-  String get signInAgain => '重新登录';
+  String get signInAgain => 'é‡æ–°ç™»å½•';
 
   @override
   String reasonQuotaThreshold(int percent) {
-    return '此账户已用掉 $percent% 的流量，已切换到下一个账户。';
+    return 'æ­¤è´¦æˆ·å·²ç”¨æŽ‰ $percent% çš„æµé‡ï¼Œå·²åˆ‡æ¢åˆ°ä¸‹ä¸€ä¸ªè´¦æˆ·ã€‚';
   }
 
   @override
-  String get reasonQuotaExhausted => '本月流量已用完；每月重置后会再次使用。';
+  String get reasonQuotaExhausted => 'æœ¬æœˆæµé‡å·²ç”¨å®Œï¼›æ¯æœˆé‡ç½®åŽä¼šå†æ¬¡ä½¿ç”¨ã€‚';
 
   @override
-  String get reasonSignInRequired => '请重新登录以使用此账户。';
+  String get reasonSignInRequired => 'è¯·é‡æ–°ç™»å½•ä»¥ä½¿ç”¨æ­¤è´¦æˆ·ã€‚';
 
   @override
-  String get reasonSignInConfirm => 'Mozilla 要求确认登录：请点“重新登录”（只需验证码）。';
+  String get reasonSignInConfirm => 'Mozilla è¦æ±‚ç¡®è®¤ç™»å½•ï¼šè¯·ç‚¹â€œé‡æ–°ç™»å½•â€ï¼ˆåªéœ€éªŒè¯ç ï¼‰ã€‚';
 
   @override
   String reasonSignInFailed(String detail) {
-    return '自动登录失败（$detail）。请重新登录。';
+    return 'è‡ªåŠ¨ç™»å½•å¤±è´¥ï¼ˆ$detailï¼‰ã€‚è¯·é‡æ–°ç™»å½•ã€‚';
   }
 
   @override
   String reasonSignInWait(String time) {
-    return '上次自动登录后不久就失效了；下次尝试时间为 $time。';
+    return 'ä¸Šæ¬¡è‡ªåŠ¨ç™»å½•åŽä¸ä¹…å°±å¤±æ•ˆäº†ï¼›ä¸‹æ¬¡å°è¯•æ—¶é—´ä¸º $timeã€‚';
   }
 
   @override
   String reasonSignInRetry(String detail, String time) {
-    return '自动登录未能完成（$detail）；将在 $time 重试。';
+    return 'è‡ªåŠ¨ç™»å½•æœªèƒ½å®Œæˆï¼ˆ$detailï¼‰ï¼›å°†åœ¨ $time é‡è¯•ã€‚';
   }
 
   @override
-  String get reasonNotEntitled => 'Mozilla 拒绝了此账户；稍后会重试。';
+  String get reasonNotEntitled => 'Mozilla æ‹’ç»äº†æ­¤è´¦æˆ·ï¼›ç¨åŽä¼šé‡è¯•ã€‚';
 
   @override
-  String get more => '更多';
+  String get more => 'æ›´å¤š';
 
   @override
-  String get refreshQuota => '刷新流量';
+  String get refreshQuota => 'åˆ·æ–°æµé‡';
 
   @override
-  String get remove => '删除';
+  String get remove => 'åˆ é™¤';
 
   @override
-  String get removeTitle => '删除账户？';
+  String get removeTitle => 'åˆ é™¤è´¦æˆ·ï¼Ÿ';
 
   @override
   String removeBody(String name) {
-    return '$name 及其保存的登录信息将从这台电脑上删除。之后可以重新添加。';
+    return '$name åŠå…¶ä¿å­˜çš„ç™»å½•ä¿¡æ¯å°†ä»Žè¿™å°ç”µè„‘ä¸Šåˆ é™¤ã€‚ä¹‹åŽå¯ä»¥é‡æ–°æ·»åŠ ã€‚';
   }
 
   @override
-  String get unlimitedQuota => '不限流量';
+  String get unlimitedQuota => 'ä¸é™æµé‡';
 
   @override
-  String get signInTitle => '登录';
+  String get signInTitle => 'ç™»å½•';
 
   @override
-  String get signInIntro => '使用 Firefox 账户登录。';
+  String get signInIntro => 'ä½¿ç”¨ Firefox è´¦æˆ·ç™»å½•ã€‚';
 
   @override
-  String get email => '邮箱';
+  String get email => 'é‚®ç®±';
 
   @override
-  String get emailInvalid => '请输入账户邮箱';
+  String get emailInvalid => 'è¯·è¾“å…¥è´¦æˆ·é‚®ç®±';
 
   @override
-  String get password => '密码';
+  String get password => 'å¯†ç ';
 
   @override
-  String get passwordEmpty => '请输入密码';
+  String get passwordEmpty => 'è¯·è¾“å…¥å¯†ç ';
 
   @override
-  String get show => '显示';
+  String get show => 'æ˜¾ç¤º';
 
   @override
-  String get hide => '隐藏';
+  String get hide => 'éšè—';
 
   @override
-  String get signIn => '登录';
+  String get signIn => 'ç™»å½•';
 
   @override
-  String get continueLabel => '继续';
+  String get continueLabel => 'ç»§ç»­';
 
   @override
-  String get done => '完成';
+  String get done => 'å®Œæˆ';
 
   @override
-  String get close => '关闭';
+  String get close => 'å…³é—­';
 
   @override
-  String get cancel => '取消';
+  String get cancel => 'å–æ¶ˆ';
 
   @override
-  String get tryAgain => '重试';
+  String get tryAgain => 'é‡è¯•';
 
   @override
-  String get signingIn => '正在登录…';
+  String get signingIn => 'æ­£åœ¨ç™»å½•â€¦';
 
   @override
-  String get accountReady => '账户已就绪';
+  String get accountReady => 'è´¦æˆ·å·²å°±ç»ª';
 
   @override
-  String get accountReadyHint => '已添加到账户列表末尾。';
+  String get accountReadyHint => 'å·²æ·»åŠ åˆ°è´¦æˆ·åˆ—è¡¨æœ«å°¾ã€‚';
 
   @override
-  String get captchaLabel => '图片中的字符';
+  String get captchaLabel => 'å›¾ç‰‡ä¸­çš„å­—ç¬¦';
 
   @override
-  String get codeLabel => '验证码';
+  String get codeLabel => 'éªŒè¯ç ';
 
   @override
-  String get captchaBroken => '无法显示验证码图片。';
+  String get captchaBroken => 'æ— æ³•æ˜¾ç¤ºéªŒè¯ç å›¾ç‰‡ã€‚';
 
   @override
   String stepEmailCode(String email) {
-    return 'Mozilla 已向 $email 发送验证码，请在此输入。';
+    return 'Mozilla å·²å‘ $email å‘é€éªŒè¯ç ï¼Œè¯·åœ¨æ­¤è¾“å…¥ã€‚';
   }
 
   @override
-  String get stepTotp => '请输入身份验证器应用中的验证码。';
+  String get stepTotp => 'è¯·è¾“å…¥èº«ä»½éªŒè¯å™¨åº”ç”¨ä¸­çš„éªŒè¯ç ã€‚';
 
   @override
   String stepUnblockCode(String email) {
-    return 'Mozilla 检测到此次登录异常，已向 $email 发送解锁码，请在此输入。';
+    return 'Mozilla æ£€æµ‹åˆ°æ­¤æ¬¡ç™»å½•å¼‚å¸¸ï¼Œå·²å‘ $email å‘é€è§£é”ç ï¼Œè¯·åœ¨æ­¤è¾“å…¥ã€‚';
   }
 
   @override
-  String get stepCaptcha => '请输入图片中的字符。';
+  String get stepCaptcha => 'è¯·è¾“å…¥å›¾ç‰‡ä¸­çš„å­—ç¬¦ã€‚';
 
   @override
   String stepEmailLink(String email) {
-    return '请打开 Mozilla 发送到 $email 的确认链接，确认后将自动继续。';
+    return 'è¯·æ‰“å¼€ Mozilla å‘é€åˆ° $email çš„ç¡®è®¤é“¾æŽ¥ï¼Œç¡®è®¤åŽå°†è‡ªåŠ¨ç»§ç»­ã€‚';
   }
 
   @override
-  String get signInFailed => '未能添加账户。';
+  String get signInFailed => 'æœªèƒ½æ·»åŠ è´¦æˆ·ã€‚';
 
   @override
-  String get signInCancelled => '登录已取消。';
+  String get signInCancelled => 'ç™»å½•å·²å–æ¶ˆã€‚';
 
   @override
-  String get signInNoAccount => '此邮箱没有 Firefox 账户。';
+  String get signInNoAccount => 'æ­¤é‚®ç®±æ²¡æœ‰ Firefox è´¦æˆ·ã€‚';
 
   @override
   String get signInNoAccountHint =>
-      '请检查邮箱地址，或用它在 Mozilla 网站免费创建一个 Firefox 账户，在邮箱中确认后再在此添加。';
+      'è¯·æ£€æŸ¥é‚®ç®±åœ°å€ï¼Œæˆ–ç”¨å®ƒåœ¨ Mozilla ç½‘ç«™å…è´¹åˆ›å»ºä¸€ä¸ª Firefox è´¦æˆ·ï¼Œåœ¨é‚®ç®±ä¸­ç¡®è®¤åŽå†åœ¨æ­¤æ·»åŠ ã€‚';
 
   @override
-  String get createAccountButton => '创建 Firefox 账户';
+  String get createAccountButton => 'åˆ›å»º Firefox è´¦æˆ·';
 
   @override
-  String get signInWrongPassword => '密码错误。';
+  String get signInWrongPassword => 'å¯†ç é”™è¯¯ã€‚';
 
   @override
   String get signInNoPassword =>
-      '此账户没有密码：它是通过 Google 或 Apple 登录创建的。请先设置密码，然后在此用该密码登录。';
+      'æ­¤è´¦æˆ·æ²¡æœ‰å¯†ç ï¼šå®ƒæ˜¯é€šè¿‡ Google æˆ– Apple ç™»å½•åˆ›å»ºçš„ã€‚è¯·å…ˆè®¾ç½®å¯†ç ï¼Œç„¶åŽåœ¨æ­¤ç”¨è¯¥å¯†ç ç™»å½•ã€‚';
 
   @override
-  String get setPasswordButton => '设置密码';
+  String get setPasswordButton => 'è®¾ç½®å¯†ç ';
 
   @override
-  String get signInTooManyAttempts => '尝试次数过多。请稍候再试。';
+  String get signInTooManyAttempts => 'å°è¯•æ¬¡æ•°è¿‡å¤šã€‚è¯·ç¨å€™å†è¯•ã€‚';
 
   @override
-  String get signInUnblockRejected => '解锁码未被接受。请使用 Mozilla 最新邮件中的验证码。';
+  String get signInUnblockRejected => 'è§£é”ç æœªè¢«æŽ¥å—ã€‚è¯·ä½¿ç”¨ Mozilla æœ€æ–°é‚®ä»¶ä¸­çš„éªŒè¯ç ã€‚';
 
   @override
   String get signInWrongCode =>
-      '验证码错误或已过期。请使用 Mozilla 最新邮件中的验证码；发送新验证码后，旧的即失效。';
+      'éªŒè¯ç é”™è¯¯æˆ–å·²è¿‡æœŸã€‚è¯·ä½¿ç”¨ Mozilla æœ€æ–°é‚®ä»¶ä¸­çš„éªŒè¯ç ï¼›å‘é€æ–°éªŒè¯ç åŽï¼Œæ—§çš„å³å¤±æ•ˆã€‚';
 
   @override
-  String get signInWrongTotp => '验证码错误。请输入身份验证器应用当前显示的验证码。';
+  String get signInWrongTotp => 'éªŒè¯ç é”™è¯¯ã€‚è¯·è¾“å…¥èº«ä»½éªŒè¯å™¨åº”ç”¨å½“å‰æ˜¾ç¤ºçš„éªŒè¯ç ã€‚';
 
   @override
-  String get signInTooManyCodes => '错误的验证码过多。请重新开始登录。';
+  String get signInTooManyCodes => 'é”™è¯¯çš„éªŒè¯ç è¿‡å¤šã€‚è¯·é‡æ–°å¼€å§‹ç™»å½•ã€‚';
 
   @override
-  String get signInTimedOut => '登录耗时过长。请重新开始。';
+  String get signInTimedOut => 'ç™»å½•è€—æ—¶è¿‡é•¿ã€‚è¯·é‡æ–°å¼€å§‹ã€‚';
 
   @override
-  String get signInNetwork => '无法连接 Mozilla。请检查网络后重试。';
+  String get signInNetwork => 'æ— æ³•è¿žæŽ¥ Mozillaã€‚è¯·æ£€æŸ¥ç½‘ç»œåŽé‡è¯•ã€‚';
 
   @override
-  String get coreConnecting => '正在连接核心…';
+  String get coreConnecting => 'æ­£åœ¨è¿žæŽ¥æ ¸å¿ƒâ€¦';
 
   @override
-  String get coreLost => '与核心的连接已断开，正在重试…';
+  String get coreLost => 'ä¸Žæ ¸å¿ƒçš„è¿žæŽ¥å·²æ–­å¼€ï¼Œæ­£åœ¨é‡è¯•â€¦';
 
   @override
-  String get cantReachCore => '无法连接到核心';
+  String get cantReachCore => 'æ— æ³•è¿žæŽ¥åˆ°æ ¸å¿ƒ';
 
   @override
-  String get startingCore => '正在启动核心…';
+  String get startingCore => 'æ­£åœ¨å¯åŠ¨æ ¸å¿ƒâ€¦';
 
   @override
-  String get retry => '重试';
+  String get retry => 'é‡è¯•';
 
   @override
   String errNoCore(String path) {
-    return '在应用旁边找不到核心程序（$path）。';
+    return 'åœ¨åº”ç”¨æ—è¾¹æ‰¾ä¸åˆ°æ ¸å¿ƒç¨‹åºï¼ˆ$pathï¼‰ã€‚';
   }
 
   @override
   String errCoreExited(String detail) {
-    return '核心已停止：$detail';
+    return 'æ ¸å¿ƒå·²åœæ­¢ï¼š$detail';
   }
 
   @override
-  String get errNotAnswering => '核心没有响应。';
+  String get errNotAnswering => 'æ ¸å¿ƒæ²¡æœ‰å“åº”ã€‚';
 
   @override
-  String get errRefused => '核心拒绝了本应用的连接，它可能属于另一个正在运行的副本。';
+  String get errRefused => 'æ ¸å¿ƒæ‹’ç»äº†æœ¬åº”ç”¨çš„è¿žæŽ¥ï¼Œå®ƒå¯èƒ½å±žäºŽå¦ä¸€ä¸ªæ­£åœ¨è¿è¡Œçš„å‰¯æœ¬ã€‚';
 
   @override
-  String get settingsTitle => '设置';
+  String get settingsTitle => 'è®¾ç½®';
 
   @override
-  String get sectionGeneral => '常规';
+  String get sectionGeneral => 'å¸¸è§„';
 
   @override
-  String get language => '语言';
+  String get language => 'è¯­è¨€';
 
   @override
-  String get languageSystem => '跟随系统';
+  String get languageSystem => 'è·Ÿéšç³»ç»Ÿ';
 
   @override
-  String get theme => '主题';
+  String get theme => 'ä¸»é¢˜';
 
   @override
-  String get themeSystem => '跟随系统';
+  String get themeSystem => 'è·Ÿéšç³»ç»Ÿ';
 
   @override
-  String get themeLight => '浅色';
+  String get themeLight => 'æµ…è‰²';
 
   @override
-  String get themeDark => '深色';
+  String get themeDark => 'æ·±è‰²';
 
   @override
-  String get closeBehavior => '关闭窗口时';
+  String get closeBehavior => 'å…³é—­çª—å£æ—¶';
 
   @override
-  String get closeAsk => '每次询问';
+  String get closeAsk => 'æ¯æ¬¡è¯¢é—®';
 
   @override
-  String get closeTray => '最小化到托盘';
+  String get closeTray => 'æœ€å°åŒ–åˆ°æ‰˜ç›˜';
 
   @override
-  String get closeQuit => '退出应用';
+  String get closeQuit => 'é€€å‡ºåº”ç”¨';
 
   @override
-  String get sectionConnection => '连接';
+  String get sectionConnection => 'è¿žæŽ¥';
 
   @override
-  String get localProxy => '本地代理';
+  String get localProxy => 'æœ¬åœ°ä»£ç†';
 
   @override
-  String get systemProxy => '系统代理';
+  String get systemProxy => 'ç³»ç»Ÿä»£ç†';
 
   @override
-  String get sectionRouting => '分流';
+  String get sectionRouting => 'åˆ†æµ';
 
   @override
-  String get routingDirect => '本地网站直连';
+  String get routingDirect => 'æœ¬åœ°ç½‘ç«™ç›´è¿ž';
 
   @override
-  String get routingDirectHint => '所选国家的网站和 IP 不走 VPN，打开更快，也节省流量。';
+  String get routingDirectHint => 'æ‰€é€‰å›½å®¶çš„ç½‘ç«™å’Œ IP ä¸èµ° VPNï¼Œæ‰“å¼€æ›´å¿«ï¼Œä¹ŸèŠ‚çœæµé‡ã€‚';
 
   @override
-  String get region => '国家';
+  String get region => 'å›½å®¶';
 
   @override
-  String get regionIr => '伊朗';
+  String get regionIr => 'ä¼Šæœ—';
 
   @override
-  String get regionCn => '中国';
+  String get regionCn => 'ä¸­å›½';
 
   @override
-  String get regionRu => '俄罗斯';
+  String get regionRu => 'ä¿„ç½—æ–¯';
 
   @override
-  String get regionAf => '阿富汗';
+  String get regionAf => 'é˜¿å¯Œæ±—';
 
   @override
-  String get regionTr => '土耳其';
+  String get regionTr => 'åœŸè€³å…¶';
 
   @override
-  String get regionId => '印度尼西亚';
+  String get regionId => 'å°åº¦å°¼è¥¿äºš';
 
   @override
-  String get regionBr => '巴西';
+  String get regionBr => 'å·´è¥¿';
 
   @override
-  String get regionNone => '无';
+  String get regionNone => 'æ— ';
 
   @override
-  String get saved => '已保存';
+  String get saved => 'å·²ä¿å­˜';
 
   @override
-  String get dataFolder => '数据文件夹';
+  String get dataFolder => 'æ•°æ®æ–‡ä»¶å¤¹';
 
   @override
-  String get openFolder => '打开文件夹';
+  String get openFolder => 'æ‰“å¼€æ–‡ä»¶å¤¹';
 
   @override
-  String get unofficialNote => '非官方客户端，与 Mozilla 无关。';
+  String get unofficialNote => 'éžå®˜æ–¹å®¢æˆ·ç«¯ï¼Œä¸Ž Mozilla æ— å…³ã€‚';
 
   @override
-  String get closeTitle => '关闭窗口？';
+  String get closeTitle => 'å…³é—­çª—å£ï¼Ÿ';
 
   @override
-  String get closeBody => '最小化到托盘后 VPN 保持连接；退出则会断开。';
+  String get closeBody => 'æœ€å°åŒ–åˆ°æ‰˜ç›˜åŽ VPN ä¿æŒè¿žæŽ¥ï¼›é€€å‡ºåˆ™ä¼šæ–­å¼€ã€‚';
 
   @override
-  String get rememberChoice => '记住我的选择';
+  String get rememberChoice => 'è®°ä½æˆ‘çš„é€‰æ‹©';
 
   @override
-  String get minimizeToTray => '最小化到托盘';
+  String get minimizeToTray => 'æœ€å°åŒ–åˆ°æ‰˜ç›˜';
 
   @override
-  String get quit => '退出';
+  String get quit => 'é€€å‡º';
 
   @override
-  String get trayOpen => '打开';
+  String get trayOpen => 'æ‰“å¼€';
 
   @override
-  String get trayQuit => '退出';
+  String get trayQuit => 'é€€å‡º';
 
   @override
-  String get trayProxyOnly => '仅代理服务';
+  String get trayProxyOnly => 'ä»…ä»£ç†æœåŠ¡';
 
   @override
-  String get traySetSystemProxy => '设置系统代理';
+  String get traySetSystemProxy => 'è®¾ç½®ç³»ç»Ÿä»£ç†';
 
   @override
   String errPortInUse(String port) {
-    return '端口 $port 被其他程序占用，应用无法连接到核心。';
+    return 'ç«¯å£ $port è¢«å…¶ä»–ç¨‹åºå ç”¨ï¼Œåº”ç”¨æ— æ³•è¿žæŽ¥åˆ°æ ¸å¿ƒã€‚';
   }
 
   @override
   String proxyPortInUse(String port) {
-    return '端口 $port 被其他程序占用，代理无法启动。';
+    return 'ç«¯å£ $port è¢«å…¶ä»–ç¨‹åºå ç”¨ï¼Œä»£ç†æ— æ³•å¯åŠ¨ã€‚';
   }
 
   @override
-  String get changePort => '更改端口';
+  String get changePort => 'æ›´æ”¹ç«¯å£';
 
   @override
-  String get portDialogTitle => '选择端口';
+  String get portDialogTitle => 'é€‰æ‹©ç«¯å£';
 
   @override
   String portDialogBody(String port) {
-    return '端口 $port 已被占用。下方已推荐一个空闲端口，你也可以输入其他端口。';
+    return 'ç«¯å£ $port å·²è¢«å ç”¨ã€‚ä¸‹æ–¹å·²æŽ¨èä¸€ä¸ªç©ºé—²ç«¯å£ï¼Œä½ ä¹Ÿå¯ä»¥è¾“å…¥å…¶ä»–ç«¯å£ã€‚';
   }
 
   @override
-  String get portChangeBody => '其他应用通过此端口连接。请选择 1024 到 65535 之间的端口。';
+  String get portChangeBody => 'å…¶ä»–åº”ç”¨é€šè¿‡æ­¤ç«¯å£è¿žæŽ¥ã€‚è¯·é€‰æ‹© 1024 åˆ° 65535 ä¹‹é—´çš„ç«¯å£ã€‚';
 
   @override
-  String get portLabel => '端口';
+  String get portLabel => 'ç«¯å£';
 
   @override
-  String get portInvalid => '请输入 1024 到 65535 之间的端口';
+  String get portInvalid => 'è¯·è¾“å…¥ 1024 åˆ° 65535 ä¹‹é—´çš„ç«¯å£';
 
   @override
-  String get portBusy => '此端口也已被占用';
+  String get portBusy => 'æ­¤ç«¯å£ä¹Ÿå·²è¢«å ç”¨';
 
   @override
-  String get portInUse => '其他程序正在使用此端口';
+  String get portInUse => 'å…¶ä»–ç¨‹åºæ­£åœ¨ä½¿ç”¨æ­¤ç«¯å£';
 
   @override
-  String get save => '保存';
+  String get save => 'ä¿å­˜';
 
   @override
-  String get proxyPort => '代理端口';
+  String get proxyPort => 'ä»£ç†ç«¯å£';
 
   @override
-  String get appPort => '应用端口';
+  String get appPort => 'åº”ç”¨ç«¯å£';
 
   @override
-  String get welcomeTitle => '欢迎';
+  String get welcomeTitle => 'æ¬¢è¿Ž';
 
   @override
-  String get welcomeBody => '请选择语言和所在国家。本国网站将直连访问，不走 VPN，速度更快，也节省流量。';
+  String get welcomeBody => 'è¯·é€‰æ‹©è¯­è¨€å’Œæ‰€åœ¨å›½å®¶ã€‚æœ¬å›½ç½‘ç«™å°†ç›´è¿žè®¿é—®ï¼Œä¸èµ° VPNï¼Œé€Ÿåº¦æ›´å¿«ï¼Œä¹ŸèŠ‚çœæµé‡ã€‚';
 
   @override
-  String get start => '开始';
+  String get start => 'å¼€å§‹';
 
   @override
   String routingSuggestTitle(String country) {
-    return '$country网站直连？';
+    return '$countryç½‘ç«™ç›´è¿žï¼Ÿ';
   }
 
   @override
   String routingSuggestBody(String country) {
-    return '$country的网站和 IP 将直连访问，不走 VPN。可在“分流”中更改。';
+    return '$countryçš„ç½‘ç«™å’Œ IP å°†ç›´è¿žè®¿é—®ï¼Œä¸èµ° VPNã€‚å¯åœ¨â€œåˆ†æµâ€ä¸­æ›´æ”¹ã€‚';
   }
 
   @override
-  String get yes => '是';
+  String get yes => 'æ˜¯';
 
   @override
-  String get notNow => '暂不';
+  String get notNow => 'æš‚ä¸';
 
   @override
-  String get navServers => '服务器';
+  String get navServers => 'æœåŠ¡å™¨';
 
   @override
-  String get navLogs => '日志';
+  String get navLogs => 'æ—¥å¿—';
 
   @override
-  String get realDelay => '真实延迟';
+  String get realDelay => 'çœŸå®žå»¶è¿Ÿ';
 
   @override
   String noticePort(String port) {
-    return 'Mozilla 代理不支持端口 $port，只有 80、443、8080 和 8443 端口可以走 VPN。';
+    return 'Mozilla ä»£ç†ä¸æ”¯æŒç«¯å£ $portï¼Œåªæœ‰ 80ã€443ã€8080 å’Œ 8443 ç«¯å£å¯ä»¥èµ° VPNã€‚';
   }
 
   @override
   String get noticeCommand =>
-      '有应用使用了 UDP（游戏、语音和视频通话等）。Mozilla 代理仅支持 TCP，因此无法通过。';
+      'æœ‰åº”ç”¨ä½¿ç”¨äº† UDPï¼ˆæ¸¸æˆã€è¯­éŸ³å’Œè§†é¢‘é€šè¯ç­‰ï¼‰ã€‚Mozilla ä»£ç†ä»…æ”¯æŒ TCPï¼Œå› æ­¤æ— æ³•é€šè¿‡ã€‚';
 
   @override
   String noticeTimes(int count, String time) {
-    return '$count 次，最近一次 $time';
+    return '$count æ¬¡ï¼Œæœ€è¿‘ä¸€æ¬¡ $time';
   }
 
   @override
-  String get dismiss => '忽略';
+  String get dismiss => 'å¿½ç•¥';
 
   @override
-  String get modeRecommended => '推荐';
+  String get modeRecommended => 'æŽ¨è';
 
   @override
-  String get modeFastest => '最快';
+  String get modeFastest => 'æœ€å¿«';
 
   @override
-  String get modeRecommendedHint => '由 Mozilla 为你选择节点。';
+  String get modeRecommendedHint => 'ç”± Mozilla ä¸ºä½ é€‰æ‹©èŠ‚ç‚¹ã€‚';
 
   @override
-  String get modeFastestHint => '每次连接时自动选择延迟最低的节点。';
+  String get modeFastestHint => 'æ¯æ¬¡è¿žæŽ¥æ—¶è‡ªåŠ¨é€‰æ‹©å»¶è¿Ÿæœ€ä½Žçš„èŠ‚ç‚¹ã€‚';
 
   @override
-  String get testDelay => '测试真实延迟';
+  String get testDelay => 'æµ‹è¯•çœŸå®žå»¶è¿Ÿ';
 
   @override
-  String get testingDelay => '正在测试…可能需要一分钟';
+  String get testingDelay => 'æ­£åœ¨æµ‹è¯•â€¦å¯èƒ½éœ€è¦ä¸€åˆ†é’Ÿ';
 
   @override
-  String get search => '搜索';
+  String get search => 'æœç´¢';
 
   @override
-  String get noAnswer => '无响应';
+  String get noAnswer => 'æ— å“åº”';
 
   @override
   String testedAgo(String ago) {
-    return '$ago测试';
+    return '$agoæµ‹è¯•';
   }
 
   @override
   String delaySummary(int answered, int total) {
-    return '$answered/$total 个节点有响应';
+    return '$answered/$total ä¸ªèŠ‚ç‚¹æœ‰å“åº”';
   }
 
   @override
-  String get noServers => '暂无服务器。核心连接到 Mozilla 后即会显示。';
+  String get noServers => 'æš‚æ— æœåŠ¡å™¨ã€‚æ ¸å¿ƒè¿žæŽ¥åˆ° Mozilla åŽå³ä¼šæ˜¾ç¤ºã€‚';
 
   @override
-  String get levelAll => '全部';
+  String get levelAll => 'å…¨éƒ¨';
 
   @override
-  String get filter => '筛选';
+  String get filter => 'ç­›é€‰';
 
   @override
-  String get follow => '自动滚动';
+  String get follow => 'è‡ªåŠ¨æ»šåŠ¨';
 
   @override
-  String get clear => '清空';
+  String get clear => 'æ¸…ç©º';
 
   @override
-  String get copyAll => '复制';
+  String get copyAll => 'å¤åˆ¶';
 
   @override
-  String get logsCopied => '日志已复制';
+  String get logsCopied => 'æ—¥å¿—å·²å¤åˆ¶';
 
   @override
-  String get noLogs => '暂无日志。';
+  String get noLogs => 'æš‚æ— æ—¥å¿—ã€‚';
 
   @override
-  String get sectionAccounts => '自动切换账户';
+  String get sectionAccounts => 'è‡ªåŠ¨åˆ‡æ¢è´¦æˆ·';
 
   @override
-  String get switchThreshold => '切换阈值';
+  String get switchThreshold => 'åˆ‡æ¢é˜ˆå€¼';
 
   @override
-  String get switchThresholdHint => '流量用到此比例时，自动切换到下一个账户。';
+  String get switchThresholdHint => 'æµé‡ç”¨åˆ°æ­¤æ¯”ä¾‹æ—¶ï¼Œè‡ªåŠ¨åˆ‡æ¢åˆ°ä¸‹ä¸€ä¸ªè´¦æˆ·ã€‚';
 
   @override
   String get sectionDns => 'DNS';
 
   @override
-  String get dnsPreset => 'DNS 服务器';
+  String get dnsPreset => 'DNS æœåŠ¡å™¨';
 
   @override
-  String get dnsSystem => '系统';
+  String get dnsSystem => 'ç³»ç»Ÿ';
 
   @override
-  String get dnsAuto => '自动（Cloudflare、Google、Quad9）';
+  String get dnsAuto => 'è‡ªåŠ¨ï¼ˆCloudflareã€Googleã€Quad9ï¼‰';
 
   @override
-  String get dnsCustom => '自定义';
+  String get dnsCustom => 'è‡ªå®šä¹‰';
 
   @override
-  String get dnsCustomHint => '每行一个：https://…/dns-query、tls://… 或 IP 地址。';
+  String get dnsCustomHint => 'æ¯è¡Œä¸€ä¸ªï¼šhttps://â€¦/dns-queryã€tls://â€¦ æˆ– IP åœ°å€ã€‚';
 
   @override
-  String get dnsFallback => '回退到系统 DNS';
+  String get dnsFallback => 'å›žé€€åˆ°ç³»ç»Ÿ DNS';
 
   @override
-  String get testDns => '测试 DNS';
+  String get testDns => 'æµ‹è¯• DNS';
 
   @override
-  String get transport => '协议';
+  String get transport => 'åè®®';
 
   @override
   String get transportH3 => 'HTTP/3 (QUIC)';
@@ -740,385 +740,385 @@ class AppLocalizationsZh extends AppLocalizations {
   String get transportH2 => 'HTTP/2 (TCP)';
 
   @override
-  String get directRules => '直连';
+  String get directRules => 'ç›´è¿ž';
 
   @override
   String get directRulesHint =>
-      '此列表中的网站和地址不经过 VPN，直接通过你自己的网络打开。所选国家的规则已在此处：可以添加、修改或删除。选择其他国家会替换为该国的规则。';
+      'æ­¤åˆ—è¡¨ä¸­çš„ç½‘ç«™å’Œåœ°å€ä¸ç»è¿‡ VPNï¼Œç›´æŽ¥é€šè¿‡ä½ è‡ªå·±çš„ç½‘ç»œæ‰“å¼€ã€‚æ‰€é€‰å›½å®¶çš„è§„åˆ™å·²åœ¨æ­¤å¤„ï¼šå¯ä»¥æ·»åŠ ã€ä¿®æ”¹æˆ–åˆ é™¤ã€‚é€‰æ‹©å…¶ä»–å›½å®¶ä¼šæ›¿æ¢ä¸ºè¯¥å›½çš„è§„åˆ™ã€‚';
 
   @override
-  String get restoreRegionRules => '恢复该国家的默认规则';
+  String get restoreRegionRules => 'æ¢å¤è¯¥å›½å®¶çš„é»˜è®¤è§„åˆ™';
 
   @override
-  String get blockRules => '拦截';
+  String get blockRules => 'æ‹¦æˆª';
 
   @override
   String get blockRulesHint =>
-      '此列表中的网站和地址完全无法打开，无论直连还是通过 VPN：适用于广告或你永远不想访问的网站。';
+      'æ­¤åˆ—è¡¨ä¸­çš„ç½‘ç«™å’Œåœ°å€å®Œå…¨æ— æ³•æ‰“å¼€ï¼Œæ— è®ºç›´è¿žè¿˜æ˜¯é€šè¿‡ VPNï¼šé€‚ç”¨äºŽå¹¿å‘Šæˆ–ä½ æ°¸è¿œä¸æƒ³è®¿é—®çš„ç½‘ç«™ã€‚';
 
   @override
-  String get rulesTitle => '规则';
+  String get rulesTitle => 'è§„åˆ™';
 
   @override
-  String get ruleSyntaxTitle => '如何编写规则';
+  String get ruleSyntaxTitle => 'å¦‚ä½•ç¼–å†™è§„åˆ™';
 
   @override
-  String get resolveDomains => 'IP 规则也应用于域名';
+  String get resolveDomains => 'IP è§„åˆ™ä¹Ÿåº”ç”¨äºŽåŸŸå';
 
   @override
-  String get routingLists => 'Geo 文件';
+  String get routingLists => 'Geo æ–‡ä»¶';
 
   @override
-  String get listSource => '列表来源';
+  String get listSource => 'åˆ—è¡¨æ¥æº';
 
   @override
-  String get listSourceCustom => '手动设置';
+  String get listSourceCustom => 'æ‰‹åŠ¨è®¾ç½®';
 
   @override
   String listsUpdatedAgo(String ago) {
-    return '更新于 $ago';
+    return 'æ›´æ–°äºŽ $ago';
   }
 
   @override
-  String get updateLists => '更新 Geo 文件';
+  String get updateLists => 'æ›´æ–° Geo æ–‡ä»¶';
 
   @override
-  String get listsUpdated => 'Geo 文件已更新。';
+  String get listsUpdated => 'Geo æ–‡ä»¶å·²æ›´æ–°ã€‚';
 
   @override
-  String get testDestination => '测试分流';
+  String get testDestination => 'æµ‹è¯•åˆ†æµ';
 
   @override
-  String get destinationHint => '域名、IP 或网址';
+  String get destinationHint => 'åŸŸåã€IP æˆ–ç½‘å€';
 
   @override
-  String get check => '检查';
+  String get check => 'æ£€æŸ¥';
 
   @override
-  String get routeDirect => '直连';
+  String get routeDirect => 'ç›´è¿ž';
 
   @override
-  String get routeProxy => '走 VPN';
+  String get routeProxy => 'èµ° VPN';
 
   @override
-  String get routeBlock => '已拦截';
+  String get routeBlock => 'å·²æ‹¦æˆª';
 
   @override
   String ruleMatched(String rule) {
-    return '规则：$rule';
+    return 'è§„åˆ™ï¼š$rule';
   }
 
   @override
-  String get portRefusedNote => 'Mozilla 代理不支持此端口。';
+  String get portRefusedNote => 'Mozilla ä»£ç†ä¸æ”¯æŒæ­¤ç«¯å£ã€‚';
 
   @override
-  String get sectionAdvanced => '高级';
+  String get sectionAdvanced => 'é«˜çº§';
 
   @override
-  String get listenAddress => '允许连接的设备';
+  String get listenAddress => 'å…è®¸è¿žæŽ¥çš„è®¾å¤‡';
 
   @override
-  String get listenLocal => '127.0.0.1 · 仅本设备';
+  String get listenLocal => '127.0.0.1 Â· ä»…æœ¬è®¾å¤‡';
 
   @override
-  String get listenAll => '0.0.0.0 · 所有网络（LAN）';
+  String get listenAll => '0.0.0.0 Â· æ‰€æœ‰ç½‘ç»œï¼ˆLANï¼‰';
 
   @override
-  String get proxyUsername => '代理用户名';
+  String get proxyUsername => 'ä»£ç†ç”¨æˆ·å';
 
   @override
-  String get proxyPassword => '代理密码';
+  String get proxyPassword => 'ä»£ç†å¯†ç ';
 
   @override
-  String get proxyLoginHint => '应用连接代理时需填写这些信息。两项都留空则无需验证。';
+  String get proxyLoginHint => 'åº”ç”¨è¿žæŽ¥ä»£ç†æ—¶éœ€å¡«å†™è¿™äº›ä¿¡æ¯ã€‚ä¸¤é¡¹éƒ½ç•™ç©ºåˆ™æ— éœ€éªŒè¯ã€‚';
 
   @override
-  String get loginBothOrNone => '请同时填写两项，或都留空。';
+  String get loginBothOrNone => 'è¯·åŒæ—¶å¡«å†™ä¸¤é¡¹ï¼Œæˆ–éƒ½ç•™ç©ºã€‚';
 
   @override
-  String get proxyLogin => '代理认证';
+  String get proxyLogin => 'ä»£ç†è®¤è¯';
 
   @override
-  String get idleSleep => '空闲后休眠';
+  String get idleSleep => 'ç©ºé—²åŽä¼‘çœ ';
 
   @override
-  String get sleepNever => '从不';
+  String get sleepNever => 'ä»Žä¸';
 
   @override
   String sleepMinutes(int count) {
-    return '$count 分钟';
+    return '$count åˆ†é’Ÿ';
   }
 
   @override
-  String get sleepHour => '1 小时';
+  String get sleepHour => '1 å°æ—¶';
 
   @override
-  String get showPublicIp => '显示公网 IP';
+  String get showPublicIp => 'æ˜¾ç¤ºå…¬ç½‘ IP';
 
   @override
-  String get speedInNotification => '在通知中显示速度';
+  String get speedInNotification => 'åœ¨é€šçŸ¥ä¸­æ˜¾ç¤ºé€Ÿåº¦';
 
   @override
-  String get liveTraffic => '实时流量';
+  String get liveTraffic => 'å®žæ—¶æµé‡';
 
   @override
-  String get totalTraffic => '总流量';
+  String get totalTraffic => 'æ€»æµé‡';
 
   @override
-  String get verboseLogs => '详细日志';
+  String get verboseLogs => 'è¯¦ç»†æ—¥å¿—';
 
   @override
-  String get webDashboard => '网页控制面板';
+  String get webDashboard => 'ç½‘é¡µæŽ§åˆ¶é¢æ¿';
 
   @override
-  String get webDashboardOpen => '打开';
+  String get webDashboardOpen => 'æ‰“å¼€';
 
   @override
-  String get webDashboardHint => '高级设置和更多工具';
+  String get webDashboardHint => 'é«˜çº§è®¾ç½®å’Œæ›´å¤šå·¥å…·';
 
   @override
   String numberInvalid(int min, int max) {
-    return '请输入 $min 到 $max 之间的数字';
+    return 'è¯·è¾“å…¥ $min åˆ° $max ä¹‹é—´çš„æ•°å­—';
   }
 
   @override
-  String get notifySwitchedTitle => '已切换账户';
+  String get notifySwitchedTitle => 'å·²åˆ‡æ¢è´¦æˆ·';
 
   @override
   String notifySwitchedBody(String name) {
-    return '现在使用 $name。';
+    return 'çŽ°åœ¨ä½¿ç”¨ $nameã€‚';
   }
 
   @override
-  String get notifySignInTitle => '需要登录';
+  String get notifySignInTitle => 'éœ€è¦ç™»å½•';
 
   @override
-  String get notifySignInBody => '有账户需要在“账户”页面重新登录。';
+  String get notifySignInBody => 'æœ‰è´¦æˆ·éœ€è¦åœ¨â€œè´¦æˆ·â€é¡µé¢é‡æ–°ç™»å½•ã€‚';
 
   @override
-  String get navAbout => '关于';
+  String get navAbout => 'å…³äºŽ';
 
   @override
-  String get appVersionLabel => '应用版本';
+  String get appVersionLabel => 'åº”ç”¨ç‰ˆæœ¬';
 
   @override
-  String get coreVersionLabel => '核心版本';
+  String get coreVersionLabel => 'æ ¸å¿ƒç‰ˆæœ¬';
 
   @override
-  String get checkUpdates => '检查更新';
+  String get checkUpdates => 'æ£€æŸ¥æ›´æ–°';
 
   @override
-  String get checkingUpdates => '正在检查…';
+  String get checkingUpdates => 'æ­£åœ¨æ£€æŸ¥â€¦';
 
   @override
-  String get upToDate => '已是最新版本。';
+  String get upToDate => 'å·²æ˜¯æœ€æ–°ç‰ˆæœ¬ã€‚';
 
   @override
   String updateAvailable(String version) {
-    return '新版本 $version 已发布。';
+    return 'æ–°ç‰ˆæœ¬ $version å·²å‘å¸ƒã€‚';
   }
 
   @override
-  String get download => '下载';
+  String get download => 'ä¸‹è½½';
 
   @override
   String updateCheckFailed(String error) {
-    return '无法检查更新：$error';
+    return 'æ— æ³•æ£€æŸ¥æ›´æ–°ï¼š$error';
   }
 
   @override
-  String get repoNotSet => '尚未设置 GitHub 仓库。';
+  String get repoNotSet => 'å°šæœªè®¾ç½® GitHub ä»“åº“ã€‚';
 
   @override
-  String get sourceCode => '源代码';
+  String get sourceCode => 'æºä»£ç ';
 
   @override
-  String get tapToConnect => '点击连接';
+  String get tapToConnect => 'ç‚¹å‡»è¿žæŽ¥';
 
   @override
-  String get tapToDisconnect => '点击断开';
+  String get tapToDisconnect => 'ç‚¹å‡»æ–­å¼€';
 
   @override
-  String get startOnBoot => '开机启动';
+  String get startOnBoot => 'å¼€æœºå¯åŠ¨';
 
   @override
-  String get connectOnStartup => '开机自动连接';
+  String get connectOnStartup => 'å¼€æœºè‡ªåŠ¨è¿žæŽ¥';
 
   @override
-  String get proxyServiceActive => '代理服务运行中';
+  String get proxyServiceActive => 'ä»£ç†æœåŠ¡è¿è¡Œä¸­';
 
   @override
-  String get navHome => '首页';
+  String get navHome => 'é¦–é¡µ';
 
   @override
-  String get groupApp => '应用';
+  String get groupApp => 'åº”ç”¨';
 
   @override
-  String get stateOff => '已断开';
+  String get stateOff => 'å·²æ–­å¼€';
 
   @override
-  String get tapToConnectPhone => '点击连接';
+  String get tapToConnectPhone => 'ç‚¹å‡»è¿žæŽ¥';
 
   @override
-  String get tapToDisconnectPhone => '点击断开';
+  String get tapToDisconnectPhone => 'ç‚¹å‡»æ–­å¼€';
 
   @override
   String lanAddress(String address) {
-    return '局域网 $address';
+    return 'å±€åŸŸç½‘ $address';
   }
 
   @override
-  String get recommendedLocation => '推荐节点';
+  String get recommendedLocation => 'æŽ¨èèŠ‚ç‚¹';
 
   @override
   String dataLeftOf(String limit) {
-    return '共 $limit';
+    return 'å…± $limit';
   }
 
   @override
-  String get homeLocation => '节点';
+  String get homeLocation => 'èŠ‚ç‚¹';
 
   @override
-  String get connectedTo => '已连接到';
+  String get connectedTo => 'å·²è¿žæŽ¥åˆ°';
 
   @override
-  String get vpnNotAllowed => 'VPN 需要你的授权。请再次点击按钮并允许。';
+  String get vpnNotAllowed => 'VPN éœ€è¦ä½ çš„æŽˆæƒã€‚è¯·å†æ¬¡ç‚¹å‡»æŒ‰é’®å¹¶å…è®¸ã€‚';
 
   @override
-  String get dataUsedTitle => '已用流量';
+  String get dataUsedTitle => 'å·²ç”¨æµé‡';
 
   @override
-  String get bypassApps => '分应用代理';
+  String get bypassApps => 'åˆ†åº”ç”¨ä»£ç†';
 
   @override
-  String get connectRetrying => '无法连接。请检查网络。';
+  String get connectRetrying => 'æ— æ³•è¿žæŽ¥ã€‚è¯·æ£€æŸ¥ç½‘ç»œã€‚';
 
   @override
-  String get failUnreachable => 'Mozilla 服务器在此网络上被屏蔽。请换一个网络连接试试。';
+  String get failUnreachable => 'Mozilla æœåŠ¡å™¨åœ¨æ­¤ç½‘ç»œä¸Šè¢«å±è”½ã€‚è¯·æ¢ä¸€ä¸ªç½‘ç»œè¿žæŽ¥è¯•è¯•ã€‚';
 
   @override
-  String get failRefused => 'Mozilla 服务器拒绝了连接。请几分钟后再试。';
+  String get failRefused => 'Mozilla æœåŠ¡å™¨æ‹’ç»äº†è¿žæŽ¥ã€‚è¯·å‡ åˆ†é’ŸåŽå†è¯•ã€‚';
 
   @override
-  String get failLocationRefused => '这个国家不对你的账户开放。请选择其他国家。';
+  String get failLocationRefused => 'è¿™ä¸ªå›½å®¶ä¸å¯¹ä½ çš„è´¦æˆ·å¼€æ”¾ã€‚è¯·é€‰æ‹©å…¶ä»–å›½å®¶ã€‚';
 
   @override
-  String get useRecommendedLocation => '使用推荐节点';
+  String get useRecommendedLocation => 'ä½¿ç”¨æŽ¨èèŠ‚ç‚¹';
 
   @override
   String exitMismatch(String exit, String chosen) {
-    return '你选择了$chosen，但你的 IP 在$exit。';
+    return 'ä½ é€‰æ‹©äº†$chosenï¼Œä½†ä½ çš„ IP åœ¨$exitã€‚';
   }
 
   @override
-  String get failSignIn => '此账户的登录已过期。请在“账户”页重新登录。';
+  String get failSignIn => 'æ­¤è´¦æˆ·çš„ç™»å½•å·²è¿‡æœŸã€‚è¯·åœ¨â€œè´¦æˆ·â€é¡µé‡æ–°ç™»å½•ã€‚';
 
   @override
-  String get failQuota => '本月流量已用完。请添加另一个账户。';
+  String get failQuota => 'æœ¬æœˆæµé‡å·²ç”¨å®Œã€‚è¯·æ·»åŠ å¦ä¸€ä¸ªè´¦æˆ·ã€‚';
 
   @override
-  String get failNotEntitled => 'Mozilla 不允许此账户使用 VPN。请添加另一个账户。';
+  String get failNotEntitled => 'Mozilla ä¸å…è®¸æ­¤è´¦æˆ·ä½¿ç”¨ VPNã€‚è¯·æ·»åŠ å¦ä¸€ä¸ªè´¦æˆ·ã€‚';
 
   @override
-  String get failRegion => 'Mozilla 不在你所在的国家提供服务。';
+  String get failRegion => 'Mozilla ä¸åœ¨ä½ æ‰€åœ¨çš„å›½å®¶æä¾›æœåŠ¡ã€‚';
 
   @override
-  String get failServer => 'Mozilla 服务暂时出现问题。应用会自动重试。';
+  String get failServer => 'Mozilla æœåŠ¡æš‚æ—¶å‡ºçŽ°é—®é¢˜ã€‚åº”ç”¨ä¼šè‡ªåŠ¨é‡è¯•ã€‚';
 
   @override
-  String get failNoAccount => '没有可用的账户。请打开“账户”页。';
+  String get failNoAccount => 'æ²¡æœ‰å¯ç”¨çš„è´¦æˆ·ã€‚è¯·æ‰“å¼€â€œè´¦æˆ·â€é¡µã€‚';
 
   @override
-  String get failTestSite => '已连接服务器，但网站打不开。请换一个国家试试。';
+  String get failTestSite => 'å·²è¿žæŽ¥æœåŠ¡å™¨ï¼Œä½†ç½‘ç«™æ‰“ä¸å¼€ã€‚è¯·æ¢ä¸€ä¸ªå›½å®¶è¯•è¯•ã€‚';
 
   @override
-  String get failOther => '无法连接。请重试。';
+  String get failOther => 'æ— æ³•è¿žæŽ¥ã€‚è¯·é‡è¯•ã€‚';
 
   @override
-  String get failNoInternet => '无网络连接。请检查 Wi-Fi 或移动数据。';
+  String get failNoInternet => 'æ— ç½‘ç»œè¿žæŽ¥ã€‚è¯·æ£€æŸ¥ Wi-Fi æˆ–ç§»åŠ¨æ•°æ®ã€‚';
 
   @override
-  String get waitingForNetwork => '正在等待网络连接…';
+  String get waitingForNetwork => 'æ­£åœ¨ç­‰å¾…ç½‘ç»œè¿žæŽ¥â€¦';
 
   @override
   String proxyStartFailed(String port) {
-    return '代理无法在端口 $port 上启动。请选择其他端口。';
+    return 'ä»£ç†æ— æ³•åœ¨ç«¯å£ $port ä¸Šå¯åŠ¨ã€‚è¯·é€‰æ‹©å…¶ä»–ç«¯å£ã€‚';
   }
 
   @override
-  String get connectionSettings => '连接设置';
+  String get connectionSettings => 'è¿žæŽ¥è®¾ç½®';
 
   @override
-  String get appModeExclude => '绕行所选应用';
+  String get appModeExclude => 'ç»•è¡Œæ‰€é€‰åº”ç”¨';
 
   @override
-  String get appModeInclude => '仅代理所选应用';
+  String get appModeInclude => 'ä»…ä»£ç†æ‰€é€‰åº”ç”¨';
 
   @override
-  String get appModeExcludeHint => '所选应用直连，不走 VPN，例如拒绝境外 IP 的银行应用。';
+  String get appModeExcludeHint => 'æ‰€é€‰åº”ç”¨ç›´è¿žï¼Œä¸èµ° VPNï¼Œä¾‹å¦‚æ‹’ç»å¢ƒå¤– IP çš„é“¶è¡Œåº”ç”¨ã€‚';
 
   @override
-  String get appModeIncludeHint => '仅所选应用走 VPN，其他应用直连。';
+  String get appModeIncludeHint => 'ä»…æ‰€é€‰åº”ç”¨èµ° VPNï¼Œå…¶ä»–åº”ç”¨ç›´è¿žã€‚';
 
   @override
   String fromRegionList(String region) {
-    return '推荐（$region列表）';
+    return 'æŽ¨èï¼ˆ$regionåˆ—è¡¨ï¼‰';
   }
 
   @override
-  String get modeProxy => '代理';
+  String get modeProxy => 'ä»£ç†';
 
   @override
-  String get connectionMode => '连接模式';
+  String get connectionMode => 'è¿žæŽ¥æ¨¡å¼';
 
   @override
-  String get modeProxyHint => '仅对已设置代理的应用生效，不更改 Windows 设置。';
+  String get modeProxyHint => 'ä»…å¯¹å·²è®¾ç½®ä»£ç†çš„åº”ç”¨ç”Ÿæ•ˆï¼Œä¸æ›´æ”¹ Windows è®¾ç½®ã€‚';
 
   @override
-  String get modeSystemProxyHint => 'Windows 和大多数应用都走代理。';
+  String get modeSystemProxyHint => 'Windows å’Œå¤§å¤šæ•°åº”ç”¨éƒ½èµ°ä»£ç†ã€‚';
 
   @override
-  String get modeProxyHintOther => '仅对已设置代理的应用生效，不更改系统设置。';
+  String get modeProxyHintOther => 'ä»…å¯¹å·²è®¾ç½®ä»£ç†çš„åº”ç”¨ç”Ÿæ•ˆï¼Œä¸æ›´æ”¹ç³»ç»Ÿè®¾ç½®ã€‚';
 
   @override
-  String get modeSystemProxyHintOther => '浏览器和大多数应用都走代理。';
+  String get modeSystemProxyHintOther => 'æµè§ˆå™¨å’Œå¤§å¤šæ•°åº”ç”¨éƒ½èµ°ä»£ç†ã€‚';
 
   @override
-  String get suggestedApps => '推荐应用';
+  String get suggestedApps => 'æŽ¨èåº”ç”¨';
 
   @override
   String suggestedAdded(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '已选中 $count 个推荐应用',
-      zero: '推荐应用已全部选中',
+      other: 'å·²é€‰ä¸­ $count ä¸ªæŽ¨èåº”ç”¨',
+      zero: 'æŽ¨èåº”ç”¨å·²å…¨éƒ¨é€‰ä¸­',
     );
     return '$_temp0';
   }
 
   @override
-  String get autoSection => '自动';
+  String get autoSection => 'è‡ªåŠ¨';
 
   @override
-  String get locationsSection => '节点';
+  String get locationsSection => 'èŠ‚ç‚¹';
 
   @override
-  String get dnsSummaryOk => '加密 DNS 工作正常';
+  String get dnsSummaryOk => 'åŠ å¯† DNS å·¥ä½œæ­£å¸¸';
 
   @override
   String dnsSummaryFailed(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count 个域名解析失败',
+      other: '$count ä¸ªåŸŸåè§£æžå¤±è´¥',
     );
     return '$_temp0';
   }
 
   @override
   String dnsVia(String server) {
-    return '经由 $server';
+    return 'ç»ç”± $server';
   }
 
   @override
@@ -1126,63 +1126,63 @@ class AppLocalizationsZh extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '当前网络的 DNS 对 $count 个域名返回了过滤地址，本应用不会采用这些结果。',
+      other: 'å½“å‰ç½‘ç»œçš„ DNS å¯¹ $count ä¸ªåŸŸåè¿”å›žäº†è¿‡æ»¤åœ°å€ï¼Œæœ¬åº”ç”¨ä¸ä¼šé‡‡ç”¨è¿™äº›ç»“æžœã€‚',
     );
     return '$_temp0';
   }
 
   @override
-  String get dnsAnswer => '结果：';
+  String get dnsAnswer => 'ç»“æžœï¼š';
 
   @override
-  String get dnsNetworkAnswer => '网络 DNS：';
+  String get dnsNetworkAnswer => 'ç½‘ç»œ DNSï¼š';
 
   @override
-  String get dnsFiltered => '被过滤';
+  String get dnsFiltered => 'è¢«è¿‡æ»¤';
 
   @override
-  String get rulesSyntaxTitle => '每行一条规则';
+  String get rulesSyntaxTitle => 'æ¯è¡Œä¸€æ¡è§„åˆ™';
 
   @override
-  String get ruleDomain => '该网站及其子域名';
+  String get ruleDomain => 'è¯¥ç½‘ç«™åŠå…¶å­åŸŸå';
 
   @override
-  String get ruleFull => '仅匹配此域名';
+  String get ruleFull => 'ä»…åŒ¹é…æ­¤åŸŸå';
 
   @override
-  String get ruleKeyword => '包含此关键词的域名';
+  String get ruleKeyword => 'åŒ…å«æ­¤å…³é”®è¯çš„åŸŸå';
 
   @override
-  String get ruleGeosite => 'Geo 文件中指定标签的网站';
+  String get ruleGeosite => 'Geo æ–‡ä»¶ä¸­æŒ‡å®šæ ‡ç­¾çš„ç½‘ç«™';
 
   @override
-  String get ruleGeoip => 'Geo 文件中指定国家的 IP';
+  String get ruleGeoip => 'Geo æ–‡ä»¶ä¸­æŒ‡å®šå›½å®¶çš„ IP';
 
   @override
-  String get ruleIp => '单个 IP 或网段';
+  String get ruleIp => 'å•ä¸ª IP æˆ–ç½‘æ®µ';
 
   @override
   String get modeVpn => 'VPN';
 
   @override
-  String get modeProxyOnly => '仅代理';
+  String get modeProxyOnly => 'ä»…ä»£ç†';
 
   @override
-  String get noNetwork => '无网络连接。请打开 Wi-Fi 或移动数据。';
+  String get noNetwork => 'æ— ç½‘ç»œè¿žæŽ¥ã€‚è¯·æ‰“å¼€ Wi-Fi æˆ–ç§»åŠ¨æ•°æ®ã€‚';
 
   @override
-  String get blockAds => '拦截广告';
+  String get blockAds => 'æ‹¦æˆªå¹¿å‘Š';
 
   @override
   String systemProxyTakenBy(String address) {
-    return '另一个程序将系统代理改为 $address，流量不再经过 VPN。';
+    return 'å¦ä¸€ä¸ªç¨‹åºå°†ç³»ç»Ÿä»£ç†æ”¹ä¸º $addressï¼Œæµé‡ä¸å†ç»è¿‡ VPNã€‚';
   }
 
   @override
-  String get systemProxyTakenOff => '另一个程序关闭了系统代理，流量不再经过 VPN。';
+  String get systemProxyTakenOff => 'å¦ä¸€ä¸ªç¨‹åºå…³é—­äº†ç³»ç»Ÿä»£ç†ï¼Œæµé‡ä¸å†ç»è¿‡ VPNã€‚';
 
   @override
-  String get setSystemProxyAgain => '重新设置';
+  String get setSystemProxyAgain => 'é‡æ–°è®¾ç½®';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -1193,98 +1193,98 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get appTitle => 'Firefox VPN';
 
   @override
-  String get navOverview => '總覽';
+  String get navOverview => 'ç¸½è¦½';
 
   @override
-  String get navAccounts => '帳號';
+  String get navAccounts => 'å¸³è™Ÿ';
 
   @override
-  String get navSettings => '設定';
+  String get navSettings => 'è¨­å®š';
 
   @override
-  String get stateConnected => '已連線';
+  String get stateConnected => 'å·²é€£ç·š';
 
   @override
-  String get stateConnecting => '正在連線…';
+  String get stateConnecting => 'æ­£åœ¨é€£ç·šâ€¦';
 
   @override
-  String get stateWaiting => '等待中';
+  String get stateWaiting => 'ç­‰å¾…ä¸­';
 
   @override
-  String get waitingForAccount => '請在「帳號」頁面新增 Firefox Account 以連線。';
+  String get waitingForAccount => 'è«‹åœ¨ã€Œå¸³è™Ÿã€é é¢æ–°å¢ž Firefox Account ä»¥é€£ç·šã€‚';
 
   @override
-  String get waitingForEnabledAccount => '所有帳號都已關閉。請在「帳號」頁面啟用一個。';
+  String get waitingForEnabledAccount => 'æ‰€æœ‰å¸³è™Ÿéƒ½å·²é—œé–‰ã€‚è«‹åœ¨ã€Œå¸³è™Ÿã€é é¢å•Ÿç”¨ä¸€å€‹ã€‚';
 
   @override
-  String get stateError => '錯誤';
+  String get stateError => 'éŒ¯èª¤';
 
   @override
-  String get stateUnknown => '未知';
+  String get stateUnknown => 'æœªçŸ¥';
 
   @override
-  String get restartProxy => '重新啟動代理';
+  String get restartProxy => 'é‡æ–°å•Ÿå‹•ä»£ç†';
 
   @override
   String copied(String value) {
-    return '已複製 $value';
+    return 'å·²è¤‡è£½ $value';
   }
 
   @override
-  String get activeAccount => '目前帳號';
+  String get activeAccount => 'ç›®å‰å¸³è™Ÿ';
 
   @override
-  String get noActiveAccount => '沒有使用中的帳號';
+  String get noActiveAccount => 'æ²’æœ‰ä½¿ç”¨ä¸­çš„å¸³è™Ÿ';
 
   @override
-  String get quotaNotRead => '尚未取得流量資訊';
+  String get quotaNotRead => 'å°šæœªå–å¾—æµé‡è³‡è¨Š';
 
   @override
-  String get unlimited => '無限制';
+  String get unlimited => 'ç„¡é™åˆ¶';
 
   @override
   String usedOf(String used, String limit) {
-    return '已用 $used / $limit';
+    return 'å·²ç”¨ $used / $limit';
   }
 
   @override
   String resets(String date) {
-    return '$date 重新計算';
+    return '$date é‡æ–°è¨ˆç®—';
   }
 
   @override
   String switchAt(int percent) {
-    return '達到 $percent% 時切換帳號';
+    return 'é”åˆ° $percent% æ™‚åˆ‡æ›å¸³è™Ÿ';
   }
 
   @override
-  String get publicIp => '公用 IP';
+  String get publicIp => 'å…¬ç”¨ IP';
 
   @override
-  String get testConnection => '測試連線';
+  String get testConnection => 'æ¸¬è©¦é€£ç·š';
 
   @override
-  String get testing => '正在測試…';
+  String get testing => 'æ­£åœ¨æ¸¬è©¦â€¦';
 
   @override
-  String get testFailed => '失敗';
+  String get testFailed => 'å¤±æ•—';
 
   @override
   String milliseconds(int value) {
-    return '$value 毫秒';
+    return '$value æ¯«ç§’';
   }
 
   @override
-  String get justNow => '剛剛';
+  String get justNow => 'å‰›å‰›';
 
   @override
   String minutesAgo(int n) {
-    return '$n 分鐘前';
+    return '$n åˆ†é˜å‰';
   }
 
   @override
   String hoursAgo(int n) {
-    return '$n 小時前';
+    return '$n å°æ™‚å‰';
   }
 
   @override
@@ -1292,625 +1292,625 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count 天前',
+      other: '$count å¤©å‰',
     );
     return '$_temp0';
   }
 
   @override
   String atTime(String time) {
-    return '於 $time';
+    return 'æ–¼ $time';
   }
 
   @override
   String durationDays(int d, int h) {
-    return '$d 天 $h 小時';
+    return '$d å¤© $h å°æ™‚';
   }
 
   @override
   String durationHours(int h, int m) {
-    return '$h 小時 $m 分';
+    return '$h å°æ™‚ $m åˆ†';
   }
 
   @override
   String durationMinutes(int m, int s) {
-    return '$m 分 $s 秒';
+    return '$m åˆ† $s ç§’';
   }
 
   @override
   String durationSeconds(int s) {
-    return '$s 秒';
+    return '$s ç§’';
   }
 
   @override
   String accountsGuide(String size) {
-    return '每個 Firefox 帳號每月有 $size 流量。你可以新增多個帳號：一個用完後，應用程式會自動切換到下一個。';
+    return 'æ¯å€‹ Firefox å¸³è™Ÿæ¯æœˆæœ‰ $size æµé‡ã€‚ä½ å¯ä»¥æ–°å¢žå¤šå€‹å¸³è™Ÿï¼šä¸€å€‹ç”¨å®Œå¾Œï¼Œæ‡‰ç”¨ç¨‹å¼æœƒè‡ªå‹•åˆ‡æ›åˆ°ä¸‹ä¸€å€‹ã€‚';
   }
 
   @override
   String accountsOrderNote(int percent) {
-    return '依此清單順序使用：每個帳戶用到 $percent%，最後一個用到流量用完。';
+    return 'ä¾æ­¤æ¸…å–®é †åºä½¿ç”¨ï¼šæ¯å€‹å¸³æˆ¶ç”¨åˆ° $percent%ï¼Œæœ€å¾Œä¸€å€‹ç”¨åˆ°æµé‡ç”¨å®Œã€‚';
   }
 
   @override
-  String get addAccount => '新增帳號';
+  String get addAccount => 'æ–°å¢žå¸³è™Ÿ';
 
   @override
   String lowQuotaNotice(String left, String size) {
-    return '目前帳號的流量快用完了（剩餘 $left）。再新增一個帳號，可再獲得 $size。';
+    return 'ç›®å‰å¸³è™Ÿçš„æµé‡å¿«ç”¨å®Œäº†ï¼ˆå‰©é¤˜ $leftï¼‰ã€‚å†æ–°å¢žä¸€å€‹å¸³è™Ÿï¼Œå¯å†ç²å¾— $sizeã€‚';
   }
 
   @override
-  String get noAccounts => '尚無帳號';
+  String get noAccounts => 'å°šç„¡å¸³è™Ÿ';
 
   @override
-  String get noAccountsHint => '新增一個 Firefox Account 以連線。';
+  String get noAccountsHint => 'æ–°å¢žä¸€å€‹ Firefox Account ä»¥é€£ç·šã€‚';
 
   @override
-  String get createAccountTitle => '還沒有 Firefox Account？';
+  String get createAccountTitle => 'é‚„æ²’æœ‰ Firefox Accountï¼Ÿ';
 
   @override
-  String get createAccountHint => '可在 accounts.firefox.com 免費註冊，再回來點選「新增帳號」。';
+  String get createAccountHint => 'å¯åœ¨ accounts.firefox.com å…è²»è¨»å†Šï¼Œå†å›žä¾†é»žé¸ã€Œæ–°å¢žå¸³è™Ÿã€ã€‚';
 
   @override
-  String get moveUp => '上移';
+  String get moveUp => 'ä¸Šç§»';
 
   @override
-  String get moveDown => '下移';
+  String get moveDown => 'ä¸‹ç§»';
 
   @override
-  String get statusActive => '使用中';
+  String get statusActive => 'ä½¿ç”¨ä¸­';
 
   @override
-  String get statusReady => '可用';
+  String get statusReady => 'å¯ç”¨';
 
   @override
-  String get statusNeedsSignIn => '需要登入';
+  String get statusNeedsSignIn => 'éœ€è¦ç™»å…¥';
 
   @override
-  String get statusReserved => '已保留';
+  String get statusReserved => 'å·²ä¿ç•™';
 
   @override
-  String get statusUnavailable => '無法使用';
+  String get statusUnavailable => 'ç„¡æ³•ä½¿ç”¨';
 
   @override
   String statusUnavailableUntil(String date) {
-    return '$date 前無法使用';
+    return '$date å‰ç„¡æ³•ä½¿ç”¨';
   }
 
   @override
-  String get statusDisabled => '已停用';
+  String get statusDisabled => 'å·²åœç”¨';
 
   @override
-  String get statusEnabled => '已啟用';
+  String get statusEnabled => 'å·²å•Ÿç”¨';
 
   @override
-  String get useNow => '立即使用';
+  String get useNow => 'ç«‹å³ä½¿ç”¨';
 
   @override
-  String get signInAgain => '重新登入';
+  String get signInAgain => 'é‡æ–°ç™»å…¥';
 
   @override
   String reasonQuotaThreshold(int percent) {
-    return '此帳號已用掉 $percent% 的流量，已切換到下一個帳號。';
+    return 'æ­¤å¸³è™Ÿå·²ç”¨æŽ‰ $percent% çš„æµé‡ï¼Œå·²åˆ‡æ›åˆ°ä¸‹ä¸€å€‹å¸³è™Ÿã€‚';
   }
 
   @override
-  String get reasonQuotaExhausted => '本月流量已用完；每月重設後會再次使用。';
+  String get reasonQuotaExhausted => 'æœ¬æœˆæµé‡å·²ç”¨å®Œï¼›æ¯æœˆé‡è¨­å¾Œæœƒå†æ¬¡ä½¿ç”¨ã€‚';
 
   @override
-  String get reasonSignInRequired => '請重新登入以使用此帳號。';
+  String get reasonSignInRequired => 'è«‹é‡æ–°ç™»å…¥ä»¥ä½¿ç”¨æ­¤å¸³è™Ÿã€‚';
 
   @override
-  String get reasonSignInConfirm => 'Mozilla 要求確認登入：請按「重新登入」（只需驗證碼）。';
+  String get reasonSignInConfirm => 'Mozilla è¦æ±‚ç¢ºèªç™»å…¥ï¼šè«‹æŒ‰ã€Œé‡æ–°ç™»å…¥ã€ï¼ˆåªéœ€é©—è­‰ç¢¼ï¼‰ã€‚';
 
   @override
   String reasonSignInFailed(String detail) {
-    return '自動登入失敗（$detail）。請重新登入。';
+    return 'è‡ªå‹•ç™»å…¥å¤±æ•—ï¼ˆ$detailï¼‰ã€‚è«‹é‡æ–°ç™»å…¥ã€‚';
   }
 
   @override
   String reasonSignInWait(String time) {
-    return '上次自動登入後不久就失效了；下次嘗試時間為 $time。';
+    return 'ä¸Šæ¬¡è‡ªå‹•ç™»å…¥å¾Œä¸ä¹…å°±å¤±æ•ˆäº†ï¼›ä¸‹æ¬¡å˜—è©¦æ™‚é–“ç‚º $timeã€‚';
   }
 
   @override
   String reasonSignInRetry(String detail, String time) {
-    return '自動登入未能完成（$detail）；將在 $time 重試。';
+    return 'è‡ªå‹•ç™»å…¥æœªèƒ½å®Œæˆï¼ˆ$detailï¼‰ï¼›å°‡åœ¨ $time é‡è©¦ã€‚';
   }
 
   @override
-  String get reasonNotEntitled => 'Mozilla 拒絕了此帳號；稍後會重試。';
+  String get reasonNotEntitled => 'Mozilla æ‹’çµ•äº†æ­¤å¸³è™Ÿï¼›ç¨å¾Œæœƒé‡è©¦ã€‚';
 
   @override
-  String get more => '更多';
+  String get more => 'æ›´å¤š';
 
   @override
-  String get refreshQuota => '重新整理流量';
+  String get refreshQuota => 'é‡æ–°æ•´ç†æµé‡';
 
   @override
-  String get remove => '移除';
+  String get remove => 'ç§»é™¤';
 
   @override
-  String get removeTitle => '要移除帳號嗎？';
+  String get removeTitle => 'è¦ç§»é™¤å¸³è™Ÿå—Žï¼Ÿ';
 
   @override
   String removeBody(String name) {
-    return '$name 及其儲存的登入資訊將從這台電腦上移除。之後可以重新新增。';
+    return '$name åŠå…¶å„²å­˜çš„ç™»å…¥è³‡è¨Šå°‡å¾žé€™å°é›»è…¦ä¸Šç§»é™¤ã€‚ä¹‹å¾Œå¯ä»¥é‡æ–°æ–°å¢žã€‚';
   }
 
   @override
-  String get unlimitedQuota => '無限流量';
+  String get unlimitedQuota => 'ç„¡é™æµé‡';
 
   @override
-  String get signInTitle => '登入';
+  String get signInTitle => 'ç™»å…¥';
 
   @override
-  String get signInIntro => '使用 Firefox Account 登入。';
+  String get signInIntro => 'ä½¿ç”¨ Firefox Account ç™»å…¥ã€‚';
 
   @override
-  String get email => '電子郵件';
+  String get email => 'é›»å­éƒµä»¶';
 
   @override
-  String get emailInvalid => '請輸入帳號的電子郵件';
+  String get emailInvalid => 'è«‹è¼¸å…¥å¸³è™Ÿçš„é›»å­éƒµä»¶';
 
   @override
-  String get password => '密碼';
+  String get password => 'å¯†ç¢¼';
 
   @override
-  String get passwordEmpty => '請輸入密碼';
+  String get passwordEmpty => 'è«‹è¼¸å…¥å¯†ç¢¼';
 
   @override
-  String get show => '顯示';
+  String get show => 'é¡¯ç¤º';
 
   @override
-  String get hide => '隱藏';
+  String get hide => 'éš±è—';
 
   @override
-  String get signIn => '登入';
+  String get signIn => 'ç™»å…¥';
 
   @override
-  String get continueLabel => '繼續';
+  String get continueLabel => 'ç¹¼çºŒ';
 
   @override
-  String get done => '完成';
+  String get done => 'å®Œæˆ';
 
   @override
-  String get close => '關閉';
+  String get close => 'é—œé–‰';
 
   @override
-  String get cancel => '取消';
+  String get cancel => 'å–æ¶ˆ';
 
   @override
-  String get tryAgain => '再試一次';
+  String get tryAgain => 'å†è©¦ä¸€æ¬¡';
 
   @override
-  String get signingIn => '正在登入…';
+  String get signingIn => 'æ­£åœ¨ç™»å…¥â€¦';
 
   @override
-  String get accountReady => '帳號已就緒';
+  String get accountReady => 'å¸³è™Ÿå·²å°±ç·’';
 
   @override
-  String get accountReadyHint => '已排在帳號清單的最後。';
+  String get accountReadyHint => 'å·²æŽ’åœ¨å¸³è™Ÿæ¸…å–®çš„æœ€å¾Œã€‚';
 
   @override
-  String get captchaLabel => '圖片中的字元';
+  String get captchaLabel => 'åœ–ç‰‡ä¸­çš„å­—å…ƒ';
 
   @override
-  String get codeLabel => '驗證碼';
+  String get codeLabel => 'é©—è­‰ç¢¼';
 
   @override
-  String get captchaBroken => '無法顯示 CAPTCHA 圖片。';
+  String get captchaBroken => 'ç„¡æ³•é¡¯ç¤º CAPTCHA åœ–ç‰‡ã€‚';
 
   @override
   String stepEmailCode(String email) {
-    return 'Mozilla 已將驗證碼寄到 $email，請在此輸入。';
+    return 'Mozilla å·²å°‡é©—è­‰ç¢¼å¯„åˆ° $emailï¼Œè«‹åœ¨æ­¤è¼¸å…¥ã€‚';
   }
 
   @override
-  String get stepTotp => '請輸入驗證器應用程式中的驗證碼。';
+  String get stepTotp => 'è«‹è¼¸å…¥é©—è­‰å™¨æ‡‰ç”¨ç¨‹å¼ä¸­çš„é©—è­‰ç¢¼ã€‚';
 
   @override
   String stepUnblockCode(String email) {
-    return 'Mozilla 認為這次登入異常，已將解除封鎖碼寄到 $email，請在此輸入。';
+    return 'Mozilla èªç‚ºé€™æ¬¡ç™»å…¥ç•°å¸¸ï¼Œå·²å°‡è§£é™¤å°éŽ–ç¢¼å¯„åˆ° $emailï¼Œè«‹åœ¨æ­¤è¼¸å…¥ã€‚';
   }
 
   @override
-  String get stepCaptcha => '請輸入圖片中的字元。';
+  String get stepCaptcha => 'è«‹è¼¸å…¥åœ–ç‰‡ä¸­çš„å­—å…ƒã€‚';
 
   @override
   String stepEmailLink(String email) {
-    return '請開啟 Mozilla 寄到 $email 的確認連結，之後會自動繼續。';
+    return 'è«‹é–‹å•Ÿ Mozilla å¯„åˆ° $email çš„ç¢ºèªé€£çµï¼Œä¹‹å¾Œæœƒè‡ªå‹•ç¹¼çºŒã€‚';
   }
 
   @override
-  String get signInFailed => '未能新增帳號。';
+  String get signInFailed => 'æœªèƒ½æ–°å¢žå¸³è™Ÿã€‚';
 
   @override
-  String get signInCancelled => '已取消登入。';
+  String get signInCancelled => 'å·²å–æ¶ˆç™»å…¥ã€‚';
 
   @override
-  String get signInNoAccount => '此電子郵件沒有 Firefox Account。';
+  String get signInNoAccount => 'æ­¤é›»å­éƒµä»¶æ²’æœ‰ Firefox Accountã€‚';
 
   @override
   String get signInNoAccountHint =>
-      '請檢查電子郵件地址，或用它在 Mozilla 網站免費建立 Firefox Account，從信箱確認後再在此新增。';
+      'è«‹æª¢æŸ¥é›»å­éƒµä»¶åœ°å€ï¼Œæˆ–ç”¨å®ƒåœ¨ Mozilla ç¶²ç«™å…è²»å»ºç«‹ Firefox Accountï¼Œå¾žä¿¡ç®±ç¢ºèªå¾Œå†åœ¨æ­¤æ–°å¢žã€‚';
 
   @override
-  String get createAccountButton => '建立 Firefox Account';
+  String get createAccountButton => 'å»ºç«‹ Firefox Account';
 
   @override
-  String get signInWrongPassword => '密碼錯誤。';
+  String get signInWrongPassword => 'å¯†ç¢¼éŒ¯èª¤ã€‚';
 
   @override
   String get signInNoPassword =>
-      '此帳號沒有密碼：它是透過 Google 或 Apple 登入建立的。請先設定密碼，再於此用該密碼登入。';
+      'æ­¤å¸³è™Ÿæ²’æœ‰å¯†ç¢¼ï¼šå®ƒæ˜¯é€éŽ Google æˆ– Apple ç™»å…¥å»ºç«‹çš„ã€‚è«‹å…ˆè¨­å®šå¯†ç¢¼ï¼Œå†æ–¼æ­¤ç”¨è©²å¯†ç¢¼ç™»å…¥ã€‚';
 
   @override
-  String get setPasswordButton => '設定密碼';
+  String get setPasswordButton => 'è¨­å®šå¯†ç¢¼';
 
   @override
-  String get signInTooManyAttempts => '嘗試次數過多。請稍候再試。';
+  String get signInTooManyAttempts => 'å˜—è©¦æ¬¡æ•¸éŽå¤šã€‚è«‹ç¨å€™å†è©¦ã€‚';
 
   @override
-  String get signInUnblockRejected => '解除封鎖碼未被接受。請使用 Mozilla 最新郵件中的代碼。';
+  String get signInUnblockRejected => 'è§£é™¤å°éŽ–ç¢¼æœªè¢«æŽ¥å—ã€‚è«‹ä½¿ç”¨ Mozilla æœ€æ–°éƒµä»¶ä¸­çš„ä»£ç¢¼ã€‚';
 
   @override
   String get signInWrongCode =>
-      '驗證碼錯誤或已過期。請使用 Mozilla 最新郵件中的驗證碼；寄出新驗證碼後，舊的即失效。';
+      'é©—è­‰ç¢¼éŒ¯èª¤æˆ–å·²éŽæœŸã€‚è«‹ä½¿ç”¨ Mozilla æœ€æ–°éƒµä»¶ä¸­çš„é©—è­‰ç¢¼ï¼›å¯„å‡ºæ–°é©—è­‰ç¢¼å¾Œï¼ŒèˆŠçš„å³å¤±æ•ˆã€‚';
 
   @override
-  String get signInWrongTotp => '驗證碼錯誤。請輸入驗證器應用程式目前顯示的驗證碼。';
+  String get signInWrongTotp => 'é©—è­‰ç¢¼éŒ¯èª¤ã€‚è«‹è¼¸å…¥é©—è­‰å™¨æ‡‰ç”¨ç¨‹å¼ç›®å‰é¡¯ç¤ºçš„é©—è­‰ç¢¼ã€‚';
 
   @override
-  String get signInTooManyCodes => '錯誤的驗證碼過多。請重新開始登入。';
+  String get signInTooManyCodes => 'éŒ¯èª¤çš„é©—è­‰ç¢¼éŽå¤šã€‚è«‹é‡æ–°é–‹å§‹ç™»å…¥ã€‚';
 
   @override
-  String get signInTimedOut => '登入耗時過長。請重新開始。';
+  String get signInTimedOut => 'ç™»å…¥è€—æ™‚éŽé•·ã€‚è«‹é‡æ–°é–‹å§‹ã€‚';
 
   @override
-  String get signInNetwork => '無法連線到 Mozilla。請檢查網路後再試。';
+  String get signInNetwork => 'ç„¡æ³•é€£ç·šåˆ° Mozillaã€‚è«‹æª¢æŸ¥ç¶²è·¯å¾Œå†è©¦ã€‚';
 
   @override
-  String get coreConnecting => '正在連線到核心…';
+  String get coreConnecting => 'æ­£åœ¨é€£ç·šåˆ°æ ¸å¿ƒâ€¦';
 
   @override
-  String get coreLost => '與核心的連線已中斷，正在重試…';
+  String get coreLost => 'èˆ‡æ ¸å¿ƒçš„é€£ç·šå·²ä¸­æ–·ï¼Œæ­£åœ¨é‡è©¦â€¦';
 
   @override
-  String get cantReachCore => '無法連線到核心';
+  String get cantReachCore => 'ç„¡æ³•é€£ç·šåˆ°æ ¸å¿ƒ';
 
   @override
-  String get startingCore => '正在啟動核心…';
+  String get startingCore => 'æ­£åœ¨å•Ÿå‹•æ ¸å¿ƒâ€¦';
 
   @override
-  String get retry => '重試';
+  String get retry => 'é‡è©¦';
 
   @override
   String errNoCore(String path) {
-    return '在應用程式旁找不到核心程式（$path）。';
+    return 'åœ¨æ‡‰ç”¨ç¨‹å¼æ—æ‰¾ä¸åˆ°æ ¸å¿ƒç¨‹å¼ï¼ˆ$pathï¼‰ã€‚';
   }
 
   @override
   String errCoreExited(String detail) {
-    return '核心已停止：$detail';
+    return 'æ ¸å¿ƒå·²åœæ­¢ï¼š$detail';
   }
 
   @override
-  String get errNotAnswering => '核心沒有回應。';
+  String get errNotAnswering => 'æ ¸å¿ƒæ²’æœ‰å›žæ‡‰ã€‚';
 
   @override
-  String get errRefused => '核心拒絕連線，可能屬於另一個正在執行的副本。';
+  String get errRefused => 'æ ¸å¿ƒæ‹’çµ•é€£ç·šï¼Œå¯èƒ½å±¬æ–¼å¦ä¸€å€‹æ­£åœ¨åŸ·è¡Œçš„å‰¯æœ¬ã€‚';
 
   @override
-  String get settingsTitle => '設定';
+  String get settingsTitle => 'è¨­å®š';
 
   @override
-  String get sectionGeneral => '一般';
+  String get sectionGeneral => 'ä¸€èˆ¬';
 
   @override
-  String get language => '語言';
+  String get language => 'èªžè¨€';
 
   @override
-  String get languageSystem => '系統預設';
+  String get languageSystem => 'ç³»çµ±é è¨­';
 
   @override
-  String get theme => '主題';
+  String get theme => 'ä¸»é¡Œ';
 
   @override
-  String get themeSystem => '跟隨系統';
+  String get themeSystem => 'è·Ÿéš¨ç³»çµ±';
 
   @override
-  String get themeLight => '淺色';
+  String get themeLight => 'æ·ºè‰²';
 
   @override
-  String get themeDark => '深色';
+  String get themeDark => 'æ·±è‰²';
 
   @override
-  String get closeBehavior => '關閉視窗時';
+  String get closeBehavior => 'é—œé–‰è¦–çª—æ™‚';
 
   @override
-  String get closeAsk => '每次詢問';
+  String get closeAsk => 'æ¯æ¬¡è©¢å•';
 
   @override
-  String get closeTray => '最小化到系統匣';
+  String get closeTray => 'æœ€å°åŒ–åˆ°ç³»çµ±åŒ£';
 
   @override
-  String get closeQuit => '結束應用程式';
+  String get closeQuit => 'çµæŸæ‡‰ç”¨ç¨‹å¼';
 
   @override
-  String get sectionConnection => '連線';
+  String get sectionConnection => 'é€£ç·š';
 
   @override
-  String get localProxy => '本機代理';
+  String get localProxy => 'æœ¬æ©Ÿä»£ç†';
 
   @override
-  String get systemProxy => '系統代理';
+  String get systemProxy => 'ç³»çµ±ä»£ç†';
 
   @override
-  String get sectionRouting => '分流';
+  String get sectionRouting => 'åˆ†æµ';
 
   @override
-  String get routingDirect => '本地網站直接連線';
+  String get routingDirect => 'æœ¬åœ°ç¶²ç«™ç›´æŽ¥é€£ç·š';
 
   @override
-  String get routingDirectHint => '所選國家的網站和 IP 不經過 VPN，開啟更快，也更省流量。';
+  String get routingDirectHint => 'æ‰€é¸åœ‹å®¶çš„ç¶²ç«™å’Œ IP ä¸ç¶“éŽ VPNï¼Œé–‹å•Ÿæ›´å¿«ï¼Œä¹Ÿæ›´çœæµé‡ã€‚';
 
   @override
-  String get region => '國家';
+  String get region => 'åœ‹å®¶';
 
   @override
-  String get regionIr => '伊朗';
+  String get regionIr => 'ä¼Šæœ—';
 
   @override
-  String get regionCn => '中國';
+  String get regionCn => 'ä¸­åœ‹';
 
   @override
-  String get regionRu => '俄羅斯';
+  String get regionRu => 'ä¿„ç¾…æ–¯';
 
   @override
-  String get regionAf => '阿富汗';
+  String get regionAf => 'é˜¿å¯Œæ±—';
 
   @override
-  String get regionTr => '土耳其';
+  String get regionTr => 'åœŸè€³å…¶';
 
   @override
-  String get regionId => '印尼';
+  String get regionId => 'å°å°¼';
 
   @override
-  String get regionBr => '巴西';
+  String get regionBr => 'å·´è¥¿';
 
   @override
-  String get regionNone => '無';
+  String get regionNone => 'ç„¡';
 
   @override
-  String get saved => '已儲存';
+  String get saved => 'å·²å„²å­˜';
 
   @override
-  String get dataFolder => '資料儲存位置';
+  String get dataFolder => 'è³‡æ–™å„²å­˜ä½ç½®';
 
   @override
-  String get openFolder => '開啟資料夾';
+  String get openFolder => 'é–‹å•Ÿè³‡æ–™å¤¾';
 
   @override
-  String get unofficialNote => '非官方用戶端，與 Mozilla 無關。';
+  String get unofficialNote => 'éžå®˜æ–¹ç”¨æˆ¶ç«¯ï¼Œèˆ‡ Mozilla ç„¡é—œã€‚';
 
   @override
-  String get closeTitle => '要關閉視窗嗎？';
+  String get closeTitle => 'è¦é—œé–‰è¦–çª—å—Žï¼Ÿ';
 
   @override
-  String get closeBody => '最小化到系統匣時，VPN 會保持連線；結束則會中斷連線。';
+  String get closeBody => 'æœ€å°åŒ–åˆ°ç³»çµ±åŒ£æ™‚ï¼ŒVPN æœƒä¿æŒé€£ç·šï¼›çµæŸå‰‡æœƒä¸­æ–·é€£ç·šã€‚';
 
   @override
-  String get rememberChoice => '記住我的選擇';
+  String get rememberChoice => 'è¨˜ä½æˆ‘çš„é¸æ“‡';
 
   @override
-  String get minimizeToTray => '最小化到系統匣';
+  String get minimizeToTray => 'æœ€å°åŒ–åˆ°ç³»çµ±åŒ£';
 
   @override
-  String get quit => '結束';
+  String get quit => 'çµæŸ';
 
   @override
-  String get trayOpen => '開啟';
+  String get trayOpen => 'é–‹å•Ÿ';
 
   @override
-  String get trayQuit => '結束';
+  String get trayQuit => 'çµæŸ';
 
   @override
-  String get trayProxyOnly => '僅代理服務';
+  String get trayProxyOnly => 'åƒ…ä»£ç†æœå‹™';
 
   @override
-  String get traySetSystemProxy => '設定系統代理';
+  String get traySetSystemProxy => 'è¨­å®šç³»çµ±ä»£ç†';
 
   @override
   String errPortInUse(String port) {
-    return '連接埠 $port 已被其他程式使用，應用程式無法連線到核心。';
+    return 'é€£æŽ¥åŸ  $port å·²è¢«å…¶ä»–ç¨‹å¼ä½¿ç”¨ï¼Œæ‡‰ç”¨ç¨‹å¼ç„¡æ³•é€£ç·šåˆ°æ ¸å¿ƒã€‚';
   }
 
   @override
   String proxyPortInUse(String port) {
-    return '連接埠 $port 已被其他程式使用，代理無法啟動。';
+    return 'é€£æŽ¥åŸ  $port å·²è¢«å…¶ä»–ç¨‹å¼ä½¿ç”¨ï¼Œä»£ç†ç„¡æ³•å•Ÿå‹•ã€‚';
   }
 
   @override
-  String get changePort => '變更連接埠';
+  String get changePort => 'è®Šæ›´é€£æŽ¥åŸ ';
 
   @override
-  String get portDialogTitle => '選擇連接埠';
+  String get portDialogTitle => 'é¸æ“‡é€£æŽ¥åŸ ';
 
   @override
   String portDialogBody(String port) {
-    return '連接埠 $port 已被佔用。下方已建議一個可用的連接埠，您也可以輸入其他連接埠。';
+    return 'é€£æŽ¥åŸ  $port å·²è¢«ä½”ç”¨ã€‚ä¸‹æ–¹å·²å»ºè­°ä¸€å€‹å¯ç”¨çš„é€£æŽ¥åŸ ï¼Œæ‚¨ä¹Ÿå¯ä»¥è¼¸å…¥å…¶ä»–é€£æŽ¥åŸ ã€‚';
   }
 
   @override
-  String get portChangeBody => '應用程式會連線到此連接埠。請選擇 1024 到 65535 之間的連接埠。';
+  String get portChangeBody => 'æ‡‰ç”¨ç¨‹å¼æœƒé€£ç·šåˆ°æ­¤é€£æŽ¥åŸ ã€‚è«‹é¸æ“‡ 1024 åˆ° 65535 ä¹‹é–“çš„é€£æŽ¥åŸ ã€‚';
 
   @override
-  String get portLabel => '連接埠';
+  String get portLabel => 'é€£æŽ¥åŸ ';
 
   @override
-  String get portInvalid => '請輸入 1024 到 65535 之間的連接埠';
+  String get portInvalid => 'è«‹è¼¸å…¥ 1024 åˆ° 65535 ä¹‹é–“çš„é€£æŽ¥åŸ ';
 
   @override
-  String get portBusy => '這個連接埠也在使用中';
+  String get portBusy => 'é€™å€‹é€£æŽ¥åŸ ä¹Ÿåœ¨ä½¿ç”¨ä¸­';
 
   @override
-  String get portInUse => '其他程式正在使用此連接埠';
+  String get portInUse => 'å…¶ä»–ç¨‹å¼æ­£åœ¨ä½¿ç”¨æ­¤é€£æŽ¥åŸ ';
 
   @override
-  String get save => '儲存';
+  String get save => 'å„²å­˜';
 
   @override
-  String get proxyPort => '代理連接埠';
+  String get proxyPort => 'ä»£ç†é€£æŽ¥åŸ ';
 
   @override
-  String get appPort => '應用程式連接埠';
+  String get appPort => 'æ‡‰ç”¨ç¨‹å¼é€£æŽ¥åŸ ';
 
   @override
-  String get welcomeTitle => '歡迎';
+  String get welcomeTitle => 'æ­¡è¿Ž';
 
   @override
-  String get welcomeBody => '請選擇語言和國家。您所在國家的網站會直接開啟，不經過 VPN，速度更快，也更省流量。';
+  String get welcomeBody => 'è«‹é¸æ“‡èªžè¨€å’Œåœ‹å®¶ã€‚æ‚¨æ‰€åœ¨åœ‹å®¶çš„ç¶²ç«™æœƒç›´æŽ¥é–‹å•Ÿï¼Œä¸ç¶“éŽ VPNï¼Œé€Ÿåº¦æ›´å¿«ï¼Œä¹Ÿæ›´çœæµé‡ã€‚';
 
   @override
-  String get start => '開始';
+  String get start => 'é–‹å§‹';
 
   @override
   String routingSuggestTitle(String country) {
-    return '$country網站直接連線？';
+    return '$countryç¶²ç«™ç›´æŽ¥é€£ç·šï¼Ÿ';
   }
 
   @override
   String routingSuggestBody(String country) {
-    return '$country的網站和 IP 將直接開啟，不經過 VPN。您可以在「分流」中變更。';
+    return '$countryçš„ç¶²ç«™å’Œ IP å°‡ç›´æŽ¥é–‹å•Ÿï¼Œä¸ç¶“éŽ VPNã€‚æ‚¨å¯ä»¥åœ¨ã€Œåˆ†æµã€ä¸­è®Šæ›´ã€‚';
   }
 
   @override
-  String get yes => '是';
+  String get yes => 'æ˜¯';
 
   @override
-  String get notNow => '暫時不要';
+  String get notNow => 'æš«æ™‚ä¸è¦';
 
   @override
-  String get navServers => '伺服器';
+  String get navServers => 'ä¼ºæœå™¨';
 
   @override
-  String get navLogs => '記錄';
+  String get navLogs => 'è¨˜éŒ„';
 
   @override
-  String get realDelay => '真實延遲';
+  String get realDelay => 'çœŸå¯¦å»¶é²';
 
   @override
   String noticePort(String port) {
-    return 'Mozilla 的代理不會連線到連接埠 $port。只有 80、443、8080 和 8443 連接埠會經過 VPN。';
+    return 'Mozilla çš„ä»£ç†ä¸æœƒé€£ç·šåˆ°é€£æŽ¥åŸ  $portã€‚åªæœ‰ 80ã€443ã€8080 å’Œ 8443 é€£æŽ¥åŸ æœƒç¶“éŽ VPNã€‚';
   }
 
   @override
   String get noticeCommand =>
-      '有應用程式要求使用 UDP（遊戲、語音和視訊通話）。Mozilla 的代理只傳輸 TCP，因此無法通過。';
+      'æœ‰æ‡‰ç”¨ç¨‹å¼è¦æ±‚ä½¿ç”¨ UDPï¼ˆéŠæˆ²ã€èªžéŸ³å’Œè¦–è¨Šé€šè©±ï¼‰ã€‚Mozilla çš„ä»£ç†åªå‚³è¼¸ TCPï¼Œå› æ­¤ç„¡æ³•é€šéŽã€‚';
 
   @override
   String noticeTimes(int count, String time) {
-    return '$count 次，最近一次 $time';
+    return '$count æ¬¡ï¼Œæœ€è¿‘ä¸€æ¬¡ $time';
   }
 
   @override
-  String get dismiss => '知道了';
+  String get dismiss => 'çŸ¥é“äº†';
 
   @override
-  String get modeRecommended => '推薦';
+  String get modeRecommended => 'æŽ¨è–¦';
 
   @override
-  String get modeFastest => '最快';
+  String get modeFastest => 'æœ€å¿«';
 
   @override
-  String get modeRecommendedHint => '由 Mozilla 為您選擇位置。';
+  String get modeRecommendedHint => 'ç”± Mozilla ç‚ºæ‚¨é¸æ“‡ä½ç½®ã€‚';
 
   @override
-  String get modeFastestHint => '每次連線時自動選擇延遲最低的位置。';
+  String get modeFastestHint => 'æ¯æ¬¡é€£ç·šæ™‚è‡ªå‹•é¸æ“‡å»¶é²æœ€ä½Žçš„ä½ç½®ã€‚';
 
   @override
-  String get testDelay => '測試真實延遲';
+  String get testDelay => 'æ¸¬è©¦çœŸå¯¦å»¶é²';
 
   @override
-  String get testingDelay => '正在測試…可能需要一分鐘';
+  String get testingDelay => 'æ­£åœ¨æ¸¬è©¦â€¦å¯èƒ½éœ€è¦ä¸€åˆ†é˜';
 
   @override
-  String get search => '搜尋';
+  String get search => 'æœå°‹';
 
   @override
-  String get noAnswer => '無回應';
+  String get noAnswer => 'ç„¡å›žæ‡‰';
 
   @override
   String testedAgo(String ago) {
-    return '測試於 $ago';
+    return 'æ¸¬è©¦æ–¼ $ago';
   }
 
   @override
   String delaySummary(int answered, int total) {
-    return '$total 個中有 $answered 個回應';
+    return '$total å€‹ä¸­æœ‰ $answered å€‹å›žæ‡‰';
   }
 
   @override
-  String get noServers => '尚無伺服器。核心連上 Mozilla 後就會顯示。';
+  String get noServers => 'å°šç„¡ä¼ºæœå™¨ã€‚æ ¸å¿ƒé€£ä¸Š Mozilla å¾Œå°±æœƒé¡¯ç¤ºã€‚';
 
   @override
-  String get levelAll => '全部';
+  String get levelAll => 'å…¨éƒ¨';
 
   @override
-  String get filter => '篩選';
+  String get filter => 'ç¯©é¸';
 
   @override
-  String get follow => '自動捲動';
+  String get follow => 'è‡ªå‹•æ²å‹•';
 
   @override
-  String get clear => '清除';
+  String get clear => 'æ¸…é™¤';
 
   @override
-  String get copyAll => '複製';
+  String get copyAll => 'è¤‡è£½';
 
   @override
-  String get logsCopied => '記錄已複製';
+  String get logsCopied => 'è¨˜éŒ„å·²è¤‡è£½';
 
   @override
-  String get noLogs => '尚無記錄。';
+  String get noLogs => 'å°šç„¡è¨˜éŒ„ã€‚';
 
   @override
-  String get sectionAccounts => '自動切換帳號';
+  String get sectionAccounts => 'è‡ªå‹•åˆ‡æ›å¸³è™Ÿ';
 
   @override
-  String get switchThreshold => '切換帳號門檻';
+  String get switchThreshold => 'åˆ‡æ›å¸³è™Ÿé–€æª»';
 
   @override
-  String get switchThresholdHint => '流量用到此比例時，自動換下一個帳號。';
+  String get switchThresholdHint => 'æµé‡ç”¨åˆ°æ­¤æ¯”ä¾‹æ™‚ï¼Œè‡ªå‹•æ›ä¸‹ä¸€å€‹å¸³è™Ÿã€‚';
 
   @override
   String get sectionDns => 'DNS';
 
   @override
-  String get dnsPreset => 'DNS 伺服器';
+  String get dnsPreset => 'DNS ä¼ºæœå™¨';
 
   @override
-  String get dnsSystem => '系統';
+  String get dnsSystem => 'ç³»çµ±';
 
   @override
-  String get dnsAuto => '自動（Cloudflare、Google、Quad9）';
+  String get dnsAuto => 'è‡ªå‹•ï¼ˆCloudflareã€Googleã€Quad9ï¼‰';
 
   @override
-  String get dnsCustom => '自訂';
+  String get dnsCustom => 'è‡ªè¨‚';
 
   @override
-  String get dnsCustomHint => '每行一個：https://…/dns-query、tls://… 或 IP 位址。';
+  String get dnsCustomHint => 'æ¯è¡Œä¸€å€‹ï¼šhttps://â€¦/dns-queryã€tls://â€¦ æˆ– IP ä½å€ã€‚';
 
   @override
-  String get dnsFallback => '失敗時改用系統 DNS';
+  String get dnsFallback => 'å¤±æ•—æ™‚æ”¹ç”¨ç³»çµ± DNS';
 
   @override
-  String get testDns => '測試 DNS';
+  String get testDns => 'æ¸¬è©¦ DNS';
 
   @override
-  String get transport => '通訊協定';
+  String get transport => 'é€šè¨Šå”å®š';
 
   @override
   String get transportH3 => 'HTTP/3 (QUIC)';
@@ -1919,226 +1919,226 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get transportH2 => 'HTTP/2 (TCP)';
 
   @override
-  String get directRules => '直接連線';
+  String get directRules => 'ç›´æŽ¥é€£ç·š';
 
   @override
   String get directRulesHint =>
-      '此清單中的網站和位址不經過 VPN，直接透過你自己的網路開啟。所選國家的規則已在此處：可以新增、修改或刪除。選擇其他國家會換成該國的規則。';
+      'æ­¤æ¸…å–®ä¸­çš„ç¶²ç«™å’Œä½å€ä¸ç¶“éŽ VPNï¼Œç›´æŽ¥é€éŽä½ è‡ªå·±çš„ç¶²è·¯é–‹å•Ÿã€‚æ‰€é¸åœ‹å®¶çš„è¦å‰‡å·²åœ¨æ­¤è™•ï¼šå¯ä»¥æ–°å¢žã€ä¿®æ”¹æˆ–åˆªé™¤ã€‚é¸æ“‡å…¶ä»–åœ‹å®¶æœƒæ›æˆè©²åœ‹çš„è¦å‰‡ã€‚';
 
   @override
-  String get restoreRegionRules => '還原該地區的規則';
+  String get restoreRegionRules => 'é‚„åŽŸè©²åœ°å€çš„è¦å‰‡';
 
   @override
-  String get blockRules => '封鎖';
+  String get blockRules => 'å°éŽ–';
 
   @override
-  String get blockRulesHint => '此清單中的網站和位址完全無法開啟，無論直連或透過 VPN：適用於廣告或你永遠不想連上的網站。';
+  String get blockRulesHint => 'æ­¤æ¸…å–®ä¸­çš„ç¶²ç«™å’Œä½å€å®Œå…¨ç„¡æ³•é–‹å•Ÿï¼Œç„¡è«–ç›´é€£æˆ–é€éŽ VPNï¼šé©ç”¨æ–¼å»£å‘Šæˆ–ä½ æ°¸é ä¸æƒ³é€£ä¸Šçš„ç¶²ç«™ã€‚';
 
   @override
-  String get rulesTitle => '規則';
+  String get rulesTitle => 'è¦å‰‡';
 
   @override
-  String get ruleSyntaxTitle => '如何撰寫規則';
+  String get ruleSyntaxTitle => 'å¦‚ä½•æ’°å¯«è¦å‰‡';
 
   @override
-  String get resolveDomains => 'IP 規則也套用於網域';
+  String get resolveDomains => 'IP è¦å‰‡ä¹Ÿå¥—ç”¨æ–¼ç¶²åŸŸ';
 
   @override
-  String get routingLists => 'Geo 檔案';
+  String get routingLists => 'Geo æª”æ¡ˆ';
 
   @override
-  String get listSource => '清單來源';
+  String get listSource => 'æ¸…å–®ä¾†æº';
 
   @override
-  String get listSourceCustom => '手動設定';
+  String get listSourceCustom => 'æ‰‹å‹•è¨­å®š';
 
   @override
   String listsUpdatedAgo(String ago) {
-    return '更新於 $ago';
+    return 'æ›´æ–°æ–¼ $ago';
   }
 
   @override
-  String get updateLists => '更新 Geo 檔案';
+  String get updateLists => 'æ›´æ–° Geo æª”æ¡ˆ';
 
   @override
-  String get listsUpdated => 'Geo 檔案已更新。';
+  String get listsUpdated => 'Geo æª”æ¡ˆå·²æ›´æ–°ã€‚';
 
   @override
-  String get testDestination => '測試路由';
+  String get testDestination => 'æ¸¬è©¦è·¯ç”±';
 
   @override
-  String get destinationHint => '網域、IP 或網址';
+  String get destinationHint => 'ç¶²åŸŸã€IP æˆ–ç¶²å€';
 
   @override
-  String get check => '檢查';
+  String get check => 'æª¢æŸ¥';
 
   @override
-  String get routeDirect => '直接連線';
+  String get routeDirect => 'ç›´æŽ¥é€£ç·š';
 
   @override
-  String get routeProxy => '經過 VPN';
+  String get routeProxy => 'ç¶“éŽ VPN';
 
   @override
-  String get routeBlock => '已封鎖';
+  String get routeBlock => 'å·²å°éŽ–';
 
   @override
   String ruleMatched(String rule) {
-    return '規則：$rule';
+    return 'è¦å‰‡ï¼š$rule';
   }
 
   @override
-  String get portRefusedNote => 'Mozilla 的代理不會連線到此連接埠。';
+  String get portRefusedNote => 'Mozilla çš„ä»£ç†ä¸æœƒé€£ç·šåˆ°æ­¤é€£æŽ¥åŸ ã€‚';
 
   @override
-  String get sectionAdvanced => '進階';
+  String get sectionAdvanced => 'é€²éšŽ';
 
   @override
-  String get listenAddress => '允許連線的裝置';
+  String get listenAddress => 'å…è¨±é€£ç·šçš„è£ç½®';
 
   @override
-  String get listenLocal => '127.0.0.1 · 僅本裝置';
+  String get listenLocal => '127.0.0.1 Â· åƒ…æœ¬è£ç½®';
 
   @override
-  String get listenAll => '0.0.0.0 · 所有網路（LAN）';
+  String get listenAll => '0.0.0.0 Â· æ‰€æœ‰ç¶²è·¯ï¼ˆLANï¼‰';
 
   @override
-  String get proxyUsername => '代理使用者名稱';
+  String get proxyUsername => 'ä»£ç†ä½¿ç”¨è€…åç¨±';
 
   @override
-  String get proxyPassword => '代理密碼';
+  String get proxyPassword => 'ä»£ç†å¯†ç¢¼';
 
   @override
-  String get proxyLoginHint => '應用程式需使用這組帳密連線到代理。兩者都留空則不需驗證。';
+  String get proxyLoginHint => 'æ‡‰ç”¨ç¨‹å¼éœ€ä½¿ç”¨é€™çµ„å¸³å¯†é€£ç·šåˆ°ä»£ç†ã€‚å…©è€…éƒ½ç•™ç©ºå‰‡ä¸éœ€é©—è­‰ã€‚';
 
   @override
-  String get loginBothOrNone => '請同時填寫兩項，或都留空。';
+  String get loginBothOrNone => 'è«‹åŒæ™‚å¡«å¯«å…©é …ï¼Œæˆ–éƒ½ç•™ç©ºã€‚';
 
   @override
-  String get proxyLogin => '代理驗證';
+  String get proxyLogin => 'ä»£ç†é©—è­‰';
 
   @override
-  String get idleSleep => '閒置多久後休眠';
+  String get idleSleep => 'é–’ç½®å¤šä¹…å¾Œä¼‘çœ ';
 
   @override
-  String get sleepNever => '從不';
+  String get sleepNever => 'å¾žä¸';
 
   @override
   String sleepMinutes(int count) {
-    return '$count 分鐘';
+    return '$count åˆ†é˜';
   }
 
   @override
-  String get sleepHour => '1 小時';
+  String get sleepHour => '1 å°æ™‚';
 
   @override
-  String get showPublicIp => '顯示公用 IP';
+  String get showPublicIp => 'é¡¯ç¤ºå…¬ç”¨ IP';
 
   @override
-  String get speedInNotification => '在通知中顯示速度';
+  String get speedInNotification => 'åœ¨é€šçŸ¥ä¸­é¡¯ç¤ºé€Ÿåº¦';
 
   @override
-  String get liveTraffic => '即時流量';
+  String get liveTraffic => 'å³æ™‚æµé‡';
 
   @override
-  String get totalTraffic => '總流量';
+  String get totalTraffic => 'ç¸½æµé‡';
 
   @override
-  String get verboseLogs => '詳細記錄';
+  String get verboseLogs => 'è©³ç´°è¨˜éŒ„';
 
   @override
-  String get webDashboard => '網頁控制台';
+  String get webDashboard => 'ç¶²é æŽ§åˆ¶å°';
 
   @override
-  String get webDashboardOpen => '開啟';
+  String get webDashboardOpen => 'é–‹å•Ÿ';
 
   @override
-  String get webDashboardHint => '進階設定和更多工具';
+  String get webDashboardHint => 'é€²éšŽè¨­å®šå’Œæ›´å¤šå·¥å…·';
 
   @override
   String numberInvalid(int min, int max) {
-    return '請輸入 $min 到 $max 之間的數字';
+    return 'è«‹è¼¸å…¥ $min åˆ° $max ä¹‹é–“çš„æ•¸å­—';
   }
 
   @override
-  String get notifySwitchedTitle => '已切換帳號';
+  String get notifySwitchedTitle => 'å·²åˆ‡æ›å¸³è™Ÿ';
 
   @override
   String notifySwitchedBody(String name) {
-    return '現在使用 $name。';
+    return 'ç¾åœ¨ä½¿ç”¨ $nameã€‚';
   }
 
   @override
-  String get notifySignInTitle => '需要登入';
+  String get notifySignInTitle => 'éœ€è¦ç™»å…¥';
 
   @override
-  String get notifySignInBody => '有帳號需要在「帳號」頁面重新登入。';
+  String get notifySignInBody => 'æœ‰å¸³è™Ÿéœ€è¦åœ¨ã€Œå¸³è™Ÿã€é é¢é‡æ–°ç™»å…¥ã€‚';
 
   @override
-  String get navAbout => '關於';
+  String get navAbout => 'é—œæ–¼';
 
   @override
-  String get appVersionLabel => '應用程式版本';
+  String get appVersionLabel => 'æ‡‰ç”¨ç¨‹å¼ç‰ˆæœ¬';
 
   @override
-  String get coreVersionLabel => '核心版本';
+  String get coreVersionLabel => 'æ ¸å¿ƒç‰ˆæœ¬';
 
   @override
-  String get checkUpdates => '檢查更新';
+  String get checkUpdates => 'æª¢æŸ¥æ›´æ–°';
 
   @override
-  String get checkingUpdates => '正在檢查…';
+  String get checkingUpdates => 'æ­£åœ¨æª¢æŸ¥â€¦';
 
   @override
-  String get upToDate => '已是最新版本。';
+  String get upToDate => 'å·²æ˜¯æœ€æ–°ç‰ˆæœ¬ã€‚';
 
   @override
   String updateAvailable(String version) {
-    return '已有新版本 $version。';
+    return 'å·²æœ‰æ–°ç‰ˆæœ¬ $versionã€‚';
   }
 
   @override
-  String get download => '下載';
+  String get download => 'ä¸‹è¼‰';
 
   @override
   String updateCheckFailed(String error) {
-    return '無法檢查更新：$error';
+    return 'ç„¡æ³•æª¢æŸ¥æ›´æ–°ï¼š$error';
   }
 
   @override
-  String get repoNotSet => '尚未設定 GitHub 儲存庫。';
+  String get repoNotSet => 'å°šæœªè¨­å®š GitHub å„²å­˜åº«ã€‚';
 
   @override
-  String get sourceCode => '原始碼';
+  String get sourceCode => 'åŽŸå§‹ç¢¼';
 
   @override
-  String get tapToConnect => '按一下以連線';
+  String get tapToConnect => 'æŒ‰ä¸€ä¸‹ä»¥é€£ç·š';
 
   @override
-  String get tapToDisconnect => '按一下以中斷連線';
+  String get tapToDisconnect => 'æŒ‰ä¸€ä¸‹ä»¥ä¸­æ–·é€£ç·š';
 
   @override
-  String get startOnBoot => '開機啟動';
+  String get startOnBoot => 'é–‹æ©Ÿå•Ÿå‹•';
 
   @override
-  String get connectOnStartup => '開機自動連線';
+  String get connectOnStartup => 'é–‹æ©Ÿè‡ªå‹•é€£ç·š';
 
   @override
-  String get proxyServiceActive => '代理服務執行中';
+  String get proxyServiceActive => 'ä»£ç†æœå‹™åŸ·è¡Œä¸­';
 
   @override
-  String get navHome => '首頁';
+  String get navHome => 'é¦–é ';
 
   @override
-  String get groupApp => '應用程式';
+  String get groupApp => 'æ‡‰ç”¨ç¨‹å¼';
 
   @override
-  String get stateOff => '未連線';
+  String get stateOff => 'æœªé€£ç·š';
 
   @override
-  String get tapToConnectPhone => '輕觸以連線';
+  String get tapToConnectPhone => 'è¼•è§¸ä»¥é€£ç·š';
 
   @override
-  String get tapToDisconnectPhone => '輕觸以中斷連線';
+  String get tapToDisconnectPhone => 'è¼•è§¸ä»¥ä¸­æ–·é€£ç·š';
 
   @override
   String lanAddress(String address) {
@@ -2146,159 +2146,159 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   }
 
   @override
-  String get recommendedLocation => '推薦位置';
+  String get recommendedLocation => 'æŽ¨è–¦ä½ç½®';
 
   @override
   String dataLeftOf(String limit) {
-    return '共 $limit';
+    return 'å…± $limit';
   }
 
   @override
-  String get homeLocation => '位置';
+  String get homeLocation => 'ä½ç½®';
 
   @override
-  String get connectedTo => '已連線到';
+  String get connectedTo => 'å·²é€£ç·šåˆ°';
 
   @override
-  String get vpnNotAllowed => 'VPN 需要您的許可。請再次輕觸按鈕並允許。';
+  String get vpnNotAllowed => 'VPN éœ€è¦æ‚¨çš„è¨±å¯ã€‚è«‹å†æ¬¡è¼•è§¸æŒ‰éˆ•ä¸¦å…è¨±ã€‚';
 
   @override
-  String get dataUsedTitle => '已用流量';
+  String get dataUsedTitle => 'å·²ç”¨æµé‡';
 
   @override
-  String get bypassApps => '個別應用程式代理';
+  String get bypassApps => 'å€‹åˆ¥æ‡‰ç”¨ç¨‹å¼ä»£ç†';
 
   @override
-  String get connectRetrying => '無法連線。請檢查網路。';
+  String get connectRetrying => 'ç„¡æ³•é€£ç·šã€‚è«‹æª¢æŸ¥ç¶²è·¯ã€‚';
 
   @override
-  String get failUnreachable => 'Mozilla 伺服器在此網路上遭封鎖。請改用其他網路連線。';
+  String get failUnreachable => 'Mozilla ä¼ºæœå™¨åœ¨æ­¤ç¶²è·¯ä¸Šé­å°éŽ–ã€‚è«‹æ”¹ç”¨å…¶ä»–ç¶²è·¯é€£ç·šã€‚';
 
   @override
-  String get failRefused => 'Mozilla 伺服器拒絕了連線。請幾分鐘後再試。';
+  String get failRefused => 'Mozilla ä¼ºæœå™¨æ‹’çµ•äº†é€£ç·šã€‚è«‹å¹¾åˆ†é˜å¾Œå†è©¦ã€‚';
 
   @override
-  String get failLocationRefused => '這個國家未對您的帳號開放。請選擇其他國家。';
+  String get failLocationRefused => 'é€™å€‹åœ‹å®¶æœªå°æ‚¨çš„å¸³è™Ÿé–‹æ”¾ã€‚è«‹é¸æ“‡å…¶ä»–åœ‹å®¶ã€‚';
 
   @override
-  String get useRecommendedLocation => '使用推薦位置';
+  String get useRecommendedLocation => 'ä½¿ç”¨æŽ¨è–¦ä½ç½®';
 
   @override
   String exitMismatch(String exit, String chosen) {
-    return '您選擇了$chosen，但您的 IP 位於$exit。';
+    return 'æ‚¨é¸æ“‡äº†$chosenï¼Œä½†æ‚¨çš„ IP ä½æ–¼$exitã€‚';
   }
 
   @override
-  String get failSignIn => '此帳號的登入已過期。請在「帳號」頁面重新登入。';
+  String get failSignIn => 'æ­¤å¸³è™Ÿçš„ç™»å…¥å·²éŽæœŸã€‚è«‹åœ¨ã€Œå¸³è™Ÿã€é é¢é‡æ–°ç™»å…¥ã€‚';
 
   @override
-  String get failQuota => '本月流量已用完。請新增另一個帳號。';
+  String get failQuota => 'æœ¬æœˆæµé‡å·²ç”¨å®Œã€‚è«‹æ–°å¢žå¦ä¸€å€‹å¸³è™Ÿã€‚';
 
   @override
-  String get failNotEntitled => 'Mozilla 不允許此帳號使用 VPN。請新增另一個帳號。';
+  String get failNotEntitled => 'Mozilla ä¸å…è¨±æ­¤å¸³è™Ÿä½¿ç”¨ VPNã€‚è«‹æ–°å¢žå¦ä¸€å€‹å¸³è™Ÿã€‚';
 
   @override
-  String get failRegion => 'Mozilla 不在您所在的國家提供服務。';
+  String get failRegion => 'Mozilla ä¸åœ¨æ‚¨æ‰€åœ¨çš„åœ‹å®¶æä¾›æœå‹™ã€‚';
 
   @override
-  String get failServer => 'Mozilla 服務暫時發生問題。應用程式會自動重試。';
+  String get failServer => 'Mozilla æœå‹™æš«æ™‚ç™¼ç”Ÿå•é¡Œã€‚æ‡‰ç”¨ç¨‹å¼æœƒè‡ªå‹•é‡è©¦ã€‚';
 
   @override
-  String get failNoAccount => '沒有可用的帳號。請開啟「帳號」頁面。';
+  String get failNoAccount => 'æ²’æœ‰å¯ç”¨çš„å¸³è™Ÿã€‚è«‹é–‹å•Ÿã€Œå¸³è™Ÿã€é é¢ã€‚';
 
   @override
-  String get failTestSite => '已連線伺服器，但網站打不開。請換個國家試試。';
+  String get failTestSite => 'å·²é€£ç·šä¼ºæœå™¨ï¼Œä½†ç¶²ç«™æ‰“ä¸é–‹ã€‚è«‹æ›å€‹åœ‹å®¶è©¦è©¦ã€‚';
 
   @override
-  String get failOther => '無法連線。請再試一次。';
+  String get failOther => 'ç„¡æ³•é€£ç·šã€‚è«‹å†è©¦ä¸€æ¬¡ã€‚';
 
   @override
-  String get failNoInternet => '無網路連線。請檢查 Wi-Fi 或行動數據。';
+  String get failNoInternet => 'ç„¡ç¶²è·¯é€£ç·šã€‚è«‹æª¢æŸ¥ Wi-Fi æˆ–è¡Œå‹•æ•¸æ“šã€‚';
 
   @override
-  String get waitingForNetwork => '正在等待網路連線…';
+  String get waitingForNetwork => 'æ­£åœ¨ç­‰å¾…ç¶²è·¯é€£ç·šâ€¦';
 
   @override
   String proxyStartFailed(String port) {
-    return '代理無法在連接埠 $port 上啟動。請選擇其他連接埠。';
+    return 'ä»£ç†ç„¡æ³•åœ¨é€£æŽ¥åŸ  $port ä¸Šå•Ÿå‹•ã€‚è«‹é¸æ“‡å…¶ä»–é€£æŽ¥åŸ ã€‚';
   }
 
   @override
-  String get connectionSettings => '連線設定';
+  String get connectionSettings => 'é€£ç·šè¨­å®š';
 
   @override
-  String get appModeExclude => '排除所選應用程式';
+  String get appModeExclude => 'æŽ’é™¤æ‰€é¸æ‡‰ç”¨ç¨‹å¼';
 
   @override
-  String get appModeInclude => '僅代理所選應用程式';
+  String get appModeInclude => 'åƒ…ä»£ç†æ‰€é¸æ‡‰ç”¨ç¨‹å¼';
 
   @override
-  String get appModeExcludeHint => '所選應用程式直接連線，不經過 VPN：例如會拒絕境外 IP 的銀行應用程式。';
+  String get appModeExcludeHint => 'æ‰€é¸æ‡‰ç”¨ç¨‹å¼ç›´æŽ¥é€£ç·šï¼Œä¸ç¶“éŽ VPNï¼šä¾‹å¦‚æœƒæ‹’çµ•å¢ƒå¤– IP çš„éŠ€è¡Œæ‡‰ç”¨ç¨‹å¼ã€‚';
 
   @override
-  String get appModeIncludeHint => '只有所選應用程式經過 VPN；其他應用程式直接連線。';
+  String get appModeIncludeHint => 'åªæœ‰æ‰€é¸æ‡‰ç”¨ç¨‹å¼ç¶“éŽ VPNï¼›å…¶ä»–æ‡‰ç”¨ç¨‹å¼ç›´æŽ¥é€£ç·šã€‚';
 
   @override
   String fromRegionList(String region) {
-    return '推薦：列於$region清單中';
+    return 'æŽ¨è–¦ï¼šåˆ—æ–¼$regionæ¸…å–®ä¸­';
   }
 
   @override
-  String get modeProxy => '代理';
+  String get modeProxy => 'ä»£ç†';
 
   @override
-  String get connectionMode => '連線模式';
+  String get connectionMode => 'é€£ç·šæ¨¡å¼';
 
   @override
-  String get modeProxyHint => '只有已設定使用代理的應用程式會經過代理；不會變更 Windows 設定。';
+  String get modeProxyHint => 'åªæœ‰å·²è¨­å®šä½¿ç”¨ä»£ç†çš„æ‡‰ç”¨ç¨‹å¼æœƒç¶“éŽä»£ç†ï¼›ä¸æœƒè®Šæ›´ Windows è¨­å®šã€‚';
 
   @override
-  String get modeSystemProxyHint => 'Windows 和大多數應用程式都會經過代理。';
+  String get modeSystemProxyHint => 'Windows å’Œå¤§å¤šæ•¸æ‡‰ç”¨ç¨‹å¼éƒ½æœƒç¶“éŽä»£ç†ã€‚';
 
   @override
-  String get modeProxyHintOther => '只有已設定使用代理的應用程式會經過代理；不會變更系統設定。';
+  String get modeProxyHintOther => 'åªæœ‰å·²è¨­å®šä½¿ç”¨ä»£ç†çš„æ‡‰ç”¨ç¨‹å¼æœƒç¶“éŽä»£ç†ï¼›ä¸æœƒè®Šæ›´ç³»çµ±è¨­å®šã€‚';
 
   @override
-  String get modeSystemProxyHintOther => '瀏覽器和大多數應用程式都會經過代理。';
+  String get modeSystemProxyHintOther => 'ç€è¦½å™¨å’Œå¤§å¤šæ•¸æ‡‰ç”¨ç¨‹å¼éƒ½æœƒç¶“éŽä»£ç†ã€‚';
 
   @override
-  String get suggestedApps => '推薦的應用程式';
+  String get suggestedApps => 'æŽ¨è–¦çš„æ‡‰ç”¨ç¨‹å¼';
 
   @override
   String suggestedAdded(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '已選取 $count 個推薦的應用程式',
-      one: '已選取 1 個推薦的應用程式',
-      zero: '推薦的應用程式都已選取',
+      other: 'å·²é¸å– $count å€‹æŽ¨è–¦çš„æ‡‰ç”¨ç¨‹å¼',
+      one: 'å·²é¸å– 1 å€‹æŽ¨è–¦çš„æ‡‰ç”¨ç¨‹å¼',
+      zero: 'æŽ¨è–¦çš„æ‡‰ç”¨ç¨‹å¼éƒ½å·²é¸å–',
     );
     return '$_temp0';
   }
 
   @override
-  String get autoSection => '自動';
+  String get autoSection => 'è‡ªå‹•';
 
   @override
-  String get locationsSection => '位置';
+  String get locationsSection => 'ä½ç½®';
 
   @override
-  String get dnsSummaryOk => '加密 DNS 運作正常';
+  String get dnsSummaryOk => 'åŠ å¯† DNS é‹ä½œæ­£å¸¸';
 
   @override
   String dnsSummaryFailed(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count 個網域無法解析',
-      one: '1 個網域無法解析',
+      other: '$count å€‹ç¶²åŸŸç„¡æ³•è§£æž',
+      one: '1 å€‹ç¶²åŸŸç„¡æ³•è§£æž',
     );
     return '$_temp0';
   }
 
   @override
   String dnsVia(String server) {
-    return '透過 $server';
+    return 'é€éŽ $server';
   }
 
   @override
@@ -2306,62 +2306,81 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '您網路的 DNS 對 $count 個網域回傳了過濾用的位址，本應用程式不會用它解析這些網域。',
-      one: '您網路的 DNS 對 1 個網域回傳了過濾用的位址，本應用程式不會用它解析這些網域。',
+      other: 'æ‚¨ç¶²è·¯çš„ DNS å° $count å€‹ç¶²åŸŸå›žå‚³äº†éŽæ¿¾ç”¨çš„ä½å€ï¼Œæœ¬æ‡‰ç”¨ç¨‹å¼ä¸æœƒç”¨å®ƒè§£æžé€™äº›ç¶²åŸŸã€‚',
+      one: 'æ‚¨ç¶²è·¯çš„ DNS å° 1 å€‹ç¶²åŸŸå›žå‚³äº†éŽæ¿¾ç”¨çš„ä½å€ï¼Œæœ¬æ‡‰ç”¨ç¨‹å¼ä¸æœƒç”¨å®ƒè§£æžé€™äº›ç¶²åŸŸã€‚',
     );
     return '$_temp0';
   }
 
   @override
-  String get dnsAnswer => '結果：';
+  String get dnsAnswer => 'çµæžœï¼š';
 
   @override
-  String get dnsNetworkAnswer => '網路 DNS：';
+  String get dnsNetworkAnswer => 'ç¶²è·¯ DNSï¼š';
 
   @override
-  String get dnsFiltered => '已過濾';
+  String get dnsFiltered => 'å·²éŽæ¿¾';
 
   @override
-  String get rulesSyntaxTitle => '每行一條規則';
+  String get rulesSyntaxTitle => 'æ¯è¡Œä¸€æ¢è¦å‰‡';
 
   @override
-  String get ruleDomain => '該網站及其子網域';
+  String get ruleDomain => 'è©²ç¶²ç«™åŠå…¶å­ç¶²åŸŸ';
 
   @override
-  String get ruleFull => '完全符合此網域';
+  String get ruleFull => 'å®Œå…¨ç¬¦åˆæ­¤ç¶²åŸŸ';
 
   @override
-  String get ruleKeyword => '包含此關鍵字的網域';
+  String get ruleKeyword => 'åŒ…å«æ­¤é—œéµå­—çš„ç¶²åŸŸ';
 
   @override
-  String get ruleGeosite => 'Geo 檔案中某個標籤的網站';
+  String get ruleGeosite => 'Geo æª”æ¡ˆä¸­æŸå€‹æ¨™ç±¤çš„ç¶²ç«™';
 
   @override
-  String get ruleGeoip => 'Geo 檔案中某個國家的位址';
+  String get ruleGeoip => 'Geo æª”æ¡ˆä¸­æŸå€‹åœ‹å®¶çš„ä½å€';
 
   @override
-  String get ruleIp => '單一 IP 或網段';
+  String get ruleIp => 'å–®ä¸€ IP æˆ–ç¶²æ®µ';
 
   @override
   String get modeVpn => 'VPN';
 
   @override
-  String get modeProxyOnly => '僅代理';
+  String get modeProxyOnly => 'åƒ…ä»£ç†';
 
   @override
-  String get noNetwork => '沒有網路連線。請開啟 Wi-Fi 或行動數據。';
+  String get noNetwork => 'æ²’æœ‰ç¶²è·¯é€£ç·šã€‚è«‹é–‹å•Ÿ Wi-Fi æˆ–è¡Œå‹•æ•¸æ“šã€‚';
 
   @override
-  String get blockAds => '封鎖廣告';
+  String get blockAds => 'å°éŽ–å»£å‘Š';
 
   @override
   String systemProxyTakenBy(String address) {
-    return '另一個程式將系統代理改為 $address，流量不再經過 VPN。';
+    return 'å¦ä¸€å€‹ç¨‹å¼å°‡ç³»çµ±ä»£ç†æ”¹ç‚º $addressï¼Œæµé‡ä¸å†ç¶“éŽ VPNã€‚';
   }
 
   @override
-  String get systemProxyTakenOff => '另一個程式關閉了系統代理，流量不再經過 VPN。';
+  String get systemProxyTakenOff => 'å¦ä¸€å€‹ç¨‹å¼é—œé–‰äº†ç³»çµ±ä»£ç†ï¼Œæµé‡ä¸å†ç¶“éŽ VPNã€‚';
 
   @override
-  String get setSystemProxyAgain => '重新設定';
+  String get setSystemProxyAgain => 'é‡æ–°è¨­å®š';
+  @override
+  String get modeWinDivert => 'WinDivert Tunnel';
+
+  @override
+  String get modeWinDivertHint =>
+      'All Windows network traffic and DNS queries go through the VPN.';
+
+  @override
+  String get elevationRequiredTitle => 'Administrator Privileges Required';
+
+  @override
+  String get elevationRequiredMessage =>
+      'WinDivert requires Administrator privileges to tunnel system network packets.';
+
+  @override
+  String get runAsAdmin => 'Run as Administrator';
+
+  @override
+  String get trayWinDivert => 'WinDivert Full Tunnel';
 }

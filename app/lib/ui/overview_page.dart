@@ -286,7 +286,7 @@ class _DesktopHome extends StatelessWidget {
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(ctx).pop(false),
-                child: Text(MaterialLocalizations.of(ctx).cancelButtonLabel),
+                child: Text(l.cancel),
               ),
               FilledButton.icon(
                 onPressed: () => Navigator.of(ctx).pop(true),
