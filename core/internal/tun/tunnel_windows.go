@@ -10,6 +10,7 @@ import (
 	"net"
 	"net/netip"
 	"os"
+	"strings"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -126,10 +127,15 @@ type Tunnel struct {
 	cancel       context.CancelFunc
 	once         sync.Once
 	selfPorts    sync.Map
+	ifMap        sync.Map
 	serverIPs    []net.IP
 	lastIfIdx    uint32
 	lastSubIfIdx uint32
 	pid          uint32
+	proxyPort    uint16
+	dashPort     uint16
+	logOnce      sync.Once
+	dnsOnce      sync.Once
 }
 
 // Start is not used with an fd on Windows; StartWinDivert is used instead.
@@ -140,7 +146,7 @@ func Start(fd int, mtu uint32, dial Dialer, allow Allow, dns *FakeDNS) (*Tunnel,
 // StartWinDivert starts the userspace TCP/IP stack and intercepts Windows traffic
 // using WinDivert. TCP connections go through dial, DNS (UDP 53) is answered by dns,
 // and other UDP is refused with ICMP unreachable so apps fall back to TCP.
-func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAddrs []string) (*Tunnel, error) {
+func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAddrs []string, proxyPort, dashPort uint16) (*Tunnel, error) {
 	if !IsWinDivertAvailable() {
 		return nil, errors.New("WinDivert.dll not found: ensure WinDivert.dll and WinDivert64.sys are present")
 	}
@@ -165,15 +171,15 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		}
 	}
 
-	// Capture outbound TCP and UDP port 53 (DNS) that are not local loopback
-	filter := "outbound and !loopback and (tcp or (udp and udp.DstPort == 53))"
+	// Capture outbound TCP, DNS (UDP 53), and QUIC (UDP 443) that are not local loopback or impostors
+	filter := "outbound and !impostor and !loopback and (tcp or (udp and (udp.DstPort == 53 or udp.DstPort == 443)))"
 	netH, err := WinDivertOpen(filter, LayerNetwork, 0, 0)
 	if err != nil {
 		return nil, fmt.Errorf("open network divert: %w", err)
 	}
 
 	// Open socket layer to track our process's socket connects
-	sockFilter := fmt.Sprintf("ProcessId == %d", pid)
+	sockFilter := fmt.Sprintf("Socket.ProcessId == %d", pid)
 	sockH, err := WinDivertOpen(sockFilter, LayerSocket, 0, FlagSniff|FlagRecvOnly)
 	if err != nil {
 		logx.Warn("open socket divert (self-traffic tracking): %s", logx.Err(err))
@@ -181,10 +187,14 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 	}
 
 	// Open flow layer with FlagSniff|FlagRecvOnly to track our own process's ports
-	flowH, err := WinDivertOpen("true", LayerFlow, 0, FlagSniff|FlagRecvOnly)
+	flowFilter := fmt.Sprintf("Flow.ProcessId == %d", pid)
+	flowH, err := WinDivertOpen(flowFilter, LayerFlow, 0, FlagSniff|FlagRecvOnly)
 	if err != nil {
-		logx.Warn("open flow divert (self-traffic tracking): %s", logx.Err(err))
-		flowH = windows.InvalidHandle
+		flowH, err = WinDivertOpen("true", LayerFlow, 0, FlagSniff|FlagRecvOnly)
+		if err != nil {
+			logx.Warn("open flow divert (self-traffic tracking): %s", logx.Err(err))
+			flowH = windows.InvalidHandle
+		}
 	}
 
 	if mtu == 0 {
@@ -212,6 +222,8 @@ func StartWinDivert(mtu uint32, dial Dialer, allow Allow, dns *FakeDNS, serverAd
 		lastIfIdx:    defIf,
 		lastSubIfIdx: defSubIf,
 		pid:          pid,
+		proxyPort:    proxyPort,
+		dashPort:     dashPort,
 	}
 
 	// Pre-seed self process TCP ports
@@ -387,17 +399,20 @@ func (t *Tunnel) captureLoop() {
 		if ifIdx := addr.NetworkIfIdx(); ifIdx != 0 {
 			atomic.StoreUint32(&t.lastIfIdx, ifIdx)
 			atomic.StoreUint32(&t.lastSubIfIdx, addr.NetworkSubIfIdx())
+			if srcIP, ok := getSrcIP(buf[:n]); ok {
+				t.ifMap.Store(srcIP.String(), [2]uint32{ifIdx, addr.NetworkSubIfIdx()})
+			}
 		}
 
 		srcPort, hasSrc := getSrcPort(buf[:n])
 		dstPort, hasDst := getDstPort(buf[:n])
 
-		// Always bypass upstream MASQUE port (2499) and local proxy/dashboard ports (10810, 10820)
-		if hasDst && (dstPort == 2499 || dstPort == 10810 || dstPort == 10820) {
+		// Always bypass upstream MASQUE port (2499) and local proxy/dashboard ports
+		if hasDst && (dstPort == 2499 || (t.proxyPort != 0 && dstPort == t.proxyPort) || (t.dashPort != 0 && dstPort == t.dashPort) || dstPort == 10810 || dstPort == 10820) {
 			_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
 			continue
 		}
-		if hasSrc && (srcPort == 2499 || srcPort == 10810 || srcPort == 10820) {
+		if hasSrc && (srcPort == 2499 || (t.proxyPort != 0 && srcPort == t.proxyPort) || (t.dashPort != 0 && srcPort == t.dashPort) || srcPort == 10810 || srcPort == 10820) {
 			_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
 			continue
 		}
@@ -416,10 +431,13 @@ func (t *Tunnel) captureLoop() {
 		}
 
 		// Bypass private, multicast, loopback, and explicitly excluded server/DoH IPs
-		if dstIP, ok := getDstIP(buf[:n]); ok {
-			if isPrivateOrExcluded(dstIP, t.serverIPs) {
-				_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
-				continue
+		// EXCEPT DNS queries (port 53), which must ALWAYS be captured and answered by FakeDNS!
+		if !hasDst || dstPort != 53 {
+			if dstIP, ok := getDstIP(buf[:n]); ok {
+				if isPrivateOrExcluded(dstIP, t.serverIPs) {
+					_, _ = WinDivertSend(t.netHandle, buf[:n], &addr)
+					continue
+				}
 			}
 		}
 
@@ -455,18 +473,28 @@ func (t *Tunnel) injectLoop() {
 			var addr WinDivertAddress
 			addr.SetLayer(LayerNetwork)
 			addr.SetOutbound(false) // Inbound to the OS stack
-			ifIdx := atomic.LoadUint32(&t.lastIfIdx)
-			subIfIdx := atomic.LoadUint32(&t.lastSubIfIdx)
-			if ifIdx != 0 {
-				addr.SetNetwork(ifIdx, subIfIdx)
+			addr.SetImpostor(true)
+
+			if dstIP, ok := getDstIP(data); ok {
+				if v, found := t.ifMap.Load(dstIP.String()); found {
+					ifs := v.([2]uint32)
+					addr.SetNetwork(ifs[0], ifs[1])
+				} else if ifIdx := atomic.LoadUint32(&t.lastIfIdx); ifIdx != 0 {
+					addr.SetNetwork(ifIdx, atomic.LoadUint32(&t.lastSubIfIdx))
+				}
+			} else if ifIdx := atomic.LoadUint32(&t.lastIfIdx); ifIdx != 0 {
+				addr.SetNetwork(ifIdx, atomic.LoadUint32(&t.lastSubIfIdx))
 			}
+
 			if (data[0] >> 4) == 6 {
 				addr.SetIPv6(true)
 			} else {
 				addr.SetIPv6(false)
 			}
 			WinDivertCalcChecksums(data, &addr, 0)
-			_, _ = WinDivertSend(t.netHandle, data, &addr)
+			if _, err := WinDivertSend(t.netHandle, data, &addr); err != nil {
+				logx.Debug("WinDivertSend inbound error: %s", logx.Err(err))
+			}
 		}
 		view.Release()
 		pkt.DecRef()
@@ -476,6 +504,26 @@ func (t *Tunnel) injectLoop() {
 func getDefaultIfIdx() (uint32, uint32) {
 	ifaces, err := net.Interfaces()
 	if err == nil {
+		// First pass: find physical adapter (Wi-Fi, Ethernet) with private IP
+		for _, ifi := range ifaces {
+			if ifi.Flags&net.FlagUp != 0 && ifi.Flags&net.FlagLoopback == 0 {
+				name := strings.ToLower(ifi.Name)
+				if strings.Contains(name, "vmware") || strings.Contains(name, "virtual") ||
+					strings.Contains(name, "default switch") || strings.Contains(name, "wintun") ||
+					strings.Contains(name, "tap") {
+					continue
+				}
+				addrs, _ := ifi.Addrs()
+				for _, a := range addrs {
+					if ipNet, ok := a.(*net.IPNet); ok && !ipNet.IP.IsLoopback() {
+						if ip4 := ipNet.IP.To4(); ip4 != nil && ip4.IsPrivate() {
+							return uint32(ifi.Index), 0
+						}
+					}
+				}
+			}
+		}
+		// Second pass: any active non-loopback adapter
 		for _, ifi := range ifaces {
 			if ifi.Flags&net.FlagUp != 0 && ifi.Flags&net.FlagLoopback == 0 {
 				return uint32(ifi.Index), 0
@@ -483,6 +531,22 @@ func getDefaultIfIdx() (uint32, uint32) {
 		}
 	}
 	return 1, 0
+}
+
+func getSrcIP(pkt []byte) (net.IP, bool) {
+	if len(pkt) < 20 {
+		return nil, false
+	}
+	version := pkt[0] >> 4
+	if version == 4 {
+		return net.IP(pkt[12:16]), true
+	} else if version == 6 {
+		if len(pkt) < 40 {
+			return nil, false
+		}
+		return net.IP(pkt[8:24]), true
+	}
+	return nil, false
 }
 
 func getDstIP(pkt []byte) (net.IP, bool) {
@@ -503,6 +567,9 @@ func getDstIP(pkt []byte) (net.IP, bool) {
 
 func isPrivateOrExcluded(ip net.IP, serverIPs []net.IP) bool {
 	if ip == nil {
+		return false
+	}
+	if addr, err := netip.ParseAddr(ip.String()); err == nil && IsFake(addr) {
 		return false
 	}
 	if ip.IsLoopback() || ip.IsPrivate() || ip.IsLinkLocalUnicast() || ip.IsMulticast() || ip.IsUnspecified() {
@@ -620,7 +687,7 @@ func (t *Tunnel) forwardTCP(r *tcp.ForwarderRequest, dial Dialer, allow Allow, d
 		if err != nil {
 			r.Complete(true)
 			if !errors.Is(err, context.Canceled) {
-				logx.Debug("WinDivert connection failed target=%s err=%s", target, logx.Err(err))
+				logx.Warn("WinDivert tunnel connection to %s failed: %s", target, logx.Err(err))
 			}
 			return
 		}
@@ -633,6 +700,9 @@ func (t *Tunnel) forwardTCP(r *tcp.ForwarderRequest, dial Dialer, allow Allow, d
 		}
 		r.Complete(false)
 		ep.SocketOptions().SetKeepAlive(true)
+		t.logOnce.Do(func() {
+			logx.Info("WinDivert tunnel actively forwarding traffic (first target: %s)", target)
+		})
 		relay(gonet.NewTCPConn(&wq, ep), upstream)
 	}()
 }
@@ -650,6 +720,9 @@ func (t *Tunnel) serveDNS(conn *gonet.UDPConn, dns *FakeDNS) {
 		if err != nil {
 			continue
 		}
+		t.dnsOnce.Do(func() {
+			logx.Info("WinDivert FakeDNS intercepted and answered first DNS query")
+		})
 		if _, err := conn.Write(reply); err != nil {
 			return
 		}

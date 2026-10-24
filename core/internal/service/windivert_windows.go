@@ -6,6 +6,7 @@ import (
 	"context"
 	"errors"
 	"net"
+	"strconv"
 	"sync"
 
 	"github.com/armanlife/firefox-vpn-client/core/internal/config"
@@ -103,7 +104,23 @@ func (d *Daemon) syncWinDivert() {
 		"api.accounts.firefox.com",
 	)
 
-	t, err := tun.StartWinDivert(1500, dial, d.TunnelAllows, divertState.fakeDNS, serverAddrs)
+	var proxyPort, dashPort uint16
+	if addr, _, _ := d.ProxyEndpoint(); addr != "" {
+		if _, p, err := net.SplitHostPort(addr); err == nil {
+			if v, err := strconv.ParseUint(p, 10, 16); err == nil {
+				proxyPort = uint16(v)
+			}
+		}
+	}
+	if listen := d.config().Dashboard.Listen; listen != "" {
+		if _, p, err := net.SplitHostPort(listen); err == nil {
+			if v, err := strconv.ParseUint(p, 10, 16); err == nil {
+				dashPort = uint16(v)
+			}
+		}
+	}
+
+	t, err := tun.StartWinDivert(1500, dial, d.TunnelAllows, divertState.fakeDNS, serverAddrs, proxyPort, dashPort)
 	if err != nil {
 		logx.Error("failed to start WinDivert tunnel: %s", logx.Err(err))
 		return
